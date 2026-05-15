@@ -23,6 +23,7 @@ updated: 2026-05-07
 | [[wiki/sources/batch-bioinfo-methods\|生信方法合集]] | 组学整合、基础模型、临床应用等 10 篇 | `raw/pdfs/` (10 个 PDF) |
 | [[wiki/sources/hla-typing-guide\|HLA 分型技术指南]] | HLA 分型 16 问：短读长到长读长，算法到落地 | `raw/hla-typing-guide-2025.md` |
 | [[wiki/sources/s41592-025-02913-x\|ImmunoMatch — Guo et al. 2026]] | 抗体重轻链配对预测模型 | `raw/s41592-025-02913-x.pdf` |
+| [[wiki/sources/cross-tissue-immune-cell-atlas-science-2022\|Cross-tissue Immune Atlas — Domínguez Conde 2022]] | 泛组织免疫细胞图谱 + CellTypist 工具 | 公众号文章追溯 |
 
 ## 🧠 Concepts（概念）
 
@@ -82,10 +83,10 @@ updated: 2026-05-07
 
 | 指标 | 数值 |
 |------|------|
-| 页面总数 | 43 |
+| 页面总数 | 44 |
 | 原始资料 | 4 个文件 + ~44 个 PDF |
 | 操作模板 | 6 |
 | 概念页 | 11 |
 | 实体页 | 15 |
-| 来源摘要 | 7 |
+| 来源摘要 | 8 |
 | Agent Skills | 5（已安装到 .claude/skills/） |

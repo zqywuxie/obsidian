@@ -46,6 +46,14 @@ created: 2026-05-06
 - 更新了 Wiki 索引
 - 总页面数更新：8 → 13；原始资料数：1 → 2
 
+## [2026-05-15] fetch | Cross-tissue immune cell atlas (Science 2022)
+
+- **来源**：流式中文网公众号文章 → 追溯原文 [DOI 10.1126/science.abl5197](https://doi.org/10.1126/science.abl5197)
+- **追溯资源**：CellTypist (GitHub + 官网) | TissueImmuneCellAtlas (GitHub) | ArrayExpress E-MTAB-11536 | UCSC Cell Browser
+- **新页面**：[[wiki/sources/cross-tissue-immune-cell-atlas-science-2022]]
+- **更新 index**：+1 条 Sources 条目
+- **更新 prompt**：fetch-url.md 新增原始文献与数据资源追溯步骤
+
 ## [2026-05-06] update | 新增 prompts 目录
 
 在 Knowledge 根目录下新增 `prompts/` 层，存放 Wiki 操作模板。

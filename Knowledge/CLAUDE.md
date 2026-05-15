@@ -28,7 +28,8 @@ Knowledge/
 │   ├── explore-topic.md
 │   ├── fetch-url.md      ← 新增：抓取网页并解读
 │   ├── synthesize.md
-│   └── update-wiki.md
+│   ├── update-wiki.md
+│   └── git-sync.md       ← Git vault 推送同步
 ├── raw/               ← 原始资料层（不可变，只读）
 │   ├── assets/        ← 图片附件
 │   └── *.md           ← 源文档（文章、论文、笔记）

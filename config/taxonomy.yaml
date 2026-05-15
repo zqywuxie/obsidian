@@ -1,0 +1,186 @@
+version: "0.1.0"
+
+domain:
+  name: "immunology-and-t-cell-biology"
+  description: "免疫学与T细胞生物学研究，涵盖T细胞亚型、免疫组库分析、高通量测序数据处理"
+
+canonical_tag_style: lowercase-hyphen
+
+base_tags:
+  - literature-note
+  - reading-note
+  - immunology
+
+usage_rules:
+  principle: "使用最小的稳定标签集，足以支持检索、比较和综述写作即可。"
+  evidence_required: true
+  promote_candidate_when:
+    - "该概念出现在多篇文献中"
+    - "该概念能改善检索或对比效果"
+    - "该概念有明确的实验证据支撑"
+
+categories:
+  document_type:
+    description: "文献类型"
+    tags:
+      research-article:
+        label: "Research article"
+      review-paper:
+        label: "Review paper"
+      systematic-review:
+        label: "Systematic review"
+      method-paper:
+        label: "Methods/Protocol paper"
+      case-study:
+        label: "Case study"
+      preprint:
+        label: "Preprint"
+
+  research_topic:
+    description: "研究方向或问题领域"
+    tags:
+      t-cell-biology:
+        label: "T cell biology"
+      adaptive-immunity:
+        label: "Adaptive immunity"
+      innate-immunity:
+        label: "Innate immunity"
+      autoimmune-disease:
+        label: "Autoimmune disease"
+      tumor-immunology:
+        label: "Tumor immunology"
+      intestinal-inflammation:
+        label: "Intestinal inflammation"
+      type-1-diabetes:
+        label: "Type 1 diabetes"
+      ict-therapy:
+        label: "ICT therapy"
+      infectious-disease:
+        label: "Infectious disease"
+      immunotherapy:
+        label: "Immunotherapy"
+      tcr-epitope-prediction:
+        label: "TCR–epitope prediction"
+
+  immune_cell_type:
+    description: "免疫细胞类型"
+    tags:
+      cd4-t-cell:
+        label: "CD4+ T cell"
+      cd8-t-cell:
+        label: "CD8+ T cell"
+      th17:
+        label: "Th17"
+      treg:
+        label: "Treg"
+      nk-cell:
+        label: "NK cell"
+      gamma-delta-t:
+        label: "γδ T cell"
+      b-cell:
+        label: "B cell"
+      macrophage:
+        label: "Macrophage"
+      dendritic-cell:
+        label: "Dendritic cell"
+      innate-lymphoid-cell:
+        label: "Innate lymphoid cell"
+
+  molecule_and_marker:
+    description: "关键分子、细胞因子、标记物"
+    tags:
+      granzyme-k:
+        label: "Granzyme K"
+      granzyme-b:
+        label: "Granzyme B"
+      eomes:
+        label: "EOMES"
+      perforin:
+        label: "Perforin"
+      ifn-gamma:
+        label: "IFN-γ"
+      tnf-alpha:
+        label: "TNF-α"
+      il-17:
+        label: "IL-17"
+      foxp3:
+        label: "FOXP3"
+      cd4:
+        label: "CD4"
+      cd8:
+        label: "CD8"
+      tcr:
+        label: "TCR"
+      trd:
+        label: "TRD (TCR delta)"
+      pd-1:
+        label: "PD-1/PD-L1"
+
+  method_family:
+    description: "实验与分析方法"
+    tags:
+      scrna-seq:
+        label: "scRNA-seq"
+      immune-repertoire:
+        label: "Immune repertoire sequencing"
+      flow-cytometry:
+        label: "Flow cytometry"
+      mass-cytometry:
+        label: "Mass cytometry (CyTOF)"
+      multi-omics:
+        label: "Multi-omics"
+      igblast:
+        label: "IgBLAST / SCigblast"
+      pandaseq:
+        label: "Pandaseq assembly"
+      bulk-seq:
+        label: "Bulk sequencing"
+      computational-method:
+        label: "Computational method / Tool"
+
+  data_and_evidence:
+    description: "数据类型与证据来源"
+    tags:
+      human-data:
+        label: "Human data"
+      mouse-model:
+        label: "Mouse model"
+      clinical-trial:
+        label: "Clinical trial"
+      patient-sample:
+        label: "Patient sample"
+      public-dataset:
+        label: "Public dataset"
+      ige-repertoire:
+        label: "IG/TR repertoire data"
+
+  contribution_type:
+    description: "主要贡献类型"
+    tags:
+      new-cell-subset:
+        label: "Novel cell subset discovery"
+      mechanism-elucidation:
+        label: "Mechanism elucidation"
+      biomarker-discovery:
+        label: "Biomarker discovery"
+      method-development:
+        label: "Method development"
+      computational-tool:
+        label: "Computational tool"
+      benchmark:
+        label: "Benchmark / Evaluation"
+      clinical-insight:
+        label: "Clinical insight"
+      review-synthesis:
+        label: "Review / Synthesis"
+
+aliases:
+  "scRNA-seq": scrna-seq
+  "single cell": scrna-seq
+  "TCR-seq": immune-repertoire
+  "Granzyme K": granzyme-k
+  "EOMES": eomes
+  "CD4+": cd4-t-cell
+  "CD8+": cd8-t-cell
+
+candidate_terms: []

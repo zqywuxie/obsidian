@@ -1,0 +1,21 @@
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspace
+.obsidian/cache/
+.obsidian/plugins/obsidian-git/data.json
+
+# Trash
+.trash/
+
+# OS files
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Claude session data (conversation logs)
+.claudian/sessions/
+
+# Temporary files
+*.swp
+*.swo
+*~

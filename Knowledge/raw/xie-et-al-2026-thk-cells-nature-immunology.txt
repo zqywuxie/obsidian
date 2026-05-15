@@ -1,0 +1,1460 @@
+nature immunology
+
+Article                                                                       https://doi.org/10.1038/s41590-026-02479-6
+
+A unique CD4 T cell subset expressing
+
+granzyme K is regulated by transcription
+
+factor EOMES and important for
+
+T cell-mediated intestinal inflammation
+
+Received: 27 October 2025     Tian Xie 1,2,3, Yizhou Du 2, Qihan Wang2, Hao Zhang1,2, Kun Wei1, Xinxin Chi 1,
+Accepted: 25 February 2026    Xue Bai 1,5, Yujie Fu 1,2, Zhilin Peng2, Yicheng Zhu2,4, Qiuyan Lan 2 &
+Published online: xx xx xxxx  Chen Dong 2
+
+    Check for updates         CD4 helper T (TH) cells consist of multiple functional subsets defined by
+                              specific effector cytokines and transcription factors. Recently, single-cell
+                              transcriptomic analyses have revealed possible existence of additional
+                              populations. Here we identify a unique CD4 T cell subset in mouse and
+                              human colitis characterized by high levels of granzyme K (Gzmk) expression,
+                              designated as THK cells. These cells exhibit unique transcriptional
+                              signatures, with minimal expression of classical TH-defining factors but
+                              rather prominent Eomesodermin (Eomes) expression. Notably, THK cell
+                              differentiation is independent of TH1, TH2 and TH17 lineages in colitis. EOMES
+                              is both necessary and sufficient for THK cell induction, by directly driving the
+                              expression of Gzmk and associated effector molecules. Genetic ablation of
+                              Eomes ameliorates intestinal immunopathology in a T cell-induced colitis
+                              model. The THK transcriptional program seems to be conserved across
+                              species and in diverse disease contexts. Our findings establish THK cells as
+                              a distinct TH cell subtype, and the EOMES­THK axis may serve as a potential
+                              therapeutic target in inflammatory diseases.
+
+CD4 helper T (TH) cells produce cytokines and act as central modu-            is the most potent and best-characterized executioner, inducing tar-
+lators of adaptive immunity. They are traditionally categorized into          get cell death through direct cleavage and activation of caspases2,3.
+distinct subsets such as TH1, TH2, TH17 and follicular helper T (TFH) cells.  Notably, recent studies have identified a distinct CD8 T cell subset
+Each subset is defined by a unique combination of lineage-determining         marked by high GZMK expression4­7. Unlike conventional GZMB CD8
+transcription factors and effector cytokines that collectively mediate        T cells, GZMK cells exhibit minimal cytotoxic activity and are instead
+specialized immune responses to certain pathogens1.                           associated with enhanced cytokine production, tissue residency and
+                                                                              immunomodulatory functions3,8.
+      In parallel, CD8 T cells constitute another major arm of adaptive
+immunity and are critical for eliminating infected or malignant cells.              The function of GZMK remains poorly understood, as its cyto-
+Their cytotoxicity depends on perforin, a pore-forming protein that           toxic potential is less established than that of GZMB; however, emerg-
+delivers granzymes into target cells2. Among these, granzyme B (GZMB)         ing evidence suggests it may modulate inflammation by promoting
+
+1Institute for Immunology and School of Basic Medical Sciences, Tsinghua University, Beijing, China. 2Westlake University School of Medicine and New
+Cornerstone Laboratory, Hangzhou, China. 3Peking University-Tsinghua University-National Institute of Biological Sciences Joint Graduate Program,
+Tsinghua University, Beijing, China. 4Shanghai Immune Therapy Institute, Shanghai Jiao Tong University School of Medicine-affiliated Renji Hospital,
+Shanghai, China. 5Present address: Department of Gastroenterology, Shengjing Hospital of China Medical University, Shenyang, China.
+
+   e-mail: dongchen@westlake.edu.cn
+
+Nature Immunology
+Article                                                                               https://doi.org/10.1038/s41590-026-02479-6
+
+         a         SELL   CCR7   TBX21                                         IFNG               GZMK
+
+         UMAP_2    GATA3  IL4    RORC                                          IL17A              GZMB                                                                                High
+                                                                                                                                      Normalized counts                               Low
+
+                                                                                                                                                                       RelativeBCL6CXCR5FOXP3IL2RAbGZMK
+                                                                                                                                                                          expression<0.0001
+                                                                                           800                                                                                      Control
+                                                                                           600         <0.0001                                                                      Remission
+                                                                                           400    0.9970                                                                            Active
+                                                                                            200
+
+                                                                                               0
+
+                                      UMAP_1                                   IL17A, BCL6, CXCR5, FOXP3, IL2RA, GZMK and GZMB). b, GZMK transcript levels in
+                                                                               mucosal biopsies from patients with active UC (n=14), UC in remission (n=14)
+Fig. 1 | Identification of a GZMK-expressing CD4 T cell subset in human        and healthy controls (n=16) (GSE128682). Data are represented as mean±s.e.m.
+intestinal inflammation. a, UMAP visualization of CD4 T cells from an          Exact P values are shown in the graph. Statistical significance was determined by
+integrated scRNA-seq dataset of intestinal, peripheral blood and lymph node    one-way analysis of variance (ANOVA) with Tukey's multiple comparisons test.
+samples from individuals with IBD and healthy controls. Density plots show
+expression of the indicated genes (SELL, CCR7, TBX21, IFNG, GATA3, IL4, RORC,
+
+inflammatory responses through extracellular proteolytic activity,             compared to those in remission and healthy individuals (Fig. 1b).
+such as cleavage of complement components and protease-activated               This finding suggests the presence of GZMK-expressing CD4+ cells
+receptor 1 (PAR-1), to activate the complement cascade and induce              in active disease.
+inflammatory cytokine production3­6,8.
+                                                                                     Beyond the gut, we consistently observed a GZMKhigh CD4 T cell
+      GZMK expression has also been observed in CD4 T cells, which             population in human pancancer scRNA-seq data16, which also lacked
+are typically identified by single-cell RNA sequencing (scRNA-seq)             canonical CD4 T cell lineage markers (Extended Data Fig. 1), suggest-
+and annotated as TH1-like or cytotoxic CD4 T cells9­13. Nevertheless,          ing that this population may represent a broadly existing, functionally
+those cells have not been systematically evaluated, and their functional       distinct state in humans across inflammatory and neoplastic contexts.
+significance, transcriptional programs and developmental regulation
+remain to be defined.                                                          Characterization of Gzmk-expressing CD4 T cells
+                                                                               in murine colitis
+GZMK CD4 T cells with noncanonical identity
+in humans                                                                      To investigate the development and function of GZMK-expressing
+                                                                               CD4 T cells in vivo, we next turned to a mouse colitis model. We inte-
+To investigate the heterogeneity of CD4 T cells in intestinal inflam-          grated public scRNA-seq datasets (CRA016814 and GSE235664)17,18
+mation, we reanalyzed an integrated scRNA-seq dataset from patients            of colonic CD4 T cells from Rag1-/- mice adoptively transferred with
+with inflammatory bowel disease (IBD), including ulcerative colitis            naive CD4 T cells (a colitis model that recapitulates key features of
+(UC) and Crohn's disease, as well as healthy individuals14. The dataset        human IBD). Unsupervised clustering revealed six transcriptionally
+encompassed multiple tissue sources, including the small intestine,            distinct populations (Fig. 2a). Cluster 0 expressed canonical TH1 genes
+colon, peripheral blood and lymph nodes. Analysis of CD4 T cells               (Tbx21, Il12rb2 and Ifng), whereas cluster 2 displayed a memory- and
+revealed canonical TH cell subsets: naive and central memory T cells           stem-like signature marked by high expression of Il7r, Slamf6, Tcf7 and
+(expressing SELL and CCR7), TH1 cells (expressing TBX21 and IFNG),             Klf2. Cluster 3 represented a proliferating population characterized
+TH2 cells (expressing GATA3 and IL4), TH17 cells (expressing RORC and          by high Mki67 expression. Cluster 4 expressed hallmark genes of TH17
+IL17A), TFH cells (expressing BCL6 and CXCR5) and regulatory T (Treg)          (Rorc, Il17a and Il17f) and TFH (Bcl6) lineages and cluster 5 was defined by
+cells (expressing FOXP3 and IL2RA) (Fig. 1a). Notably, in addition to          high expression of the Treg cell master regulator Foxp3 (Fig. 2b). Of note,
+these known subsets, we discovered a CD4 T cell population char-               cluster 1 emerged as a unique population distinguished by substantial
+acterized by high levels of GZMK expression, which did not coincide            expression of Gzmk, with minimal expression of other lineage-defining
+with prominent expression of canonical CD4 T cell lineage markers              transcription factors (Fig. 2b,c).
+(Fig. 1a). Furthermore, this population exhibited minimal expression
+of GZMB (Fig. 1a). These transcriptional features suggest that GZMKhigh              To validate these findings experimentally, we utilized a novel
+CD4 T cells represent a previously underappreciated subset with a              Gzmk-P2A-CreERT2-T2A-tdTomato (Gzmk-tdTomato) reporter mouse
+unique molecular identity.                                                     strain. Flow cytometric analysis of intestinal lymphocytes from
+                                                                               steady-state mice revealed tdTomato signals in subsets of  T cells
+      To assess the potential relevance of this population in intes-           (including CD4, CD8 and CD8 subsets), and  T cells within
+tinal inflammation, we analyzed bulk RNA-seq data (GSE128682)                  the small intestinal intraepithelial and lamina propria (LP) compart-
+from mucosal biopsies of patients with active UC, UC in remis-                 ments. In contrast, Gzmk-tdTomato CD4 T cells were rare in colonic
+sion and healthy controls15. We observed a significant elevation of            intraepithelial and LP compartments, as well as in mesenteric lymph
+GZMK expression in the inflamed mucosa of patients with active UC              nodes (mLNs) (Extended Data Fig. 2).
+
+Nature Immunology
+Article                                                                                                                                                                       https://doi.org/10.1038/s41590-026-02479-6
+
+a                                                                              b                                                                                                               c               Gzmk
+
+                                                                                    5
+
+                                                                                          4
+
+                                                                       0        Identity  3
+
+                                                                       1
+
+                                                                       2                  2
+
+                                                                       3                  1
+
+                                                                       4
+
+                                                                       5                  0
+
+               UMAP_2                                                                        Gzmk Prf1GzmaGzmb Il7Srlamf6 Tcf7 Klf2Tbx2I1l12rb2 IfngGata3 Il4 Rorc Il17a Il17f Bcl6FoxpM3ki67  UMAP_2
+
+                          UMAP_1                                                                     Cell fraction (%)                      Mean scaled expression                                     UMAP_1                       Low         High
+
+                                                                                                                                                                                                                                    Relative expression
+
+                                                                                                     100 75 50 25                           Low            High
+
+d                         LP
+
+               105 17.9                           1.20 105 27.6                                      0.68 105 21.2                                   0.14  105 19.9                                    0.69 105 20.6                                     0
+
+Gzmk-tdTomato  104                                      104                                                   104                                          104                                                 104
+
+               103                                      103                                                   103                                          103                                                 103
+
+               0                                           0                                                  0                                                  0                                             0
+
+                          63.2                    17.7                 54.8                          16.9                    62.3                    16.4            72.0                              7.36                   77.3                       2.05
+
+                                 0  103 104 105                                 0 103             104 105                          0            104  105                      0                103 104 105                          0    103 104 105
+
+                                    T-bet­PE-Cy7                       GATA3­PerCP-eFluor 710                                      RORt­RB705                                    BCL6­APC                                              FOXP3­FITC
+
+                          250       <0.0001                            1,200                                             30                                          100                                                   8
+                                                                        800                                                            <0.0001                                                                                         <0.0001
+                          200                                           400                  0.0011                                                                  80          <0.0001
+                                                                                                                         20                                                                                                6
+               T-bet MFI  150                              GATA3 MFI                                          RORt+ (%)                                    BCL6 MFI  60                                        FOXP3+ (%)
+                                                                                                                         10                                                                                                4
+                          100                                                                                                                                        40
+                                                                                                                                                                                                                           2
+                          50                                                                                                                                         20
+
+                              0                                             0                                                0                                       0                                                     0
+
+                              Gzmk-tdTomato­            Gzmk-tdTomato+
+
+e                         LP                            f                   LP                                g                    LP
+
+               105 16.6                           9.10                 105 13.0                       5.78                   105 13.1                      14.6               2,500            0.0002
+
+Gzmk-tdTomato  104                                      Gzmk-tdTomato  104                                    Gzmk-tdTomato  104                                              2,000
+
+               103                                                     103                                                   103                                     IFN MFI  1,500                            IFN+Gzmk-tdTomato­
+                                                                                                                                                                              1,000                            IFN+Gzmk-tdTomato+
+
+               0                                                       0                                                        0                                             500
+
+                          73.1                    1.20                      69.9                      11.4                         36.8                    35.5                  0
+
+                                 0  103 104 105                                           0  103     104 105                             0      103 104 105
+
+                                    Perforin­APC                                          GZMB­BV785                                        IFN­AF700
+
+Fig. 2 | A distinct Gzmk-expressing CD4 T cell population in murine                                                                      mice. Representative plots (y axis, Gzmk-tdTomato; x axis, T-bet, GATA3, RORt,
+colitis. a, UMAP visualization of colonic CD4 T cells from the integration                                                               BCL6 or FOXP3) (top). Quantification of MFI of T-bet (n=8), GATA3 (n=3)
+of two independent scRNA-seq datasets (CRA016814 and GSE235664) using                                                                    and BCL6 (n=8), and frequency of RORt (n=8) and FOXP3 (n=8) cells in
+the Rag1-/- adoptive transfer model of colitis. Clusters were identified by                                                              Gzmk-tdTomato versus Gzmk-tdTomato cells (bottom). e­g, Flow cytometry
+unsupervised clustering. b, Dot plot showing average expression (color) and                                                              analysis of perforin (e), GZMB (f) and IFN (g) in LP CD4 T cells. Representative
+percentage of expressing cells (dot size) for selected genes across six clusters.                                                        plots (y axis, Gzmk-tdTomato; x axis, target protein) (left). In g, right: MFI of IFN
+c, Feature plot displaying Gzmk expression in the UMAP. d, Flow cytometry                                                                in IFNGzmk-tdTomato and IFNGzmk-tdTomato subsets (n=8). Data are
+analysis of Gzmk-tdTomato expression in LP CD4 T cells of Rag1-/- colitis mice                                                           representative of at least two independent experiments. Exact P values are shown
+adoptively transferred with naive CD4 T cells from Gzmk-tdTomato reporter                                                                in each graph. Statistical significance was assessed by two-tailed paired t-test.
+
+      We next examined Gzmk expression by CD4 T cells during colitis.                                                                    lineages (Fig. 2d and Extended Data Fig. 3a). For simplicity, we named
+Naive CD4 T cells isolated from Gzmk-tdTomato reporter mice were                                                                         this Gzmkhigh subset THK cells.
+adoptively transferred into Rag1-/- recipients to induce colitis. In line
+with the scRNA-seq data, approximately 20% of CD4 T cells in colonic LP                                                                        Phenotypic characterization revealed that the majority of
+and mLNs exhibited tdTomato fluorescence, confirming Gzmk expres-                                                                        perforin-expressing CD4 T cells were Gzmk-tdTomato, though
+sion during intestinal inflammation (Fig. 2d and Extended Data Fig. 3a).                                                                 only a subset of Gzmk-tdTomato cells expressed perforin (Fig. 2e
+Flow cytometric analysis revealed that Gzmk-tdTomato cells exhibited                                                                     and Extended Data Fig. 3b). Among cells expressing Gzmk-tdTomato
+minimal or no expression of T-bet, GATA3, RORt, BCL6 or FOXP3, fur-                                                                      or GZMB, a small subset was double-positive for both gran-
+ther supporting that they were distinct from classical TH and Treg cell                                                                  zymes, suggesting partial overlap in their expression patterns
+                                                                                                                                         (Fig. 2f and Extended Data Fig. 3c). Furthermore, while a proportion
+
+Nature Immunology
+Article                                                                                                                                          https://doi.org/10.1038/s41590-026-02479-6
+
+         a LP                                         WT                                 Tbx21 KO                                 GZMB
+                                                          40.9                                   20.2
+              105                                                                                                           60    0.0001
+              104
+              103TCR ­BUV395                                                                                 GZMB+ (%)      40
+
+                0                                                                                                           20
+
+                                              0 103        104           105                                                0     Tbx21 KO
+                                                                                                                              WT
+
+                                             GZMB­PE/Dazzle 594
+
+         b LP    TCR ­BUV395                          WT                                 Tbx21 KO            Perforin+ (%)             Perforin  c         Relative expression          Gzmk
+                                                        9.11                                     18.7                       30                                                          0.5826
+              105                                                                                                                                      0.08
+              104                                                                                                                       0.0238         0.06
+              103                                                                                                                                      0.04
+                                                                                                                            20                         0.02
+                0
+                                                                                                                            10
+
+                                              0       103     104 105                                                       0     Tbx21 KO                                      0       Tbx21 KO
+                                                                                                                              WT                                                   WT
+
+                                             Perforin­APC
+
+         d                                       Gzmk            e LP                    WT                                     Stat6 KO                                                   Perforin
+                                                 0.0091                                    6.65                                                                                 15
+               0.12Relative expression                                105TCR ­BUV395
+                                                                      104                                                                                  Perforin+ (%)                   0.2874
+              0.08                                                    103
+                                                                                                                                                                                10
+                                                                        0
+                                       0.04                                                                                       6.64                                          5
+
+                                       0         Stat6 KO                             0  103        104 105                                                                     0       Stat6 KO
+                                          WT                                                                                                                                        WT
+
+                                                                                      Perforin­APC
+
+         f        Relative expression          Gzmk              g LP    TCR ­BUV395     WT                                 Cd4cre Rorcfl/fl                                              Perforin
+                                             <0.0001                                      7.23                                         17.6                                     30
+               1.5                                                    105
+                                                                      104                                                                                  Perforin+ (%)                   0.0004
+              1.0                                                     103                                                                                                       20
+
+                                       0.5                              0                                                                                                       10
+
+                                       0                                                                                                                                        0
+                                                                                                                                                                                   WT
+                                       WT     Cd4cre Rorcfl/fl                        0  103 104 105                                                                                    Cd4cre Rorcfl/fl
+
+                                                                                      Perforin­APC
+
+Fig. 3 | THK cell differentiation is independent of TH1, TH2 and TH17 programs.                              and Stat6-/- cells (n=7). Representative plots (left). Frequency of perforin cells
+a,b, Flow cytometry analysis of GZMB (a) and perforin (b) in LP CD4 T cells from                             (right). f, Gzmk mRNA expression in sorted WT and Cd4cre Rorcfl/fl CD4 T cells
+Rag1-/- recipients co-transferred with wild-type (WT) (CD45.1) and Tbx21-/-                                  from the colonic LP, measured by RT­qPCR (n=3). g, Flow cytometry analysis of
+(CD45.2) naive CD4 T cells (n=6). Representative plots (left). Frequency                                     perforin in LP CD4 T cells from recipients of WT and Cd4cre Rorcfl/fl cells (n=6).
+of GZMB or perforin cells among donor-derived populations (right). KO,                                       Representative plots (left). Frequency of perforin cells (right). Data are shown
+knockout. c, Gzmk mRNA expression in sorted WT and Tbx21-/- CD4 T cells from                                 as mean±s.e.m. and are representative of two independent experiments.
+the colonic LP, measured by RT­qPCR (n=3). d, Gzmk mRNA expression in sorted                                 Exact P values are shown in each graph. Statistical significance was assessed by
+WT and Stat6-/- CD4 T cells from the colonic LP, measured by RT­qPCR (n=3).                                  two-tailed paired t-test (a,b,e,g) or two-tailed unpaired t-test (c,d,f).
+e, Flow cytometry analysis of perforin in LP CD4 T cells from recipients of WT
+
+of Gzmk-tdTomato cells produced IFN, the mean fluorescence                                                         To investigate the functional properties of THK cells, we per-
+intensity (MFI) of IFN in these Gzmk-tdTomato cells was slightly                                             formed in vitro cytotoxicity assays using sorted Gzmk-tdTomato
+lower than that in IFN-producing Gzmk-tdTomato cells (Fig. 2g and                                            and Gzmk-tdTomato CD4 T cells isolated from LP of colitic mice.
+Extended Data Fig. 3d). ScRNA-seq data from colitis mice showed that,                                        These cells were co-cultured with the mastocytoma cell line P815.
+unlike Gzmk and Prf1, which were predominantly expressed in cluster                                          While the majority of Gzmk-tdTomato cells retained tdTomato expres-
+1 (THK), Gzmb and Ifng were more broadly distributed across clusters,                                        sion and Gzmk-tdTomato cells remained tdTomato-negative after
+with the highest levels observed in cluster 5 (Treg) and cluster 0 (TH1)                                     co-culture (Extended Data Fig. 3f), both populations exhibited compa-
+cells, respectively (Extended Data Fig. 3e).                                                                 rable cytotoxic activity against target cells in the presence of anti-CD3
+
+Nature Immunology
+Article                                                                             https://doi.org/10.1038/s41590-026-02479-6
+
+(Extended Data Fig. 3g), indicating a cytotoxic potential for, but not              wild-type and Runx3-deficient (Vav1cre Runx3fl/fl) naive CD4 T cells
+unique to, THK cells.                                                               into Rag1-/- recipient mice. Although Runx3 deficiency led to a marked
+                                                                                    reduction in CD8 and GZMB expression in CD4 T cells from LP of
+THK cell differentiation independent of                                             colitis mice (Extended Data Fig. 5e,f), Gzmk expression was not sig-
+canonical lineages                                                                  nificantly altered (Extended Data Fig. 5g), supporting that THK cells
+                                                                                    are distinct from CD4CD8 T cells.
+We next asked whether THK cell differentiation relies on the established
+TH cell developmental pathways. To test this, we first assessed the role            Eomes is transcriptionally and epigenetically
+of TH1 lineage commitment in THK cell generation by co-transferring                 associated with THK cells
+wild-type (CD45.1) and Tbx21-deficient (CD45.2) naive CD4
+T cells into Rag1-/- recipient mice. Four weeks later, we analyzed                  Given that THK cell differentiation in vivo occurs independently of the
+donor-derived T cells in LP and mLNs. Notably, although Tbx21 defi-                 canonical lineage-defining transcription factors of TH1, TH2 and TH17
+ciency led to a marked reduction in GZMB expression (Fig. 3a and                    cells, we sought to identify the key transcriptional regulator associated
+Extended Data Fig. 4a), the frequencies of perforin-expressing CD4                  with their unique cell identity. Bulk RNA-seq of sorted Gzmk-tdTomato
+T cells were significantly increased (Fig. 3b and Extended Data Fig. 4b).           and Gzmk-tdTomato CD4 T cells from LP of colitic mice revealed a
+As currently there is no good staining antibody for murine GZMK,                    distinct transcriptional signature in Gzmk-expressing cells (Fig. 4a).
+we sorted CD45.1 and CD45.2 CD4 T cells from LP for quantita-                       We defined the top 100 most differentially expressed genes as the `THK
+tive PCR with reverse transcription PCR (RT­qPCR) analysis, and                     cell signature' and applied it to score individual cells in the scRNA-seq
+found that Gzmk expression was preserved in Tbx21-deficient cells                   data (Fig. 2a and Extended Data Fig. 6a). Cluster 1 exhibited the highest
+(Fig. 3c). This indicates that Gzmk induction occurs independently                  enrichment score, confirming its identity as the THK subset (Fig. 4b).
+of the TH1 program.                                                                 Within this signature, Eomes emerged as one of the most significantly
+                                                                                    upregulated genes (Fig. 4a), implicating it as a key candidate regulator
+      To determine whether THK cell development depends on TH2 or                   of THK cell identity.
+TH17 lineages, we examined Gzmk expression in Stat6-/- and Cd4cre
+Rorcfl/fl CD4 T cells using a similar co-transfer system. Notably, Gzmk                   This association was further supported by multimodal evidence.
+and perforin expression was largely unaffected in Stat6-deficient                   Gzmk and Eomes displayed nearly identical expression patterns
+cells, indicating that STAT6, an obligatory transcription factor for TH2            across CD4 T cell clusters in mouse colitis scRNA-seq data (Fig. 4c
+differentiation, is not required for THK cell differentiation (Fig. 3d,e            and Extended Data Fig. 6b). A similar coexpression pattern was also
+and Extended Data Fig. 4c). In contrast, Gzmk and perforin expres-                  observed in human CD4 T cell data (Fig. 4d and Extended Data Fig. 6c).
+sion was significantly elevated in Rorc-deficient CD4 T cells (Fig. 3f,g            In addition, correlation analysis of bulk RNA-seq data from patients
+and Extended Data Fig. 4d), suggesting that RORt may restrain THK                   with UC and healthy controls (GSE128682) further confirmed that
+cell differentiation.                                                               EOMES displayed the strongest positive correlation with GZMK expres-
+                                                                                    sion (Pearson R2=0.953, P<0.001) (Fig. 4e and Extended Data Fig. 6d).
+      In addition, Bcl6 deficiency resulted in reduced Gzmk and Prf1                Consistently, flow cytometry further confirmed notable coexpression
+expression in colonic CD4 T cells (Extended Data Fig. 4e). Given that               of Gzmk-tdTomato and EOMES proteins in CD4 T cells from LP and
+CD4 T cells expressing Bcl6 in lymphoid follicles can differentiate into            mLNs of colitic mice (Fig. 4f). Time-course analysis of LP and mLNs
+multiple effector subsets in LP under inflammatory conditions while                 at days 7, 14, 21, 28 and 35 after naive CD4 T cell transfer showed that
+losing Bcl6 expression17,18, this finding raises the possibility that THK           EOMESGzmk-tdTomato THK cells were nearly undetectable at day 7
+cells may also arise from such a progenitor population.                             post-transfer; however, this population became detectable by day 14
+                                                                                    and reached a relatively stable frequency by approximately 3­4 weeks
+      Previous studies reported that CD4 T cells can be reprogrammed                (Extended Data Fig. 6e). In contrast, TH1 (T-bet) and TH17 (RORt)
+into CD4CD8 cytotoxic T lymphocytes, which upregulate Runx3                         cells were already present at day 7 (Extended Data Fig. 6e). Consistent
+and downregulate ThPOK (Zbtb7b)19,20. We examined Runx3 and Zbtb7b                  with the regulation of Gzmk, EOMES expression did not require T-bet,
+expression in scRNA-seq data from colitis mice and found that nei-                  STAT6 or RORt during colitis (Fig. 4g­i and Extended Data Fig. 6f­h);
+ther gene was specifically or substantially altered in cluster 1 (THK)              however, EOMES expression was also significantly reduced upon Bcl6
+(Extended Data Fig. 5a,b). Similarly, CD8 expression was not elevated               deficiency (Fig. 4j and Extended Data Fig. 6i).
+in Gzmk-tdTomato CD4 T cells compared to other CD4 T cell popu-
+lations (Extended Data Fig. 5c,d). Furthermore, we co-transferred
+
+Fig. 4 | Eomes is transcriptionally and epigenetically associated with              (mLN) CD4 T cells from Rag1-/- recipients transferred with naive CD4 T cells
+THK cell identity. a, Volcano plot of differentially expressed genes in sorted      from Gzmk-tdTomato reporter mice. g­j, Flow cytometry analysis of EOMES
+Gzmk-tdTomato versus Gzmk-tdTomato CD4 T cells from LP of colitic                   expression in LP CD4 T cells from Rag1-/- recipients co-transferred with WT
+mice (bulk RNA-seq). Differential expression was assessed using DESeq2              (CD45.1) and KO (CD45.2) naive CD4 T cells. Tbx21-/- (n=6) (g), Stat6-/- (n=7)
+(Wald test, two-sided). P values were adjusted using the Benjamini­Hochberg         (h), Cd4cre Rorcfl/fl (n=6) (i) and Cd4cre Bcl6fl/fl (n=5) (j). Representative plots
+procedure. Red dots, upregulated in Gzmk-tdTomato; blue dots, upregulated           (left). Frequency of EOMES cells within donor-derived populations (right).
+in Gzmk-tdTomato. Horizontal dashed line, adjusted P=0.05; vertical dashed          k, Integrated heatmap of co-directional gene­peak pairs (adjusted P<0.05 for
+lines, log2(fold change)=±log2(1.5). b, Gene set enrichment score of the `THK cell  both RNA-seq and ATAC-seq). Rows represent linked gene­peak pairs ranked by
+signature' across CD4 T cell clusters (cluster 0, n=5,932; cluster 1, n=3,502;      gene log2(fold change). Columns show z-scored log2(TPM+1) values for RNA-seq
+cluster 2, n=2,703; cluster 3, n=1,703; cluster 4, n=1,610; and cluster 5, n=133).  (left) and z-scored log2(normalized counts + 1) for ATAC-seq peaks within
+Violin plots with embedded box plots showing median (center line) and               ±100kb of the transcription start site (TSS). TPM, transcripts per million. l, IGV
+25th­75th percentiles (box bounds). Numbers above show adjusted P values            tracks showing chromatin accessibility (blue) and gene expression (red) at the
+(Wilcoxon rank-sum test, two-tailed, cluster 1 versus all others); numbers below    Eomes locus in Gzmk-tdTomato versus Gzmk-tdTomato cells. Because Eomes
+show mean scores. c, Feature plots displaying Gzmk and Eomes expression in          expression in Gzmk-tdTomato cells was very low compared to Gzmk-tdTomato
+the UMAP from mouse colitis scRNA-seq data (Fig. 2a). d, Density plots showing      cells, its signal fell below the visible threshold when the y axis was uniformly set
+GZMK and EOMES expression in the human IBD dataset (Fig. 1a). e, Correlation        to 0­8,500. m, Volcano plot of motif enrichment analysis. Shown are -log(P
+between GZMK and EOMES mRNA expression in bulk RNA-seq data from patients           value) (natural log) calculated by HOMER using binomial test. Dashed gray lines,
+with UC and healthy controls (GSE128682). Shown is R2 from Pearson correlation;     P=0.05 and fold enrichment=1. Motifs in red, enriched in Gzmk-tdTomato;
+two-sided P values are unadjusted. Points are colored by group. Black line shows    blue, enriched in Gzmk-tdTomato. Data are representative of two (g­j) or three
+linear regression fit. Gray shaded band indicates 95% CI. f, Flow cytometry         (f) independent experiments. Exact P values are shown in each graph. Statistical
+analysis of Gzmk-tdTomato and EOMES in LP and mesenteric lymph node                 significance was assessed by two-tailed paired t-test. Adj., adjusted.
+
+Nature Immunology
+Article                                                                                                                                                                                                                                https://doi.org/10.1038/s41590-026-02479-6
+
+a                                   Gzmk-tdTomato­             Gzmk-tdTomato+               b                                                                                                                                       c
+
+       300                          Il1r1        Il2ra       Nr4a2  Ccl5Cd27 Eomes                                            THK cell signature                                                                                                       Gzmk                                     Eomes
+                                        Foxp3           Il18r1                 Gzmk
+       200
+         -log10(adj. P value)                            Nkg7       Il10ra                                                    <0.001             <0.001 <0.001 <0.001 <0.001
+
+                                                Il12rb2                          Tox        Signature score
+
+                                                                           Prf1                                   0.2
+                                    Il22
+
+                                                                  Ccr5
+
+                                           Rorc                                                                   0.0                                                                                                                  UMAP_2
+
+                               100                                     Klrg1
+                                                               Slamf7
+                                    Il17a
+                                                                      Crtam
+                                           Il23r
+                                                                    Il10
+                                                Il13                                                         -0.2 -0.02 0.08 -0.03 -0.04 -0.06 -0.04                                                                                           UMAP_1
+
+                               0    Il17f                                                                                         0     1        2                           3     4                    5                                                          Low          High
+
+                                           Il4                                                                                                                                                                                                                Relative expression
+
+                                           -4            0                       4                                                               Clusters
+
+                                                log2(Fold change)
+
+d                                                              EOMES                             e                                    GSE128682                                       f                                         LP                              mLN
+                                                                                                                              R2 = 0.953                                                                                                               22.2 3.21
+              GZMK                                                                                    500                     P < 0.001                                               EOMES­eFluor 450  105 4.17
+
+                                                                                                 GZMK expression400                                                                                                                                                                             23.0
+
+                                                                                                                                                                                                        104                                                                                     3.34
+
+                                                                                                                  300                                                                                                                                                                               EOMES
+                                                                                                                                                                                                                                                                                            50
+                                                                                                                  200                                                                                   103
+                                                                                                                  100                                                                                                                                                                                  0.8386
+UMAP_2                                                                                                                                                  Active                                                   0                                     4.99 70.4                            40
+                                                                                                                     0                                  Remission                                                     68.6                                                                  30
+                                                                                                                          0                             Control                                                                                                                             20
+    UMAP_1                                                                                                                                                                                                                          0          103 104 105                                  10
+                                                                                                                                   50 100 150 200 250
+g LP                                              Low          High                                                               EOMES expression                                                                              Gzmk-tdTomato                                                0
+                                                                                                                                                                                                                                                                                              WT Stat6 KO
+          105                                   Relative expression
+          104
+          103                                   WT                               Tbx21 KO                                             EOMES             h LP                                            WT                                             Stat6 KO
+                                                                                                                                                                                                         16.0                                                16.6
+            0TCR ­BUV395                                                                                                      60      0.0035                 105TCR ­BUV395
+                                                                                                                                                             104
+                                                                                                                  EOMES+ (%)  40                             103                                                                                                                EOMES+ (%)
+
+                                                 8.68                                 32.8                                    20                               0
+
+                                         0 103 104 105                                                                        0                                                         0 103 104 105
+                                    EOMES­eFluor 450                                                                           WT Tbx21 KO                                         EOMES­PE-Cy7
+
+i LP                                            WT                   Cd4cre Rorcfl/fl                                                EOMES                      j LP                                    WT                                         Cd4cre Bcl6fl/fl                             EOMES
+                                                 10.3                           24.7                                                                                                                                                                          0.50
+          105                                                                                                                 50                                TCR ­BUV395  105                                                                                                            50
+          104
+          103TCR ­BUV395                                                                                          EOMES+ (%)             0.0027                              104                                                                                                EOMES+ (%)  40  0.0002
+                                                                                                                              40
+            0
+                                                                                                                              30                                             103                                                                                                            30
+
+                                                                                                                              20                                                                                 25.0                                                                       20
+
+                                                                                                                              10                                                0                                                                                                           10
+
+                                                                                                                              0                                                                                                                                                             0
+
+                      0 103 104 105                                                                                           WT      Cd4cre Rorc l/ l                                   0 103 104 105                                                                                      WT  Cd4cre Bcl6 l/ l
+             EOMES­eFluor 450                                                                                                                                                      EOMES­eFluor 450
+
+k                                                                                                                                                   l                                                                                                         16 kb
+
+                                                                                            Eomes                                                   Gzmk-tdTomato+ ATAC-seq 0­900
+                                                                                                                                                    Gzmk-tdTomato- ATAC-seq 0­900
+                                                                                            Gzmk                                                     Gzmk-tdTomato+ RNA-seq 0­8,500
+                                                                                                                                                     Gzmk-tdTomato- RNA-seq 0­8,500
+                                                                                            Prf1
+
+                                                                                            Ccl5
+
+                                                                                            Klrg1
+
+                                                                                            Il10ra
+
+                                                                                            Nr4a2
+
+                                                                                            Nkg7
+
+                                                                                            Il10                                                                                                                                                       Eomes
+
+                                                                                            Ccr5
+
+                                                                                            Slamf7                                                                                                      m                              Gzmk-tdTomato- Gzmk-tdTomato+
+
+                                                                                            Il22                                                                                                             300
+                                                                                                                                                                                                             200
+                                                                                            Il17a                                                                                                             100                                                  Tbx6(T-box)
+
+                                                                                            Il1r1                                                                                                                                                             Tbx21(T-box)
+                                                                                                                                                                                                                                                                             Tbet(T-box)
+                                                                                            Il5
+
+                                                                                            Rorc
+
+                                                                                            Csf2                                                                                                                 -log(P value)                         Tbx5(T-box)              Tbr1(T-box)
+
+                                                                                            Il23r                                                                                                                                      RORg(NR)
+
+                                                                                            Foxp3                                                                                                                                                  RORgt(NR) Eomes(T-box)
+
+                                                                                            Il17f                                                                                                                                                          Gata2(Zf)
+                                                                                                                                                                                                                                                                     Gata6(Zf)
+                                                                                            Ccr6                              RNA-seq                                                                                                  RORa(NR)
+                                                                                            Il13
+
+                                                                                            Il4                               ATAC-seq                                                                                                 GATA(Zf)    Gata1(Zf)  GATA3(Zf)
+                                                                                            Il1rl1
+
+                                                                                            Il2                               Gzmk-tdTomato+                                                                                                                  Bcl6(Zf)
+
+                                                                                            Il2ra                             Gzmk-tdTomato-
+                                                                                            Ahr
+                                                                                                                                                                                                                                0
+                                                                                            Cxcr6
+
+                                                                                            Il18r1                ­1.0 0 1.5                                                                                                                   -4      -2            0          2
+                                                                                            Il1rl2                     z-score
+                                                                                                                                                                                                                                                   log2(fold enrichment)
+
+Nature Immunology
+Article                                                                                                                                                                                              https://doi.org/10.1038/s41590-026-02479-6
+
+a                                                                        b                                                                                                          c
+
+      100                             Ccl4               Ccr5                       THK cell signature                                                                                                     Eomes overexpression UP signature
+                                               Gzmb Crtam                     0.8
+        75                                          Ifng       Eomes     Enrichment score                                                                                                            0.3 <0.001      <0.001 <0.001 <0.001 0.003
+                                                                              0.6
+­log10(adj. P value)            Tbx21 Nkg7               Prf1                                                                        NES = 2.61
+                                                                                                                                     Adj. P < 0.001
+                                                                                                                                                                                    Signature score  0.2
+
+                                               Slamf7 Il10                                 0.4                                                                                                       0.1
+                                                                                           0.2
+                      50
+                                                                                             0
+                                                                                                                                                                                                     0
+
+                      25    Il4             Il10ra                                                                                                                                                   -0.1
+                                      Il13 Ccl5
+                                Rorc                                                                                                                                                                 -0.2
+                            Il5                  Prdm1 Gzmk
+                                                       Gzma                                                                                                                                                -0.04  0 -0.07 -0.06 -0.07 -0.02
+                                                                                                                                                                                                               0
+                      0                                                                                     3,000                    6,000  9,000                           12,000                                1  2          3                 4       5
+                                                                                                Eomes OE                                                                    Ctrl
+                            -2              0  2         4         6                                                                                                                                                 Clusters
+
+                                      log2(Fold change)
+
+d                                     Ctrl                  Eomes OE                                                    Gzmk-tdTomato       e                                       Ctrl                          Eomes OE                                 Perforin
+                                                                                                                                                                                       0.22                               34.3
+                      105                                                                       Gzmk-tdTomato+ (%)  40      <0.0001              105Live/Dead­ef506                                                                               50
+                                                                                                                                                 104                                                                                                         <0.0001
+Live/Dead­ef506        104                                                                                          30                                                                                                             Perforin+ (%)
+                                                                                                                                                 103                                                                                              40
+                       103                                                                                                                         0
+                        0             0.17                         30.4                                                                                                                                                                           30
+                      ­103
+                                                                                                                    20
+
+                                                                                                                                                                                                                                                  20
+
+                                                                                                                    10                                                                                                                            10
+
+                                  0 103 104 105                                                                     0       Eomes OE                                 ­103 0 103 104 105                                                           0       Eomes OE
+                            Gzmk-tdTomato                                                                             Ctrl                                           Perforin­APC                                                                   Ctrl
+
+f                                                           25 kb                                                                                                    15 kb                                        g Increased accessibility
+
+                               0­1,200                                                                                  0­2,600                                                                                      2,316                        Gzmk Tox
+EOMES CUT&Tag                                                                                                           0­1,300                                                                                                                   Prf1 Ccl3/4/5
+                                                                                                                        0­1,300                                                                                                                   Nkg7 Ifng
+                               0­2,000
+Gzmk+ ATAC-seq                                                                                                                                                                                                       662                          Klrg1 Il10
+
+                               0­2,000                                                                                                                                                                               5,152         Binding peak
+Gzmk­ ATAC-seq
+                                                                                                                                                                                                                      66                          Ccr6
+                                                                                                                                                                                                                     4,199                        Gata3
+
+                                                                        Gzmk                                                                        Prf1
+                                                                                                                                                                                                        Decreased accessibility
+Fig. 5 | EOMES drives the THK program and constrains alternative TH cell
+fates. a, Volcano plot of differentially expressed genes in CD4 T cells retrovirally                                                        embedded box plots showing median (center line) and 25th­75th percentiles
+transduced with Eomes versus control vector, activated under the nonpolarizing                                                              (box bounds). Numbers above show adjusted P values (Wilcoxon rank-sum
+condition (bulk RNA-seq). Differential expression was assessed using DESeq2                                                                 test, two-tailed, cluster 1 versus all others); numbers below show mean scores.
+(Wald test, two-sided). P values were adjusted using the Benjamini­Hochberg                                                                 d,e, Flow cytometry analysis of Gzmk-tdTomato (d) and perforin (e) in control
+procedure. Red dots, upregulated after Eomes overexpression; blue dots,                                                                     or Eomes-overexpressing (OE) CD4 T cells activated under the nonpolarizing
+downregulated after Eomes overexpression. Horizontal dashed line, adjusted                                                                  condition (n=3). Representative plots (left). Frequency of Gzmk-tdTomato and
+P=0.05; vertical dashed lines, log2(fold change)=±log2(1.5). b, GSEA of the `THK                                                            perforin cells (right). f, IGV tracks showing EOMES CUT&Tag signal (purple),
+cell signature' in Eomes-overexpressing CD4 T cells compared to control. GSEA                                                               chromatin accessibility (blue) at the Gzmk and Prf1 loci in Gzmk-tdTomato
+was performed using clusterProfiler (fgsea algorithm). P values were adjusted                                                               versus Gzmk-tdTomato CD4 T cells. g, Venn diagram showing overlap between
+using the Benjamini­Hochberg procedure. Normalized enrichment score                                                                         EOMES-bound regions (CUT&Tag in Eomes-overexpressing CD4 T cells) and
+(NES) and adjusted P value are shown. c, Single-cell gene set enrichment score                                                              differentially accessible chromatin regions (ATAC-seq in Gzmk-tdTomato versus
+of the `Eomes overexpression UP' signature (top 100 upregulated genes) across                                                               Gzmk-tdTomato CD4 T cells from colitic LP). Numbers indicate peak counts.
+CD4 T cell clusters (cluster 0, n=5,932; cluster 1, n=3,502; cluster 2, n=2,703;                                                            Data are shown as mean±s.e.m. and are representative of two independent
+cluster 3, n=1,703; cluster 4, n=1,610; and cluster 5, n=133). Violin plots with                                                            experiments (d,e). Exact P values are shown in each graph. Statistical significance
+                                                                                                                                            was assessed by two-tailed unpaired t-test (d,e).
+
+      To examine the epigenetic basis of this transcriptional program,                                                                            Motif enrichment analysis of differentially accessible chroma-
+we performed bulk ATAC-seq on the same sorted populations. Chro-                                                                            tin regions revealed that T-box family motifs, including the Eomes
+matin accessibility profiling revealed a distinct regulatory landscape                                                                      motif, were significantly enriched in regions with higher accessibility
+in Gzmk-expressing cells, with increased chromatin accessibility                                                                            in Gzmk-tdTomato cells (Fig. 4m). In contrast, regions with higher
+at cis-regulatory elements near THK-associated genes, including                                                                             accessibility in Gzmk-tdTomato cells were enriched for motifs of
+Eomes, Gzmk, Prf1, Cd27, Ccl5, Klrg1, Il10ra, Nr4a2, Nkg7, Il10, Ccr5                                                                       ROR/ROR, Bcl6 and GATA family members, which are associated
+and Slamf7 (Fig. 4k). Notably, the Eomes locus exhibited both ele-                                                                          with TH17, TFH and TH2 lineages, respectively (Fig. 4m).
+vated transcription and enhanced promoter/enhancer accessibility
+(Fig. 4l). In contrast, regulatory regions near genes of canonical                                                                          EOMES drives THK fate and restricts alternative
+CD4 T cell lineages, such as Rorc, Il17a, Il17f, Il22, Csf2, Il23r, Il5,                                                                    lineages
+Il13, Il4 and Il18r1, were more accessible in Gzmk-tdTomato cells
+(Fig. 4k). These findings demonstrate that Gzmk-expressing CD4                                                                              Having identified EOMES expression associated with THK cell iden-
+T cells possess a unique epigenetic program aligned with their dis-                                                                         tity, we next asked whether it is sufficient to induce the THK tran-
+tinct transcriptional identity.                                                                                                             scriptional program. We retrovirally overexpressed Eomes in CD4
+                                                                                                                                            T cells activated under the nonpolarizing condition and performed
+
+Nature Immunology
+Article                                                                             https://doi.org/10.1038/s41590-026-02479-6
+
+bulk RNA-seq. Differential expression analysis revealed that Gzmk                   Eomes and TFH cell differentiation. We overexpressed Eomes in OT-II
+and Prf1 were among the most significantly upregulated genes in                     cells, adoptively transferred them into wild-type recipients, and
+Eomes-overexpressing cells (Fig. 5a). Ifng and Gzmb were also upregu-               then immunized the mice with OVA. Seven days post-immunization,
+lated, albeit with lower fold changes (Fig. 5a). Notably, Tbx21 expression          donor-derived Eomes-overexpressing cells exhibited significantly
+was suppressed, suggesting that EOMES did not induce a canonical TH1                decreased frequencies of both PD-1CXCR5 and BCL6CXCR5 TFH
+program. In addition, signature genes of other helper T cell subsets,               cells (Extended Data Fig. 7i,j), demonstrating a negative regulatory
+including Rorc (TH17), and Il5, Il4 and Il13 (TH2), were markedly down-             role of Eomes in TFH cell differentiation. BLIMP1 is an antagonistic
+regulated (Fig. 5a). Gene set enrichment analysis (GSEA) confirmed                  regulator of BCL6 and TFH cell differentiation25,26. Our RNA-seq data
+strong enrichment of the `THK cell signature' in Eomes-overexpressing               revealed that Eomes overexpression upregulated Prdm1 (encoding
+cells (Fig. 5b). To assess this at single-cell resolution, we derived an            BLIMP1) expression (Fig. 5a). Furthermore, we found that the major-
+`Eomes overexpression UP' gene signature, defined as the top 100                    ity of EOMES CD4 T cells from colitis mice highly expressed BLIMP1
+upregulated genes from RNA-seq of CD4 T cells with in vitro Eomes                   (Extended Data Fig. 7k). Collectively, these findings indicate that THK
+overexpression, and evaluated its enrichment across clusters in the                 cells are distinct from TFH cells.
+mouse scRNA-seq data (Fig. 2a). Notably, cluster 1 (THK) exhibited the
+highest enrichment score (Fig. 5c), indicating that Eomes overexpres-               EOMES binds regulatory elements of THK genes
+sion induces the THK transcriptional program.
+                                                                                    To determine whether EOMES directly regulates the THK transcriptional
+      We further validated these findings experimentally. RT­qPCR                   program, we performed CUT&Tag for HA-tagged EOMES overexpressed
+confirmed robust induction of Gzmk and Prf1 in Eomes-overexpressing                 in CD4 T cells under nonpolarizing conditions. Genomic annotation of
+CD4 T cells under nonpolarizing conditions (Extended Data Fig. 7a),                 EOMES-occupied regions revealed that 37.38% in introns, 28.04% in dis-
+and flow cytometry showed strong upregulation of Gzmk-tdTomato                      tal intergenic regions, and 27.15% in promoters (Extended Data Fig. 8a),
+and perforin compared to controls (Fig. 5d,e). Although Gzmb                        suggesting that EOMES acts upon both promoter-proximal and dis-
+was also induced, its fold change was substantially lower than that                 tal enhancer-like regulatory elements. Motif enrichment analysis
+of Gzmk (Extended Data Fig. 7a). Reanalysis of published RNA-seq                    of EOMES-bound regions showed significant enrichment of T-box
+data21 from Eomes-overexpressing CD8 T cells also revealed a pro-                   motifs (including Eomes itself) and ETS-family motifs (for example,
+nounced increase in Gzmk expression, with minimal impact on Gzmb                    ETS1, ERG and Fli1) (Extended Data Fig. 8b). Notably, EOMES binding
+(Extended Data Fig. 7b).                                                            signals were robustly enriched at the Gzmk and Prf1 loci (Fig. 5f). We
+                                                                                    also examined published ChIP-seq data21 from CD8 T cells and found
+      We next investigated whether EOMES influences the differentia-                that EOMES similarly occupied the Gzmk and Prf1 loci in CD8 T cells
+tion of canonical TH cell subsets under polarizing conditions. First, we            (Extended Data Fig. 8c).
+found that none of the established differentiation conditions for clas-
+sical subsets (TH1, TH2, TH17 and Treg cells in vitro, and TFH induced by                 To assess the functional relevance of EOMES binding in the con-
+ovalbumin (OVA) immunization in vivo) could effectively induce the                  text of endogenous THK cell differentiation, we integrated EOMES
+expression of EOMES and Gzmk-tdTomato (Extended Data Fig. 7c).                      CUT&Tag data with ATAC-seq profiles from Gzmk-tdTomato and
+We further explored whether Eomes overexpression could suppress                     Gzmk-tdTomato CD4 T cells isolated from LP of colitic mice. Of
+the differentiation of canonical CD4 T cells. Our results showed that               the 5,880 EOMES binding peaks identified, 662 overlapped with
+while Eomes overexpression upregulated Ifng expression in the nonpo-                regions of increased chromatin accessibility in Gzmk-tdTomato cells,
+larizing condition (Fig. 5a), it markedly suppressed T-bet expression               whereas only 66 overlapped with regions showing reduced accessibil-
+under TH1-polarizing conditions (Extended Data Fig. 7d). In the TH2                 ity, indicating that EOMES may preferentially act as the epigenetic
+condition, Eomes overexpression modestly reduced GATA3 expres-                      activator during THK cell differentiation (Fig. 5g). Notably, EOMES
+sion (Extended Data Fig. 7e). Previous studies have shown that Eomes                peaks that colocalized with accessible chromatin in Gzmk-tdTomato
+strongly suppresses IL-5 production, while having minimal effects on                cells were located near THK-associated genes, including Gzmk, Prf1,
+IL-4 or IL-13 expression22. Under TH17 and Treg cell-polarizing conditions,         Nkg7, Klrg1, Tox, Ccl3/4/5, Ifng and Il10. In contrast, EOMES binding at
+Eomes overexpression markedly downregulated RORt/IL-17A and                         regions that were less accessible in Gzmk-tdTomato cells occurred
+FOXP3 expression, respectively (Extended Data Fig. 7f­h), consistent                near genes associated with alternative lineages, such as Ccr6 and
+with previous reports23,24.                                                         Gata3 (Fig. 5g). Notably, because EOMES CUT&Tag data came from
+                                                                                    an in vitro overexpression system while ATAC-seq profiles were from
+      Although Bcl6 knockout reduced the expression of EOMES and                    ex vivo-sorted LP CD4 T cells, their overlap is likely limited by differ-
+Gzmk in CD4 T cells from colitis mice (Fig. 4j and Extended Data                    ences in cellular contexts.
+Figs. 4e and 6i), we further characterized the relationship between
+
+Fig. 6 | Eomes is required for THK cell differentiation and intestinal              integrating genes upregulated in Gzmk-tdTomato cells, induced by Eomes
+immunopathology. a, Volcano plot of differentially expressed genes in Eomes         overexpression, suppressed in Eomes cKO cells, and bound by EOMES (CUT&Tag).
+cKO (Cd4cre Eomesfl/fl) versus WT donor CD4 T cells isolated from colonic LP of     e, Venn diagram integrating genes upregulated in Gzmk-tdTomato cells,
+colitic mice (bulk RNA-seq). Differential expression was assessed using DESeq2      suppressed by Eomes overexpression, induced in Eomes cKO cells, and bound
+(Wald test, two-sided). P values were adjusted using the Benjamini­Hochberg         by EOMES (CUT&Tag). f­h, Disease severity in Rag1-/- recipients of naive CD4
+procedure. Red dots, upregulated in Eomes cKO; blue dots, downregulated.            T cells from Eomes cKO (n=6) or control (Eomesfl/fl) (n=6) donors. Body weight
+Horizontal dashed line, adjusted P=0.05; vertical dashed lines, log2(fold           change (f); colon length at end point (g); histological inflammation score; scale
+change)=±log2(1.5). b, GSEA of the `THK cell signature' in Eomes cKO versus         bars, 500m (h). i, Total number of donor-derived CD4 T cells in colonic LP at
+WT CD4 T cells. GSEA was performed using clusterProfiler (fgsea algorithm).         experimental end point. j­l, Flow cytometry analysis of effector molecules in
+P values were adjusted using the Benjamini­Hochberg procedure. NES and              donor-derived CD4 T cells from colonic LP (n=6). Representative plots showing
+adjusted P values are shown. c, Single-cell gene set enrichment score of the        EOMES and Gzmk-tdTomato expression, with quantification of the frequency
+`Eomes cKO DOWN' signature (top 50 downregulated genes) across CD4                  of Gzmk-tdTomato cells (j). Representative plots (left) and frequencies (right)
+T cell clusters (cluster 0, n=5,932; cluster 1, n=3,502; cluster 2, n=2,703;        of perforin (k) and GZMB (l) cells. Data are shown as mean±s.e.m. and are
+cluster 3, n=1,703; cluster 4, n=1,610; and cluster 5, n=133). Violin plots with    representative of three independent experiments. Exact P values are shown
+embedded box plots showing median (center line) and 25th­75th percentiles           in each graph. Statistical significance was assessed by two-way ANOVA with
+(box bounds). Numbers above show adjusted P values (Wilcoxon rank-sum test,         Bonferroni's post hoc test (f) and two-tailed unpaired t-test (g­l).
+two-tailed, cluster 1 versus all others); below shows mean scores. d, Venn diagram
+
+Nature Immunology
+Article                                                                                                                                                                                                                    https://doi.org/10.1038/s41590-026-02479-6
+
+Eomes is required for THK cell differentiation                                                                                                                reduced expression of THK-associated genes, including Gzmk, Prf1,
+in colitis                                                                                                                                                    Nkg7 and Slamf7 (Fig. 6a). GSEA confirmed strong downregulation
+                                                                                                                                                              of the `THK cell signature' in the Eomes cKO population (Fig. 6b). To
+To determine whether Eomes is necessary for THK cell development                                                                                              define the Eomes-dependent transcriptional program, we generated
+in vivo, we isolated naive CD4 T cells from Cd4cre Eomesfl/fl mice (Eomes                                                                                     an `Eomes cKO DOWN' gene signature comprising the top 50 genes
+                                                                                                                                                              downregulated in Eomes cKO versus wild-type CD4 T cells, and evalu-
+cKO) and co-transferred them with CD45.1 wild-type control cells into                                                                                         ated its enrichment across clusters in the scRNA-seq data of colonic
+Rag1-/- recipients, enabling assessment of the cell-intrinsic requirement                                                                                     CD4 T cells from colitic mice (Fig. 2a). This gene signature showed the
+                                                                                                                                                              highest enrichment in cluster 1 (THK) (Fig. 6c), suggesting that THK cells
+for Eomes. Donor-derived wild-type and Eomes cKO CD4 T cells were
+
+sorted from the colonic LP of colitic mice for bulk RNA-seq. Transcrip-
+
+tomic analysis revealed that Eomes cKO cells exhibited significantly
+
+        a                                                                                                           b                                                                                               c
+             30
+                                                      Il10                                                                    0  THK cell signature                                                                             Eomes cKO DOWN signature
+                                       Eomes       Prf1                                                                   -0.2
+
+                ­log10(adj. P value)                                                                                                                                                                                       0.6 <0.001                <0.001 <0.001                <0.001  <0.001
+                                                                                            Enrichment score
+                             20                                                                                                                              NES = -2.01                                                   0.4                                                    -0.07   -0.05
+                                                                                                                                                                           Signature scoreAdj. P < 0.001                                                                               4       5
+
+                                                                Slamf7                                                     -0.4                                                                                             0.2
+                                                                                                                           -0.6
+                                          Gzmk                          Nkg7                                               -0.8                                                                                                0
+
+                                                        Il10ra                                                                                                                                                             -0.2
+                             10                                                                                                                                                                                                        -0.01 0.11 -0.03 -0.04
+
+                                                     Ccr5       Cd27                      Foxp3
+                                               Ccl4
+
+                             0                                                                                                   2,500 5,000 7,500 10,000 12,500
+
+                                                                                                                                                                                                                                0             1      2        3
+
+                                 -6            -3                           0                        3                           Eomes KO                                                              WT                                                  Clusters
+
+                                                log2(Fold change)
+
+        d                              Eomes cKO DOWN Binding genes                                                              e                                                             Eomes cKO UP Binding genes
+
+        Eomes OE UP                                                                                     Gzmk-tdTomato+ UP                              Eomes OE DOWN                                   17               3,068   Gzmk-tdTomato­ UP
+                                                                                                                                                                                                                                                        Ccl1
+                                                   28                                     3,111                                                        Ccr4
+
+                                                                        9                                           Ccl3                                                                                        9                                    Ccl6
+
+                                                2                                             192                   Ccl4                               Ccr6                                         1                      281
+
+                             Gzma         134             2                               14            461         Ccr5         Ahr                   Gata3                                   153         0            2       1,237                Ccl9
+                                                                                                                    Eomes        Ccl20                 Il4                                                                                           Ccr1
+                                                                                                                    Gzmk
+                Gzmb                                                                                                Il10         Csf2                                                                           3                                    Icos
+                Prdm1                                                                                               Nkg7
+                                                                        18                                                       Il13                                                               50                     13          Ccr7          Il12rb2
+                    Ccl5                                                                                                                                                                                    32      2                  Cxcr6         Il17f
+                                                71                                               19                              Il1r2
+                                                        28                                5
+
+                             Havcr2                                     22                              Il10ra Prf1              Il2                                                                            90                     Ccr8          Il18r1
+                                Ikzf3                                                                                            Rorc                                                                                                  Foxp3         Il18rap
+
+                                                                                                        Nr4a2 Slamf7             Tlr7                                                                                                                Il1rl1
+
+        f                                                                                                    g                                                            h                                   Eomesfl/fl               Cd4cre Eomesfl/fl                       5
+
+                                 120                                                                                             Length of colon (cm)  12                                                                                                                         0.0119
+                                                                                                                                                                   0.0011
+                Relative body                                                                                                                                                                                                                                 Histology score  4
+                   weight (%)                                                                                                                           9
+                                 100                                                                                                                    6                                                                                                                      3
+                                                                                                                                                        3
+                                                                        0.0108                                                                         0                                                                                                                       2
+
+                                 80           Eomesfl/fl
+
+                                               Cd4cre Eomesfl/fl                              <0.0001                                                                                                                                                                          1
+
+                                 60                                                                                                                                                                                                                                            0
+                                         0 1 2345
+
+                                               Weeks after transfer
+
+i       Cell number (×106)             0.2695                   j LP    EOMES­eFluor 450                Eomesfl/fl               Cd4cre Eomesfl/fl                         Gzmk-tdTomato+ (%)      Gzmk-tdTomato                Legend for g­I
+                                                                                                            14.4                             0.81                                              40                                 Eomesfl/fl
+      10                                                             105                                                                                                                                                          Cd4cre Eomesfl/fl
+       8                                                             104                                                                                                                                    0.0003
+       6                                                                                                                                                                                       30
+       4                                                             103
+       2                                                                                                                                                                                       20
+       0                                                               0
+                                                                                                                                                                                               10
+
+                                                                                                                                                                                                0
+
+                                                                                                     0       103 104 105
+
+                                                                                              Gzmk-tdTomato
+
+        k LP                              Eomesfl/fl                                             Cd4cre Eomesfl/fl                      Perforin                           l LP                            Eomesfl/fl                  Cd4cre Eomesfl/fl                                  GZMB
+                                                 5.16                                                                            10                                                                               19.3                             12.3                        30
+             105TCR ­BUV395                                                                                  1.15          Perforin+ (%)                                        105                                                                           GZMB+ (%)
+             104                                                                                                                                                TCR ­BUV3950.0020104                                                                                                       0.0208
+             103                                                                                                                  8                                             103                                                                                            20
+             102                                                                                                                                                                102
+                                                                                                                                  6                                                                                                                                            10
+               0                                                                                                                                                                   0
+                                                                                                                                  4                                                                                                                                             0
+
+                                                                                                                                  2
+
+                                                                                                                                  0
+
+                                       0        103 104 105                                                                                                                                         0         103 104 105
+
+                                   Perforin­APC                                                                                                                                                     GZMB­BV785
+
+Nature Immunology
+Article                                                                    https://doi.org/10.1038/s41590-026-02479-6
+
+exhibit the strongest transcriptional dependence on Eomes among all        human GZMKhigh cells correspond to THK signature genes defined in our
+CD4 subsets analyzed.                                                      mouse colitis model (Extended Data Fig. 10a,b). We next converted the
+                                                                           genes significantly upregulated in Gzmk-tdTomato CD4 T cells from
+      To identify high-confidence direct target genes of EOMES, we         murine colitis (bulk RNA-seq, Fig. 4a) into their human orthologs, and
+integrated differentially expressed genes from three RNA-seq data-         overlapped them with the upregulated genes in human GZMKhigh sub-
+sets: (1) Gzmk-tdTomato versus Gzmk-tdTomato CD4 T cells; (2)              sets (Extended Data Fig. 10c). Notably, the overlapping genes included
+Eomes-overexpressing versus control CD4 T cells; and (3) Eomes cKO         core THK-associated factors, such as EOMES, GZMK, CCR5, PRF1, NKG7
+versus wild-type CD4 T cells, together with EOMES binding genes            and SLAMF7, which were consistently and significantly upregulated in
+identified in CUT&Tag. This analysis identified 18 genes consistently      each dataset (Extended Data Fig. 10a­c). These findings suggest that
+upregulated in Gzmk-tdTomato CD4 T cells, induced by Eomes over-           the THK transcriptional program is evolutionarily conserved between
+expression, suppressed in Eomes cKO cells, and bound by EOMES. These       mice and humans.
+include Ccl3, Ccl4, Ccr5, Eomes, Gzmk, Il10, Nkg7 and Prf1 (Fig. 6d),
+forming a core set of direct EOMES target genes in THK cells. In con-            We further investigated whether THK cells also arise beyond the
+trast, integration of genes downregulated upon Eomes overexpres-           colitis model. We analyzed published scRNA-seq datasets of CD4 T cells
+sion, upregulated in Gzmk-tdTomato cells, upregulated in Eomes             from multiple murine disease contexts: Hepa1-6 tumor-infiltrating
+cKO cells, and EOMES binding genes yielded only three overlapping          conventional CD4 T cells (GSE285225; Extended Data Fig. 10d)27, CD4
+genes (Fig. 6e). Notably, several differentially expressed genes asso-     T cells in the central nervous system of mice with experimental autoim-
+ciated with alternative lineages, including Rorc, Ahr, Il13, Csf2 and      mune encephalomyelitis (EAE) (GSE156196; Extended Data Fig. 10e)
+Foxp3, lacked direct EOMES binding (Fig. 6e), suggesting they are          and splenic CD4 T cells from mice chronically infected with lym-
+indirectly regulated.                                                      phocytic choriomeningitis virus clone 13 (LCMV cl13) (GSE201730;
+                                                                           Extended Data Fig. 10f)28. In all these settings, we consistently identified
+Eomes-dependent THK program drives intestinal                              a distinct Gzmkhigh CD4 T cell subset that co-expressed high levels of
+inflammation                                                               Eomes (Extended Data Fig. 10d­f). Moreover, this Gzmkhigh subset exhib-
+                                                                           ited significantly higher enrichment scores for the `THK cell signature'
+To evaluate the functional relevance of THK cells in disease patho-        compared to other CD4 subsets (Extended Data Fig. 10g­i).
+genesis, we assessed the impact of Eomes ablation in CD4 T cells on
+the development of intestinal inflammation. Naive CD4 T cells from               Although technical variations and differences in non-Gzmkhigh
+Eomes cKO mice or control Eomesfl/fl mice, which were crossed with         cell composition across datasets could affect differential expression
+Gzmk-tdTomato reporter mice, were transferred into Rag1-/- recipients      results, we found that many THK signature genes defined in our mouse
+separately. Mice receiving Eomes cKO CD4 T cells exhibited signifi-        colitis model were significantly upregulated in Gzmkhigh populations
+cantly attenuated colitis compared to those receiving control cells, as    (Extended Data Fig. 10j­l). Intersecting the upregulated genes from all
+evidenced by reduced weight loss, less severe colonic shortening and       four disease models (colitis, tumor, EAE and LCMV cl13), we found that
+lower histological inflammation scores (Fig. 6f­h). At the experimental    Eomes, Gzmk and Prf1 were consistently and significantly upregulated
+end point, the total numbers of donor Eomes cKO and control CD4            across all datasets, whereas additional THK-associated genes (for exam-
+T cells in LP were comparable (Fig. 6i), indicating that Eomes deficiency  ple, Ccl5, Ccr5, Nkg7, Il10ra and Slamf7) were consistently upregulated
+did not impair T cell expansion or tissue homing under these conditions.   in some of these models (Extended Data Fig. 10m).
+
+      Flow cytometric analysis revealed that Eomes deficiency                    Collectively, these results indicate that THK cells are broadly
+nearly abolished Gzmk-tdTomato expression (Fig. 6j and                     present across diverse disease settings, including inflammatory
+Extended Data Fig. 9a) and markedly reduced perforin levels in             (colitis), autoimmune (EAE), tumoral and chronic infectious (LCMV
+donor CD4 T cells (Fig. 6k and Extended Data Fig. 9b). GZMB expres-        cl13) contexts, and that their core transcriptional program is con-
+sion was modestly decreased but still present (Fig. 6l and                 served; however, they may also exhibit context-dependent tran-
+Extended Data Fig. 9c), and T-bet expression remained largely              scriptional adaptations, reflecting their functional plasticity in
+unchanged (Extended Data Fig. 9d,e), with a slight reduction in IFN        different microenvironments.
+production observed in mLNs (Extended Data Fig. 9f,g). Notably, the
+frequencies of RORt and IL-17A CD4 T cells were increased in the           Discussion
+colonic LP and mLNs, and FOXP3 CD4 T cells were elevated in LP
+(Extended Data Fig. 9h­m) of mice receiving Eomes-deficient cells,         Effector TH cells are traditionally defined by lineage-specific transcrip-
+suggesting a fate shift toward alternative lineages in the absence of      tion factors and cytokines. Here, we identify a distinct CD4 T cell sub-
+THK differentiation. Eomes deficiency did not affect the frequencies of    set, THK cells, characterized by coexpression of EOMES and GZMK,
+CD8 cells among CD4 T cells in LP (Extended Data Fig. 9n), further         with a unique transcriptomic profile and a critical role in intestinal
+indicating that THK cells are distinct from CD4CD8 T cells.                inflammation. THK cells are transcriptionally and developmentally
+                                                                           distinct from classical TH lineages, differentiating independently of
+      To determine whether GZMK mediates the pathogenic function of        T-bet, RORt or STAT6. EOMES is both necessary and sufficient for
+THK cells, we performed adoptive transfer experiments using Gzmk-/-        establishing THK identity, directly binding to and activating key genes
+CD4 T cells. In contrast to Eomes cKO, Gzmk deletion did not amelio-       such as Gzmk and Prf1. Reanalysis of published RNA-seq and ChIP-seq
+rate the disease, as recipients exhibited comparable weight loss and       data21 further reveals that EOMES binds the Gzmk locus and drives its
+colon shortening (Extended Data Fig. 9o,p). These results indicate         expression in CD8 T cells, indicating that the EOMES­GZMK axis is a
+that THK-mediated immunopathology may depend on a coordinated,             conserved regulatory module across T cell lineages.
+potentially redundant effector program downstream of EOMES.
+                                                                                 Although THK cells can express IFN, they are not TH1 cells, as
+The THK program is conserved across species                                they express low levels of T-bet and TH1 signature genes such as Il12rb2
+and diseases                                                               and Il18r1 (Fig. 4a). Gzmk and Eomes are expressed independently
+                                                                           of T-bet, and Eomes overexpression suppresses T-bet. Nevertheless,
+To assess the conservation of the THK program in humans, we per-           T-bet may contribute at certain stages to regulating other THK effec-
+formed differential gene expression analysis comparing GZMKhigh            tors, particularly IFN and GZMB. While some EOMES CD4 T cells
+CD4 T cell subsets to other CD4 subsets in published scRNA-seq data-       express IL-10 and exhibit type 1 regulatory T (Tr1)-like properties29­33,
+sets of IBD (Extended Data Fig. 10a; data from Fig. 1a) and pancancer      Tr1 development depends on T-bet29,34, underscoring a distinct THK
+(Extended Data Fig. 10b; data from Extended Data Fig. 1). In addition to   differentiation pathway. As T-box family members, EOMES and T-bet
+GZMK and EOMES, many of the most significantly upregulated genes in        play nonredundant roles in defining THK versus TH1 identities but may
+
+Nature Immunology
+Article                                                                       https://doi.org/10.1038/s41590-026-02479-6
+
+share partially redundant functions in shaping CD4 T cell effector            Our work expands the functional taxonomy of TH cells and highlights
+programs, warranting further investigation.                                   the EOMES­THK axis as a compelling therapeutic target in chronic
+                                                                              inflammatory diseases.
+      Our results showed that Bcl6 deletion reduced Gzmk and EOMES
+expression. Previous studies indicate that Bcl6-expressing CD4                Online content
+T cells act as precursors in transfer colitis, giving rise to TH1, TH17 and
+CD4CD8 effectors in the inflamed LP while losing Bcl6 expression17,18.        Any methods, additional references, Nature Portfolio reporting sum-
+These effector populations are also reduced upon Bcl6 deletion17,18.          maries, source data, extended data, supplementary information,
+Therefore, THK cells likely represent an additional effector fate derived     acknowledgements, peer review information; details of author contri-
+from these precursors.                                                        butions and competing interests; and statements of data and code avail-
+                                                                              ability are available at https://doi.org/10.1038/s41590-026-02479-6.
+      A key question is whether THK cells are cytotoxic CD4 T cells.
+Although previous studies describe cytotoxic CD4 subsets, often               References
+defined by GZMB or cytotoxic surface markers35­37, they are typically
+EOMES-negative or only partially positive36,37, distinguishing them from      1. Dong, C. Cytokine regulation and function in T cells. Annu. Rev.
+the EOMES THK cells. Our results further confirm that THK cells are dis-            Immunol. 39, 51­76 (2021).
+tinct from CD4CD8 cytotoxic T cells. While THK cells express Gzmb
+and Prf1 and exhibit ex vivo cytotoxicity, non-THK CD4 T cells also dis-      2. Voskoboinik, I., Whisstock, J. C. & Trapani, J. A. Perforin and
+play cytotoxic activity, indicating that cytotoxicity is not unique to THK          granzymes: function, dysfunction and human pathology. Nat. Rev.
+cells. Moreover, GZMK's function seems to be amplifying inflammation                Immunol. 15, 388­400 (2015).
+via extracellular proteolysis, such as cleaving PAR-1 and complement
+components4,5,8, rather than direct cytotoxicity, which remains less          3. Aubert, A., Jung, K., Hiroyasu, S., Pardo, J. & Granville, D. J.
+validated. Thus, the `K' in THK denotes both specific GZMK expression               Granzyme serine proteases in inflammation and rheumatic
+and a context-dependent potential for killing.                                      diseases. Nat. Rev. Rheumatol. 20, 361­376 (2024).
+
+      Functionally, the EOMES-driven THK program is critical for              4. Donado, C. A. et al. Granzyme K activates the entire complement
+intestinal immunopathology. Although Eomes has been linked to                       cascade. Nature 641, 211­221 (2025).
+inflammation30,38, most studies lack CD4 T cell-intrinsic genetic
+evidence. To address this, we transferred sorted naive CD4 T cells,           5. Lan, F. et al. GZMK-expressing CD8(+) T cells promote recurrent
+restricting deletion to conventional CD4 T cells; however, while                    airway inflammatory diseases. Nature 638, 490­498 (2025).
+loss of the entire THK program by Eomes deletion ameliorated dis-
+ease, Gzmk deletion alone did not provide significant protection.             6. Guo, C. L. et al. Granzyme K(+)CD8(+) T cells interact with
+This suggests that targeting EOMES or its core transcriptional                      fibroblasts to promote neutrophilic inflammation in nasal polyps.
+network may be more effective therapeutically than inhibiting                       Nat. Commun. 15, 10413 (2024).
+individual downstream effectors, as EOMES regulates multiple
+effectors including perforin and GZMB; however, because Eomes                 7. Guo, X. et al. Contrasting cytotoxic and regulatory T cell
+deficiency may indirectly alter the differentiation or function of                  responses underlying distinct clinical outcomes to anti-PD-1 plus
+other CD4 T cell subsets, the observed protection cannot be solely                  lenvatinib therapy in cancer. Cancer Cell 43, 248­268.e9
+attributed to THK loss, highlighting the need for direct validation of              (2025).
+THK-intrinsic pathogenicity.
+                                                                              8. Guo, C. L., Wang, C. S., Wang, X. H., Yu, D. & Liu, Z. GZMK(+)CD8(+)
+      Notably, THK cells are not restricted to colitis. Our analysis of pub-        T cells: multifaceted roles beyond cytotoxicity. Trends Immunol.
+lished scRNA-seq datasets revealed a conserved THK transcriptional                  46, 562­572 (2025).
+signature in human IBD and pancancer contexts, as well as in murine
+models of tumor, EAE and LCMV cl13 infection. GZMKEOMES CD4                   9. Kwek, S. S. et al. Identification and regulation of circulating
+T cells have also been reported in other diseases, such as IgG4-related             tumor-TCR-matched cytotoxic CD4+ lymphocytes by KLRG1 in
+disease10. These findings indicate that THK cells are evolutionarily con-           bladder cancer. JCI Insight 10, e177373 (2025).
+served and broadly deployed across pathological contexts, warranting
+further investigation into their functional roles.                            10. Koga, R. et al. Granzyme K- and amphiregulin-expressing
+                                                                                    cytotoxic T cells and activated extrafollicular B cells are potential
+      THK cell differentiation mechanisms warrant further investiga-                drivers of IgG4-related disease. J. Allergy Clin. Immunol. 153,
+tion. The upstream signals that initiate THK differentiation, including             1095­1112 (2024).
+cytokines, chronic antigen exposure and tissue-derived cues, remain
+to be defined. Although previous studies have reported that IL-10 and         11. Aoyagi, R. et al. Single-cell transcriptomics reveals granzyme
+IL-27 can be required for optimal EOMES expression in CD4 T cells                   K-expressing cytotoxic Tfh cells in tertiary lymphoid structures
+under specific conditions29,32,39, whether and how they directly drive              in IgG4-RD. J. Allergy Clin. Immunol. 153, 513­520.e10
+THK differentiation remains unclear.                                                (2024).
+
+      Although EOMES CD4 T cells are often associated with proin-             12. Elyahu, Y. et al. Aging promotes reorganization of the CD4 T cell
+flammatory or effector functions in diverse settings24,32,38­48, some               landscape toward extreme regulatory and effector phenotypes.
+studies suggest they can also exhibit immunosuppressive features,                   Sci. Adv. 5, eaaw8330 (2019).
+as indicated by IL-10 expression29­33. This functional duality implies
+that, like TH17 cells49, THK cells may also adopt either inflammatory or      13. Magen, A. et al. Intratumoral dendritic cell-CD4(+) T helper
+regulatory roles depending on the microenvironment. Whether such                    cell niches enable CD8(+) T cell differentiation following PD-1
+heterogeneity exists within THK cells and how it is regulated remain key            blockade in hepatocellular carcinoma. Nat. Med. 29, 1389­1399
+questions for future study.                                                         (2023).
+
+      In summary, we have identified THK cells as a distinct CD4 T cell       14. Nie, H. et al. Single-cell meta-analysis of inflammatory bowel
+subset defined by a core EOMES­GZMK module. This population exhib-                  disease with scIBD. Nat. Comput. Sci. 3, 522­531 (2023).
+its unique transcriptional and epigenetic characteristics, and plays
+a critical role in driving intestinal inflammation. THK cells are con-        15. Fenton, C. G., Taman, H., Florholmen, J., Sorbye, S. W. & Paulssen,
+served across species and broadly present in diverse disease contexts.              R. H. Transcriptional signatures that define ulcerative colitis in
+                                                                                    remission. Inflamm. Bowel Dis. 27, 94­105 (2021).
+
+                                                                              16. Zheng, L. et al. Pan-cancer single-cell landscape of
+                                                                                    tumor-infiltrating T cells. Science 374, abe6474 (2021).
+
+                                                                              17. Bai, X. et al. Reciprocal regulation of T follicular helper cells and
+                                                                                    dendritic cells drives colitis development. Nat. Immunol. 25,
+                                                                                    1383­1394 (2024).
+
+                                                                              18. Li, Y. et al. Stem-like T cells are associated with the pathogenesis
+                                                                                    of ulcerative colitis in humans. Nat. Immunol. 25, 1231­1244
+                                                                                    (2024).
+
+Nature Immunology
+Article                                                                        https://doi.org/10.1038/s41590-026-02479-6
+
+19. Reis, B. S., Rogoz, A., Costa-Pinto, F. A., Taniuchi, I. & Mucida, D.      36. Marshall, N. B. et al. NKG2C/E marks the unique cytotoxic CD4
+      Mutual expression of the transcription factors Runx3 and ThPOK                 T cell subset, ThCTL, generated by influenza infection.
+      regulates intestinal CD4 T cell immunity. Nat. Immunol. 14,                    J. Immunol. 198, 1142­1155 (2017).
+      271­280 (2013).
+                                                                               37. Takeuchi, A. et al. CRTAM determines the CD4+ cytotoxic T
+20. Mucida, D. et al. Transcriptional reprogramming of mature CD4(+)                 lymphocyte lineage. J. Exp. Med. 213, 123­138 (2016).
+      helper T cells generates distinct MHC class II-restricted cytotoxic
+      T lymphocytes. Nat. Immunol. 14, 281­289 (2013).                         38. Mazzoni, A. et al. Eomes controls the development of
+                                                                                     Th17-derived (non-classic) Th1 cells during chronic inflammation.
+21. Li, J., He, Y., Hao, J., Ni, L. & Dong, C. High levels of eomes                  Eur. J. Immunol. 49, 79­95 (2019).
+      promote exhaustion of anti-tumor CD8(+) T cells. Front. Immunol.
+      9, 2981 (2018).                                                          39. Curran, M. A. et al. Systemic 4-1BB activation induces a novel
+                                                                                     T cell phenotype driven by high expression of Eomesodermin.
+22. Endo, Y. et al. Eomesodermin controls interleukin-5 production                   J. Exp. Med. 210, 743­755 (2013).
+      in memory T helper 2 cells through inhibition of activity of the
+      transcription factor GATA3. Immunity 35, 733­745 (2011).                 40. Raveney, B. J. et al. Eomesodermin-expressing T-helper cells are
+                                                                                     essential for chronic neuroinflammation. Nat. Commun. 6, 8437
+23. Ichiyama, K. et al. Transcription factor Smad-independent T                      (2015).
+      helper 17 cell induction by transforming-growth factor- is
+      mediated by suppression of Eomesodermin. Immunity 34,                    41. Stienne, C. et al. Foxo3 transcription factor drives pathogenic
+      741­754 (2011).                                                                T helper 1 differentiation by inducing the expression of Eomes.
+                                                                                     Immunity 45, 774­787 (2016).
+24. Lupar, E. et al. Eomesodermin expression in CD4+ T cells restricts
+      peripheral Foxp3 induction. J. Immunol. 195, 4742­4752 (2015).           42. Zhang, C. et al. Extrapituitary prolactin promotes generation of
+                                                                                     Eomes-positive helper T cells mediating neuroinflammation. Proc.
+25. Johnston, R. J. et al. Bcl6 and Blimp-1 are reciprocal and                       Natl Acad. Sci. USA 116, 21131­21139 (2019).
+      antagonistic regulators of T follicular helper cell differentiation.
+      Science 325, 1006­1010 (2009).                                           43. Raveney, B. J. E. et al. Involvement of cytotoxic Eomes-expressing
+                                                                                     CD4(+) T cells in secondary progressive multiple sclerosis. Proc.
+26. Sun, Q. et al. BCL6 promotes a stem-like CD8(+) T cell program                   Natl Acad. Sci. USA 118, e2021818118 (2021).
+      in cancer via antagonizing BLIMP1. Sci. Immunol. 8, eadh1306
+      (2023).                                                                  44. Chen, S. et al. Eomesodermin expression in CD4(+) T-cells
+                                                                                     associated with disease progression in amyotrophic lateral
+27. Tan, S. N. et al. Regulatory T cells converted from Th1 cells in                 sclerosis. CNS Neurosci. Ther. 30, e14503 (2024).
+      tumors suppress cancer immunity via CD39. J. Exp. Med. 222,
+      e20240445 (2025).                                                        45. Joulia, E. et al. Eomes-dependent mitochondrial regulation
+                                                                                     promotes survival of pathogenic CD4+ T cells during
+28. Zander, R., Khatun, A., Kasmani, M. Y., Chen, Y. & Cui, W.                       inflammation. J. Exp. Med. 221, e20230449 (2024).
+      Delineating the transcriptional landscape and clonal diversity of
+      virus-specific CD4(+) T cells during chronic viral infection. eLife 11,  46. Kanazawa, T. et al. Pathogenic potential of
+      e80079 (2022).                                                                 Eomesodermin-expressing T-helper cells in neurodegenerative
+                                                                                     diseases. Ann. Neurol. 95, 1093­1098 (2024).
+29. Zhang, P. et al. Eomesodermin promotes the development of type
+      1 regulatory T (T(R)1) cells. Sci. Immunol. 2, eaah7152 (2017).          47. Elyahu, Y. et al. CD4 T cells acquire Eomesodermin to modulate
+                                                                                     cellular senescence and aging. Nat. Aging 5, 1970­1982 (2025).
+30. Gruarin, P. et al. Eomesodermin controls a unique differentiation
+      program in human IL-10 and IFN- coproducing regulatory T cells.          48. Roessner, P. M. et al. EOMES and IL-10 regulate antitumor activity
+      Eur. J. Immunol. 49, 96­111 (2019).                                            of T regulatory type 1 CD4(+) T cells in chronic lymphocytic
+                                                                                     leukemia. Leukemia 35, 2311­2324 (2021).
+31. Bonnal, R. J. P. et al. Clonally expanded EOMES(+) Tr1-like cells
+      in primary and metastatic tumors are associated with disease             49. Schnell, A., Littman, D. R. & Kuchroo, V. K. T(H)17 cell
+      progression. Nat. Immunol. 22, 735­745 (2021).                                 heterogeneity and its role in tissue inflammation. Nat. Immunol.
+                                                                                     24, 19­29 (2023).
+32. Zhang, P. et al. Eomesodermin+ CD4+ T cells are critical for
+      curative immunotherapy outcomes. Immunity 58, 3024­3039.e7               Publisher's note Springer Nature remains neutral with regard to
+      (2025).                                                                  jurisdictional claims in published maps and institutional affiliations.
+
+33. Thelen, B. et al. Eomes is sufficient to regulate IL-10 expression         Springer Nature or its licensor (e.g. a society or other partner) holds
+      and cytotoxic effector molecules in murine CD4(+) T cells. Front.        exclusive rights to this article under a publishing agreement with
+      Immunol. 14, 1058267 (2023).                                             the author(s) or other rightsholder(s); author self-archiving of the
+                                                                               accepted manuscript version of this article is solely governed by the
+34. Ansaldo, E. et al. T-bet-expressing Tr1 cells driven by dietary            terms of such publishing agreement and applicable law.
+      signals dominate the small intestinal immune landscape. Proc.
+      Natl Acad. Sci. USA 123, e2520747122 (2026).                             © The Author(s), under exclusive licence to Springer Nature America,
+                                                                               Inc. 2026
+35. Devarajan, P. et al. Cytotoxic CD4 development requires CD4
+      effectors to concurrently recognize local antigen and encounter
+      type I IFN-induced IL-15. Cell Rep. 42, 113182 (2023).
+
+Nature Immunology
+Article                                                                     https://doi.org/10.1038/s41590-026-02479-6
+
+Methods                                                                     GGAGGAGGCGGATCAGGAGGAGGCGGATCATACCCATACGACG-
+                                                                            TACCAGATTACGCT. For retrovirus production, each plasmid was
+Mice                                                                        co-transfected with the packaging plasmid pCL-ECO into 293T cells
+C57BL/6J (cat. no. 000664), CD45.1 (cat. no. 002014), Rag1-/- (cat. no.     using the calcium phosphate method. Virus-containing supernatants
+002216), Tbx21-/- mice (cat. no. 004648), Stat6-/- (cat. no. 005977),       were collected 48h post-transfection.
+Cd4cre (cat. no. 022071), Vav1cre (cat. no. 008610), BLIMP1-EYFP (cat.
+no. 008828) and OVA323­339-specific T cell receptor transgenic OT-II        T cell differentiation and culture
+(cat. no. 004194) mice were originally from The Jackson Laboratory.         Naive CD4 T cells were activated in vitro using plate-bound anti-CD3
+Gzmk-/- mice (cat. no. T029683) were originally from GemPharmatech.         (5gml-1) and anti-CD28 (5gml-1). Under the nonpolarizing condi-
+Runx3fl/fl mice were provided by Y. Sun (Beijing Institute of Genom-        tion, no additional cytokines or blocking antibodies were added to the
+ics, Chinese Academy of Sciences)50 and crossed with Vav1cre mice to        culture medium. For differentiation under TH0 condition, cultures were
+generate Vav1cre Runx3fl/fl mice. Gzmk-2A-CreERT2-2A-tdTomato mice          supplemented with anti-IFN (10gml-1) and anti-IL-4 (10gml-1).
+(referred to as Gzmk-tdTomato, cat. no. NM-KI-241127) were purchased        For TH1 polarization, cells were cultured in the presence of anti-IL-4
+from Shanghai Model Organisms Center. Eomesfl/fl, Rorcfl/fl and Bcl6fl/     (10gml-1) and mIL-12 (10ngml-1). For TH2 polarization, cells were cul-
+fl mice, as previously described21,51,52, were crossed with Cd4cre mice     tured with anti-IFN (10gml-1), IL-4 (20ngml-1) and mIL-2 (10 U ml-1).
+to generate T cell-specific knockout lines. All mice were housed in         TH17 differentiation was induced with human TGF- (1ngml-1), mIL-6
+specific-pathogen-free conditions at 22°C with humidity of 40­70%           (20ngml-1), mIL-1 (10ngml-1), IL-23 (25ngml-1), together with
+and a light­dark cycle of 12h and were used and maintained under            anti-IFN (10gml-1) and anti-IL-4 (10gml-1). For Treg cell differen-
+the guidelines of the Institutional Animal Care and Use Committee of        tiation, cells were cultured with mIL-2 (10Uml-1) and human TGF-
+Westlake University.                                                        (2ngml-1), supplemented with anti-IFN (10gml-1) and anti-IL-4
+                                                                            (10gml-1). All antibodies, including anti-CD3, anti-CD28, anti-IFN
+T cell-induced colitis                                                      and anti-IL-4, were purchased from BioXCell; IL-23 was obtained from
+CD4 T cells were isolated from the spleens and lymph nodes of donor         R&D Systems; all other cytokines were from Peprotech.
+mice. CD4CD25CD44CD62L naive T cells were subsequently puri-
+fied by fluorescence-activated cell sorting on the FACSAria sorter,               For the infection experiment, naive T cells were activated under
+achieving a post-sort purity of >98%. A total of 1.5­2×106 sorted naive     TH0 condition for 24h before viral infection. At 24h post-infection,
+T cells were intravenously injected into 8­12-week-old male Rag1-/-         the medium was replaced with the specified differentiation conditions
+recipient mice to induce colitis. Body weight was monitored weekly.         for an additional 4 days before analysis, or cells were transferred into
+At ~4 weeks or other designated time points post-transfer, mice were        recipient mice for further experiments.
+killed for sample collection; colon tissues and mLNs were collected for
+downstream analyses.                                                        OVA immunization
+                                                                            One day after the adoptive transfer of OT-II CD4 T cells, mice were
+Isolation of colon lymphocytes                                              immunized subcutaneously near the inguinal lymph nodes with a 1:1
+Colon tissues were collected, opened longitudinally and cleared of          emulsion of chicken OVA (3mgml-1, Sigma-Aldrich, cat. no. A5503) and
+fecal content. They were then incubated in RPMI 1640 medium con-            Complete Freund's Adjuvant (Sigma-Aldrich, cat. no. F5881). Analysis
+taining 5mM EDTA (Invitrogen, cat. no. 15575020) and 1mM dithi-             was performed on day 7 post-immunization.
+othreitol (DTT; Sigma-Aldrich, cat. no. D9779) at 37°C for 30min with
+constant shaking to remove epithelial cells. After two washes with          In vitro cytotoxicity assay
+RPMI 1640 containing 2mM EDTA, the tissues were minced into small           CD4 T cells were isolated from LP of colitic mice and used as effector
+pieces (~2mm) and digested enzymatically in RPMI 1640 containing            cells. The mouse mastocytoma cell line P815 was labeled with CFSE
+0.5mgml-1 collagenase D (Roche, cat. no. 11088858001), 1mgml-1              (BD, cat. no. 565082) and used as target cells. Effector and target
+dispase (Invitrogen, cat. no. 17105041) and 4gml-1 DNase I (Roche,          cells were co-cultured for 19h in the presence of soluble anti-CD3
+cat. no. 11284932001) at 37°C for 30min with gentle shaking. The            (0 or 1gml-1, BioXCell, cat. no. BE0002, clone 17A2) at the indicated
+resulting digest was filtered through a 100-m nylon cell strainer. To       effector-to-target (E:T) ratios. Specific cytotoxicity was assessed by
+enrich for LP lymphocytes, the cell suspension was resuspended in           flow cytometry using a Fixable Viability Dye eF506 (eBioscience, cat.
+37% Percoll (Cytiva, cat. no. 17089109) and carefully layered onto a        no. 65-0866-18).
+70% Percoll solution in a 15-ml tube. After centrifugation, lymphocytes
+were collected from the 37%/70% interface, washed and resuspended           Flow cytometry analysis
+in complete medium for downstream applications.                             Before surface staining, cells were stained with Fixable Viability Dye
+                                                                            eF506 (eBioscience, cat. no. 65-0866-18) and blocked with CD16/CD32
+Histological analysis                                                       antibodies (BD, cat. no. 553142, clone 2.4G2, AB_394656) to prevent non-
+Distal colon segments were fixed in 4% paraformaldehyde (Leagene,           specific binding. Cells were first stained with various surface markers,
+cat. no. DF0135), embedded in paraffin, and sectioned at a thickness        then fixed and permeabilized using the FOXP3/Transcription Factor
+of 5m. Tissue sections were stained with hematoxylin and eosin.             Staining Buffer Set (eBioscience, cat. no. 00-5523-00) for intracellular
+Histopathological scoring (0­4) was performed in a blinded manner           staining. If fluorescent protein signals were to be detected, cells were
+on the basis of the severity of inflammatory cell infiltration, colon wall  fixed with 2% paraformaldehyde for 20min before permeabilization to
+thickening and loss of crypts and goblet cells.                             preserve fluorescence integrity. For intracellular cytokine detection,
+                                                                            cells were restimulated with phorbol 12-myristate 13-acetate (PMA;
+EOMES-expressing vector construction and transfection                       50ngml-1, Sigma-Aldrich, cat. no. P8139) and ionomycin (500ngml-1,
+The coding sequence for mouse EOMES was cloned into the RVKM                Sigma-Aldrich, cat. no. I0634) in the presence of GolgiStop (BD, cat.
+retroviral vector, which contains an internal ribosome entry site           no. 554724) for 4.5h. The following antibodies were used at a 1:400
+(IRES)-driven blue fluorescent protein reporter. To generate a              dilution unless otherwise noted: BUV395 rat anti-mouse CD4 (BD, cat.
+C-terminally tagged version, a sequence encoding a glycine­ser-             no. 563790, clone GK1.5, AB_2738426); Brilliant Violet 785 anti-mouse
+ine linker followed by an HA epitope tag was inserted in-frame              CD4 (BioLegend, cat. no. 100552, clone RM4-5, AB_2563053); Brilliant
+immediately upstream of the stop codon. The inserted nucleotide             Violet 421 anti-mouse CD45.2 (BioLegend, cat. no. 109832, clone 104,
+sequence is shown below, with the HA-coding portion underlined:             AB_2565511); Brilliant Violet 605 anti-mouse CD8a (BioLegend, cat.
+
+Nature Immunology
+Article                                                                    https://doi.org/10.1038/s41590-026-02479-6
+
+no. 100744, clone 53-6.7, AB_2562609); Spark PLUS UV395 anti-mouse         (Vazyme, cat. no. R333). Quantitative PCR with reverse transcrip-
+TCR  chain (BioLegend, cat. no. 109264, clone H57-597, AB_3662168);        tion (RT­qPCR) was performed using SYBR Green Master Mix Low
+RB705 rat anti-mouse CD279 (PD-1) (BD, cat. no. 570566, clone 29F.1A12,    ROX (Yeasen, cat. no. 11202ES08), with Actb serving as the endog-
+AB_3685850); EOMES monoclonal antibody, eFluor 450 (eBioscience,           enous reference control. The following primer sequences were
+cat. no. 48-4875-82, clone Dan11mag, AB_2574062); T-bet monoclonal         used for RT­qPCR: Gzmk (F: 5-TGGCTGGCGTTTATATGTCTTC-3,
+antibody, PE-cyanine7 (eBioscience, cat. no. 25-5825-82, clone eBio4B10    R: 5-GCTGCGGTACTGGATGGAC-3); Prf1 (F: 5-AGCACAAGTT
+(4B10), AB_11042699); RB705 mouse anti-T-bet (BD, cat. no. 570294,         CGTGCCAGG-3, R: 5-GCGTCTCTCATTAGGGAGTTTTT-3); Gzmb
+clone O4-46, AB_3685647); Gata3 monoclonal antibody, PerCP-eFluor          (F: 5-TGTGAAGCCAGGAGATGTGT-3, R: 5-TCAGCTCAACC
+710 (eBioscience, cat. no. 46-9966-42, clone TWAJ, AB_10804487);           TCTTGTAGC-3); and Actb (F: 5-TGGAATCCTGTGGCATCCATGAAAC-
+RB705 mouse anti-mouse RORt (BD, cat. no. 570259, clone Q31-378,           3, R: 5-TAAAACGCAGCTCAGTAACAGTCCG-3).
+AB_3685620); PE-CF594 mouse anti-Bcl-6 (BD, cat. no. 562401, clone
+K112-91, AB_11152084, 1:200); FOXP3 monoclonal antibody, FITC (eBio-             For RNA-seq analysis, total RNA was sent to OE Biotech Co. for
+science, cat. no. 11-5773-82, clone FJK-16s, AB_465243); FOXP3 mono-       library preparation with the VAHTS Universal V10 RNA-seq Library
+clonal antibody, PerCP-eFluor 710 (eBioscience, cat. no. 46-5773-82,       Prep kit (Vazyme, cat. no. NRM606) and subsequent sequencing on
+clone FJK-16s, AB_2811810); APC anti-mouse perforin antibody (BioLe-       the DNBSEQ-T7 platform, which generated 150-bp paired-end reads.
+gend, cat. no. 154304, clone S16009A, AB_2721463); Brilliant Violet 785    Approximately 20 million raw reads were obtained per sample.
+anti-human/mouse granzyme B recombinant antibody (BioLegend, cat.
+no. 396438, clone QA18A02, AB_3106140); PE/Dazzle 594 anti-human/          RNA-seq data analysis
+mouse granzyme B recombinant antibody (BioLegend, cat. no. 372216,         Raw paired-end FASTQ reads were quality controlled and
+clone QA16A02, AB_2728383); Alexa Fluor 700 rat anti-mouse IFN (BD,        adaptor-trimmed using fastp56 (v.0.23.4) to obtain high-quality clean
+cat. no. 557998, clone XMG1.2, AB_396979); biotin rat anti-mouse CD185     reads. The clean reads were then aligned to the mm39 (GRCm39) ref-
+(CXCR5) (BD, cat. no. 551960, clone 2G8, AB_394301, 1:50); PE/cyanine7     erence genome using HISAT2 (v.2.2.1)57 with the strand-specificity
+streptavidin (BioLegend, cat. no. 405206, 1:200). Flow cytometry was       option set to RF. The resulting alignments were sorted and indexed
+performed using an LSRFortessa (BD) instrument and data were ana-          using SAMtools58 (v.1.18). Gene-level read counts were quantified
+lyzed with FlowJo software v.10.9.0.                                       with featureCounts (Subread59, v.2.0.6) in paired-end mode. TPM val-
+                                                                           ues were calculated to normalize for gene length and sequencing
+ScRNA-seq data analysis                                                    depth. Differential expression analysis was performed using DESeq2
+For human scRNA-seq data, preprocessed datasets from previous              (v.1.46.0)60. GSEA was conducted using the clusterProfiler61 (v.4.12.0).
+studies14,16 were directly utilized for downstream analysis and visu-      For visualization, strand-specific BigWig files were generated from the
+alization. Gene expression density mapping was performed using             aligned BAM files using bamCoverage (deepTools62, v.3.5.4) with RPKM
+the Nebulosa package53 (v.1.16.0). In the IBD dataset14, GZMKhigh cells    normalization, read extension and a 10-bp bin size. Group-average
+were primarily localized within the originally annotated `CD4 Temra'       signal tracks were generated from these files using bigwigAverage
+cluster. To refine this population, we re-subclustered this group and      (deepTools62, v.3.5.4).
+separated it into a major GZMKhigh subset and a minor GZMKlow/neg subset;
+the former was used for subsequent differential expression analysis.       ATAC-seq and data analysis
+In the pancancer dataset16, the originally annotated `CD4.c12(GZMK+        Approximately 100,000 cells were sorted per sample for ATAC-seq.
+TEM)' cluster was directly designated as the GZMKhigh population for       Libraries were prepared using the Hyperactive ATAC-Seq Library Prep
+comparative analysis.                                                      kit (Vazyme, cat. no. TD711) according to the manufacturer's instruc-
+                                                                           tions, followed by sequencing on the Illumina NovaSeq X Plus platform
+      For mouse colitis data, Seurat objects from two published datasets   to generate 150-bp paired-end reads. Approximately 40 million raw
+(CRA016814 and GSE235664)17,18 were subset to include only wild-type       reads were generated per sample.
+cells, merged, and then processed through a standard workflow using
+Seurat54 (v.5.2.1). This included normalization, selection of highly             Raw reads were quality controlled and adaptor-trimmed using
+variable features, and scaling. Principal-component analysis was per-      fastp56 (v.0.24.0) with default parameters. Trimmed reads were aligned
+formed, followed by batch effect correction with harmony55 (v.1.2.3).      to the mm39 (GRCm39) reference genome using Bowtie263 (v.2.5.4) with
+                                                                           the options ­very-sensitive, -X 2000, ­no-mixed, ­no-discordant and
+      For additional mouse datasets, including tumor-infiltrating con-     ­no-unal. Post-alignment processing included removal of PCR dupli-
+ventional CD4 T cells from Hepa1-6-bearing mice (GSE285225)27,             cates using Picard MarkDuplicates (v.3.1.0), exclusion of mitochondrial
+CNS-infiltrating CD4 T cells from EAE mice (GSE156196) and GP66            reads (chrM) and filtering for properly paired reads with mapping
+splenic CD4 T cells from mice infected with LCMV cl13 (GSE201730),         quality (MAPQ)30 using SAMtools58 view (v.1.21). Reads overlapping
+data were processed through the standard Seurat workflow. After unsu-      ENCODE blacklist regions were removed using bedtools64 intersect
+pervised clustering, the cluster exhibiting the highest Gzmk expression    -v (v.2.31.1), and the final filtered BAM files were sorted and indexed
+was designated as the Gzmkhigh subset for downstream differential          with SAMtools58. Peak calling was performed on individual samples
+expression analysis. Differential expression analysis was performed        using MACS2 (v.2.2.9.1) with the following parameters: -f BAMPE,
+using Seurat's FindMarkers function.                                       -q 0.01, ­nomodel, ­shift -100, ­extsize 200, ­keep-dup auto, -g mm
+                                                                           and ­call-summits. BigWig files were generated from the final BAM files
+      All data were visualized using UMAP. To evaluate coordinated         using bamCoverage (deepTools62, v.3.5.6) with RPKM normalization,
+gene expression patterns in mouse datasets, module scores for prede-       an extension size of 200bp, a bin size of 10bp and smoothing over
+fined gene sets were calculated using the AddModuleScore function          50bp (­smoothLength 50). For group-level analysis, BigWig files from
+in Seurat.                                                                 samples within the same experimental group were averaged using
+                                                                           bigwigAverage (deepTools62, v.3.5.6) across all genomic positions with
+RNA extraction and gene expression analysis                                a bin size of 10bp to generate consensus signal tracks for downstream
+T cells were restimulated with PMA (50ngml-1) and ionomycin                visualization. Downstream analysis was performed with the DiffBind
+(500ngml-1) for 2h before RNA extraction. Total RNA was extracted          package (v.3.16.0) to identify differentially accessible peaks. Motif
+using TRIzol reagent (Magen, cat. no. R4801) according to the manu-        enrichment analysis was performed using HOMER65 (v.5.1) to compare
+facturer's instructions. RNA concentration and purity were deter-          peaks with increased accessibility in the `Gzmk-tdTomato' group
+mined, and complementary DNA was synthesized from qualified                versus those with decreased accessibility (and vice versa) to identify
+RNA samples using the HiScript III All-in-one RT SuperMix Perfect
+
+Nature Immunology
+Article                                                                     https://doi.org/10.1038/s41590-026-02479-6
+
+condition-specific enriched transcription factor binding motifs, with       ANOVA with Bonferroni's post hoc test were applied as appropriate.
+peak centers extended to 200bp and mm39 as the reference genome.            For next-generation sequencing data, R (v.4.4.3) was used for statis-
+                                                                            tical analysis. Error bars represent the s.e.m. throughout the study.
+Gene-to-peak association analysis and integrated                            Animals were randomly assigned to experimental groups. The order
+visualization                                                               of experimental conditions and data collection was randomized to
+Gene-to-peak associations were analyzed to link chromatin acces-            minimize bias. Data collection and analysis were not performed blind
+sibility changes with gene expression. Differentially expressed genes       to the conditions of the experiments. No animals or data points were
+(DEGs) and differentially accessible regions (DARs) were defined using      excluded from the analyses.
+adjusted P values<0.05 and absolute log2(fold change) >1. Transcrip-
+tion start site (TSS) coordinates were obtained from the TxDb.Mmus-         Reporting summary
+culus.UCSC.mm39.knownGene annotation package (v.3.20.0). For                Further information on research design is available in the Nature
+each DEG, DARs within ±100kb of its TSS were identified, and only           Portfolio Reporting Summary linked to this article.
+pairs showing concordant directionality were retained; the nearest
+such DAR to the TSS was assigned to the gene. Gene­peak pairs were          Data availability
+ordered by gene expression fold change for visualization. RNA-seq
+(TPM) and ATAC-seq (normalized counts) data were log2-transformed           The raw sequence data reported in this paper have been deposited in
+with a pseudocount of 1 and underwent row-wise z-score normalization        National Genomics Data Center under accession code PRJCA048888.
+for heatmap display.                                                        The processed RNA-seq, ATAC-seq and CUT&Tag data of this study are
+                                                                            available on figshare at https://doi.org/10.6084/m9.figshare.30477716
+CUT&Tag experiments                                                         (ref. 67). Source data are provided with this paper.
+CD4 T cells overexpressing HA-tagged EOMES protein or empty vec-
+tor were collected for CUT&Tag assays, with three biological replicates     Code availability
+per sample. The experiments were performed using the Hyperactive
+Universal CUT&Tag Assay kit (Vazyme, cat. no. TD904-C2) and an anti-        This article does not report any original code. All functionality used
+body to HA-Tag (Cell Signaling Technology, cat. no. 3724), following        to analyze the sequencing data is publicly available via the software
+the manufacturer's instructions. Sequencing was conducted on the            packages described in Methods.
+Illumina NovaSeq X Plus platform to generate 150-bp paired-end reads,
+yielding approximately 20 million raw reads per sample.                     References
+
+CUT&Tag data analysis                                                       50. Liu, Z. et al. Epigenetic reprogramming of Runx3 reinforces
+Raw paired-end reads were processed using the same pipeline as                    CD8+ T-cell function and improves the clinical response to
+described for ATAC-seq data, which included quality control and adap-             immunotherapy. Mol. Cancer 22, 84 (2023).
+tor trimming with fastp56 (v.0.24.0), alignment to the mm39 genome
+using Bowtie263 (v.2.5.4) (with parameters: ­very-sensitive, -X 2000,       51. Chi, X. et al. RORt expression in mature T(H)17 cells safeguards
+­no-mixed, ­no-discordant and ­no-unal), duplicate removal with                   their lineage specification by inhibiting conversion to T(H)2 cells.
+Picard MarkDuplicates (v.3.1.0), and filtering of mitochondrial and               Sci. Adv. 8, eabn7774 (2022).
+ENCODE blacklist regions using bedtools64 intersect (v.2.31.1). Final
+BAM files were sorted and indexed. BigWig files were generated using        52. Liu, X. et al. Genome-wide analysis identifies Bcl6-controlled
+bamCoverage (deepTools62, v.3.5.6) with RPKM normalization, a bin                 regulatory networks during T follicular helper cell differentiation.
+size of 10bp, and the ­centerReads option. For each experimental                  Cell Rep. 14, 1735­1747 (2016).
+group, three replicates were averaged using bigwigAverage (deep-
+Tools62, v.3.5.6) with a bin size of 10bp to generate consensus tracks.     53. Alquicira-Hernandez, J. & Powell, J. E. Nebulosa recovers
+The control-averaged signal was then subtracted from the treatment                single-cell gene expression signals by kernel density estimation.
+sample using bigwigCompare (deepTools62, v.3.5.6) with the same bin               Bioinformatics 37, 2485­2487 (2021).
+size; the resulting differential signal tracks were used for downstream
+visualization. Peak calling was performed on individual replicates          54. Hao, Y. et al. Dictionary learning for integrative, multimodal and
+using MACS2 (v.2.2.9.1) in BAMPE mode with the parameters: -q 0.01,               scalable single-cell analysis. Nat. Biotechnol. 42, 293­304 (2024).
+­keep-dup auto, ­call-summits and -g mm. Consensus peaks for down-
+stream analysis were defined as regions identified in all three biological  55. Korsunsky, I. et al. Fast, sensitive and accurate integration of
+replicates using sequential bedtools64 intersect operations. Genomic              single-cell data with Harmony. Nat. Methods 16, 1289­1296
+annotation of the consensus peaks was performed using ChIPseeker66                (2019).
+(v.1.42.1) with the TxDb.Mmusculus.UCSC.mm39.knownGene annota-
+tion package (v.3.20.0), defining promoter regions as ±3kb from the         56. Chen, S., Zhou, Y., Chen, Y. & Gu, J. fastp: an ultra-fast all-in-one
+TSS. Motif enrichment analysis was performed on these consensus                   FASTQ preprocessor. Bioinformatics 34, i884­i890 (2018).
+peaks using HOMER65 (v.5.1) with a region size of 400bp (-300 to
++100bp relative to the peak center) and the -len 8,10,12 option to test     57. Kim, D., Paggi, J. M., Park, C., Bennett, C. & Salzberg, S. L.
+multiple motif widths.                                                            Graph-based genome alignment and genotyping with HISAT2
+                                                                                  and HISAT-genotype. Nat. Biotechnol. 37, 907­915 (2019).
+Quantification and statistical analysis
+No statistical methods were used to predetermine sample sizes but our       58. Danecek, P. et al. Twelve years of SAMtools and BCFtools.
+sample sizes are similar to those reported in previous publications17,18.         Gigascience 10, giab008 (2021).
+Data distribution was assumed to be normal but this was not formally
+tested. Statistical analyses were performed using GraphPad Prism            59. Liao, Y., Smyth, G. K. & Shi, W. The Subread aligner: fast, accurate
+(v.10.1.2). For experimental data, two-tailed paired or unpaired Stu-             and scalable read mapping by seed-and-vote. Nucleic Acids Res.
+dent's t-tests, one-way ANOVA with Tukey's post hoc test or two-way               41, e108 (2013).
+
+                                                                            60. Love, M. I., Huber, W. & Anders, S. Moderated estimation of fold
+                                                                                  change and dispersion for RNA-seq data with DESeq2. Genome
+                                                                                  Biol. 15, 550 (2014).
+
+                                                                            61. Xu, S. et al. Using clusterProfiler to characterize multiomics data.
+                                                                                  Nat. Protoc. 19, 3292­3320 (2024).
+
+                                                                            62. Ramirez, F., Dundar, F., Diehl, S., Gruning, B. A. & Manke, T.
+                                                                                  deepTools: a flexible platform for exploring deep-sequencing
+                                                                                  data. Nucleic Acids Res. 42, W187­W191 (2014).
+
+                                                                            63. Langmead, B. & Salzberg, S. L. Fast gapped-read alignment with
+                                                                                  Bowtie 2. Nat. Methods 9, 357­359 (2012).
+
+                                                                            64. Quinlan, A. R. & Hall, I. M. BEDTools: a flexible suite of utilities for
+                                                                                  comparing genomic features. Bioinformatics 26, 841­842 (2010).
+
+Nature Immunology
+Article                                                                    https://doi.org/10.1038/s41590-026-02479-6
+
+65. Heinz, S. et al. Simple combinations of lineage-determining            the paper. Y.D., Q.W., H.Z., K.W., X.C., X.B., Y.F., Z.P., Y.Z. and Q.L.
+      transcription factors prime cis-regulatory elements required for     provided experimental support. C.D. supervised the research and
+      macrophage and B cell identities. Mol. Cell 38, 576­589 (2010).      revised the paper.
+
+66. Wang, Q. et al. Exploring epigenomic datasets by ChIPseeker.           Competing interests
+      Curr. Protoc. 2, e585 (2022).
+                                                                           The authors declare no competing interests.
+67. Xie, T. Processed RNA-seq, ATAC-seq and CUT&Tag data. figshare
+      https://doi.org/10.6084/m9.figshare.30477716 (2026).                 Additional information
+
+Acknowledgements                                                           Extended data is available for this paper at https://doi.org/10.1038/
+                                                                           s41590-026-02479-6.
+We thank Y. Qiu (Peking University, Beijing) for providing Stat6-/- mice,
+F. Shao (National Institute of Biological Sciences, Beijing) for Gzmk-/-   Supplementary information The online version contains
+mice and Y. Sun (Beijing Institute of Genomics, Chinese Academy of         supplementary material available at https://doi.org/10.1038/s41590-
+Sciences, Beijing) for Runx3fl/fl mice. We thank all Dong laboratory       026-02479-6.
+members for their help. This work was supported by grants from the
+National Natural Science Foundation of China (32550002 to C.D.,            Correspondence and requests for materials should be addressed to
+82402058 to Q.L. and 92574302 to Q.L.), the Zhejiang Provincial            Chen Dong.
+Natural Science Foundation of China (LD25C120002 to C.D.), the
+National Key R&D Program of China (2023YFC2508200 to H. Yuan)              Peer review information Nature Immunology thanks the anonymous
+and the Construction Fund of Key Medical Disciplines of Hangzhou on        reviewer(s) for their contribution to the peer review of this work. Peer
+Immune Diseases and Precision Therapy (2025HZGF01 to C.D.). C.D.           reviewer reports are available. Primary Handling Editor: L. A. Dempsey,
+was a New Cornerstone Investigator.                                        in collaboration with the Nature Immunology team.
+
+Author contributions                                                       Reprints and permissions information is available at
+                                                                           www.nature.com/reprints.
+T.X. and C.D. conceived of the study. T.X. performed the
+experiments, conducted bioinformatic analyses and drafted
+
+Nature Immunology
+Article            https://doi.org/10.1038/s41590-026-02479-6
+
+Extended Data Fig. 1 | A GZMK-high CD4 T cell population in integrated pan-cancer scRNA-seq data. UMAP visualization of CD4 T cells from a published
+integrated pan-cancer scRNA-seq dataset. Density plots show expression of SELL, CCR7, TBX21, IFNG, GATA3, RORC, BCL6, CXCR5, FOXP3, IL2RA, GZMB, and GZMK.
+
+Nature Immunology
+Article                                                                               https://doi.org/10.1038/s41590-026-02479-6
+
+Extended Data Fig. 2 | Analysis of Gzmk-tdTomato reporter expression across           of Gzmk-tdTomato reporter mice at steady-state. Left panels: representative
+intestinal and lymphoid tissues in steady-state mice. Flow cytometric analysis        plots showing tdTomato signal in CD4, CD8, CD8, and  T cell
+of lymphocytes from small intestinal intraepithelial lymphocytes (SI-IEL), small      subsets. Right panels: frequency of tdTomato cells within each subset (n = 5).
+intestinal lamina propria lymphocytes (SI-LPL), large intestinal IEL (LI-IEL), large  Data are shown as mean ± s.e.m. and are representative of three independent
+intestinal LPL (LI-LPL), Peyer's patches (PP), and mesenteric lymph nodes (mLN)       experiments.
+
+Nature Immunology
+Article                                            https://doi.org/10.1038/s41590-026-02479-6
+
+Extended Data Fig. 3 | See next page for caption.
+Nature Immunology
+Article                                                                           https://doi.org/10.1038/s41590-026-02479-6
+
+Extended Data Fig. 3 | Phenotypic and functional characterization of              Gzmb, and Ifng across CD4 T cell clusters (cluster 0, n = 5,932; cluster 1, n = 3,502;
+Gzmk-expressing CD4 T cells. a, Flow cytometry analysis of Gzmk-tdTomato          cluster 2, n = 2,703; cluster 3, n = 1,703; cluster 4, n = 1,610; cluster 5, n = 133). Violin
+expression in mesenteric lymph nodes (mLN) CD4 T cells of Rag1-/- colitis mice    plots with embedded box plots showing median (center line) and 25th­75th
+adoptively transferred with naive CD4 T cells from Gzmk-tdTomato reporter         percentiles (box bounds). Numbers above: adjusted P values (Wilcoxon rank-sum
+mice. Upper: representative plots (y-axis: Gzmk-tdTomato; x-axis: T-bet, GATA3,   test, two-tailed, Cluster 1 versus all others); below: average expression levels.
+RORt, BCL6, or FOXP3). Lower: quantification of MFI of T-bet (n = 8), GATA3       f, Proportion of Gzmk-tdTomato cells among sorted populations after 19-h co-
+(n = 3), and BCL6 (n = 8), and frequency of RORt (n = 8) and FOXP3 (n = 8) cells  culture with P815 target cells. g, In vitro cytotoxicity assay measuring proportion
+in Gzmk-tdTomato versus Gzmk-tdTomato cells. b­d, Flow cytometry analysis         of dead P815 cells at varying effector-to-target ratios, with or without anti-CD3
+of perforin (b), GZMB (c), and IFN (d) in mLN CD4 T cells. Left: representative   antibody (n = 3). Data are shown as mean ± s.e.m. and are representative of at least
+plots (y-axis: Gzmk-tdTomato; x-axis: target protein). In d, right: mean          two independent experiments. Exact P values are shown in each graph. Statistical
+fluorescence intensity (MFI) of IFN in IFNGzmk-tdTomato and IFNGzmk-              significance was assessed by two-tailed paired t-test (a,d).
+tdTomato subsets (n = 8). e, Violin plots showing expression of Gzmk, Prf1,
+
+Nature Immunology
+Article                                                                                  https://doi.org/10.1038/s41590-026-02479-6
+
+Extended Data Fig. 4 | THK cell differentiation is independent of TH1, TH2,              quantification as in Fig. 3e. e, Gzmk and Prf1 mRNA expression in sorted wild-type
+and TH17 programs. a,b, Flow cytometry analysis of GZMB (a) and perforin (b)             and Cd4cre Bcl6fl/fl CD4 T cells from the colonic LP, measured by RT­qPCR (n = 3).
+in mesenteric lymph nodes (mLN) CD4 T cells from mice co-transferred with                Data are shown as mean ± s.e.m. and are representative of two independent
+wild-type and Tbx21-/- cells (n = 6). Representative plots and quantification as         experiments. Exact P values are shown in each graph. Statistical significance was
+                                                                                         assessed by two-tailed paired t-test (a­d) or two-tailed unpaired t-test (e).
+in Fig. 3a, b. c,d, Flow cytometry analysis of perforin in mLN CD4 T cells from
+recipients of wild-type and Stat6-/- (n = 7) (c) or Cd4cre Rorcfl/fl (n = 6) (d) cells;
+
+Nature Immunology
+Article                                                                             https://doi.org/10.1038/s41590-026-02479-6
+
+Extended Data Fig. 5 | THK cells are distinct from CD4CD8 cytotoxic T cells.        CD4 T cells compared to other CD4 T cell populations in lamina propria (LP).
+a­c, Violin plots showing expression of Runx3 (a), Zbtb7b (b) and Cd8a (c) across   e,f, Flow cytometry analysis of CD8 (n = 4) and GZMB (n = 5) in LP CD4 T cells
+CD4 T cell clusters (cluster 0, n = 5,932; cluster 1, n = 3,502; cluster 2,         from recipients of wild-type and Vav1cre Runx3fl/fl CD4 T cells g, Gzmk mRNA
+n = 2,703; cluster 3, n = 1,703; cluster 4, n = 1,610; cluster 5, n = 133). Violin  expression in sorted wild-type and Vav1cre Runx3fl/fl CD4 T cells from the colonic
+plots with embedded box plots showing median (center line) and 25th­75th            LP, measured by RT­qPCR (n = 3). Data are shown as mean ± s.e.m. and are
+percentiles (box bounds). Numbers above: adjusted P values (Wilcoxon rank-sum       representative of two independent experiments. Exact P values are shown in each
+test, two-tailed, Cluster 1 versus all others); below: average expression levels.   graph. Statistical significance was assessed by two-tailed paired t-test (d­f) or
+d, Flow cytometric analysis showing CD8 expression in Gzmk-tdTomato                 two-tailed unpaired t-test (g).
+
+Nature Immunology
+Article                                            https://doi.org/10.1038/s41590-026-02479-6
+
+Extended Data Fig. 6 | See next page for caption.
+Nature Immunology
+Article                                                                                        https://doi.org/10.1038/s41590-026-02479-6
+
+Extended Data Fig. 6 | Eomes is transcriptionally and epigenetically                           from the lamina propria (LP) and mesenteric lymph nodes (mLN) at days 7, 14, 21,
+associated with THK cell identity. a, UMAP embedding of scRNA-seq data from                    28, and 35 after naive CD4 T cell transfer. Left: Representative flow cytometry
+colitic CD4 T cells, colored by `THK cell signature' enrichment score. b, Eomes                plots showing coexpression of EOMES and Gzmk-tdTomato (top), T-bet (middle),
+expression across CD4 T cell clusters (cluster 0, n = 5,932; cluster 1, n = 3,502;             and RORt (bottom) in LP. Right: Quantification of EOMESGzmk-tdTomato,
+cluster 2, n = 2,703; cluster 3, n = 1,703; cluster 4, n = 1,610; cluster 5, n = 133). Violin  T-bet, and RORt CD4 T cells in LP and mLN (n = 3 for each time point).
+plots with embedded box plots showing median (center line) and 25th­75th                       f­i, Flow cytometry analysis of EOMES expression in mLN CD4 T cells from
+percentiles (box bounds). Numbers above: adjusted P values (Wilcoxon rank-sum                  Rag1-/- recipients co-transferred with wild-type (CD45.1) and knockout
+test, two-tailed, Cluster 1 versus all others); below: average expression levels.              (CD45.2) naive CD4 T cells. Tbx21-/- (n = 6) (f), Stat6-/- (n = 7) (g), Cd4cre Rorcfl/fl
+c, Density plots showing GZMK and EOMES expression in human pan-cancer                         (n = 6) (h), and Cd4cre Bcl6fl/fl (n = 5) (i). Left: representative plots. Right: frequency
+dataset. d, Correlation analysis between GZMK and all other genes in bulk                      of EOMES cells within donor-derived populations. Data are shown as mean ±
+RNA-seq data from ulcerative colitis patients and healthy controls (GSE128682).                s.e.m. and are representative of two independent experiments. Exact P values are
+Shown is R2 from Pearson correlation; P values are unadjusted. e, Time-course                  shown in each graph. Statistical significance was assessed by two-tailed paired
+analysis of EOMES, Gzmk-tdTomato, T-bet, and RORt expression in CD4 T cells                    t-test (f­i).
+
+Nature Immunology
+Article                                            https://doi.org/10.1038/s41590-026-02479-6
+
+Extended Data Fig. 7 | See next page for caption.
+Nature Immunology
+Article                                                                               https://doi.org/10.1038/s41590-026-02479-6
+
+Extended Data Fig. 7 | EOMES drives the THK program and constrains                    analysis of RORt (f) and IL-17A (g) in control or Eomes-overexpressing CD4 T
+alternative TH cell fates. a, RT­qPCR analysis of Gzmk, Prf1, and Gzmb expression     cells under TH17-polarizing conditions (n = 3). Left: representative plots. Right:
+in control or Eomes-overexpressing CD4 T cells activated under non-polarizing         quantification of frequency. h, Flow cytometry analysis of FOXP3 in control or
+conditions. Data normalized to Actb and presented relative to control (n = 3 per      Eomes-overexpressing CD4 T cells under Treg-polarizing conditions (n = 3).
+group; one undetected replicate in the Gzmk control group). b, Reanalysis of          Left: representative plots. Right: quantification of frequency. i,j, Flow cytometry
+published RNA-seq data (GSE122889) from control or Eomes-overexpressing               analysis of PD-1 and CXCR5 (i) and BCL6 and CXCR5 (j) in donor-derived OT-II
+CD8 T cells. Expression levels of Gzmk, Prf1, and Gzmb shown as FPKM. c, EOMES        CD4 T cells 7 days after transfer into wild-type recipients and immunization with
+and Gzmk-tdTomato expression in CD4 T cells under in vitro TH1, TH2, TH17,            OVA protein (n = 8 per group). Left: representative plots. Right: quantification of
+Treg polarizing conditions, and in vivo in adoptively transferred OT-II×Gzmk-         frequency. k, Expression of EOMES and BLIMP1-EYFP in CD4 T cells isolated from
+tdTomato CD4 T cells from OVA-immunized recipient mice. d,e, Flow cytometry           the lamina propria (LP) and mesenteric lymph nodes (mLN) of colitis mice. Data
+analysis of T-bet (d) and GATA3 (e) in control or Eomes-overexpressing CD4 T          are shown as mean ± s.e.m. and are representative of at least two independent
+cells cultured under TH1- and TH2-polarizing conditions, respectively (n = 3). Left:  experiments. Exact P values are shown in each graph. Statistical significance was
+representative plots. Right: quantification of frequency. f,g, Flow cytometry         assessed by two-tailed unpaired t-test.
+
+Nature Immunology
+Article                                                                       https://doi.org/10.1038/s41590-026-02479-6
+
+Extended Data Fig. 8 | EOMES directly binds to regulatory elements of         peaks. Shown are fold enrichment (target/background) and-Log(p value)
+THK-associated genes. a, Genomic annotation of EOMES-bound regions            (natural log) from HOMER (binomial test). Dashed gray lines: P = 0.05 and fold
+identified by CUT&Tag in Eomes-overexpressing CD4 T cells. Pie chart shows    enrichment = 1. c, Reanalysis of published ChIP-seq data (GSE122888) showing
+distribution across promoters, introns, distal intergenic regions, and other  EOMES occupancy at the Gzmk and Prf1 loci in control or Eomes-overexpressing
+features. b, Transcription factor motif enrichment analysis in EOMES-bound    CD8 T cells. Tracks display EOMES ChIP-seq signal and control signal (mm10).
+
+Nature Immunology
+Article                                            https://doi.org/10.1038/s41590-026-02479-6
+
+Extended Data Fig. 9 | See next page for caption.
+Nature Immunology
+Article                                                                             https://doi.org/10.1038/s41590-026-02479-6
+
+Extended Data Fig. 9 | Eomes ablation alters CD4 T cell differentiation             n, Frequencies of CD8 cells in CD4 T cells in LP. o,p, Disease severity in Rag1-/-
+in vivo. a­m, Flow cytometric analysis of transcription factors and effector        recipients of naive CD4 T cells from Gzmk-/- (n = 5) or control (n = 5) donors.
+molecules in donor-derived CD4 T cells from colonic lamina propria (LP) and         Body weight change (o); colon length at endpoint (p). Data are shown as mean
+mesenteric lymph nodes (mLN) (n = 5 or 6). Representative plots showing EOMES       ± s.e.m. and are representative of three independent experiments. Each data
+and Gzmk-tdTomato expression, with quantification of the frequency of Gzmk-         point represents an individual mouse. Exact P values are shown in each graph.
+tdTomato cells in mLN (a). Representative plots (left) and frequencies (right) of   Statistical significance was assessed by two-tailed unpaired t-test (a­n,p) and
+perforin (b) and GZMB (c) cells in mLN. d­m, Frequencies of T-bet (d,e), IFN        two-way ANOVA with Bonferroni's post hoc test (o).
+(f,g), RORt (h,i), IL-17A (j,k), and FOXP3 (l,m) cells in LP (upper), mLN (lower).
+
+Nature Immunology
+Article                                             https://doi.org/10.1038/s41590-026-02479-6
+
+Extended Data Fig. 10 | See next page for caption.
+Nature Immunology
+Article                                                                                                       https://doi.org/10.1038/s41590-026-02479-6
+
+Extended Data Fig. 10 | Analysis of the THK transcriptional program            highlighted; Gzmk and Eomes expression are shown. g­i, Gene set enrichment
+across species and diseases. a,b, Differential gene expression analysis        scores of the `THK cell signature' in Gzmkhigh versus other CD4 T cell subsets
+comparing human GZMKhigh CD4 T cells to other CD4 subsets in published         in tumor (g; Gzmkhigh, n = 2,943; others, n = 42,419), EAE (h; Gzmkhigh, n = 1,882;
+scRNA-seq datasets from inflammatory bowel disease (IBD) patients (a; data     others, n = 18,003), and LCMV cl13 (i; Gzmkhigh, n = 341; others, n = 7,031) models.
+from Fig. 1a) and pan-cancer samples (b; data from Extended Data Fig. 1).      Violin plots with embedded box plots show median (center line) and 25th­75th
+Differential expression was assessed using the Wilcoxon rank-sum test (two-    percentiles (box bounds). Numbers above: adjusted P values (Wilcoxon rank-sum
+tailed) implemented in the Seurat package. P values were adjusted using the    test, two-tailed, Gzmkhigh versus others); below: mean scores. j­l, Volcano plots
+Bonferroni correction. Red dots: upregulated in GZMKhigh CD4 T cells; blue     of differentially expressed genes in Gzmkhigh CD4 T cells versus other CD4 T cell
+dots: upregulated in other CD4 T cells. Horizontal dashed line: adjusted P =   subsets in tumor (j), EAE (k), and LCMV cl13 (l) models. Differential expression
+0.05; vertical dashed lines: log2(fold change) = ±1. c, Overlap between human  was assessed using the Wilcoxon rank-sum test (two-tailed) implemented in the
+orthologs of upregulated genes from bulk RNA-seq of Gzmk-tdTomato versus       Seurat package. P values were adjusted using the Bonferroni correction. Red
+Gzmk-tdTomato CD4 T cells in murine colitis (Fig. 4a) and upregulated genes    dots: upregulated in Gzmkhigh CD4 T cells; blue dots: upregulated in other CD4
+in human GZMKhigh subsets (a,b). d­f, UMAP visualization of CD4 T cells from   T cells. Horizontal dashed line: adjusted P = 0.05; vertical dashed lines: log2(fold
+murine disease models: Hepa1-6 tumor-infiltrating lymphocytes (GSE285225;      change) = ±1. m, Venn diagram showing intersection of significantly upregulated
+d), CNS-infiltrating CD4 T cells in EAE (GSE156196; e), and splenic CD4 T      genes across all four murine disease models. All upregulated genes in this figure
+cells during chronic LCMV cl13 infection (GSE201730; f). Gzmkhigh subsets are  were defined using the thresholds: adjusted P < 0.05 and log2(fold change) > 1.
+
+Nature Immunology
+                                                                          
+                                                         
+
+                                                       
+                                                                            
+                                     
+
+
+--  --                                                                            --
+
+                                                                              --
+-  
+

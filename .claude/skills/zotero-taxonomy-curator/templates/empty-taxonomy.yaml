@@ -1,0 +1,47 @@
+version: "0.1.0"
+domain:
+  name: "my-research-domain"
+  description: "Describe your research field here."
+
+canonical_tag_style: lowercase-hyphen
+
+base_tags:
+  - literature-note
+  - reading-note
+
+usage_rules:
+  principle: "Use the smallest set of stable tags that still supports retrieval, comparison, and review writing."
+  evidence_required: true
+  promote_candidate_when:
+    - "The concept appears across multiple papers."
+    - "The concept improves retrieval or comparison beyond existing tags."
+    - "The concept is supported by explicit evidence in the paper."
+
+categories:
+  document_type:
+    description: "Publication type. Add stable tags only when they are useful for retrieval."
+    tags: {}
+
+  research_topic:
+    description: "Main domain topic, problem family, or research stream."
+    tags: {}
+
+  theory_or_framework:
+    description: "Theory, conceptual framework, or analytical perspective."
+    tags: {}
+
+  method_family:
+    description: "Methods, models, algorithms, or analytical approaches."
+    tags: {}
+
+  data_and_evidence:
+    description: "Data source, evidence type, benchmark, case, or experiment design."
+    tags: {}
+
+  contribution_type:
+    description: "Main contribution type."
+    tags: {}
+
+aliases: {}
+
+candidate_terms: []

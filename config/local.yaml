@@ -1,0 +1,13 @@
+zotero:
+  sqlite_path: "C:/Users/Yun/Zotero/zotero.sqlite"
+  storage_dir: "C:/Users/Yun/Zotero/storage"
+
+output:
+  note_root: "literature/notes"
+  index_file: "literature/Literature Index.md"
+
+taxonomy:
+  path: "config/taxonomy.yaml"
+
+template:
+  path: "templates/literature-note-template.md"

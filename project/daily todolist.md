@@ -1,0 +1,32 @@
+2026年5月9日
+1. treemap绘制 3
+2. SCigblast barcode umi拆分后表的重新设计 以及 图的绘制  2
+	1. 后续
+3. 南京人民数据分析  1
+
+2026年5月11日
+1. SCigblast 后续操作
+2. 南京人民数据分析
+3. SF_0416  项目汇报 
+	1. 男女可以分开分析
+	2. VJ基因 参考文献进行介绍 在哪些病情里面出现
+	3. 降维分析 使用ML 判断是否可以区分出来
+	4. 图的字体大小 比例放大  P值去掉
+	5. 对于显著性内容 进行明显标识
+
+
+
+2026年5月12日
+1. 冰箱管理系统 部署 
+2. SF_0416 补齐man 和 woman分类单独展示
+3. 南京人民数据分析
+
+            df_gb_vj = df_vj_combine[["vj", "copy"]].groupby("vj").sum()
+
+            df_gb_vj["copy"] = df_gb_vj["copy"] / df_gb_vj["copy"].sum()
+
+            df_gb_vj.rename(columns={"copy": param_col}, inplace=True)
+
+
+
+TGTGCAGCCTCTGCATTCACCTTTAGCAGCTATGCCATGAGCTGGGTCCGCCAGACTCCAGGGAGGGGGCTGGAGTGGGTCTCAGCTATTACTAGTGGTGGTGGCAGCACATACTACGCTGACTCCGTGAAGGGCCGGTTCACCATCTCCAGAGACAATTCCAAGAACACGCTGTATCTGCAAATGAACAGCCTGAGAGCCGAGGACACGGCCGTATATTACTGTGCGAAACGGATGGTGGGTACAGCTGGTTACTTTGACTACTGGGGCCAGGGAACCCTGGTCACCGTCTCCTCAGCCTCCACCAAGGGCCCATCGGTC,CAASAFTFSSYAMSWVRQTPGRGLEWVSAITSGGGSTYYADSVKGRFTISRDNSKNTLYLQMNSLRAEDTAVYYCAKRMVGTAGYFDYWGQGTLVTVSSASTKGPSV,AKRMVGTAGYFDY,

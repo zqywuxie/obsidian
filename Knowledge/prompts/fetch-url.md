@@ -38,9 +38,10 @@ updated: 2026-05-15
 示例：doi:10.1126/science.abl5197
       Domínguez Conde C, et al. Science. 2022;376(6594):eabl5197
 ```
+- 用 `https://doi.org/<DOI>` 作为原文的标准 URL（即使付费墙后无法访问 PDF，URL 也要记录）
 - 如果页面直接链接到了 PDF 原文 → 下载到 Knowledge/raw/
 - 如果页面只有 DOI/PMID 但无直接 PDF → 用 WebFetch 访问原文页面（至少保留摘要 + 引用信息）
-- 提取完整引用信息（DOI、期刊、年份、作者、标题）→ 记录到后续的归档中
+- 提取完整引用信息（DOI、期刊、年份、作者、标题、原文 URL）→ 记录到后续的归档中
 
 ### B. Code/Data availability
 扫描页面中是否提及以下信息，并提取对应的**链接和编号**：
@@ -61,8 +62,8 @@ sources:
   - type: paper
     title: "原文标题"
     doi: "10.xxx/xxx"
-    url: "https://..."
-    pdf: "Knowledge/raw/filename.pdf"  # 如果已下载
+    url: "https://doi.org/10.xxx/xxx"  # 即使付费也写 DOI URL
+    pdf: "Knowledge/raw/filename.pdf"  # 已下载时才写
   - type: code
     repo: "GitHub: user/repo"
     url: "https://github.com/user/repo"
@@ -105,7 +106,7 @@ sources:
 - YAML frontmatter 中写入所有追溯到的关联资源（论文 DOI、代码仓库、数据编号）
 - 正文结构：
   1. 抓取的 URL 页面摘要
-  2. 原始论文核心信息（如追溯到了论文）
+  2. 原始论文核心信息（如追溯到了论文）— **必须包含论文 URL（DOI）**，即使付费墙后
   3. 代码/数据资源清单
   4. 本次分析笔记
 

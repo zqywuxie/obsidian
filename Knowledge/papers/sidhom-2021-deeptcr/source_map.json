@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "paper_key": "sidhom-2021-deeptcr",
+    "title": "DeepTCR: a suite of unsupervised and supervised deep learning methods to model T cell receptor sequences",
+    "authors": "John-William Sidhom, Douglas Pardoll, Alexander S Baras",
+    "journal": "Nature Communications",
+    "volume": "12",
+    "pages": "3154",
+    "year": 2021,
+    "doi": "10.1038/s41467-021-21879-w",
+    "url": "https://doi.org/10.1038/s41467-021-21879-w",
+    "pdf": "original.pdf",
+    "source_type": "publisher_HTML",
+    "fetched_date": "2026-05-16",
+    "paper_type": "methods_algorithm"
+  },
+  "resources": {
+    "code": [
+      {"name": "DeepTCR (Python package)", "url": "https://github.com/sidhomj/DeepTCR"},
+      {"name": "DeepTCR on PyPI", "url": "https://pypi.org/project/DeepTCR/"}
+    ],
+    "data": [
+      {"name": "10x Genomics immune profiling dataset", "url": "https://www.10xgenomics.com/resources/application-notes/a-new-way-of-exploring-immunity-linking-highly-multiplexed-antigen-recognition-to-immune-repertoire-and-phenotype/"}
+    ]
+  },
+  "sections": {
+    "S001": {"title": "Abstract"},
+    "S002-S004": {"title": "Introduction"},
+    "S005-S007": {"title": "Results: Deep learning approach & TCR featurization"},
+    "S008-S010": {"title": "Results: VAE for unsupervised clustering (Fig. 1)"},
+    "S011-S013": {"title": "Results: Supervised classification (Fig. 2)"},
+    "S014-S016": {"title": "Results: Supervised regression (Fig. 3)"},
+    "S017-S019": {"title": "Results: Perturbation analysis & RSLs (Fig. 3)"},
+    "S020-S024": {"title": "Results: Repertoire classification (Fig. 4-5)"},
+    "S025-S028": {"title": "Discussion"},
+    "S029-S045": {"title": "Methods"}
+  },
+  "figures": {
+    "F001": {"label": "Fig. 1", "title": "Unsupervised TCR sequence representation (VAE)", "file": "assets/fig1.png"},
+    "F002": {"label": "Fig. 2", "title": "Supervised TCR sequence classification", "file": "assets/fig2.png"},
+    "F003": {"label": "Fig. 3", "title": "Supervised TCR sequence regression & perturbation analysis", "file": "assets/fig3.png"},
+    "F004": {"label": "Fig. 4", "title": "Supervised TCR repertoire classification", "file": "assets/fig4.png"},
+    "F005": {"label": "Fig. 5", "title": "Characterization of TCR repertoire to HIV-specific epitopes", "file": "assets/fig5.png"}
+  }
+}

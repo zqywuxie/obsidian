@@ -1,0 +1,53 @@
+{
+  "paper": {
+    "key": "projectils-2021",
+    "title": "Interpretation of T cell states from single-cell transcriptomics data using reference atlases",
+    "doi": "10.1038/s41467-021-23324-4",
+    "source": "defuddle(https://www.nature.com/articles/s41467-021-23324-4)"
+  },
+  "blocks": [
+    { "id": "S001", "type": "abstract", "section": "Abstract", "description": "ProjecTILs introduction — reference atlas projection for T cell state interpretation" },
+    { "id": "S002", "type": "body", "section": "Introduction", "description": "T cell diversity, exhaustion, challenges in studying adaptive immunity" },
+    { "id": "S003", "type": "body", "section": "Introduction", "description": "scRNA-seq for T cell diversity, need for reference subtypes" },
+    { "id": "S004", "type": "body", "section": "Introduction", "description": "STACAS integration, need for cell-type-specific atlases" },
+    { "id": "S005", "type": "body", "section": "Introduction", "description": "Reference mapping challenge, ProjecTILs unique advantage" },
+    { "id": "S006", "type": "body", "section": "Results: TIL Atlas", "description": "Construction of murine TIL reference atlas (16,803 cells from 6 studies), 9 subtypes" },
+    { "id": "S007", "type": "caption", "section": "Results: TIL Atlas", "description": "Fig 1 caption — reference map construction" },
+    { "id": "S008", "type": "body", "section": "Results: ProjecTILs", "description": "ProjecTILs workflow: alignment, projection, classification, benchmarking" },
+    { "id": "S009", "type": "caption", "section": "Results: ProjecTILs", "description": "Fig 2 caption — ProjecTILs analysis workflow" },
+    { "id": "S010", "type": "body", "section": "Results: Perturbations", "description": "miR-155 KO and Regnase-1 KO analysis, ICA discriminant analysis" },
+    { "id": "S011", "type": "caption", "section": "Results: Perturbations", "description": "Fig 3 caption — genetic perturbation effects" },
+    { "id": "S012", "type": "body", "section": "Results: Perturbations", "description": "Regnase-1 KO details — ICA 25 (Lag3/Klrc1) downregulation" },
+    { "id": "S013", "type": "body", "section": "Results: Infection Atlas", "description": "LCMV infection atlas, Ptpn2-KO and Tox-KO projections" },
+    { "id": "S014", "type": "caption", "section": "Results: Infection Atlas", "description": "Fig 4 caption — virus-specific CD8+ T cell atlas" },
+    { "id": "S015", "type": "body", "section": "Results: Infection Atlas", "description": "Ptpn2-KO and Tox-KO detailed results, CD4-depletion projection" },
+    { "id": "S016", "type": "body", "section": "Results: Cross-species", "description": "Tissue-specific, cross-species human-to-mouse projection, 132 biopsies meta-analysis" },
+    { "id": "S017", "type": "body", "section": "Results: Human TIL", "description": "Human TIL subtype composition across tissues, TCR clonal linkage" },
+    { "id": "S018", "type": "body", "section": "Results: Human TIL", "description": "TCR overlap analysis, tumor-specific clonotypes spanning EM/Tpex/Tex" },
+    { "id": "S019", "type": "body", "section": "Results: Human TIL", "description": "EM→Tpex→Tex differentiation model with XCL1-XCR1 axis" },
+    { "id": "S020", "type": "body", "section": "Discussion", "description": "Reference atlas value, ProjecTILs advantages over other methods" },
+    { "id": "S021", "type": "body", "section": "Discussion", "description": "Novel state discovery, ICA 25, control group substitution potential" },
+    { "id": "S022", "type": "body", "section": "Discussion", "description": "Cross-species conservation, human TIL differentiation model summary" },
+    { "id": "S023", "type": "body", "section": "Discussion", "description": "Limitations: CD4+ underrepresented, γδ missing, future growth" },
+    { "id": "S024", "type": "body", "section": "Discussion", "description": "R package implementation, Docker, integration with Seurat" }
+  ],
+  "section_index": {
+    "Abstract": { "start": "S001", "blocks": ["S001"] },
+    "Introduction": { "start": "S002", "blocks": ["S002", "S003", "S004", "S005"] },
+    "Results: TIL Atlas": { "start": "S006", "blocks": ["S006", "S007"] },
+    "Results: ProjecTILs": { "start": "S008", "blocks": ["S008", "S009"] },
+    "Results: Perturbations": { "start": "S010", "blocks": ["S010", "S011", "S012"] },
+    "Results: Infection Atlas": { "start": "S013", "blocks": ["S013", "S014", "S015"] },
+    "Results: Cross-species": { "start": "S016", "blocks": ["S016"] },
+    "Results: Human TIL": { "start": "S017", "blocks": ["S017", "S018", "S019"] },
+    "Discussion": { "start": "S020", "blocks": ["S020", "S021", "S022", "S023", "S024"] }
+  },
+  "resources": {
+    "doi": "https://doi.org/10.1038/s41467-021-23324-4",
+    "github": "https://github.com/carmonalab/ProjecTILs",
+    "code_archive": "https://doi.org/10.5281/zenodo.4601466",
+    "figshare_atlas": "https://doi.org/10.6084/m9.figshare.12478571",
+    "figshare_viral": "https://doi.org/10.6084/m9.figshare.12489518",
+    "cases": "https://github.com/carmonalab/ProjecTILs_CaseStudies"
+  }
+}

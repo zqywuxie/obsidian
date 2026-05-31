@@ -1,0 +1,70 @@
+{
+  "paper": {
+    "title": "Mapping the functional landscape of T cell receptor repertoire by single T cell transcriptomics",
+    "pmcid": "PMC7799492",
+    "doi": "10.1038/s41592-020-01020-3"
+  },
+  "source_blocks": {
+    "S001": { "section": "Abstract", "page": 1, "type": "abstract", "description": "Full abstract" },
+    "S002": { "section": "INTRODUCTION", "page": 1, "type": "body", "description": "T cell biology and TCR profiling intro" },
+    "S003": { "section": "INTRODUCTION", "page": 1, "type": "body", "description": "Limitation of TCR-only approaches" },
+    "S004": { "section": "INTRODUCTION", "page": 1, "type": "body", "description": "scRNA-Seq technologies enabling TCR-transcriptomics integration" },
+    "S005": { "section": "INTRODUCTION", "page": 1, "type": "body", "description": "Introduction of tessa model" },
+    "S006": { "section": "RESULTS / Annotating the functional relevance", "page": 2, "type": "body", "description": "TCR numeric embedding with Atchley factors and auto-encoder" },
+    "S007": { "section": "RESULTS / Annotating the functional relevance", "page": 2, "type": "body", "description": "Correlation between TCR distances and expression distances" },
+    "S008": { "section": "RESULTS / Annotating the functional relevance", "page": 2, "type": "body", "description": "Tessa core rationale and iterative algorithm" },
+    "S009": { "section": "RESULTS / Annotating the functional relevance", "page": 2, "type": "body", "description": "Consistency of learned weights across datasets" },
+    "S010": { "section": "RESULTS / Convergent TCR recombinations", "page": 2, "type": "body", "description": "TCR network purity validation" },
+    "S011": { "section": "RESULTS / Convergent TCR recombinations", "page": 3, "type": "body", "description": "Center vs non-center T cells and 'wisdom of the crowds'" },
+    "S012": { "section": "RESULTS / Convergent TCR recombinations", "page": 3, "type": "body", "description": "Antigen binding strength gradient" },
+    "S013": { "section": "RESULTS / TCR-dependent dichotomization post-ICI", "page": 3, "type": "body", "description": "BCC dataset and comparison with Yost et al." },
+    "S014": { "section": "RESULTS / TCR-dependent dichotomization post-ICI", "page": 3, "type": "body", "description": "T-SNE analysis showing three clusters in responders" },
+    "S015": { "section": "RESULTS / TCR-dependent dichotomization post-ICI", "page": 4, "type": "body", "description": "TGFB1 and pathway activity analysis" },
+    "S016": { "section": "RESULTS / TCR-dependent dichotomization post-ICI", "page": 4, "type": "body", "description": "Diffusion map and pseudotime analysis" },
+    "S017": { "section": "RESULTS / TCR-dependent dichotomization post-ICI", "page": 4, "type": "body", "description": "Summary of post-ICI dichotomization finding" },
+    "S018": { "section": "RESULTS / TCR constraint in tumor contexts", "page": 4, "type": "body", "description": "CTCL vs healthy donor t-SNE comparison" },
+    "S019": { "section": "RESULTS / TCR constraint in tumor contexts", "page": 5, "type": "body", "description": "Quantitative TCR-expression correlation in CTCL vs healthy" },
+    "S020": { "section": "RESULTS / TCR constraint in tumor contexts", "page": 5, "type": "body", "description": "Unexplained variance analysis across 19 datasets" },
+    "S021": { "section": "RESULTS / TCR constraint in tumor contexts", "page": 5, "type": "body", "description": "Cytokine pathway activity correlation" },
+    "S022": { "section": "DISCUSSION", "page": 5, "type": "body", "description": "Main findings and alignment with prior work" },
+    "S023": { "section": "DISCUSSION", "page": 5, "type": "body", "description": "Translational value and implications" },
+    "S024": { "section": "DISCUSSION", "page": 5, "type": "body", "description": "Limitations and future directions" },
+    "S025": { "section": "DISCUSSION", "page": 5, "type": "body", "description": "Conclusion" },
+    "S026": { "section": "ONLINE METHODS / Embedding TCR sequences", "page": 5, "type": "methods", "description": "Atchley factor encoding details" },
+    "S027": { "section": "ONLINE METHODS / Tessa model description", "page": 6, "type": "methods", "description": "Dirichlet Process and parameter updating" },
+    "S028": { "section": "ONLINE METHODS / Statistical analyses", "page": 7, "type": "methods", "description": "R environment, SCINA, t-SNE, statistical tests" }
+  },
+  "figures": {
+    "F001": { "file": "assets/fig1.jpg", "source_page": 2, "caption_page": 2, "description": "Fig. 1: The tessa algorithm flowchart" },
+    "F002": { "file": "assets/fig2.jpg", "source_page": 3, "caption_page": 3, "description": "Fig. 2: TCR networks targeting efficiency gradient" },
+    "F003": { "file": "assets/fig3.jpg", "source_page": 4, "caption_page": 4, "description": "Fig. 3: TCR similarity post-immunotherapy" },
+    "F004": { "file": "assets/fig4.jpg", "source_page": 5, "caption_page": 5, "description": "Fig. 4: TCR constraint in healthy vs tumor" },
+    "F005": { "file": "assets/extfig1.jpg", "source_page": 6, "caption_page": 6, "description": "Extended Data Fig. 1: Auto-encoder details" },
+    "F006": { "file": "assets/extfig2.jpg", "source_page": 6, "caption_page": 6, "description": "Extended Data Fig. 2: TCR-expression distance scatterplots" },
+    "F007": { "file": "assets/extfig3.jpg", "source_page": 6, "caption_page": 6, "description": "Extended Data Fig. 3: TCR embedding weights" },
+    "F008": { "file": "assets/extfig4.jpg", "source_page": 6, "caption_page": 6, "description": "Extended Data Fig. 4: GLIPH benchmarking" },
+    "F009": { "file": "assets/extfig5.jpg", "source_page": 6, "caption_page": 6, "description": "Extended Data Fig. 5: Antigen specificity clustering" },
+    "F010": { "file": "assets/extfig6.jpg", "source_page": 6, "caption_page": 6, "description": "Extended Data Fig. 6: Pathway activity scores" },
+    "F011": { "file": "assets/extfig7.jpg", "source_page": 6, "caption_page": 6, "description": "Extended Data Fig. 7: Pseudotime analysis" },
+    "F012": { "file": "assets/extfig8.jpg", "source_page": 6, "caption_page": 6, "description": "Extended Data Fig. 8: Unexplained variance sketch" }
+  },
+  "captions": {
+    "C001": { "figure": "F001", "page": 2, "type": "main_figure_caption" },
+    "C002": { "figure": "F002", "page": 3, "type": "main_figure_caption" },
+    "C003": { "figure": "F003", "page": 4, "type": "main_figure_caption" },
+    "C004": { "figure": "F004", "page": 5, "type": "main_figure_caption" },
+    "C005": { "figure": "F005", "page": 6, "type": "extended_data_caption" },
+    "C006": { "figure": "F006", "page": 6, "type": "extended_data_caption" },
+    "C007": { "figure": "F007", "page": 6, "type": "extended_data_caption" },
+    "C008": { "figure": "F008", "page": 6, "type": "extended_data_caption" },
+    "C009": { "figure": "F009", "page": 6, "type": "extended_data_caption" },
+    "C010": { "figure": "F010", "page": 6, "type": "extended_data_caption" },
+    "C011": { "figure": "F011", "page": 6, "type": "extended_data_caption" },
+    "C012": { "figure": "F012", "page": 6, "type": "extended_data_caption" }
+  },
+  "supplementary": {
+    "SD1": { "type": "supplementary_note", "description": "Supplementary Note 1: Detailed tessa description" },
+    "SD2": { "type": "supplementary_table", "description": "Supplementary Table 1: Data cohorts" },
+    "SD3": { "type": "supplementary_table", "description": "Supplementary Table 2: Pathway genes" }
+  }
+}

@@ -1,0 +1,3 @@
+[     827ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://www.sciencedirect.com/science/article/pii/S2211124724014872:0
+[    1229ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.sciencedirect.com/craft/hosnb?tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&rh=d3d3LnNjaWVuY2VkaXJlY3QuY29t:0
+[    1443ms] [ERROR] Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOriginAfterDefaultedToSameOriginByCoep @ https://sdfestaticassets-us-east-1.sciencedirectassets.com/shared-assets/24/images/elsevier-non-solus-new-grey.svg:0

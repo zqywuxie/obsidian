@@ -1,0 +1,65 @@
+{
+  "paper": {
+    "key": "dynnet-2026",
+    "title": "Inferring stochastic dynamics by biophysical Neural ODE using single-cell transcriptomics",
+    "doi": "10.1038/s41467-026-73257-z",
+    "source": "Nature Communications (2026), Article in Press",
+    "url": "https://doi.org/10.1038/s41467-026-73257-z"
+  },
+  "article": {
+    "source": "defuddle(https://mp.weixin.qq.com/s/Um73DQFGq2KsVC0Mgek6jQ)",
+    "title": "DynNet：把单细胞静态快照变成细胞命运的动力学模型",
+    "platform": "微信公众号 — 计算生物前沿"
+  },
+  "blocks": [
+    { "id": "S001", "type": "header", "section": "Introduction", "description": "开场：静态快照 vs 连续动态 — DynNet 要解决的问题" },
+    { "id": "S002", "type": "body", "section": "Background", "description": "已有方法的局限性：拟时序、Markov、RNA velocity 不能解释机制" },
+    { "id": "S003", "type": "body", "section": "Background", "description": "确定性ODE vs 随机性：细胞命运是多稳定态 + 噪声的系统" },
+    { "id": "S004", "type": "figure", "section": "Core Framework", "description": "Figure 1: DynNet 整体框架示意图" },
+    { "id": "S005", "type": "body", "section": "Core Framework", "description": "DynNet 核心框架：SDE 漂移项 + 扩散项 + 希尔函数 + 先验约束" },
+    { "id": "S006", "type": "figure", "section": "Core Framework", "description": "Figure 1: 硬约束 vs 软约束说明" },
+    { "id": "S007", "type": "body", "section": "MISA Validation", "description": "MISA 模型模拟验证：5 时间点，3 稳定态恢复" },
+    { "id": "S008", "type": "figure", "section": "MISA Validation", "description": "Figure 2: MISA 验证结果 — 稳定态、决策边界、速度场、能量景观" },
+    { "id": "S009", "type": "body", "section": "MISA Validation", "description": "DynNet 恢复决策边界的能力优于确定性 Neural ODE" },
+    { "id": "S010", "type": "body", "section": "7-gene Branching", "description": "7基因发育分支模拟：G1-G3 级联激活，G4/G5 互相抑制开关" },
+    { "id": "S011", "type": "figure", "section": "7-gene Branching", "description": "Figure 3: 7基因分支结果 — 表达动态、速度场、硬/软约束对比" },
+    { "id": "S012", "type": "body", "section": "7-gene Branching", "description": "硬约束 vs 软约束：收敛速度 vs 发现新边的能力" },
+    { "id": "S013", "type": "body", "section": "Hepatocyte", "description": "肝细胞分化：iPSC → DE → HE → MH/LB 分叉" },
+    { "id": "S014", "type": "figure", "section": "Hepatocyte", "description": "Figure 4: 肝细胞分化结果 — 能量景观、转变路径、FPT、敲除模拟" },
+    { "id": "S015", "type": "body", "section": "Hepatocyte", "description": "转变作用量分析：中间态降低转变代价，MH 比 LB 更易达到" },
+    { "id": "S016", "type": "body", "section": "Hepatocyte", "description": "计算敲除模拟：TOB1 → LB 加速，RANBP1 → MH 促进" },
+    { "id": "S017", "type": "body", "section": "EMT/MET", "description": "EMT/MET 时间序列：36 基因，7 时间点，>100000 细胞" },
+    { "id": "S018", "type": "figure", "section": "EMT/MET", "description": "Figure 5: EMT 能量景观 — 数据驱动 vs 模型重建" },
+    { "id": "S019", "type": "body", "section": "EMT/MET", "description": "MET 更可能经过中间态（IM/pEMT），而非直接切换" },
+    { "id": "S020", "type": "figure", "section": "EMT/MET", "description": "Figure 6: 转变路径、参数敏感性分析、敲除模拟" },
+    { "id": "S021", "type": "body", "section": "EMT/MET", "description": "CD44 敲除使间质态细胞回到上皮态，CDH1 降低促进 EMT" },
+    { "id": "S022", "type": "body", "section": "EMT/MET", "description": "TGF-β 作为外源调控节点加入模型，模拟 EMT 过程" },
+    { "id": "S023", "type": "body", "section": "Significance", "description": "论文意义：把静态快照、GRN、随机动力学、能量景观、命运转变统一" },
+    { "id": "S024", "type": "metadata", "section": "Paper Info", "description": "论文信息：标题、期刊、作者、发表日期" }
+  ],
+  "section_index": {
+    "Introduction": { "start": "S001", "blocks": ["S001"] },
+    "Background": { "start": "S002", "blocks": ["S002", "S003"] },
+    "Core Framework": { "start": "S004", "blocks": ["S004", "S005", "S006"] },
+    "MISA Validation": { "start": "S007", "blocks": ["S007", "S008", "S009"] },
+    "7-gene Branching": { "start": "S010", "blocks": ["S010", "S011", "S012"] },
+    "Hepatocyte": { "start": "S013", "blocks": ["S013", "S014", "S015", "S016"] },
+    "EMT/MET": { "start": "S017", "blocks": ["S017", "S018", "S019", "S020", "S021", "S022"] },
+    "Significance": { "start": "S023", "blocks": ["S023"] },
+    "Paper Info": { "start": "S024", "blocks": ["S024"] }
+  },
+  "figures": {
+    "fig1": { "page": 52, "description": "DynNet framework overview — workflow, SDE model, comparison table", "files": ["assets/fig1_overview.png"] },
+    "fig2": { "page": 53, "description": "MISA model validation — stable states, decision boundaries, landscape", "files": ["assets/fig2a_misa_model.png", "assets/fig2b_stable_states.png", "assets/fig2c_decision_boundaries.png", "assets/fig2d_landscape.png"] },
+    "fig3": { "page": 54, "description": "7-gene developmental branching — cascade activation, bifurcation", "files": ["assets/fig3_branching.png", "assets/fig3_gene_dynamics.png"] },
+    "fig4": { "page": 55, "description": "Hepatocyte differentiation — trajectory, landscape, transition paths, knockout", "files": ["assets/fig4_hepatocyte.png", "assets/fig4a_trajectory.png"] },
+    "fig5": { "page": 56, "description": "EMT landscape — data-driven vs model-based, velocity field, GRN", "files": ["assets/fig5_emt_landscape.png", "assets/fig5b_landscape_2d.png"] },
+    "fig6": { "page": 57, "description": "EMT transition paths — minimum action path, sensitivity analysis, knockout", "files": ["assets/fig6_transition_paths.png", "assets/fig6b_sensitivity.png"] }
+  },
+  "resources": {
+    "doi": "https://doi.org/10.1038/s41467-026-73257-z",
+    "pdf": "original.pdf",
+    "paper_url": "https://www.nature.com/articles/s41467-026-73257-z",
+    "article_url": "https://mp.weixin.qq.com/s/Um73DQFGq2KsVC0Mgek6jQ"
+  }
+}

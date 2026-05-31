@@ -1,0 +1,43 @@
+- generic [ref=e1]:
+  - generic [ref=e6]:
+    - generic [ref=e8]:
+      - generic [ref=e9]: 正在检查浏览器以便让您访问 pmc.ncbi.nlm.nih.gov…
+      - generic [ref=e10]:
+        - text: 如果系统在 5 秒后未自动将您重定向，请点击
+        - link "此处" [ref=e11] [cursor=pointer]:
+          - /url: "#"
+        - text: 。
+    - iframe [ref=e14]:
+      - generic [ref=f1e6]:
+        - text: 由
+        - strong [ref=f1e7]: reCAPTCHA
+        - text: 提供保护
+  - iframe [active] [ref=e17]:
+    - dialog [ref=f4e57]:
+      - generic [ref=f4e58]:
+        - generic [ref=f4e61]:
+          - text: 请选择包含
+          - strong [ref=f4e62]: 人行横道
+          - text: 的所有图片。
+          - generic [ref=f4e63]: 在没有新图片可以点按后，请点击“验证”。
+        - table [ref=f4e66]:
+          - rowgroup [ref=f4e67]:
+            - row [ref=f4e68]:
+              - button [ref=f4e69]
+              - button [ref=f4e72]
+              - button [ref=f4e76]
+            - row [ref=f4e79]:
+              - button [ref=f4e80]
+              - button [ref=f4e83]
+              - button [ref=f4e87]
+            - row [ref=f4e91]:
+              - button [ref=f4e92]
+              - button [ref=f4e95]
+              - button [ref=f4e99]
+        - generic [ref=f4e103]: 另外，您还需查看新显示的图片。
+      - generic [ref=f4e107]:
+        - generic [ref=f4e108]:
+          - button "换一个新的验证码" [ref=f4e110] [cursor=pointer]
+          - button "改用音频验证" [ref=f4e112] [cursor=pointer]
+          - button "帮助" [ref=f4e114] [cursor=pointer]
+        - button "验证" [active] [ref=f4e116] [cursor=pointer]

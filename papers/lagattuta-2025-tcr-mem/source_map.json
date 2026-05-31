@@ -1,0 +1,50 @@
+{
+  "paper": {
+    "title": "The T cell receptor sequence influences the likelihood of T cell memory formation",
+    "pmcid": "PMC11785489",
+    "pmid": "39731734",
+    "doi": "10.1016/j.celrep.2024.115098"
+  },
+  "source_blocks": {
+    "S001": { "section": "Summary", "page": 1, "type": "abstract", "description": "Full abstract of the paper" },
+    "S002": { "section": "INTRODUCTION", "page": 1, "type": "body", "description": "T cell biology, TCR recombination and previous methods" },
+    "S003": { "section": "RESULTS / T cell transcriptional state annotation", "page": 2, "type": "body", "description": "UMAP clustering of dataset 1 into A1-A9 and B1-B9 clusters" },
+    "S004": { "section": "RESULTS / Transcriptional fate matching (TCR twins)", "page": 2-3, "type": "body", "description": "115 TCR twin pairs, 80 concordant (p=6.1e-28), controls for HLA and COVID status" },
+    "S005": { "section": "RESULTS / Multidimensional approach (rCCA)", "page": 3-4, "type": "body", "description": "1250 TCR features via Atchley factors, rCCA on 494,419 cells from datasets 1+2" },
+    "S006": { "section": "RESULTS / rCCA identifies four T cell fates", "page": 4, "type": "body", "description": "CV1 (innate), CV2 (CD8/CD4), CV3 (Treg), CV4 (naive/memory)" },
+    "S007": { "section": "RESULTS / TCR scoring functions", "page": 4-5, "type": "body", "description": "TCR-innate, TCR-CD8, TCR-reg, TCR-mem via logistic regression on 1250 features" },
+    "S008": { "section": "RESULTS / TCR scoring functions generalize", "page": 5-6, "type": "body", "description": "Validation across clinical strata, held-out data, and external dataset 3" },
+    "S009": { "section": "RESULTS / Alternative TCR scoring schemes", "page": 6-7, "type": "body", "description": "Benchmark vs TiRP, AAIS, CNN — TCR-reg and TCR-mem outperform" },
+    "S010": { "section": "RESULTS / Nonproductive TCRs", "page": 7, "type": "body", "description": "Nonproductive TCRs show no association, effects require surface protein expression" },
+    "S011": { "section": "RESULTS / TCR-mem predicts activation", "page": 7-9, "type": "body", "description": "MART-1 and NLV Jurkat transduction, Dextramer meta-analysis across 29 populations" },
+    "S012": { "section": "RESULTS / TCR-mem distinct from affinity", "page": 9-10, "type": "body", "description": "Tetramer dilution, iTAST, PDB buried surface — all show no correlation with affinity" },
+    "S013": { "section": "RESULTS / Thymic selection", "page": 10-11, "type": "body", "description": "TCR-mem in DP vs SP thymocytes (β=0.14, p=1.3e-7), indistinguishable from peripheral memory effect" },
+    "S014": { "section": "DISCUSSION", "page": 11, "type": "discussion", "description": "Four TCR scoring functions, MAIT determinism, CDR3 hydrophobicity, generic MHC reactivity" },
+    "S015": { "section": "Limitations of the study", "page": 11, "type": "discussion", "description": "αβ only, dual-α excluded, insufficient for accurate classification" },
+    "S016": { "section": "Data and code availability", "page": 11, "type": "resources", "description": "GitHub repositories and data access" }
+  },
+  "figures": {
+    "F001": { "file": "assets/fig1.jpg", "source_page": 2, "caption_page": 2, "description": "Fig 1: TCR twin analysis — UMAP, MAIT/NKT labeling, twin pairs, concordance barplot" },
+    "F002": { "file": "assets/fig2.jpg", "source_page": 3, "caption_page": 4, "description": "Fig 2: rCCA and TCR scoring functions — schematic, 1250 features, canonical correlations, CV UMAPs, CDR contributions" },
+    "F003": { "file": "assets/fig3.jpg", "source_page": 5, "caption_page": 6, "description": "Fig 3: Generalization — forest plots, held-out validation, external dataset decile analysis" },
+    "F004": { "file": "assets/fig4.jpg", "source_page": 7, "caption_page": 8, "description": "Fig 4: Antigen-specific activation — TCR-mem by subset, Jurkat transduction, Dextramer meta-analysis" },
+    "F005": { "file": "assets/fig5.jpg", "source_page": 9, "caption_page": 10, "description": "Fig 5: Thymic selection — SP proportion by TCR-mem quintile, DP vs SP comparison, TCR-CD8 and TCR-reg in thymus" }
+  },
+  "captions": {
+    "C001": { "figure": "F001", "page": 2, "type": "main_figure_caption" },
+    "C002": { "figure": "F002", "page": 4, "type": "main_figure_caption" },
+    "C003": { "figure": "F003", "page": 6, "type": "main_figure_caption" },
+    "C004": { "figure": "F004", "page": 8, "type": "main_figure_caption" },
+    "C005": { "figure": "F005", "page": 10, "type": "main_figure_caption" }
+  },
+  "tables": {
+    "T001": { "section": "Table 1", "page": 1, "type": "main_table", "description": "7 datasets analyzed in this study" },
+    "T002": { "section": "Table 2", "page": 8, "type": "main_table", "description": "8 TCR sequences used in transduction experiments" }
+  },
+  "supplementary": {
+    "SD1": { "type": "supplementary_figures", "description": "Supplementary Figures S1-S7" },
+    "SD2": { "type": "supplementary_table", "description": "Table S2: 1250 TCR sequence features" },
+    "SD3": { "type": "supplementary_table", "description": "Table S3: rCCA CV gene/protein correlations" },
+    "SD4": { "type": "supplementary_table", "description": "Table S4: Full association statistics" }
+  }
+}

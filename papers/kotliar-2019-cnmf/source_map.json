@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "paper_key": "kotliar-2019-cnmf",
+    "title": "Identifying gene expression programs of cell-type identity and cellular activity with single-cell RNA-Seq",
+    "authors": "Dylan Kotliar, Adrian Veres, M Aurel Nagy, Shervin Tabrizi, Eran Hodis, Douglas A Melton, Pardis C Sabeti",
+    "journal": "eLife",
+    "volume": "8",
+    "pages": "e43803",
+    "year": 2019,
+    "doi": "10.7554/eLife.43803",
+    "url": "https://doi.org/10.7554/eLife.43803",
+    "pdf": "original.pdf",
+    "source_type": "publisher_html",
+    "fetched_date": "2026-05-16"
+  },
+  "resources": {
+    "code": [
+      {"name": "cNMF (main)", "url": "https://github.com/dylkot/cNMF/"},
+      {"name": "cNMF (archived)", "url": "https://github.com/elifesciences-publications/cNMF"},
+      {"name": "scsim simulator", "url": "https://github.com/dylkot/scsim"},
+      {"name": "scsim (archived)", "url": "https://github.com/elifesciences-publications/scsim"}
+    ],
+    "data": [
+      {"name": "Brain organoid (Quadrato 2017)", "accession": "GSE86153", "database": "GEO"},
+      {"name": "Visual cortex (Hrvatin 2018)", "accession": "GSE102827", "database": "GEO"},
+      {"name": "Visual cortex (Tasic 2016)", "accession": "GSE71585", "database": "GEO"},
+      {"name": "Pancreatic islets (Baron 2016)", "accession": "GSE50244", "database": "GEO"}
+    ],
+    "reproducibility": [
+      {"name": "Code Ocean capsule", "doi": "10.24433/CO.9044782e-cb96-4733-8a4f-bf42c21399e6", "url": "https://doi.org/10.24433/CO.9044782e-cb96-4733-8a4f-bf42c21399e6"}
+    ]
+  },
+  "sections": {
+    "S000-S003": {"title": "Abstract", "page": 1},
+    "S004-S010": {"title": "Introduction", "page": "1-4"},
+    "S011-S022": {"title": "Results: Simulation benchmarking", "page": "4-9"},
+    "S023-S033": {"title": "Results: Brain organoid data", "page": "9-14"},
+    "S034-S045": {"title": "Results: Visual cortex data", "page": "14-19"},
+    "S046-S052": {"title": "Discussion", "page": "19-22"},
+    "S053-S075": {"title": "Materials and methods", "page": "22-30"},
+    "S076-S078": {"title": "Data and code availability", "page": "31"},
+    "S079-S082": {"title": "Supplementary: Batch-effect analysis", "page": "31-33"}
+  },
+  "figures": {
+    "F001": {"label": "Fig. 1", "title": "cNMF pipeline schematic", "url": "https://iiif.elifesciences.org/lax/43803%2Felife-43803-fig1-v2.tif/full/1234,/0/default.webp"},
+    "F002": {"label": "Fig. 2", "title": "Simulation benchmarking results", "url": "https://iiif.elifesciences.org/lax/43803%2Felife-43803-fig2-v2.tif/full/1234,/0/default.webp"},
+    "F003": {"label": "Fig. 3", "title": "Brain organoid results", "url": "https://iiif.elifesciences.org/lax/43803%2Felife-43803-fig3-v2.tif/full/1234,/0/default.webp"},
+    "F004": {"label": "Fig. 4", "title": "Visual cortex results", "url": "https://iiif.elifesciences.org/lax/43803%2Felife-43803-fig4-v2.tif/full/1234,/0/default.webp"},
+    "F005": {"label": "Fig. 5", "title": "Robustness to K", "url": "https://iiif.elifesciences.org/lax/43803%2Felife-43803-fig5-v2.tif/full/1234,/0/default.webp"}
+  }
+}

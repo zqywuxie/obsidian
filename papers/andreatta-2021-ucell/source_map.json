@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "paper_key": "andreatta-2021-ucell",
+    "title": "UCell: Robust and scalable single-cell gene signature scoring",
+    "authors": "Massimo Andreatta and Santiago J. Carmona",
+    "journal": "Computational and Structural Biotechnology Journal",
+    "volume": "19",
+    "pages": "3796-3798",
+    "year": 2021,
+    "doi": "10.1016/j.csbj.2021.06.043",
+    "url": "https://doi.org/10.1016/j.csbj.2021.06.043",
+    "pdf": "original.pdf",
+    "source_type": "publisher_HTML",
+    "fetched_date": "2026-05-16",
+    "paper_type": "methods_algorithm"
+  },
+  "resources": {
+    "code": [
+      {"name": "UCell (R package)", "url": "https://github.com/carmonalab/UCell"},
+      {"name": "UCell demo/reproducibility", "url": "https://gitlab.unil.ch/carmona/UCell_demo"}
+    ]
+  },
+  "sections": {
+    "S001": {"title": "Abstract"},
+    "S002-S006": {"title": "Introduction"},
+    "S007-S008": {"title": "Methods"},
+    "S009": {"title": "Results"},
+    "S010": {"title": "Funding & CRediT"}
+  },
+  "figures": {
+    "F001": {"label": "Fig. 1", "title": "Evaluating T cell signatures using UCell", "file": "assets/fig1.jpg"}
+  },
+  "tables": {
+    "T001": {"label": "Table 1", "title": "Gene signatures for T cell subsets"}
+  }
+}

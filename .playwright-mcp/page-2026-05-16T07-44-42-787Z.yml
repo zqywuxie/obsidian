@@ -1,0 +1,625 @@
+- generic [ref=e1]:
+  - dialog "Cookie 同意横幅" [ref=e2]:
+    - button "关闭此对话框" [active] [ref=e3] [cursor=pointer]:
+      - img "关闭此对话框" [ref=e4]
+    - generic [ref=e5]:
+      - generic [ref=e6]: 本网站利用 Cookie 等技术来启用基本网站功能以及 分析、个性化定制 和 有针对性的广告。 要了解更多信息，请查看以下链接：
+      - link "隐私政策" [ref=e7] [cursor=pointer]:
+        - /url: https://www.science.org/content/page/privacy-policy
+    - button "设定偏好" [ref=e9] [cursor=pointer]
+  - generic [ref=e12]:
+    - link "Skip to main content" [ref=e13] [cursor=pointer]:
+      - /url: "#main-content-focus"
+    - generic [ref=e21]: Advertisement
+    - banner [ref=e23]:
+      - navigation [ref=e24]:
+        - generic [ref=e26]:
+          - list [ref=e28]:
+            - listitem [ref=e29]:
+              - button "Toggle navigation" [ref=e30] [cursor=pointer]:
+                - generic [ref=e31]: 
+          - link "SPJ SPJ" [ref=e33] [cursor=pointer]:
+            - /url: /
+            - img "SPJ" [ref=e34]
+            - img "SPJ" [ref=e35]
+          - list [ref=e37]:
+            - listitem [ref=e38]:
+              - link "" [ref=e39] [cursor=pointer]:
+                - /url: "#header-quick-search-wrapper"
+                - generic [ref=e40]: 
+      - text: 
+    - generic:    󡀆  | |
+    - generic [ref=e43]:
+      - link "Logo Image" [ref=e44] [cursor=pointer]:
+        - /url: /journal/csbj
+        - img "Logo Image" [ref=e45]
+      - generic [ref=e46]:
+        - list [ref=e48]:
+          - listitem [ref=e49]:
+            - link "Submit Manuscript" [ref=e50] [cursor=pointer]:
+              - /url: https://www.editorialmanager.com/csbj/default.aspx
+        - list [ref=e52]:
+          - listitem [ref=e53]:
+            - button "More" [ref=e55] [cursor=pointer]
+      - link "Research Networks Logo" [ref=e57] [cursor=pointer]:
+        - /url: https://www.research-networks.org/
+        - img "Research Networks Logo" [ref=e58]
+    - generic [ref=e59]: Main content starts here
+    - main [ref=e60]:
+      - generic [ref=e61]:
+        - article [ref=e62]:
+          - generic [ref=e64]:
+            - navigation [ref=e66]:
+              - generic [ref=e67]:
+                - link "Home" [ref=e68] [cursor=pointer]:
+                  - /url: /
+                - generic [ref=e69]: 
+                - link "Computational and Structural Biotechnology Journal" [ref=e70] [cursor=pointer]:
+                  - /url: "/journal/csbj "
+                - generic [ref=e71]: 
+                - link "Table Of Contents" [ref=e72] [cursor=pointer]:
+                  - /url: "/index/csbj "
+                - generic [ref=e73]: 
+                - generic [ref=e74]: "UCell: Robust and scalable single-cell gene signature scoring"
+              - text: 
+            - generic [ref=e75]:
+              - generic [ref=e76]:
+                - generic [ref=e77]:
+                  - generic [ref=e78]: 
+                  - generic [ref=e79]: Open access
+                - generic [ref=e80]: Software/Web server Article
+              - generic [ref=e83]:
+                - generic [ref=e84]: Share on
+                - list [ref=e85]:
+                  - listitem [ref=e86]:
+                    - link "Share on facebook" [ref=e87] [cursor=pointer]:
+                      - /url: /#facebook
+                      - generic [ref=e88]: 
+                  - listitem [ref=e89]:
+                    - link "Share on x" [ref=e90] [cursor=pointer]:
+                      - /url: /#x
+                      - generic [ref=e91]: 
+                  - listitem [ref=e92]:
+                    - link "Share on linkedin" [ref=e93] [cursor=pointer]:
+                      - /url: /#linkedin
+                      - generic [ref=e94]: 
+                  - listitem [ref=e95]:
+                    - link "Share on reddit" [ref=e96] [cursor=pointer]:
+                      - /url: /#reddit
+                      - generic [ref=e97]: 
+                  - listitem [ref=e98]:
+                    - link "Share on wechat" [ref=e99] [cursor=pointer]:
+                      - /url: /#wechat
+                      - generic [ref=e100]: 󡀆
+                  - listitem [ref=e101]:
+                    - link "Share on email" [ref=e102] [cursor=pointer]:
+                      - /url: /#email
+                      - generic [ref=e103]: 
+            - 'heading "UCell: Robust and scalable single-cell gene signature scoring" [level=1] [ref=e104]'
+            - generic [ref=e105]:
+              - list [ref=e107]:
+                - listitem [ref=e108]:
+                  - link "Massimo Andreatta" [ref=e109] [cursor=pointer]:
+                    - /url: "#au005"
+                - text: and
+                - listitem [ref=e110]:
+                  - link "Santiago J. Carmona" [ref=e111] [cursor=pointer]:
+                    - /url: "#au010"
+              - link "Authors Info & Affiliations" [ref=e112] [cursor=pointer]:
+                - /url: "#tab-contributors"
+            - generic [ref=e113]:
+              - generic [ref=e114]: 7 Jul 2021
+              - generic [ref=e116]: Vol 19
+              - generic [ref=e117]: "Article ID: 3796-3798"
+            - generic [ref=e119]:
+              - link [ref=e121] [cursor=pointer]:
+                - /url: "#tab-citations"
+                - generic [ref=e122]: 
+              - link [ref=e124] [cursor=pointer]:
+                - /url: /doi/reader/10.1016/j.csbj.2021.06.043
+                - generic [ref=e125]: 
+          - generic "Article navigation" [ref=e126]:
+            - generic [ref=e127]:
+              - button "Toggle section navigation menu" [ref=e128] [cursor=pointer]:
+                - generic [ref=e129]: 
+              - navigation "Contents"
+            - navigation [ref=e130]:
+              - list [ref=e131]:
+                - listitem [ref=e132]:
+                  - link "Information & Authors" [disabled]:
+                    - /url: "#core-collateral-info"
+                    - generic: 
+                    - generic: Information & Authors
+                - listitem [ref=e133]:
+                  - link "Metrics & Citations" [disabled]:
+                    - /url: "#core-collateral-metrics"
+                    - generic: 
+                    - generic: Metrics & Citations
+                - listitem [ref=e134]:
+                  - link "View Options" [disabled]:
+                    - /url: "#core-collateral-fulltext-options"
+                    - generic: 
+                    - generic: View Options
+                - listitem [ref=e135]:
+                  - link "References" [disabled]:
+                    - /url: "#core-collateral-references"
+                    - generic: 
+                    - generic: References
+                - listitem [ref=e136]:
+                  - link "Figures" [disabled]:
+                    - /url: "#core-collateral-figures"
+                    - generic: 
+                    - generic: Figures
+                - listitem [ref=e137]:
+                  - link "Tables" [disabled]:
+                    - /url: "#core-collateral-tables"
+                    - generic: 
+                    - generic: Tables
+                - listitem [ref=e138]:
+                  - link "Media" [disabled]:
+                    - /url: "#core-collateral-media"
+                    - generic: 
+                    - generic: Media
+                - listitem [ref=e139]:
+                  - link "Share" [disabled]:
+                    - /url: "#core-collateral-share"
+                    - generic: 
+                    - generic: Share
+          - generic [ref=e140]:
+            - generic [ref=e142]:
+              - generic [ref=e143]:
+                - heading "Abstract" [level=2] [ref=e144]
+                - paragraph [ref=e145]:
+                  - text: UCell is an R package for evaluating gene signatures in single-cell datasets. UCell signature scores, based on the Mann-Whitney U statistic, are robust to dataset size and heterogeneity, and their calculation demands less computing time and memory than other available methods, enabling the processing of large datasets in a few minutes even on machines with limited computing power. UCell can be applied to any single-cell data matrix, and includes functions to directly interact with Seurat objects. The UCell package and documentation are available on GitHub at
+                  - link "https://github.com/carmonalab/UCell" [ref=e146] [cursor=pointer]:
+                    - /url: https://github.com/carmonalab/UCell
+                  - text: .
+              - generic [ref=e149]:
+                - heading "SIGN UP FOR Computational and Structural Biotechnology Journal eTOC ALERTS!" [level=4] [ref=e150]
+                - generic [ref=e151]:
+                  - generic [ref=e152]: Get the latest SPJ table of contents delivered right to you!
+                  - button "GET OUR E-ALERTS" [ref=e154] [cursor=pointer]:
+                    - generic [ref=e155]: GET OUR E-ALERTS
+                    - generic [ref=e156]: 
+            - generic [ref=e158]:
+              - generic [ref=e159]:
+                - heading "1. Introduction" [level=2] [ref=e160]
+                - paragraph [ref=e161]:
+                  - text: In single-cell RNA-seq analysis, gene signature (or “module”) scoring constitutes a simple yet powerful approach to evaluate the strength of biological signals, typically associated to a specific cell type or biological process, in a transcriptome. Thousands of gene sets have been derived by measuring transcriptional differences between different biological states or cell phenotypes, and are collected in public databases such as MSigDB
+                  - link "[1]" [ref=e162] [cursor=pointer]:
+                    - /url: "#b0005"
+                  - text: . More recently, large-scale efforts to construct single-cell atlases
+                  - link "[2,3]" [ref=e163] [cursor=pointer]:
+                    - /url: "#b0010"
+                  - text: are providing specific gene sets that can be useful to discriminate between cell types. For example, Han et al. have used single-cell RNA sequencing to quantify cell type heterogeneity in different tissues and to define gene signatures for >100 human and murine cell types
+                  - link "[3]" [ref=e164] [cursor=pointer]:
+                    - /url: "#b0015"
+                  - text: . Given such a gene set, signature scoring aims at quantifying the activity of the genes in the set, with the goal to characterize cell types, states, active biological processes or responses to environmental cues. The Seurat R package
+                  - link "[4]" [ref=e165] [cursor=pointer]:
+                    - /url: "#b0020"
+                  - text: is one of the most comprehensive and widely used frameworks for scRNA-seq data analysis. Seurat provides a computationally efficient gene signature scoring function, named AddModuleScore, originally proposed by Tirosh et al.
+                  - link "[5]" [ref=e166] [cursor=pointer]:
+                    - /url: "#b0025"
+                  - text: . However, because genes are binned based on their average expression across the whole dataset for normalization purposes, the method generates inconsistent results for the same cell depending on the composition of the dataset. Inspired by the AUCell algorithm implemented in SCENIC
+                  - link "[6]" [ref=e167] [cursor=pointer]:
+                    - /url: "#b0030"
+                  - text: ", we propose UCell, a gene signature scoring method based on the Mann-Whitney U statistic. UCell scores depend only on the relative gene expression in individual cells and are therefore not affected by dataset composition. We provide a time- and memory-efficient implementation of the algorithm that can be seamlessly incorporated into Seurat workflows."
+              - generic [ref=e168]:
+                - heading "2. Methods" [level=2] [ref=e169]
+                - paragraph [ref=e170]:
+                  - text: UCell calculates gene signature scores for scRNA-seq data based on the Mann-Whitney U statistic
+                  - link "[7]" [ref=e171] [cursor=pointer]:
+                    - /url: "#b0035"
+                  - text: . Given a g × c matrix
+                  - generic [ref=e172]: X
+                  - text: of numerical values (e.g. gene expression measurements) for g genes in c cells, we first calculate the matrix of relative ranks
+                  - generic [ref=e173]: R
+                  - text: by sorting each column in
+                  - generic [ref=e174]: X
+                  - text: ; in other words, we calculate a ranked list of genes for each cell in the dataset. Because in scRNA-seq not all molecules in the original sample are observed, transcript counts matrices contain many zeros, resulting in a long tail of bottom-ranking genes. To mitigate this uninformative tail, we set
+                  - generic [ref=e175]:
+                    - text: r
+                    - subscript [ref=e176]: g,c
+                  - text: =
+                  - generic [ref=e177]:
+                    - text: r
+                    - subscript [ref=e178]: max
+                  - text: + 1 for all
+                  - generic [ref=e179]:
+                    - text: r
+                    - subscript [ref=e180]: g,c
+                  - text: ">"
+                  - generic [ref=e181]:
+                    - text: r
+                    - subscript [ref=e182]: max
+                  - text: ", with"
+                  - generic [ref=e183]:
+                    - text: r
+                    - subscript [ref=e184]: max
+                  - text: = 1500 by default (matching typical thresholds used for quality control for minimum number of genes detected). To evaluate a gene signature
+                  - generic [ref=e185]: s
+                  - text: composed of n genes (
+                  - generic [ref=e186]:
+                    - text: s
+                    - subscript [ref=e187]: "1"
+                    - text: ","
+                  - text: …
+                  - generic [ref=e188]:
+                    - text: ",s"
+                    - subscript [ref=e189]: "n"
+                  - text: ), we calculate a UCell score U’ for each cell j in
+                  - generic [ref=e190]: X
+                  - text: "with the formula:"
+                  - math [ref=e192]:
+                    - math [ref=e194]:
+                      - generic [ref=e195]:
+                        - generic [ref=e196]:
+                          - generic [ref=e197]: U
+                          - generic [ref=e199]: j
+                          - generic [ref=e200]: "'"
+                        - generic [ref=e201]: =
+                        - generic [ref=e202]: "1"
+                        - generic [ref=e203]: "-"
+                        - generic [ref=e204]:
+                          - generic [ref=e205]:
+                            - generic [ref=e206]: U
+                            - generic [ref=e207]: j
+                          - generic [ref=e208]:
+                            - generic [ref=e209]: "n"
+                            - generic [ref=e210]: ∙
+                            - generic [ref=e211]:
+                              - generic [ref=e212]: r
+                              - generic [ref=e213]: max
+                  - text: "where U is the Mann-Whitney U statistic calculated by:"
+                  - math [ref=e215]:
+                    - math [ref=e217]:
+                      - generic [ref=e218]:
+                        - generic [ref=e219]:
+                          - generic [ref=e220]: U
+                          - generic [ref=e221]: j
+                        - generic [ref=e222]: =
+                        - generic [ref=e223]:
+                          - generic [ref=e224]: ∑
+                          - generic [ref=e225]:
+                            - generic [ref=e226]: i
+                            - generic [ref=e227]: =
+                            - generic [ref=e228]: "1"
+                          - generic [ref=e229]: "n"
+                        - generic [ref=e230]:
+                          - generic [ref=e231]: r
+                          - generic [ref=e232]:
+                            - generic [ref=e233]: i
+                            - generic [ref=e234]: ","
+                            - generic [ref=e235]: j
+                          - generic [ref=e236]: "'"
+                        - generic [ref=e237]: "-"
+                        - generic [ref=e238]:
+                          - generic [ref=e239]:
+                            - generic [ref=e240]: "n"
+                            - generic [ref=e241]: (
+                            - generic [ref=e242]: "n"
+                            - generic [ref=e243]: +
+                            - generic [ref=e244]: "1"
+                            - generic [ref=e245]: )
+                          - generic [ref=e246]: "2"
+                  - text: and
+                  - generic [ref=e247]: R′
+                  - text: is obtained by sub-setting
+                  - generic [ref=e248]: R
+                  - text: on the genes in signature
+                  - generic [ref=e249]: s
+                  - text: .
+                - paragraph [ref=e250]:
+                  - text: We note that the U statistic is closely related to the area-under-the-curve (AUC) statistic for ROC curves
+                  - link "[8]" [ref=e251] [cursor=pointer]:
+                    - /url: "#b0040"
+                  - text: ", therefore we expect UCell scores to correlate with methods based on AUC scores such as AUCell"
+                  - link "[6]" [ref=e252] [cursor=pointer]:
+                    - /url: "#b0030"
+                  - text: . Internally, UCell uses the frank function from the data.table package
+                  - link "[9]" [ref=e253] [cursor=pointer]:
+                    - /url: "#b0045"
+                  - text: for efficient ranks computations. Large datasets are automatically split into batches of reduced size, which can be processed serially (minimizing memory usage) or in parallel through the future package
+                  - link "[10]" [ref=e254] [cursor=pointer]:
+                    - /url: "#b0050"
+                  - text: (minimizing execution time) depending on the available computational resources.
+              - generic [ref=e255]:
+                - heading "3. Results" [level=2] [ref=e256]
+                - paragraph [ref=e257]:
+                  - text: UCell is an R package for the evaluation of gene signature enrichment designed for scRNA-seq data. Given a gene expression matrix or Seurat object, and a list of gene sets, UCell calculates signature scores for each cell, for each gene set. In the following illustrative example, we applied UCell to a single-cell multimodal dataset of human blood T cells
+                  - link "[11]" [ref=e258] [cursor=pointer]:
+                    - /url: "#b0055"
+                  - text: ", which were annotated by the authors using both gene (scRNA-seq) and cell surface marker expression (CITE-seq) ("
+                  - link "Fig. 1" [ref=e259] [cursor=pointer]:
+                    - /url: "#f0005"
+                  - text: A). Provided a set of T cell subtype-specific genes (
+                  - link "Table 1" [ref=e260] [cursor=pointer]:
+                    - /url: "#t0005"
+                  - text: ), UCell helps interpreting clusters in terms of signature enrichment in low-dimensional spaces such as the UMAP (
+                  - link "Fig. 1" [ref=e261] [cursor=pointer]:
+                    - /url: "#f0005"
+                  - text: B). Importantly, UCell scores are based on the relative ranking of genes for individual cells, therefore they are robust to dataset composition. Evaluating a CD8 T cell signature on the full dataset or on CD8 T cells only, results in identical score distributions for CD8 T cells in the two settings (
+                  - link "Fig. 1" [ref=e262] [cursor=pointer]:
+                    - /url: "#f0005"
+                  - text: C). Conversely, AddModuleScore from Seurat normalizes its scores against the average expression of a control set of genes across the whole dataset, and is therefore dependent on dataset composition. CD8 T cells analyzed in isolation or in the context of the full T cell dataset are assigned highly different AddModuleScore scores, with median ~1 in the full dataset and median ~0 for the CD8 T cell subset (
+                  - link "Fig. 1" [ref=e263] [cursor=pointer]:
+                    - /url: "#f0005"
+                  - text: D). Another widely-used method for single-cell signature scoring, AUCell
+                  - link "[6]" [ref=e264] [cursor=pointer]:
+                    - /url: "#b0030"
+                  - text: ", is also based on relative rankings and therefore has the same desirable property as UCell of reporting consistent scores regardless of dataset composition. Compared to AUCell, UCell is about three times faster ("
+                  - link "Fig. 1" [ref=e265] [cursor=pointer]:
+                    - /url: "#f0005"
+                  - text: E) and uses significantly less memory (
+                  - link "Fig. 1" [ref=e266] [cursor=pointer]:
+                    - /url: "#f0005"
+                  - text: F). For example, AUCell requires over 64 GB of RAM to process 100,000 single-cells, while UCell uses only 5.5 GB of peak memory (
+                  - link "Fig. 1" [ref=e267] [cursor=pointer]:
+                    - /url: "#f0005"
+                  - text: F), making it suitable even for machines with limited computing power.
+                - figure [ref=e269]:
+                  - img [ref=e270]
+                  - generic [ref=e271]:
+                    - text: Fig. 1. Evaluating T cell signatures using UCell. A) UMAP representation of T subsets from the single-cell dataset by Hao et al.
+                    - link "[11]" [ref=e272] [cursor=pointer]:
+                      - /url: "#b0055"
+                    - text: . B) UCell score distribution in UMAP space for five gene signatures (listed in
+                    - link "Table 1" [ref=e273] [cursor=pointer]:
+                      - /url: "#t0005"
+                    - text: ) evaluated using UCell. C-D) Comparison of UCell score (C) and Seurat’s AddModuleScore (D) distributions for a two-gene CD8 T cell signature (CD8A, CD8B), evaluated on the complete T cell dataset (black outlines), or on the subset of CD8 T cells only (red outlines); UCell scores for CD8 T cell have the same distribution in the complete or subset dataset, while AddModuleScores are highly dependent on dataset composition. E-F) Running time (E) and peak memory (F) for UCell and AUCell (which produces similar results) on datasets of different sizes show that UCell is about three times faster and requires up to ten times less memory on large (>10
+                    - superscript [ref=e274]: "4"
+                    - text: ) single-cell datasets. (For interpretation of the references to colour in this figure legend, the reader is referred to the web version of this article.)
+                - figure "Table 1. Gene signatures for T cell subsets in Fig. 1." [ref=e276]:
+                  - table [ref=e278]:
+                    - rowgroup [ref=e279]:
+                      - row "T cell type Gene set" [ref=e280]:
+                        - columnheader "T cell type" [ref=e281]
+                        - columnheader "Gene set" [ref=e282]
+                    - rowgroup [ref=e283]:
+                      - row "CD4 T cell CD4, CD40LG" [ref=e284]:
+                        - cell "CD4 T cell" [ref=e285]
+                        - cell "CD4, CD40LG" [ref=e286]
+                      - row "CD8 T cell CD8A, CD8B" [ref=e287]:
+                        - cell "CD8 T cell" [ref=e288]
+                        - cell "CD8A, CD8B" [ref=e289]
+                      - row "Treg FOXP3, IL2RA" [ref=e290]:
+                        - cell "Treg" [ref=e291]
+                        - cell "FOXP3, IL2RA" [ref=e292]
+                      - row "MAIT KLRB1, SLC4A10, NCR3" [ref=e293]:
+                        - cell "MAIT" [ref=e294]
+                        - cell "KLRB1, SLC4A10, NCR3" [ref=e295]
+                      - row "gd T cell TRDC, TRGC1, TRGC2, TRDV1" [ref=e296]:
+                        - cell "gd T cell" [ref=e297]
+                        - cell "TRDC, TRGC1, TRGC2, TRDV1" [ref=e298]
+                  - generic [ref=e299]:
+                    - text: Table 1. Gene signatures for T cell subsets in
+                    - link "Fig. 1." [ref=e300] [cursor=pointer]:
+                      - /url: "#f0005"
+                - paragraph [ref=e301]:
+                  - text: UCell is available as an R package at
+                  - link "https://github.com/carmonalab/UCell" [ref=e302] [cursor=pointer]:
+                    - /url: https://github.com/carmonalab/UCell
+                  - text: ", and is accompanied by vignettes for signature scoring and for seamless integration with Seurat pipelines. Source code to reproduce the results in this manuscript is available at the following repository:"
+                  - link "https://gitlab.unil.ch/carmona/UCell_demo" [ref=e303] [cursor=pointer]:
+                    - /url: https://gitlab.unil.ch/carmona/UCell_demo
+                  - text: .
+              - generic [ref=e304]:
+                - heading "Funding" [level=2] [ref=e305]
+                - paragraph [ref=e306]: "This research was supported by the Swiss National Science Foundation (SNF) Ambizione grant : 180010 to SJC."
+              - generic [ref=e307]:
+                - heading "CRediT authorship contribution statement" [level=2] [ref=e308]
+                - paragraph [ref=e309]: "Massimo Andreatta: Conceptualization, Methodology, Software, Formal analysis, Visualization, Writing - original draft, Writing - review & editing. Santiago J. Carmona: Conceptualization, Methodology, Software, Formal analysis, Writing - original draft, Writing - review & editing, Funding acquisition."
+            - generic [ref=e311]:
+              - generic [ref=e312]:
+                - heading "Declaration of Competing Interest" [level=2] [ref=e313]
+                - paragraph [ref=e314]: The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+              - generic [ref=e315]:
+                - heading "References" [level=2] [ref=e316]
+                - list [ref=e317]:
+                  - listitem [ref=e318]:
+                    - generic [ref=e319]: "1"
+                    - generic [ref=e321]:
+                      - generic [ref=e322]:
+                        - text: "Liberzon A., Birger C., Thorvaldsdóttir H., Ghandi M., Mesirov J.P. and Tamayo P.: The Molecular Signatures Database (MSigDB) hallmark gene set collection."
+                        - emphasis [ref=e323]: CellSyst
+                        - text: "2015; 1: 417."
+                      - link "Google Scholar" [ref=e326] [cursor=pointer]:
+                        - /url: https://scholar.google.com/scholar_lookup?title=The+Molecular+Signatures+Database+%28MSigDB%29+hallmark+gene+set+collection&author=A.+Liberzon&author=C.+Birger&author=H.+Thorvaldsd%C3%B3ttir&author=M.+Ghandi&author=J.P.+Mesirov&author=P.+Tamayo&publication_year=2015&journal=CellSyst&pages=417
+                  - listitem [ref=e327]:
+                    - generic [ref=e328]: "2"
+                    - generic [ref=e330]:
+                      - generic [ref=e331]: Regev A, Teichmann SA, Lander ES, Amit I, Benoist C, Birney E, et al. The Human Cell Atlas. ELife 2017;6. https://doi.org/10.7554/eLife.27041.
+                      - generic [ref=e332]:
+                        - link "Crossref" [ref=e334] [cursor=pointer]:
+                          - /url: https://doi.org/10.7554/eLife.27041
+                        - generic [ref=e335]:
+                          - text: •
+                          - link "Google Scholar" [ref=e336] [cursor=pointer]:
+                            - /url: https://scholar.google.com/scholar_lookup?doi=10.7554%2FeLife.27041
+                  - listitem [ref=e337]:
+                    - generic [ref=e338]: "3"
+                    - generic [ref=e340]:
+                      - generic [ref=e341]:
+                        - text: "Han X., Zhou Z., Fei L., Sun H., Wang R., Chen Y. et al: Construction of a human cell landscape at single-cell level."
+                        - emphasis [ref=e342]: Nature
+                        - text: "2020; 581: 303."
+                      - link "Google Scholar" [ref=e345] [cursor=pointer]:
+                        - /url: https://scholar.google.com/scholar_lookup?title=Construction+of+a+human+cell+landscape+at+single-cell+level&author=X.+Han&author=Z.+Zhou&author=L.+Fei&author=H.+Sun&author=R.+Wang&author=Y.+Chen&publication_year=2020&journal=Nature&pages=303
+                  - listitem [ref=e346]:
+                    - generic [ref=e347]: "4"
+                    - generic [ref=e349]:
+                      - generic [ref=e350]:
+                        - text: "Stuart T., Butler A., Hoffman P., Hafemeister C., Papalexi E., Mauck W.M. et al: Comprehensive integration of single-cell data."
+                        - emphasis [ref=e351]: Cell
+                        - text: "2019; 177: 1888."
+                      - link "Google Scholar" [ref=e354] [cursor=pointer]:
+                        - /url: https://scholar.google.com/scholar_lookup?title=Comprehensive+integration+of+single-cell+data&author=T.+Stuart&author=A.+Butler&author=P.+Hoffman&author=C.+Hafemeister&author=E.+Papalexi&author=W.M.+Mauck&publication_year=2019&journal=Cell&pages=1888
+                  - listitem [ref=e355]:
+                    - generic [ref=e356]: "5"
+                    - generic [ref=e358]:
+                      - generic [ref=e359]:
+                        - text: "Tirosh I., Izar B., Prakadan S.M., Wadsworth M.H., Treacy D., Trombetta J.J. et al: Dissecting the multicellular ecosystem of metastatic melanoma by single-cell RNA-seq."
+                        - emphasis [ref=e360]: Science
+                        - text: "2016; 352: 189."
+                      - link "Google Scholar" [ref=e363] [cursor=pointer]:
+                        - /url: https://scholar.google.com/scholar_lookup?title=Dissecting+the+multicellular+ecosystem+of+metastatic+melanoma+by+single-cell+RNA-seq&author=I.+Tirosh&author=B.+Izar&author=S.M.+Prakadan&author=M.H.+Wadsworth&author=D.+Treacy&author=J.J.+Trombetta&publication_year=2016&journal=Science&pages=189
+                  - listitem [ref=e364]:
+                    - generic [ref=e365]: "6"
+                    - generic [ref=e367]:
+                      - generic [ref=e368]:
+                        - text: "Aibar S., González-Blas C.B., Moerman T., Huynh-Thu V.A., Imrichova H., Hulselmans G. et al: SCENIC: single-cell regulatory network inference and clustering."
+                        - emphasis [ref=e369]: Nat Methods
+                        - text: "2017; 14: 1083."
+                      - link "Google Scholar" [ref=e372] [cursor=pointer]:
+                        - /url: https://scholar.google.com/scholar_lookup?title=SCENIC%3A+single-cell+regulatory+network+inference+and+clustering&author=S.+Aibar&author=C.B.+Gonz%C3%A1lez-Blas&author=T.+Moerman&author=V.A.+Huynh-Thu&author=H.+Imrichova&author=G.+Hulselmans&publication_year=2017&journal=Nat+Methods&pages=1083
+                  - listitem [ref=e373]:
+                    - generic [ref=e374]: "7"
+                    - generic [ref=e376]:
+                      - generic [ref=e377]:
+                        - text: "Mann H.B. and Whitney D.R.: On a test of whether one of two random variables is stochastically larger than the other."
+                        - emphasis [ref=e378]: Ann Math Stat
+                        - text: "1947; 18: 50."
+                      - link "Google Scholar" [ref=e381] [cursor=pointer]:
+                        - /url: https://scholar.google.com/scholar_lookup?title=On+a+test+of+whether+one+of+two+random+variables+is+stochastically+larger+than+the+other&author=H.B.+Mann&author=D.R.+Whitney&publication_year=1947&journal=Ann+Math+Stat&pages=50
+                  - listitem [ref=e382]:
+                    - generic [ref=e383]: "8"
+                    - generic [ref=e385]:
+                      - generic [ref=e386]:
+                        - text: "Mason S.J. and Graham N.E.: Areas beneath the relative operating characteristics (ROC) and relative operating levels (ROL) curves: Statistical significance and interpretation."
+                        - emphasis [ref=e387]: Q J R Meteorol Soc
+                        - text: "2002; 128: 2145."
+                      - link "Google Scholar" [ref=e390] [cursor=pointer]:
+                        - /url: https://scholar.google.com/scholar_lookup?title=Areas+beneath+the+relative+operating+characteristics+%28ROC%29+and+relative+operating+levels+%28ROL%29+curves%3A+Statistical+significance+and+interpretation&author=S.J.+Mason&author=N.E.+Graham&publication_year=2002&journal=Q+J+R+Meteorol+Soc&pages=2145
+                  - listitem [ref=e391]:
+                    - generic [ref=e392]: "9"
+                    - generic [ref=e394]:
+                      - generic [ref=e395]: "Dowle M, Srinivasan A. data.table: Extension of ‘data.frame’. R package version 1.14.0. 2021."
+                      - link "Google Scholar" [ref=e398] [cursor=pointer]:
+                        - /url: https://scholar.google.com/scholar?q=Dowle+M%2C+Srinivasan+A.+data.table%3A+Extension+of+%E2%80%98data.frame%E2%80%99.+R+package+version+1.14.0.+2021.
+                  - listitem [ref=e399]:
+                    - generic [ref=e400]: "10"
+                    - generic [ref=e402]:
+                      - generic [ref=e403]: Bengtsson H. A Unifying Framework for Parallel and Distributed Processing in R using Futures. ArXiv200800553 Cs Stat 2020.
+                      - link "Google Scholar" [ref=e406] [cursor=pointer]:
+                        - /url: https://scholar.google.com/scholar?q=Bengtsson+H.+A+Unifying+Framework+for+Parallel+and+Distributed+Processing+in+R+using+Futures.+ArXiv200800553+Cs+Stat+2020.
+                  - listitem [ref=e407]:
+                    - generic [ref=e408]: "11"
+                    - generic [ref=e410]:
+                      - generic [ref=e411]:
+                        - text: "Hao Y., Hao S., Andersen-Nissen E., Mauck W.M., Zheng S., Butler A. et al: Integrated analysis of multimodal single-cell data."
+                        - emphasis [ref=e412]: Cell
+                        - text: "2021; 184: 3573."
+                      - link "Google Scholar" [ref=e415] [cursor=pointer]:
+                        - /url: https://scholar.google.com/scholar_lookup?title=Integrated+analysis+of+multimodal+single-cell+data&author=Y.+Hao&author=S.+Hao&author=E.+Andersen-Nissen&author=W.M.+Mauck&author=S.+Zheng&author=A.+Butler&publication_year=2021&journal=Cell&pages=3573
+          - dialog [ref=e416]:                     󡀃  󡀀 󡀁 󡀆 󡁰  
+          - complementary [ref=e417]:
+            - generic [ref=e419]:
+              - heading "Latest Articles" [level=4] [ref=e420]
+              - generic [ref=e423]:
+                - article [ref=e426]:
+                  - generic [ref=e427]:
+                    - generic [ref=e428]:
+                      - link "Computational and Structural Biotechnology Journal" [ref=e430] [cursor=pointer]:
+                        - /url: /journal/csbj
+                      - time [ref=e431]: 7 Apr 2026
+                    - 'link "Quantum Biology Using Ultrafast Integrative and Molecular Engineering Tools: A Perspective" [ref=e434] [cursor=pointer]':
+                      - /url: /doi/10.34133/csbj.0024
+                    - generic [ref=e436]:
+                      - text: By
+                      - list "list of authors" [ref=e437]:
+                        - listitem [ref=e438]: Krishna Prasad Khakurel,
+                        - listitem [ref=e439]: Gustavo Fuertes,
+                        - listitem [ref=e440]:
+                          - emphasis [ref=e442]: et al.
+                - link "View More" [ref=e444] [cursor=pointer]:
+                  - /url: /index/csbj
+                  - generic [ref=e445]: View More
+                  - generic [ref=e446]: 
+            - heading "Advertisement" [level=4] [ref=e454]
+        - generic [ref=e457]:
+          - link [ref=e458] [cursor=pointer]:
+            - /url: /doi/full/10.1016/j.csbj.2021.06.043
+            - text: View full text
+          - text: "|"
+          - link [ref=e459] [cursor=pointer]:
+            - /url: /doi/pdf/10.1016/j.csbj.2021.06.043
+            - text: Download PDF
+    - contentinfo [ref=e460]:
+      - generic [ref=e463]:
+        - generic [ref=e464]:
+          - generic [ref=e466]:
+            - heading "Follow Us" [level=6] [ref=e467]
+            - list [ref=e468]:
+              - listitem [ref=e469]:
+                - link "Facebook" [ref=e470] [cursor=pointer]:
+                  - /url: https://www.facebook.com/SPJournals
+                  - generic [ref=e471]: 
+              - listitem [ref=e472]:
+                - link "Share on X" [ref=e473] [cursor=pointer]:
+                  - /url: https://twitter.com/SPJournals
+                  - generic [ref=e474]: 
+              - listitem [ref=e475]:
+                - link "RSS feeds" [ref=e476] [cursor=pointer]:
+                  - /url: /page/email-alerts-and-rss-feeds
+                  - generic [ref=e477]: 
+              - listitem [ref=e478]:
+                - link "WeChat" [ref=e479] [cursor=pointer]:
+                  - /url: https://mp.weixin.qq.com/s?__biz=MzI3NDY3NzQ2Mg==&mid=100002864&idx=1&sn=43ca0a6209177ae6acffb4fbdc2b8f4e&chksm=6b1127895c66ae9f038a4088630c173c51510b52d286ea281d48eaf08300157b1d6493fc2681&mpshare=1&scene=1&srcid=&pass_ticket=iRj%2FvWX30ODqUejK3qZkPBXG5aazCAQo4S34psBEfL7nzufGPwpDS%2BdwplnXtNeA#rd
+                  - generic [ref=e480]: 󡀆
+              - listitem [ref=e481]:
+                - link "Share on LinkedIn" [ref=e482] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/spjournals/
+                  - generic [ref=e483]: 
+          - navigation [ref=e485]:
+            - list [ref=e486]:
+              - listitem [ref=e487]:
+                - link "About Us" [ref=e488] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e489]:
+                - link "About SPJ" [ref=e490] [cursor=pointer]:
+                  - /url: /program-overview/
+              - listitem [ref=e491]:
+                - link "About AAAS" [ref=e492] [cursor=pointer]:
+                  - /url: https://www.aaas.org/
+              - listitem [ref=e493]:
+                - link "Science family of journals" [ref=e494] [cursor=pointer]:
+                  - /url: https://www.science.org/journals
+              - listitem [ref=e495]:
+                - link "Work at AAAS" [ref=e496] [cursor=pointer]:
+                  - /url: https://www.aaas.org/careers/workataaas
+            - list [ref=e497]:
+              - listitem [ref=e498]:
+                - link "Help" [ref=e499] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e500]:
+                - link "FAQ" [ref=e501] [cursor=pointer]:
+                  - /url: /frequently-asked-questions/
+              - listitem [ref=e502]:
+                - link "Email Alerts and RSS Feeds" [ref=e503] [cursor=pointer]:
+                  - /url: /page/email-alerts-and-rss-feeds
+        - generic:    󡀆 
+      - generic [ref=e506]:
+        - generic [ref=e508]:
+          - link "logo" [ref=e509] [cursor=pointer]:
+            - /url: https://www.aaas.org/
+            - img [ref=e510]
+          - paragraph [ref=e513]: © 2026 American Association for the Advancement of Science. All rights Reserved. AAAS is a partner of HINARI, AGORA, OARE, CHORUS, CLOCKSS, CrossRef and COUNTER.
+        - list [ref=e515]:
+          - listitem [ref=e516]:
+            - link "Terms of Service" [ref=e517] [cursor=pointer]:
+              - /url: https://www.science.org/content/page/terms-service
+          - listitem [ref=e518]:
+            - text: "|"
+            - link "Privacy Policy" [ref=e519] [cursor=pointer]:
+              - /url: https://www.science.org/content/page/privacy-policy
+          - listitem [ref=e520]:
+            - text: "|"
+            - link "Cookie Preferences" [ref=e521] [cursor=pointer]:
+              - /url: "#cookie-preferences"
+          - listitem [ref=e522]:
+            - text: "|"
+            - link "Accessibility" [ref=e523] [cursor=pointer]:
+              - /url: https://www.science.org/content/page/accessibility
+  - link [ref=e524] [cursor=pointer]:
+    - /url: "#"
+    - text: Skip to references

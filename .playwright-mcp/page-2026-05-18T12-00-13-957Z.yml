@@ -1,0 +1,1794 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e18]:
+    - link "Skip to main content" [ref=e19] [cursor=pointer]:
+      - /url: "#content"
+    - complementary [ref=e20]:
+      - paragraph [ref=e22]: Advertisement
+    - banner [ref=e23]:
+      - generic [ref=e26]:
+        - link "Nature Genetics" [ref=e28] [cursor=pointer]:
+          - /url: /ng
+          - img "Nature Genetics" [ref=e30]
+        - list [ref=e31]:
+          - listitem [ref=e32]:
+            - link "View all journals" [ref=e33] [cursor=pointer]:
+              - /url: https://www.nature.com/siteindex
+              - generic [ref=e34]: View all journals
+          - listitem [ref=e35]:
+            - button "Search" [ref=e36] [cursor=pointer]:
+              - img [ref=e37]
+              - generic [ref=e39]: Search
+          - listitem [ref=e40]:
+            - link "Log in" [ref=e41] [cursor=pointer]:
+              - /url: https://idp.nature.com/auth/personal/springernature?redirect_uri=https://www.nature.com/articles/s41588-024-01993-3
+              - generic [ref=e42]: Log in
+      - list [ref=e46]:
+        - listitem [ref=e47]:
+          - button "Explore content" [ref=e48] [cursor=pointer]:
+            - generic [ref=e49]: Explore content
+            - img [ref=e50]
+        - listitem [ref=e52]:
+          - button "About the journal" [ref=e53] [cursor=pointer]:
+            - generic [ref=e54]: About the journal
+            - img [ref=e55]
+        - listitem [ref=e57]:
+          - button "Publish with us" [ref=e58] [cursor=pointer]:
+            - generic [ref=e59]: Publish with us
+            - img [ref=e60]
+    - navigation "breadcrumbs" [ref=e62]:
+      - list [ref=e64]:
+        - listitem [ref=e65]:
+          - link "nature" [ref=e66] [cursor=pointer]:
+            - /url: /
+          - img [ref=e67]
+        - listitem [ref=e69]:
+          - link "nature genetics" [ref=e70] [cursor=pointer]:
+            - /url: /ng
+          - img [ref=e71]
+        - listitem [ref=e73]:
+          - link "articles" [ref=e74] [cursor=pointer]:
+            - /url: /ng/articles?type=article
+          - img [ref=e75]
+        - listitem [ref=e77]: article
+  - main [ref=e79]:
+    - generic [ref=e1110]:
+      - generic [ref=e1111]: Consensus prediction of cell type labels in single-cell data with popV
+      - link "Download PDF" [ref=e1114] [cursor=pointer]:
+        - /url: /articles/s41588-024-01993-3.pdf
+        - generic [ref=e1115]: Download PDF
+        - img [ref=e1116]
+    - article [ref=e80]:
+      - link "Download PDF" [ref=e85] [cursor=pointer]:
+        - /url: /articles/s41588-024-01993-3.pdf
+        - generic [ref=e86]: Download PDF
+        - img [ref=e87]
+      - generic [ref=e90]:
+        - list [ref=e91]:
+          - listitem [ref=e92]: Article
+          - listitem [ref=e93]:
+            - link "Open access" [ref=e94] [cursor=pointer]:
+              - /url: https://www.springernature.com/gp/open-science/about/the-fundamentals-of-open-access-and-open-research
+          - listitem [ref=e95]:
+            - text: "Published:"
+            - time [ref=e96]: 20 November 2024
+        - heading "Consensus prediction of cell type labels in single-cell data with popV" [level=1] [ref=e97]
+        - list [ref=e98]:
+          - listitem [ref=e99]:
+            - link "Can Ergen" [ref=e100] [cursor=pointer]:
+              - /url: "#auth-Can-Ergen-Aff1-Aff2"
+            - text: ","
+          - listitem [ref=e101]:
+            - link "Galen Xing" [ref=e102] [cursor=pointer]:
+              - /url: "#auth-Galen-Xing-Aff1-Aff3-Aff7"
+            - text: ","
+          - listitem [ref=e103]:
+            - link "Chenling Xu" [ref=e104] [cursor=pointer]:
+              - /url: "#auth-Chenling-Xu-Aff1"
+            - text: ","
+          - listitem [ref=e105]:
+            - link "Martin Kim" [ref=e106] [cursor=pointer]:
+              - /url: "#auth-Martin-Kim-Aff2"
+            - text: ","
+          - listitem [ref=e107]:
+            - link "Michael Jayasuriya" [ref=e108] [cursor=pointer]:
+              - /url: "#auth-Michael-Jayasuriya-Aff2"
+            - text: ","
+          - listitem [ref=e109]:
+            - link "Erin McGeever" [ref=e110] [cursor=pointer]:
+              - /url: "#auth-Erin-McGeever-Aff3"
+            - text: ","
+          - listitem [ref=e111]:
+            - link "Angela Oliveira Pisco" [ref=e112] [cursor=pointer]:
+              - /url: "#auth-Angela-Oliveira_Pisco-Aff3-Aff8"
+            - text: ","
+          - listitem [ref=e113]:
+            - link "Aaron Streets" [ref=e114] [cursor=pointer]:
+              - /url: "#auth-Aaron-Streets-Aff1-Aff3-Aff4"
+            - text: "&"
+          - listitem [ref=e115]:
+            - link "Nir Yosef" [ref=e116] [cursor=pointer]:
+              - /url: "#auth-Nir-Yosef-Aff1-Aff2-Aff5-Aff6"
+              - text: Nir Yosef
+              - img [ref=e117]
+        - paragraph [ref=e119]:
+          - link "Nature Genetics" [ref=e120] [cursor=pointer]:
+            - /url: /ng
+          - generic [ref=e121]:
+            - generic [ref=e122]: volume
+            - text: "56"
+          - text: ","
+          - generic [ref=e123]: pages
+          - text: 2731–2738 (2024)
+          - link "Cite this article" [ref=e124] [cursor=pointer]:
+            - /url: "#citeas"
+        - list [ref=e126]:
+          - listitem [ref=e127]:
+            - paragraph [ref=e128]: 44k Accesses
+          - listitem [ref=e129]:
+            - paragraph [ref=e130]: 42 Citations
+          - listitem [ref=e131]:
+            - paragraph [ref=e132]: 7 Altmetric
+          - listitem [ref=e133]:
+            - paragraph [ref=e134]:
+              - link "Metrics details" [ref=e135] [cursor=pointer]:
+                - /url: /articles/s41588-024-01993-3/metrics
+                - text: Metrics
+                - generic [ref=e136]: details
+      - generic [ref=e137]:
+        - region "Abstract" [ref=e138]:
+          - generic [ref=e139]:
+            - heading "Abstract" [level=2] [ref=e140]
+            - paragraph [ref=e142]: Cell-type classification is a crucial step in single-cell sequencing analysis. Various methods have been proposed for transferring a cell-type label from an annotated reference atlas to unannotated query datasets. Existing methods for transferring cell-type labels lack proper uncertainty estimation for the resulting annotations, limiting interpretability and usefulness. To address this, we propose popular Vote (popV), an ensemble of prediction models with an ontology-based voting scheme. PopV achieves accurate cell-type labeling and provides uncertainty scores. In multiple case studies, popV confidently annotates the majority of cells while highlighting cell populations that are challenging to annotate by label transfer. This additional step helps to reduce the load of manual inspection, which is often a necessary component of the annotation process, and enables one to focus on the most problematic parts of the annotation, streamlining the overall annotation process.
+        - region "Similar content being viewed by others" [ref=e143]:
+          - heading "Similar content being viewed by others" [level=3] [ref=e144]
+          - generic [ref=e145]:
+            - article [ref=e147]:
+              - generic [ref=e149]:
+                - heading "The CellPhe toolkit for cell phenotyping using time-lapse imaging and pattern recognition" [level=3] [ref=e150]:
+                  - link "The CellPhe toolkit for cell phenotyping using time-lapse imaging and pattern recognition" [ref=e151] [cursor=pointer]:
+                    - /url: https://www.nature.com/articles/s41467-023-37447-3?fromPaywallRec=false
+                - generic [ref=e152]:
+                  - text: Article Open access
+                  - generic [ref=e153]: 03 April 2023
+            - article [ref=e155]:
+              - generic [ref=e157]:
+                - heading "The Human Cell Atlas from a cell census to a unified foundation model" [level=3] [ref=e158]:
+                  - link "The Human Cell Atlas from a cell census to a unified foundation model" [ref=e159] [cursor=pointer]:
+                    - /url: https://www.nature.com/articles/s41586-024-08338-4?fromPaywallRec=false
+                - generic [ref=e160]: Article 20 November 2024
+            - article [ref=e162]:
+              - generic [ref=e164]:
+                - 'heading "CellFM: a large-scale foundation model pre-trained on transcriptomics of 100 million human cells" [level=3] [ref=e165]':
+                  - 'link "CellFM: a large-scale foundation model pre-trained on transcriptomics of 100 million human cells" [ref=e166] [cursor=pointer]':
+                    - /url: https://www.nature.com/articles/s41467-025-59926-5?fromPaywallRec=false
+                - generic [ref=e167]:
+                  - text: Article Open access
+                  - generic [ref=e168]: 20 May 2025
+        - generic [ref=e169]:
+          - generic [ref=e171]:
+            - heading "Main" [level=2] [ref=e172]
+            - generic [ref=e173]:
+              - paragraph [ref=e174]:
+                - text: Cell-type annotation is a crucial task in analyzing single-cell RNA sequencing (scRNA-seq) data. The quality of the annotations has a direct impact on downstream analyses such as the comparison of cell type composition as well as the analysis performed on a per-cell-type basis
+                - superscript [ref=e175]:
+                  - link "Reference 1" [ref=e176] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR1
+                    - text: "1"
+                - text: . Manual annotation is highly time-consuming and requires biological context-specific and sequencing technology-specific domain knowledge. Thus, as scRNA-seq becomes an increasingly standard lab technique, there is a growing need to generate automated annotations. We propose here the use of a collection of cell-type prediction models to provide not only automated annotations but also well-calibrated measures of uncertainty. This enables the user to streamline the annotation process.
+              - paragraph [ref=e177]:
+                - text: Automated cell type annotations encounter several challenges
+                - superscript [ref=e178]:
+                  - link "Reference 2" [ref=e179] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR2
+                    - text: "2"
+                - text: . There is no gold standard ground truth for cell type annotation within a specific dataset. Biology is complex, and when cell states vary continuously, delineations between cell types are imprecise, and even human experts may disagree on the exact phenotype of a specific cell. Therefore, it is essential that annotation methods highlight areas of uncertainty that require expert knowledge input. The continuous nature of cell states
+                - superscript [ref=e180]:
+                  - link "Reference 3" [ref=e181] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR3
+                    - text: "3"
+                - text: ", along with stochasticity in the sequencing process, as well as the domain knowledge of the person manually annotating the dataset, can lead to cells being annotated at varying levels of specificity even within the same dataset. Across multiple datasets, factors, like identification of new cell subtypes or redefinition of marker genes, lead to discrepancies in cell type identification. There are a plethora of automated cell-type annotation methods"
+                - superscript [ref=e182]:
+                  - link "Reference 4" [ref=e183] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR4
+                    - text: "4"
+                - text: . However, differences in cell type granularity, experiment-specific nuisance factors and technology-dependent sparsity of gene expression lead to no clear ‘best method’ for automatic annotation. Based on these factors, we propose that it is crucial for automatic cell-type annotation pipelines
+                - superscript [ref=e184]:
+                  - link "Reference 5" [ref=e185] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR5
+                    - text: "5"
+                - text: to highlight areas of uncertainty that may require manual scrutiny, balance the specificity of predictions with accuracy and be easily accessible and usable.
+              - paragraph [ref=e186]:
+                - text: To address these challenges, we developed popular Vote (popV), a flexible and scalable automated cell-type annotation framework that takes in an unannotated query dataset from a scRNA-seq experiment, transfers labels from an annotated reference dataset and generates predictions with a predictability score indicating the confidence of the prediction. We pose here that various prediction methods will disagree in their prediction if an annotation is not accurate, whereas they will tend to agree if the predicted cell type is the correct one. We named our method popV because instead of relying on the predictions of a single classifier, popV takes a consensus approach and incorporates the predictions from eight automated annotation methods. PopV also takes into account annotations at different levels of granularity by aggregating results over the Cell Ontology
+                - superscript [ref=e187]:
+                  - link "Reference 6" [ref=e188] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR6
+                    - text: "6"
+                - text: ", an expert-curated formalization of cell types in a hierarchical structure with a standardized vocabulary."
+              - paragraph [ref=e189]:
+                - text: PopV is available as an easy-to-install, open-source Python package and is designed to be a flexible framework for incorporating future cell-type classification methods. We provide a notebook that allows the prediction of new datasets and provides pretrained models for 20 different organs based on the Tabula Sapiens dataset
+                - superscript [ref=e190]:
+                  - link "Reference 7" [ref=e191] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR7
+                    - text: "7"
+                - text: .
+          - generic [ref=e193]:
+            - heading "Results" [level=2] [ref=e194]
+            - generic [ref=e195]:
+              - heading "Overview of popV" [level=3] [ref=e196]
+              - paragraph [ref=e197]:
+                - text: PopV takes a consensus of experts’ approach to the task of automated cell type annotation. The input is an unannotated query dataset together with an annotated reference dataset (Fig.
+                - link "1a" [ref=e198] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig1
+                - text: "). Both datasets are expected to contain raw count data and demonstrate that popV can be applied to unique molecular identifier as well as non-unique molecular identifier-based technologies. PopV then runs the following eight different annotation methods: random forest (RF)"
+                - superscript [ref=e199]:
+                  - link "Reference 8" [ref=e200] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR8
+                    - text: "8"
+                - text: ", support vector machine (SVM)"
+                - superscript [ref=e201]:
+                  - link "Reference 8" [ref=e202] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR8
+                    - text: "8"
+                - text: ", scANVI"
+                - superscript [ref=e203]:
+                  - link "Reference 9" [ref=e204] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR9
+                    - text: "9"
+                - text: ", OnClass"
+                - superscript [ref=e205]:
+                  - link "Reference 10" [ref=e206] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR10
+                    - text: "10"
+                - text: ", Celltypist"
+                - superscript [ref=e207]:
+                  - link "Reference 11" [ref=e208] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR11
+                    - text: "11"
+                - text: and k-nearest neighbors (kNN) after batch correction with three single-cell harmonization methods—scVI
+                - superscript [ref=e209]:
+                  - link "Reference 12" [ref=e210] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR12
+                    - text: "12"
+                - text: ", BBKNN"
+                - superscript [ref=e211]:
+                  - link "Reference 13" [ref=e212] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR13
+                    - text: "13"
+                - text: and Scanorama
+                - superscript [ref=e213]:
+                  - link "Reference 14" [ref=e214] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR14
+                    - text: "14"
+                - text: (Fig.
+                - link "1" [ref=e215] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig1
+                - text: ). The eight prediction algorithms were chosen because they were shown to have good prediction accuracy
+                - superscript [ref=e216]:
+                  - link "Reference 15" [ref=e217] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR15
+                    - text: "15"
+                - text: and/or good harmonization performances
+                - superscript [ref=e218]:
+                  - link "Reference 16" [ref=e219] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR16
+                    - text: "16"
+                - text: . These methods encompass supervised methods that are trained only on labeled data (RF, SVM, OnClass, Celltypist and kNN) after applying unsupervised harmonization methods that are agnostic to label information during training (BBKNN, Scanorama and scVI) and a semi-supervised method trained with both labeled and unlabeled data (scANVI). However, we emphasize that popV offers an intuitive application interface (API) for the rapid inclusion of additional annotation methods. We demonstrate this capability through a code snippet for adding a new classifier (kNN after batch correction with Harmony
+                - superscript [ref=e220]:
+                  - link "Reference 17" [ref=e221] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR17
+                    - text: "17"
+                - text: ) in the
+                - link "Methods" [ref=e222] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Sec7
+                - text: .
+              - 'figure "Fig. 1: Framework of popV for automatic cell type annotation." [ref=e224]':
+                - generic [ref=e226]: "Fig. 1: Framework of popV for automatic cell type annotation."
+                - generic [ref=e227]:
+                  - generic [ref=e228]:
+                    - 'img "Fig. 1: Framework of popV for automatic cell type annotation." [ref=e230]'
+                    - generic [ref=e231]: The alternative text for this image may have been generated using AI.
+                    - link "Full size image figure 1" [ref=e233] [cursor=pointer]:
+                      - /url: /articles/s41588-024-01993-3/figures/1
+                      - text: Full size image
+                      - img [ref=e234]
+                  - paragraph [ref=e237]: PopV takes an unannotated query dataset and an annotated reference dataset as input. Each expert algorithm predicts the label on the query dataset to yield a cell-type annotation. The certainty of the respective label transfer can be quantified by scoring the agreement of those methods. The workflow yields a sample report to provide the user with insights into the annotated labels.
+              - paragraph [ref=e238]:
+                - text: After applying each of these methods separately, popV proceeds to aggregate the resulting predictions for two purposes (Extended Data Fig.
+                - link "1" [ref=e239] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig4
+                - text: ). The first is to designate a single ‘consensus’ annotation for every query cell. The second purpose is to quantify our certainty in this prediction. We estimate the consensus annotation using a simple majority vote procedure, counting for each annotation label the number of algorithms that support it. In this procedure, all algorithms get a single ‘vote’, except for OnClass, which received several votes. The reason for that is that OnClass is the only method in our collection of methods that is capable of predicting cell types that do not exist in the reference dataset. It does so through a two-step process—first selecting an annotation out of the collection of labels in the reference dataset and then propagating it to identify a potentially more refined label in the Cell Ontology (even if this label is absent from the reference). To account for these ‘out of sample’ cell type annotations, we consider every label that is on the path from the root of the ontology down to the OnClass-predicted label as a predicted label (Extended Data Fig.
+                - link "1" [ref=e240] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig4
+                - text: ). We then perform majority voting with OnClass having multiple ‘votes’ at different levels of hierarchy. We have attempted using a simple majority vote with the ‘within sample’ annotation from the first stage of OnClass and with no propagation along the Cell Ontology. In most of our analyses, we found our first strategy to outperform the simple strategy (Supplementary Fig.
+                - link "1" [ref=e241] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ).
+              - paragraph [ref=e242]: A potentially useful property of many of the algorithms included in popV is an ‘algorithm-intrinsic’ estimation of prediction certainty. This could, in principle, be leveraged to compute a weighted consensus. However, we found that the certainties are calibrated differently for the different methods, which makes this approach futile as it will weigh more on the predictions of classifiers with higher estimated certainties.
+              - paragraph [ref=e243]:
+                - text: After calculating the consensus score, popV generates a sample report that includes prediction summaries as well as integrated views of the query and reference datasets. For the latter, it displays Uniform Manifold Approximation and Projections (UMAPs) for the joint visualization of the reference and query datasets for the four methods that perform data integration (Fig.
+                - link "1" [ref=e244] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig1
+                - text: ), as well as a bar plot comparing cell type frequencies in the reference and query dataset to highlight the differential abundance of various cell types. One set of summaries in the report is confusion matrices between the consensus predictions and each individual method to indicate which cell types were confused with another cell type for any particular method. The report also includes a per-cell-type display of the consensus score (that is, the number of agreeing methods—between 1 and 8) to highlight which cell types are overall difficult to predict. Complementing this ‘algorithm-extrinsic’ estimation of certainty, we also output the intrinsic uncertainty (that is, classifier score) of each of the eight methods (these scores are defined in the
+                - link "Methods" [ref=e245] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Sec7
+                - text: ). We emphasize that intrinsic and extrinsic uncertainty are two complementary measurements essential to quantifying the performance of a set of cell annotation tools.
+              - paragraph [ref=e246]:
+                - text: To allow for fast annotation of new query datasets, we provide pretrained models for all 20 organs present in Tabula Sapiens
+                - superscript [ref=e247]:
+                  - link "Reference 18" [ref=e248] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR18
+                    - text: "18"
+                - text: . Pretraining is possible for all methods except Scanorama and BBKNN, which compute a joint embedding of reference and query datasets and make pretraining infeasible. For scVI and scANVI, we provide pretrained embeddings of the reference dataset and map the query dataset to this embedding using scArches
+                - superscript [ref=e249]:
+                  - link "Reference 19" [ref=e250] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR19
+                    - text: "19"
+                - text: ". PopV has the following three different modes of cell type prediction: in retrain mode, all classifiers are trained from scratch, which requires an hour for 100k cells in a Google Colab session; in inference mode, models previously trained for the reference dataset are used where applicable, which requires 30 min for 100k cells; in fast mode, only pretrained models are used and only cell types in the query dataset are predicted, which requires 5 min for 100k query cells. PopV is available as an open-source Python project and includes an online Google Colab notebook with free computing resources. The codebase enables the addition of new reference datasets (in addition to Tabula Sapiens) through a simple API and can be invoked from the same notebook environment. We recommend that in any newly added reference datasets, the annotations should be consistent with Cell Ontology, either by matching terms in the ontology or by hierarchically assigning new terms to existing terms in the ontology. To this end, we provide scripts to add custom cell type labels to the Cell Ontology before processing by popV (where it is used for running OnClass and calculating our consensus scores)."
+              - heading "PopV prediction score discriminates high- and low-quality annotations" [level=3] [ref=e251]
+              - paragraph [ref=e252]:
+                - text: We evaluated the performance of cell-type annotation using popV with a Human Lung Cell Atlas as the query dataset
+                - superscript [ref=e253]:
+                  - link "Reference 20" [ref=e254] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR20
+                    - text: "20"
+                - text: and the lung tissue of Tabula Sapiens as a reference dataset. The Lung Cell Atlas is carefully annotated to a high level of granularity. It contains a wide variety of cell types across immune cells, epithelial cells, endothelial cells and stromal cells and is therefore well suited for studying tissues with diverse labels. To make the labels comparable across both datasets, we translated the Lung Cell Atlas labels to the corresponding terms in the Cell Ontology (Supplementary Fig.
+                - link "2" [ref=e255] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ).
+              - paragraph [ref=e256]:
+                - text: PopV achieves high accuracy on the Lung Cell Atlas. We visualize the popV predictions against the manual annotations in the Lung Cell Atlas and see a strong agreement between the prediction and the original annotation, as well as a good integration between the query and the reference cells (Fig.
+                - link "2a" [ref=e257] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig2
+                - text: ). We decided here to use scANVI integration as it showed the highest performance in scIB metrics, which measure data integration and biological conservation
+                - superscript [ref=e258]:
+                  - link "Reference 16" [ref=e259] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR16
+                    - text: "16"
+                - text: (Extended Data Fig.
+                - link "2a" [ref=e260] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig5
+                - text: ). To evaluate the quality of our predictions, we compute accuracy terms based on the Cell Ontology tree (
+                - link "Methods" [ref=e261] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Sec7
+                - text: ). An exact match, as the name implies, means that the predicted cell type is exactly the same as the manual annotation. Furthermore, intuitively, a prediction algorithm that predicts one cell type as another similar cell type performs better than a prediction algorithm that predicts the cell is of an unrelated type. The parent match, child match and sibling match take this into account and measure if the predicted cell type is the parent, child or sibling in the Cell Ontology tree compared to the ground truth annotation. This measure is especially useful if a cell type label exists only in the query and not in the reference dataset. Every prediction that did not match any of these relationships was classified as no match. PopV overall achieves high accuracy for most cell types (Fig.
+                - link "2b" [ref=e262] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig2
+                - text: and Extended Data Fig.
+                - link "2c" [ref=e263] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig5
+                - text: ). Except for scANVI and OnClass, all methods have comparable performance in this dataset. Furthermore, we compared the performance of popV with the label transfer provided in Seurat, which is another popular tool for cell type annotation transfer
+                - superscript [ref=e264]:
+                  - link "Reference 21" [ref=e265] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR21
+                    - text: "21"
+                - text: ", and found that Seurat performs worse than most methods used in popV. We also included OnClass predictions after step one (OnClass_seen), where OnClass only predicts cell types that were present in the reference dataset, and found this to perform similarly to the good-performing annotation tools, so that the lower performance of OnClass here is solely due to the prediction of unseen cell types. Overall, popV performed best for the number of exact matches and was comparable in the number of cells with no match, highlighting that the popV prediction is more accurate than any of the single methods. For a better insight into the prediction, we display bar plots in the report for popV, highlighting the abundance of cell types in query and reference datasets, as well as prediction accuracy (Extended Data Fig."
+                - link "2" [ref=e266] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig5
+                - text: ), and display confusion of cell types using alluvial plots (Supplementary Fig.
+                - link "3" [ref=e267] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ).
+              - 'figure "Fig. 2: PopV prediction on LCA and TS lung as reference is accurate and interpretable." [ref=e269]':
+                - generic [ref=e271]: "Fig. 2: PopV prediction on LCA and TS lung as reference is accurate and interpretable."
+                - generic [ref=e272]:
+                  - generic [ref=e273]:
+                    - 'img "Fig. 2: PopV prediction on LCA and TS lung as reference is accurate and interpretable." [ref=e275]'
+                    - generic [ref=e276]: The alternative text for this image may have been generated using AI.
+                    - link "Full size image figure 2" [ref=e278] [cursor=pointer]:
+                      - /url: /articles/s41588-024-01993-3/figures/2
+                      - text: Full size image
+                      - img [ref=e279]
+                  - paragraph [ref=e282]:
+                    - text: a, UMAP embedding after scANVI integration of TS reference cells, LCA query cells labeled with the ground-truth label and LCA query cells labeled with predicted label. b, Ontology accuracy (
+                    - link "Methods" [ref=e283] [cursor=pointer]:
+                      - /url: /articles/s41588-024-01993-3#Sec7
+                    - text: ) for the various methods computed on the query cells. c, Ontology accuracy for the prediction scores in popV. d, Highlighted cells with a consensus score of 4 or less (low consensus). e, Zoomed-in view of endothelial cells in the LCA with popV-predicted labels and ground-truth labels displayed. The zoomed-in picture is rotated by 90° to allow readability of all labels. Alveolar capillary type 2 endothelial cell is the Cell Ontology term for capillary aerocytes. The LCA annotated additional cell types between capillary aerocytes and capillary endothelial cells. TS, Tabula Sapiens; LCA, Lung Cell Atlas.
+              - paragraph [ref=e284]:
+                - text: When checking the popV prediction scores, we found that the accuracy of the prediction is highly correlated with the prediction score (Fig.
+                - link "2c" [ref=e285] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig2
+                - text: ). For scores of 6 and higher, we found that more than 90% of the annotations were exact matches with the ground truth. For scores of 8, which is a perfect agreement between all methods, 98% of the predictions were exact matches. For scores of 3 and lower, the prediction accuracy was lower than 50%, highlighting that the popV consensus score is a valuable metric to reflect the classification accuracy and points to groups of cells that should be further (and manually) scrutinized.
+              - paragraph [ref=e286]:
+                - text: When considering cells that were assigned with a low consensus score, we found three possible reasons that may explain the disagreement between the different methods (Fig.
+                - link "2d" [ref=e287] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig2
+                - text: ). The first is that the distinction between certain cell subsets with different labels is unclear. This often arises in cases of a continuum of cell states with no clear decision boundary in transcriptome space. In such cases, the boundaries determined by different algorithms may vary (because they depend on different objectives or techniques), leading to low consistency. It is, however, exactly those cases that merit closer (and often manual) inspection and—if needed—assignment of multiple optional labels. As an example, we found several areas of low consensus score in the various lung endothelial cells (Fig.
+                - link "2e" [ref=e288] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig2
+                - text: ). Most endothelial cells with a low consensus score arise between capillary endothelial cells and alveolar capillary type 2 endothelial cells. In this region, the various algorithms disagree on the correct boundary, but all algorithms predict those cells with either of those labels. We found that alveolar capillary type 2 endothelial cells express EDNRB and HPGD, and capillary endothelial cells express FCN3 and IL7R. Cells between both cell types are double positive in both markers, while they do not show any specific marker gene. Therefore, we conclude that neither the term capillary endothelial cell nor the term alveolar capillary type 2 endothelial cell is adequate to describe these cells, but their phenotype is between both cell types. Thus, it is a region that requires manual scrutiny to determine the correct label of those cells. In fact, such scrutiny was applied in the original annotation of the Lung Cell Atlas—annotations not provided to popV—which labeled these cells as capillary intermediates 1 and 2. Therefore, this example demonstrates that a low consensus score can help identify areas that require a refined label, possibly extending the vocabulary available in the reference atlas.
+              - paragraph [ref=e289]:
+                - text: The second reason for a low consensus score in this case study occurs when the query dataset contains subsets of cells that are absent from the reference atlas. As an example, while the Lung Cell Atlas (which we use as the query) includes a subset of endothelial cells that were originally labeled bronchial vessel 2, this subset (and its respective label) seems to be absent from our reference atlas. Indeed, when checking marker genes for these cells, their expression was high in PLVAP and low in the vein endothelial marker ACKR1 (Supplementary Fig.
+                - link "4" [ref=e290] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ), which can be interpreted as an intermediate stage between capillary endothelial cells (negative for both markers) and lung microvascular endothelial cells (positive for both markers). This combination of marker gene expression was not observed in Tabula Sapiens and therefore marks a cell type not present in the reference dataset.
+              - paragraph [ref=e291]:
+                - text: The third possible reason we find for the low consensus is inaccuracy in the reference annotation. As an example, we found a subset of T cells with a low consensus score (Extended Data Fig.
+                - link "3" [ref=e292] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig6
+                - text: ). All cells of this group in the query dataset were originally labeled (by the authors of the Lung Cell Atlas) as effector CD4
+                - superscript [ref=e293]: +
+                - text: αβ T cells, while similar cells originating from the Tabula Sapiens reference were labeled as a mixture of CD4 and CD8 T cells. Consequently, most algorithms in popV labeled this low consensus group as a mix of CD4 and CD8 T cells with different decision boundaries. Manually following up on this low-scoring group, we checked the marker gene CD8A and found a clear decision boundary that distinguishes the CD4
+                - superscript [ref=e294]: +
+                - text: (T
+                - subscript [ref=e295]: H
+                - text: ) and CD8
+                - superscript [ref=e296]: +
+                - text: (cytotoxic) subsets in a manner consistent with the (hidden) query annotation. Despite this clear delineation, we found that many CD8
+                - superscript [ref=e297]: −
+                - text: cells are labeled in the reference atlas as CD8
+                - superscript [ref=e298]: +
+                - text: T cells. A low consensus score in this group of cells helped to identify wrongly annotated cells in the reference dataset, and we highlight that manual scrutiny can clean up these wrong labels.
+              - paragraph [ref=e299]:
+                - text: PopV uses a diverse set of underlying classifiers. The heuristic is that including methods with varying bias allows us to detect uncertain predictions. We studied whether distinct classifiers are essential by comparing popV against majority voting between eight different SVM algorithms with different kernels and cost parameters. We find the popV consensus score to better correlate with accuracy than this simplified algorithm (Extended Data Fig.
+                - link "4a,b,d" [ref=e300] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig7
+                - text: ). Indeed, we find higher diversity in the predicted cell-type labels in the predictors underlying popV and find no pair of predictors with a Hamming similarity above 0.9 (Extended Data Fig.
+                - link "4c" [ref=e301] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig7
+                - text: ). While popV highlighted problems with annotating different subsets of T cells, majority voting after SVM shows high uncertainty for cells predicted to be natural killer (NK) cells. However, for these cells, we found marker gene expression that aligns with those cells being NK cells highlighting an accurate prediction by popV. Taking together, using a diverse set of algorithms enables popV to highlight cell types with wrongly predicted labels, while a more simplified algorithm using only predictors based on SVM does not provide a calibrated classifier.
+              - paragraph [ref=e302]: We have demonstrated here that the consensus score can highlight regions that require manual scrutiny and that reannotation in those regions can be performed using marker gene expression. This leads to new delineation of cell types not discovered in the reference dataset, detection of query-specific cell types and correction of the cell type label of wrongly assigned reference cell type labels.
+              - heading "PopV provides useful label transfer in case of drastic differences in cellular composition" [level=3] [ref=e303]
+              - paragraph [ref=e304]:
+                - text: After highlighting that popV is capable of detecting query-specific cells and that the consensus score is capable of highlighting these cells, we studied whether this can also be achieved when we have very different query and reference datasets. To this end, we studied the annotation of thymus cells using Tabula Sapiens as a reference dataset and a second study, which profiled thymi from different age groups (fetal, childhood, adolescence and adulthood) as query
+                - superscript [ref=e305]:
+                  - link "Reference 22" [ref=e306] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR22
+                    - text: "22"
+                - text: (Supplementary Fig.
+                - link "5" [ref=e307] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ). In particular, the thymus undergoes involution with age, and the adult thymus, which we use here as reference, does not accurately represent the structure and function of the thymus in younger individuals. In particular, we anticipate that the reference sample will not provide ample representation of the developing T cell population, which is prevalent in our query data.
+              - paragraph [ref=e308]:
+                - text: UMAP embedding of the two harmonized datasets clearly highlights the subsets of query cells that are represented in the reference dataset, while as expected by the age of the donors in the Tabula Sapiens project, the compartments of thymocytes and developing T cells are almost absent from the reference dataset (Fig.
+                - link "3a" [ref=e309] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig3
+                - text: and Supplementary Fig.
+                - link "6" [ref=e310] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ). Indeed, we find a high consensus score and accuracy in regions well represented in the reference dataset, while the consensus score for query-specific cell types is lower (Fig.
+                - link "3b,c" [ref=e311] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig3
+                - text: ). We find a high prediction accuracy for query cells from the adult thymus that are similar to the cells from the reference dataset (Fig.
+                - link "3d" [ref=e312] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig3
+                - text: and Supplementary Fig.
+                - link "7" [ref=e313] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ). Reassuringly, popV assigned low consensus scores to the majority of cells from compartments that are absent in adult humans, highlighting them for manual annotation (Fig.
+                - link "3e" [ref=e314] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig3
+                - text: and Extended Data Fig.
+                - link "5" [ref=e315] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig8
+                - text: ), while for cells isolated from an adult thymus, we overall find very high accuracy across all algorithms and a high consensus score with popV outperforming the single methods in accuracy (Fig.
+                - link "3f" [ref=e316] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig3
+                - text: and Supplementary Fig.
+                - link "8" [ref=e317] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ). We found for the underlying algorithms that their internal certainties do not correlate well with the accuracy and find a lower area under the precision–recall curve for these algorithms compared to popV (Extended Data Fig.
+                - link "6" [ref=e318] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig9
+                - text: and Supplementary Fig.
+                - link "9" [ref=e319] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ).
+              - 'figure "Fig. 3: PopV identifies thymocytes as query-specific cell types and yields highly interpretable consensus scores." [ref=e321]':
+                - generic [ref=e323]: "Fig. 3: PopV identifies thymocytes as query-specific cell types and yields highly interpretable consensus scores."
+                - generic [ref=e324]:
+                  - generic [ref=e325]:
+                    - 'img "Fig. 3: PopV identifies thymocytes as query-specific cell types and yields highly interpretable consensus scores." [ref=e327]'
+                    - generic [ref=e328]: The alternative text for this image may have been generated using AI.
+                    - link "Full size image figure 3" [ref=e330] [cursor=pointer]:
+                      - /url: /articles/s41588-024-01993-3/figures/3
+                      - text: Full size image
+                      - img [ref=e331]
+                  - paragraph [ref=e334]: a, UMAP embedding after scANVI integration of reference cells (TS) and query cells (thymus cells across different age groups) labeled by popV prediction and original annotation. b, PopV prediction score overlaid on the UMAP plot. The prediction score is low for thymocytes and higher for most other cell types. c, The prediction accuracy of the popV prediction highlights the low accuracy in developing thymocytes. d, The prediction accuracy of the popV prediction in adult thymus cells in the query shows high accuracy except for CD8 T cells. e, Left, PopV accuracy and consensus score are well correlated in all thymus cells with high accuracy for predictions with a consensus score of 7 and 8. Right, All methods show a low accuracy on fetal cells. f, Left, PopV accuracy and consensus score are also well correlated when subsetting to cells from adult donors. Right, PopV shows the highest accuracy when subsetting to adult cells; most methods show similarly high accuracy.
+              - paragraph [ref=e335]:
+                - text: We identified two other cell populations that are underrepresented in Tabula Sapiens compared to the query dataset, which are cortical thymic epithelial cells (also associated with involution
+                - superscript [ref=e336]:
+                  - link "Reference 23" [ref=e337] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR23
+                    - text: "23"
+                - text: ) and plasmacytoid dendritic cells. Similarly to our previous examples, we find that the consensus score associated with cortical epithelial cells is indeed low, with a variety of annotations assigned to these cells by the different algorithms, including fibroblasts and medullary epithelial cells (Supplementary Fig.
+                - link "10" [ref=e338] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ). The low consensus score suggests that manual curation of this group of cells is needed. In this case, the manual assignment of the correct out-of-reference label is relatively straightforward using PSMB11, an established marker of cortical thymic epithelial cells that is not expressed in any cell-type in the Tabula Sapiens reference.
+              - paragraph [ref=e339]: For plasmacytoid dendritic cells, all algorithms except Scanorama + kNN predicted that those cells are B cells or plasma cells. Scanorama+ kNN predicted that those cells are dendritic cells. Even OnClass, which can predict cells not present in the reference dataset, predicted those cells as antibody-secreting cells or lymphocytes of B lineage, with not a single cell correctly predicted as a plasmacytoid dendritic cell. However, these query cells expressed high levels of CLEC4C and IL3RA and were therefore correctly labeled as plasmacytoid dendritic cells. As two-thirds of plasmacytoid dendritic cells have a score of 5 or lower, manual identification of these cells is possible, and the user can identify those confidently wrongly annotated cells using these marker genes.
+              - paragraph [ref=e340]: The only cell fraction that had a high consensus score but low accuracy is a group of cells labeled as endothelial cells by popV, while annotated as lymphocytes in the original (hidden) annotation of the query dataset. However, these cells express CAVIN2, TFPI, which fits well with an annotation as endothelial cells. We found that their gene expression aligns well with lymphatic endothelial cells. Therefore, it suggests a wrong annotation in the query dataset and a correct prediction by popV.
+              - paragraph [ref=e341]: Overall, this demonstrates that the consensus score yields an interpretable metric for prediction accuracy and that it helps handle cases of discrepancies between the query and reference dataset.
+              - paragraph [ref=e342]:
+                - text: Creating consensus cell-type labels across different sequencing technologies is important with the advent of large integration efforts. We applied popV to this scenario by transferring labels from the Lung Cell Atlas (Fig.
+                - link "2" [ref=e343] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig2
+                - text: ) to two lung datasets, one sequenced using Drop-seq technology and the other using nuclei sequencing
+                - superscript [ref=e344]:
+                  - link "Reference 24" [ref=e345] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR24
+                    - text: "24"
+                  - text: ","
+                  - link "Reference 25" [ref=e346] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR25
+                    - text: "25"
+                - text: . We find an accurate transfer of labels for both datasets (Extended Data Fig.
+                - link "7" [ref=e347] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig10
+                - text: ). The popV consensus score again provides a metric that was better correlated with accuracy compared to the intrinsic certainty metrics of the underlying algorithms (Supplementary Figs.
+                - link "11" [ref=e348] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: –
+                - link "14" [ref=e349] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ). Thus, it allows detecting cells that require manual scrutiny in these more challenging scenarios.
+              - paragraph [ref=e350]:
+                - text: PopV relies on using a Cell Ontology to aggregate votes across the ontology. For some reference datasets, cells are not annotated according to an existing Cell Ontology. We therefore tested the impact when no matching ontology is provided. For this case, we disable the use of OnClass, which requires an ontology (
+                - link "Supplementary Note" [ref=e351] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: and Extended Data Fig.
+                - link "8" [ref=e352] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig11
+                - text: ). We find popV to perform well in this scenario. Additionally, this dataset allowed us to study the effect of different cell-type granularities on cell-type prediction. The prediction score highlights high granularity annotations as less confidently transferred and thereby requiring more manual scrutiny to perform annotation at this very fine level.
+              - paragraph [ref=e353]:
+                - text: Finally, we performed ablation studies to test whether algorithms can be removed from popV while maintaining accurate and well-interpretable results (Extended Data Fig.
+                - link "9" [ref=e354] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig12
+                - text: ). After dropping three of the eight algorithms, we found that the accuracy remains stable in the tested cases. However, we find a decrease in the ability to distinguish predictions with low accuracy. We, therefore, conclude that the number of algorithms is essential to be able to highlight low-confidence predictions.
+          - generic [ref=e356]:
+            - heading "Discussion" [level=2] [ref=e357]
+            - generic [ref=e358]:
+              - paragraph [ref=e359]: We have developed popV, an ensemble method for cell type annotation, to yield an interpretable certainty quantification for the task of cell type annotation. We have demonstrated throughout this manuscript that in various scenarios with different sequencing technologies, various cell type resolutions and various overlaps of reference and query datasets, popV yields a confidence score that is well correlated with the actual accuracy of cell type transfer. We demonstrated that the prediction score can predict cell types that are specific to the query dataset (middle temporal gyrus (MTG)-specific neurons), incorrectly annotated in the reference (CD4 T cell subsets in Tabula Sapiens) or in the query dataset (lymphatic endothelial cells in the thymus) or cell types that are not annotated in the reference dataset while present in both datasets (lung intermediate capillary endothelial cells in Tabula Sapiens).
+              - paragraph [ref=e360]: PopV is implemented as an easy-to-install, open-source Python tool. The codebase is designed so that adding additional cell type classification algorithms is straightforward, thereby allowing researchers to mitigate the risk of choosing a single algorithm (that is, circumvent the no ‘one size fits all’ problem). We expect future annotation tools to be developed and popV to be used as a tool to handle various biases in these tools and to help quantify certainty in automatic prediction. As an example, upon user request, we included Harmony + kNN, which was not part of the initial release and therefore not used throughout the manuscript, as a classification model and found popV’s flexible framework to be straightforward in implementing new predictors.
+              - paragraph [ref=e361]:
+                - text: PopV’s performance is limited by the performance of the underlying predictors. We showed throughout the manuscript that overall popV performed equally well as the single-best method in terms of accuracy. However, the aim of popV is not to improve the accuracy of cell-type annotation over the single predictors but to yield a metric of certainty that is easy to interpret and well-calibrated. In fact, we found that algorithm-intrinsic certainties tend to be poorly correlated with the accuracy of cell-type annotation. While single methods provide similar calibration as popV, no other method provides throughout all case studies similar performance. Other methods therefore provide no reliable calibration. This is also reflected in a recent study that highlights the low calibration of conventional tools for cell-type transfer
+                - superscript [ref=e362]:
+                  - link "Reference 26" [ref=e363] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR26
+                    - text: "26"
+                - text: . Conversely, we demonstrated that the popV consensus score is highly associated with accuracy and that it helps identify cases where manual involvement is required. A future focus in the development of cell-type annotation tools will be on providing better internal certainty measurements. Including these algorithms in popV will provide even more interpretable results for label transfer, as, for example, in the case of several algorithms having low internal certainty but agreeing on the most probable label. Label transfer enables harmonizing cell-type annotations across different datasets and streamlines data analysis. However, we recommend validating the transferred labels by checking the expression of canonical marker genes because cell-type label transfer can fail. For example, for plasmacytoid dendritic cells in the thymus dataset, for which the corresponding cell type was missing from the reference dataset, these cells were incorrectly annotated as B cells.
+              - paragraph [ref=e364]: We included eight different algorithms in popV and developed popV in a way that allows the inclusion of new algorithms in a straightforward manner. We performed ablation studies and found that removing algorithms led to less interpretable consensus scores and made distinguishing low-confidence predictions harder. In the future, these metrics will allow us to scrutinize, including additional algorithms or remove existing ones. Across the case studies here and in applications to other datasets, we find an accuracy greater than 95% for scores of seven and eight out of eight predictors, while we recommend manually scrutinizing predictions with a consensus score of six out of eight and less. We highlighted that the good calibration in popV is dependent on a diverse set of predictors. These predictors have different biases (integration methods with kNN classifier versus supervised classifier in gene expression space). PopV is a flexible framework that can easily be extended to new classifiers. To make popV a valuable resource for the community, we provide a Google Colab notebook with pretrained models for every tissue in the final Tabula Sapiens publication.
+          - generic [ref=e366]:
+            - heading "Methods" [level=2] [ref=e367]
+            - generic [ref=e368]:
+              - paragraph [ref=e369]:
+                - text: PopV is a Python package available via the Python Package Index. Further details on popV, the source code and a model tutorial are available at
+                - link "https://github.com/YosefLab/popV" [ref=e370] [cursor=pointer]:
+                  - /url: https://github.com/YosefLab/popV
+                - text: . This research complies with all applicable ethical regulations. No primary data were generated. All software versions were used as described in our reproducibility GitHub repository (
+                - link "https://github.com/YosefLab/popv-reproducibility" [ref=e371] [cursor=pointer]:
+                  - /url: https://github.com/YosefLab/popv-reproducibility
+                - text: ). Specifically, popV (v0.2.2), AnnData (v0.8.0), BBKNN (v1.5.1), Celltypist (v1.6.0), Harmony-Pytorch (v0.1.7), Onclass (v1.3), Scanorama (v1.7.3), Scanpy (v1.9.3), scikit-learn (v0.24.2) and scvi-tools (v1.0.3) were used.
+              - heading "Datasets" [level=3] [ref=e372]
+              - heading "Tabula Sapiens" [level=4] [ref=e373]
+              - paragraph [ref=e374]:
+                - text: Tabula Sapiens was used throughout the manuscript as the reference dataset. It was downloaded from CELLxGENE (
+                - link "https://cellxgene.cziscience.com/collections/e5f58829-1a66-40b5-a624-9046778e74f5" [ref=e375] [cursor=pointer]:
+                  - /url: https://cellxgene.cziscience.com/collections/e5f58829-1a66-40b5-a624-9046778e74f5
+                - text: ). The expression data were set to the raw object of the h5ad object, which contains count data for all cells and genes. This yields 483,152 cells and 58,559 genes. We filter every cell type that has less than ten cells in a respective tissue as the kNN used in popV cannot predict cells with less than eight examples (15 nearest neighbors by default; Supplementary Table
+                - link "1" [ref=e376] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ). We confirmed that all cell types are present in the recent version of the Cell Ontology downloaded from
+                - link "https://github.com/obophenotype/cell-ontology/tree/v2023-02-19" [ref=e377] [cursor=pointer]:
+                  - /url: https://github.com/obophenotype/cell-ontology/tree/v2023-02-19
+                - text: . Furthermore, we validated that the cell type annotation was not donor-dependent in Tabula Sapiens. Tabula Sapiens was annotated on a per-donor basis, and for early donors, cell type labels have different names for the same cell type compared to later donors. To reduce the effect of this inconsistency, we excluded several samples (Supplementary Table
+                - link "2" [ref=e378] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ). Additionally, we found a strong batch effect between some 10× samples. After contacting the original authors, we found that the 10× chemistry was the reason for this and created a new metadata column containing the correct assay. The corrected assay can be accessed through
+                - link "https://doi.org/10.5281/zenodo.7587774" [ref=e379] [cursor=pointer]:
+                  - /url: https://doi.org/10.5281/zenodo.7587774
+                - text: . All models were trained seperately for each tissue using a batch covariate of concatenated donor and assay (Supplementary Tables
+                - link "3" [ref=e380] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: and
+                - link "4" [ref=e381] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ).
+              - heading "Lung Cell Atlas" [level=4] [ref=e382]
+              - paragraph [ref=e383]:
+                - text: Data were downloaded from CELLxGENE (
+                - link "https://cellxgene.cziscience.com/collections/5d445965-6f1a-4b68-ba3a-b8f765155d3a" [ref=e384] [cursor=pointer]:
+                  - /url: https://cellxgene.cziscience.com/collections/5d445965-6f1a-4b68-ba3a-b8f765155d3a
+                - text: ). We relabeled the cell types to attain conformity with the Cell Ontology (Supplementary Table
+                - link "6" [ref=e385] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ). Additionally, we filtered all blood samples collected for the construction of the Lung Cell Atlas. We created a concatenated column of sample ID and assay and used this concatenated metadata as the query_batch_key in popV (Supplementary Table
+                - link "5" [ref=e386] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ). Throughout this manuscript, the query dataset label was not used as input to scANVI because the general application of popV is intended for an unlabeled query dataset. The Lung Cell Atlas contains 75,071 cells in total, and 39 unique cell types were used as Cell Ontology labels of 59 unique cell types in the original Lung Cell Atlas.
+              - heading "Brain dataset" [level=4] [ref=e387]
+              - paragraph [ref=e388]:
+                - text: Data were downloaded from CELLxGENE (
+                - link "https://cellxgene.cziscience.com/collections/283d65eb-dd53-496d-adb7-7570c7caa443" [ref=e389] [cursor=pointer]:
+                  - /url: https://cellxgene.cziscience.com/collections/283d65eb-dd53-496d-adb7-7570c7caa443
+                - text: ). We downloaded the dissection of cerebral cortex (Cx)–precentral gyrus (PrCG)–primary motor cortex-M1C and the dissection of Cx-middle temporal gyrus (MTG) as the two cortical regions with the largest number of cells (Supplementary Table
+                - link "7" [ref=e390] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ). Original cell type labels were used for this dataset, and we used, respectively, cluster_id and supercluster_term as the cell type key. We removed cells labeled with the supercluster terms splatter as well as miscellaneous, as these likely contain low-quality cells where manual annotation was failing. For all downstream metrics, we removed cell types with less than ten cells in each cell type label, as we found those to be reflective of nuclei from distinct brain regions (medium spiny neuron, hippocampal dentate gyrus, hippocampal CA1–3 and amygdala excitatory). We decided against using labels that conform to the Cell Ontology, as all neurons in the original data set were labeled with the same Cell Ontology term neuron, which does not reflect the heterogeneity of these cells. The cell-type labels termed subcluster_id were the finest level of annotation. However, we found little evidence for these labels in the transcriptome of nuclei and excluded those from the analysis.
+              - heading "Thymus dataset" [level=4] [ref=e391]
+              - paragraph [ref=e392]:
+                - text: Data were downloaded from
+                - link "https://cellxgene.cziscience.com/collections/de13e3e2-23b6-40ed-a413-e9e12d7d3910" [ref=e393] [cursor=pointer]:
+                  - /url: https://cellxgene.cziscience.com/collections/de13e3e2-23b6-40ed-a413-e9e12d7d3910
+                - text: and were analyzed using the same CELLxGENE access link. We labeled cell types to achieve granularity comparable to the reference dataset (Supplementary Table
+                - link "9" [ref=e394] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ). For subset analysis, fetal samples were filtered to every development stage containing a week number (for example, 4th week) as a substring, and adult samples were filtered to the human early adulthood stage. We use the donor ID and assay as the query_batch_key in popV (Supplementary Table
+                - link "8" [ref=e395] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ). The thymus dataset contains 255,901 cells in total, and 28 unique cell types were used as Cell Ontologies of 31 unique cell types in the original thymus dataset. All cells in this dataset were labeled according to the Cell Ontology. However, we decided to summarize all CD4
+                - superscript [ref=e396]: +
+                - text: ", as well as all CD8"
+                - superscript [ref=e397]: +
+                - text: T cells, into a common cell type to make the annotation granularity comparable between reference and query datasets (Supplementary Fig.
+                - link "7" [ref=e398] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ). We additionally summarized all B cells in the query and reference dataset to be annotated as B cells, as the label of B cells in Tabula Sapiens showed strong donor inconsistencies and summarized all endothelial cells to be labeled as endothelial cells to harmonize the granularity of cell type labels.
+              - heading "Nucleus sequencing and Drop-seq dataset" [level=4] [ref=e399]
+              - paragraph [ref=e400]:
+                - text: Data were downloaded from the extended set of the Human Lung Cell Atlas (
+                - link "https://cellxgene.cziscience.com/e/9f222629-9e39-47d0-b83f-e08d610c7479.cxg/" [ref=e401] [cursor=pointer]:
+                  - /url: https://cellxgene.cziscience.com/e/9f222629-9e39-47d0-b83f-e08d610c7479.cxg/
+                - text: ). For nuclei sequencing, we selected the study_id Sun_2020, and for Drop-seq, we selected the study_id Schiller_2020. We used donor_id as the query_batch_key and used no query_labels_key. The models were trained from scratch using 4,000 highly variable genes computed on the reference cells after subsetting to common genes in the query and reference datasets, respectively. Cell types provided in original_ann_nonharmonized were used as ground truth labels based on the manual labels in the original manuscripts
+                - superscript [ref=e402]:
+                  - link "Reference 24" [ref=e403] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR24
+                    - text: "24"
+                  - text: ","
+                  - link "Reference 25" [ref=e404] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR25
+                    - text: "25"
+                - text: . We relabeled the cell types to achieve granularity comparable to the reference dataset (Supplementary Tables
+                - link "10" [ref=e405] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: and
+                - link "11" [ref=e406] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ).
+              - heading "Model parameters" [level=3] [ref=e407]
+              - paragraph [ref=e408]:
+                - text: We use eight different cell-type annotation algorithms, and in the following, we explain our parameters for those annotation algorithms as well as the data preprocessing pipeline that we use for popV. For UMAP embedding, we used scanpy default parameters except for a min_dist of 0.3. For the kNN classifier, we use uniform weights and n_neighbors equal to 15 in sklearn.neighbors.KNeighborsClassifier. The classifier is first trained on all reference cell labels and is then applied to all query cells in prediction mode. To increase the performance of this classifier, we use a sklearn pipeline and PyNNDescent for neighbor computation
+                - superscript [ref=e409]:
+                  - link "Reference 27" [ref=e410] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR27
+                    - text: "27"
+                - text: . All default parameters for the underlying methods can be changed using a dictionary method_kwargs upon calling popv.annotate_data.
+              - paragraph [ref=e411]:
+                - text: Several algorithms in popV use a graphics processing unit (GPU) to accelerate training. We highly recommend using popV with a GPU. All experiments highlighted here were performed on a workstation with 128 GB of RAM, an Intel Core i9-12900KF desktop CPU and an NVIDIA 3090 GPU. All case studies performed throughout the manuscript were computed on this workstation, and cell-type prediction took less than an hour per dataset. We have applied popV to a dataset of roughly 2 million cells, which takes less than 12 h. We recommend disabling kNN on Scanorama for large datasets, as it does not scale well with a large number of experimental batches
+                - superscript [ref=e412]:
+                  - link "Reference 28" [ref=e413] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR28
+                    - text: "28"
+                - text: .
+              - heading "Preprocessing" [level=4] [ref=e414]
+              - paragraph [ref=e415]:
+                - text: Every dataset was preprocessed using the Process_Query function in popV. The input parameters of Process_Query are explained in the popV documentation. If using a pretrained model folder, both reference and query datasets are subsets of the same genes. It is validated that both datasets contain raw counts. The cell type labels in the reference dataset are subsampled to 300 labeled cells by default to reduce the runtime of the underlying methods. The intersection of genes between the query dataset and the reference dataset is taken, and both datasets are concatenated. We remove all batches in the query and the reference dataset that contain less than nine cells in total, as otherwise BBKNN is failing and no further filtering was performed. Highly variable genes are computed using seurat_v3 flavor in scanpy
+                - superscript [ref=e416]:
+                  - link "Reference 29" [ref=e417] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR29
+                    - text: "29"
+                - text: ", and by default, 4,000 genes are selected. Count data are stored, and additionally counts are normalized to 10K counts. The log1p function is applied for methods that require normalized data and are stored in a separate layer. For the computation of principal components, the count data are scaled to unit variance. These principal components are used for Spanorama and BBKNN. All keys used to set up the model are stored in the uns field of the anndata object"
+                - superscript [ref=e418]:
+                  - link "Reference 30" [ref=e419] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR30
+                    - text: "30"
+                - text: .
+              - paragraph [ref=e420]: "PopV has the following three different modes:"
+              - list [ref=e421]:
+                - listitem [ref=e422]:
+                  - generic [ref=e423]: "1."
+                  - paragraph [ref=e424]: retrain—it trains all methods from scratch and stores the classifier to reuse them on other datasets. This hugely benefits from a GPU to train the scVI and scANVI algorithms as well as the OnClass algorithm.
+                - listitem [ref=e425]:
+                  - generic [ref=e426]: "2."
+                  - paragraph [ref=e427]:
+                    - text: inference—it uses pretrained methods to classify query and reference cells; computes a joint UMAP embedding of query and reference cells and by default uses all eight methods; and trains scVI and scANVI models for 20 epochs using scArches query embedding
+                    - superscript [ref=e428]:
+                      - link "Reference 19" [ref=e429] [cursor=pointer]:
+                        - /url: /articles/s41588-024-01993-3#ref-CR19
+                        - text: "19"
+                    - text: .
+                - listitem [ref=e430]:
+                  - generic [ref=e431]: "3."
+                  - paragraph [ref=e432]: fast—it uses pretrained methods to classify only query cells; computes a UMAP embedding of query cells if enabled; skips Scanorama and BBKNN data integration as those recompute an embedding instead of projecting cells into an existing embedding; and trains scVI and scANVI models for 1 epoch using scArches query embedding.
+              - heading "BBKNN" [level=4] [ref=e433]
+              - paragraph [ref=e434]:
+                - text: Batch-balanced kNN is a data integration method. To integrate the datasets, BBKNN takes the nearest neighbors from each batch to construct a balanced neighborhood graph. This nearest-neighbor graph can then be used as a batch-corrected graph embedding of the data
+                - superscript [ref=e435]:
+                  - link "Reference 13" [ref=e436] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR13
+                    - text: "13"
+                - text: . The default settings for popV and those used throughout the manuscript are 50 principal components, 8 neighbors_within_batch and the angular metric. We found that the angular metric outperforms a standard Euclidean metric in our use case. We use the implementation of BBKNN in scanpy.external.pp.bbknn. The batch-balanced nearest neighbors are used as a precomputed metric in sklearn.neighbors.KNeighborsClassifier and used as input for UMAP dimensionality reduction.
+              - heading "Spanorama" [level=4] [ref=e437]
+              - paragraph [ref=e438]: Scanorama is a data integration method. It searches for the mutual nearest neighbors across datasets and uses panoramic stitching. Cells are then integrated in PCA space using those mutual neighbors. By default in popV and throughout the manuscript, 50 principal components are used. We compute a new joint embedding of the query and the reference dataset using scanorama.integrate_scanpy function. This joint embedding is used for the kNN classification and UMAP embedding.
+              - heading "scVI" [level=4] [ref=e439]
+              - paragraph [ref=e440]: "ScVI is a variational auto-encoder that incorporates batch keys as latent variables and provides data integration in its latent space. We use the following nondefault parameters for scVI: dropout_rate = 0.05, n_layers = 3, n_latent = 20, gene_likelihood = nb, encode_covariates = True and use_layer_norm = both. The reason for these nonstandard parameters is to facilitate the integration of a query dataset using scArches. For the training parameters, we use by default scVI with n_epochs_kl_warmup = 20 epochs. We compute the joint latent representation of query and reference data, and this joint embedding is used for the kNN classification and UMAP embedding."
+              - heading "scANVI" [level=4] [ref=e441]
+              - paragraph [ref=e442]: In addition to scVI, a classifier is trained during the training of the auto-encoder on the positions in latent space to classify cells into the provided reference cell type labels. We continue training based on the trained scVI model to reduce the overall training time. For the classifier in scANVI, we use n_layers = 3 and dropout_rate = 0.1. Subsampled labels are used as discussed above. We use as training parameters batch_size = 512 and n_samples_per_label = 20 to stabilize the training of the classifier. Subsequently, the built-in classifier is used to predict cell type labels in the query dataset.
+              - heading "RF" [level=4] [ref=e443]
+              - paragraph [ref=e444]: RF uses an ensemble of classification trees together with random feature subsetting to regularize the classification trees. The final prediction is the majority vote across the tree ensemble. We use normalized counts (see above) as input for RF and sklearn.ensemble.RandomForestClassifier as the classifier. We use nondefault parameters as max_features = 200 and class_weight = balanced_subsample as we found the best performance using this parameter combination. For training the classifier, subsampled cell type labels are used as described above, as this improves prediction speed.
+              - heading "SVM" [level=4] [ref=e445]
+              - paragraph [ref=e446]: SVMs find the hyperplane that best separates the data. We use sklearn.svm.LinearSVC as the classifier. We use nondefault parameters as C = 1, max_iter = 5,000 and class_weight = balanced as we found the best performance using this combination of parameters. For training the classifier, subsampled cell type labels are used as described above for RF, as this improves prediction speed. To allow computation of prediction probabilities, we use sklearn.calibration.CalibratedClassifierCV.
+              - heading "Celltypist" [level=4] [ref=e447]
+              - paragraph [ref=e448]: Celltypist uses a logistic regression framework. We use nondefault parameters check_expression = False and max_iter = 500 to allow for faster model training. During celltypist.annotate, we use majority_voting = True except in fast mode where we set it to False. As intrinsic probabilities, we use predictions.probability_matrix as the majority voting purity and not the initial logistic regression probabilities. This is similar to the probabilities used in the Celltypist tutorials.
+              - heading "OnClass" [level=4] [ref=e449]
+              - paragraph [ref=e450]:
+                - text: OnClass first computes an embedding of the Cell Ontology using natural language processing (NLP) on the cell type names and then applies random walks. This can be embedded using singular value decomposition
+                - superscript [ref=e451]:
+                  - link "Reference 31" [ref=e452] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR31
+                    - text: "31"
+                - text: . Then a bipartite neural network was optimized to allow classification of the reference cells. The network is then applied to unannotated cells. By design, this allows the classification of unseen cell types in the Cell Ontology term-based low-dimensional embedding. We downloaded the Open Biological and Biomedical Ontology Foundry (OBO) Ontology files in version releases/2023-01-09. To allow fast retraining of sentence embedding, we use sentencetransformer.SentenceTransformer(‘all-mpnet-base-v2’) as the NLP model. This is a newer NLP model than in the original OnClass publication but allows in our hands for faster convergence. We encode all descriptions or cell-type labels in the OBO file. We provide notebooks for retraining with newer releases of ontology files or different species. We provide several ontology files in our GitHub repository; these are cl.obo, which is the downloaded file from
+                - link "https://github.com/obophenotype/cell-ontology" [ref=e453] [cursor=pointer]:
+                  - /url: https://github.com/obophenotype/cell-ontology
+                - text: . Cl.ontology is a file containing only the is_a cell type relationships from the cl.obo file, and cl.ontology.nlp.emb contains the embeddings of the cl.obo file. As count data, we use normalized data (see above) and disable the options to recompute this normalization in OnClass. OnClass provides the option to use batch integration using Scanorama. We disabled this option to not bias the prediction based on the performance of Scanorama. We found no sign of a strong batch effect in cell-type prediction. For OnClass, we provide two different cell-type labels. OnClass_seen is the prediction of all cells limited to the cell types in the reference dataset, while OnClass_prediction contains for each cell type the final output of the OnClass model. OnClass currently only outputs predictions after step 2 for 10% of the cells, although it computes those on all cells. We found this procedure wasteful and implemented our own version that outputs labels after step 2 on all cells.
+              - heading "Harmony" [level=4] [ref=e454]
+              - paragraph [ref=e455]:
+                - text: Harmony was not used throughout the manuscript. However, we found it to scale better to large-scale datasets (more than a million cells and 50 batches) than Scanorama. Harmony uses soft K-means clustering and shifts the centroids of those K-means clusters to allow batch correction
+                - superscript [ref=e456]:
+                  - link "Reference 17" [ref=e457] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR17
+                    - text: "17"
+                - text: . We used 50 principal components as default input to Harmony. We used an efficient GPU-enabled version of Harmony (
+                - link "https://github.com/lilab-bcb/harmony-pytorch" [ref=e458] [cursor=pointer]:
+                  - /url: https://github.com/lilab-bcb/harmony-pytorch
+                - text: ). We computed a new joint embedding of the query and the reference dataset using harmony.harmonize function. This joint embedding is used for the kNN classification and the UMAP embedding.
+              - heading "Seurat label transfer" [level=4] [ref=e459]
+              - paragraph [ref=e460]:
+                - text: Seurat uses canonical component analysis and nearest-neighbor matching to first integrate the reference dataset and then map the query dataset to this integrated dataset
+                - superscript [ref=e461]:
+                  - link "Reference 21" [ref=e462] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#ref-CR21
+                    - text: "21"
+                - text: . Seurat is not part of popV, as copying a data frame to R can be a time-consuming step for large data. However, we compared the performance of popV with Seurat for the Lung Cell Atlas. We computed 2,000 genes using FindVariableFeatures with vst transformation in Seurat. We used FindIntegrationAnchors using 30 CCA components. Subsequently, we scaled the corrected counts and calculated 30 principal components. Those components were used in FindTransferAnchors, and afterward, TransferData was called to transfer the labels from the reference dataset to the query dataset.
+              - heading "Consensus voting" [level=4] [ref=e463]
+              - paragraph [ref=e464]:
+                - text: As described in the manuscript, we tried majority voting as well as Cell Ontology-based aggregation of OnClass results (Extended Data Fig.
+                - link "1" [ref=e465] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig4
+                - text: ). We found the Cell-Ontology-based aggregation to outperform majority voting (Supplementary Fig.
+                - link "1" [ref=e466] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM1
+                - text: ). For this voting strategy, we take the majority vote (counting all predictions) for all predictors except OnClass. For OnClass prediction, we use the predicted cell type and, in addition, every cell type along the path from this cell type to the root node of the Cell Ontology graph and increase the score of those ancestors by 1. We take as consensus score the score at each cell type level node and take as popV prediction the cell type node with the highest score. For majority voting, we use the prediction in OnClass_seen and count the predictors who agree on a certain cell type node. The node with the majority of votes is used as the majority-voted cell type label. If there is a tie between two nodes in the number of votes, we use the cell type label that is further down the Cell Ontology tree, meaning the more granular cell type. If there is still disagreement, we use the cell type that is later in the alphabet to have a deterministic mapping and not rely on the order of cell types in the prediction matrix.
+              - heading "Evaluation metrics" [level=3] [ref=e467]
+              - paragraph [ref=e468]: All code for creating evaluation plots is available in the popV package as a _reproducibility module. We will discuss those metrics here. For displaying the translations of cell type terms, we use alluvial plots that highlight the corresponding cell types before and after translation to a Cell Ontology conform term.
+              - heading "Accuracy metrics" [level=4] [ref=e469]
+              - paragraph [ref=e470]: If no Cell Ontology graph is available, we use F1 metrics to quantify accuracy. The micro-F1 accuracy computes the number of exact matches across the whole dataset and is a global metric, whereas the macro-F1 score computes a per-cell-type accuracy and averages this across all cell types. The macro-F1 accuracy therefore better represents the performance across rare cell types. We found agreement between both metrics in their evaluation of performance, but the macro-F1 accuracy is more sensitive as rare cell types are harder to predict.
+              - paragraph [ref=e471]: If a Cell Ontology is available, we reasoned that the performance of a predictor is preferable if it predicts a closely related cell type. We therefore computed different matching scores. We computed an exact match similar to the F1 score as cell types that are correctly predicted. Parent match means that the predicted term is a node that is one step closer to the root of the Cell Ontology graph, while child match means that the predicted term is one step further away from the root. Sibling match means that the cell type is two steps away from the correct cell and has the same depth as the original cell type in the Cell Ontology tree. We also experimented with more fine-grained metrics quantifying the distance in the Cell Ontology tree between two cell types. However, after manually checking the corresponding cell types, we found that the nearest matches were the correct metric to evaluate classification, as cell types that are further apart tend to be distinct cell-types.
+              - heading "Confusion matrix" [level=4] [ref=e472]
+              - paragraph [ref=e473]: We use scikit-learn.metric.confusion_matrix and normalize those entries. We compute these matrices between all algorithms and the ground-truth label but also between the different algorithms and the consensus label.
+              - heading "Differential expression analysis" [level=4] [ref=e474]
+              - paragraph [ref=e475]: We use scanpy.tl.rank_genes_groups with default parameters to yield differentially expressed genes and scanpy.pl.rank_genes_groups_dotplot to plot those results.
+              - heading "Precision–recall curves" [level=4] [ref=e476]
+              - paragraph [ref=e477]: We are evaluating whether a decision boundary exists to distinguish between inaccurate predictions and accurate predictions. To this end, whether a prediction is an exact match is used as the label, and the prediction certainty is used as the class probability. Precision–recall curves are computed based on these two values. The area under the precision–recall curve is computed using sklearn.metrics.average_precision_score and the F1 score at the decision boundary using sklearn.metrics.f1_score. To calculate the best decision boundary, we compute the point with the highest F1 score. As some probabilities are discrete, like the popV consensus score, we include all cells at the decision boundary as positive cells. We provide the ratio of cells equal to or above the boundary, the accuracy of those cells and the boundary value in the respective plots.
+              - heading "Ablation experiment" [level=4] [ref=e478]
+              - paragraph [ref=e479]: We are evaluating whether removing predictors leads to a reduction in accuracy or calibration for popV. We study this for the thymus case study as well as the scRNA to snRNA label transfer case study. We first remove OnClass from the popV algorithms. After removing, simple majority voting and the popV consensus voting yield the same results. Afterward, we remove all pairs of the seven remaining predictors and compute the majority voting result of these five predictors as well as the consensus score. We compute the weighted F1 score and the area under the precision–recall curve for each set of five predictors. In the title of these plots, we present the value in the original popV algorithm, while in each field of the resulting heatmaps, we present the difference in the respective score between the full popV algorithm and the set of five predictors.
+              - heading "Comparison to majority voting of SVM classifiers" [level=4] [ref=e480]
+              - paragraph [ref=e481]:
+                - text: We are evaluating whether majority voting after predicting cell types with a set of SVM classifiers is similar in performance to popV. For this comparison, we use the implementation of SVM in cuML and set up a multiclass classifier using scikit-learn’s multiclass.OneVsRestClassifier. We train eight different SVM algorithms that differ in their kernel (sigmoid, polynomial, linear and radial basis function) and the respective cost parameters (0.1 and 1.0). We otherwise used the default hyperparameters in cuML. After predicting the labels for every cell in the Lung Cell Atlas case study, we perform majority voting between the predictions of the underlying SVM predictors and subset the resulting dataset to all query cells. We compute the Hamming similarity by computing 1 − HammingDistance and display the results as the upper triangle comparing all pairs of algorithms against each other. All other metrics in Extended Data Fig.
+                - link "4" [ref=e482] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig7
+                - text: are described in other parts of the
+                - link "Methods" [ref=e483] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Sec7
+                - text: and are applied here similarly to the results of both algorithms. We do not display the results of OnClass in Extended Data Fig.
+                - link "4e" [ref=e484] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Fig7
+                - text: to reduce the amount of colors in the resulting plot.
+              - heading "Statistics and reproducibility" [level=3] [ref=e485]
+              - paragraph [ref=e486]:
+                - text: No statistical method was used to predetermine the sample size. No data were excluded from the analyses except as highlighted in the
+                - link "Methods" [ref=e487] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#Sec7
+                - text: . The experiments were not randomized, and the investigators were not blinded to allocation during experiments and outcome assessment.
+              - heading "Reporting summary" [level=3] [ref=e488]
+              - paragraph [ref=e489]:
+                - text: Further information on research design is available in the
+                - link "Nature Portfolio Reporting Summary" [ref=e490] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#MOESM2
+                - text: linked to this article.
+        - generic [ref=e491]:
+          - generic [ref=e493]:
+            - heading "Data availability" [level=2] [ref=e494]
+            - paragraph [ref=e496]:
+              - text: Lung Cell Atlas was downloaded from CELLxGENE (
+              - link "https://cellxgene.cziscience.com/collections/5d445965-6f1a-4b68-ba3a-b8f765155d3a" [ref=e497] [cursor=pointer]:
+                - /url: https://cellxgene.cziscience.com/collections/5d445965-6f1a-4b68-ba3a-b8f765155d3a
+              - text: ). The thymus dataset was downloaded from
+              - link "https://cellxgene.cziscience.com/collections/de13e3e2-23b6-40ed-a413-e9e12d7d3910" [ref=e498] [cursor=pointer]:
+                - /url: https://cellxgene.cziscience.com/collections/de13e3e2-23b6-40ed-a413-e9e12d7d3910
+              - text: . The brain dataset was downloaded from CELLxGENE (
+              - link "https://cellxgene.cziscience/com/collections/283d65eb-dd53-496d-adb7-7570c7caa443" [ref=e499] [cursor=pointer]:
+                - /url: https://cellxgene.cziscience/com/collections/283d65eb-dd53-496d-adb7-7570c7caa443
+              - text: ). Human Lung Cell Atlas was downloaded from CELLxGENE (
+              - link "https://cellxgene.cziscience.com/e/9f222629-9e39-47d0-b83f-e08d610c7479.cxg/" [ref=e500] [cursor=pointer]:
+                - /url: https://cellxgene.cziscience.com/e/9f222629-9e39-47d0-b83f-e08d610c7479.cxg/
+              - text: ). A minimal dataset to reproduce the code is available as a tutorial at
+              - link "https://github.com/YosefLab/popV" [ref=e501] [cursor=pointer]:
+                - /url: https://github.com/YosefLab/popV
+              - text: . All datasets were used from the CELLxGENE census accessed on 9 June 2023. After the correction of metadata (
+              - link "Methods" [ref=e502] [cursor=pointer]:
+                - /url: /articles/s41588-024-01993-3#Sec7
+              - text: ), Tabula Sapiens was deposited on Zenodo (
+              - link "https://doi.org/10.5281/zenodo.7587774" [ref=e503] [cursor=pointer]:
+                - /url: https://doi.org/10.5281/zenodo.7587774
+              - text: )
+              - superscript [ref=e504]:
+                - link "Reference 32" [ref=e505] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#ref-CR32
+                  - text: "32"
+              - text: .
+          - generic [ref=e507]:
+            - heading "Code availability" [level=2] [ref=e508]
+            - paragraph [ref=e510]:
+              - text: The code to reproduce the experiments of this paper is available at
+              - link "https://github.com/YosefLab/popv-reproducibility" [ref=e511] [cursor=pointer]:
+                - /url: https://github.com/YosefLab/popv-reproducibility
+              - text: (ref.
+              - superscript [ref=e512]:
+                - link "Reference 33" [ref=e513] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#ref-CR33
+                  - text: "33"
+              - text: ). The popV package can be found on GitHub at
+              - link "https://github.com/YosefLab/popV" [ref=e514] [cursor=pointer]:
+                - /url: https://github.com/YosefLab/popV
+              - text: . Documentation and tutorials can be found at
+              - link "https://github.com/YosefLab/popV" [ref=e515] [cursor=pointer]:
+                - /url: https://github.com/YosefLab/popV
+              - text: (ref.
+              - superscript [ref=e516]:
+                - link "Reference 34" [ref=e517] [cursor=pointer]:
+                  - /url: /articles/s41588-024-01993-3#ref-CR34
+                  - text: "34"
+              - text: ).
+          - region "References" [ref=e519]:
+            - generic [ref=e520]:
+              - heading "References" [level=2] [ref=e521]
+              - generic [ref=e523]:
+                - list [ref=e524]:
+                  - listitem [ref=e525]:
+                    - text: "1."
+                    - paragraph [ref=e526]: "Luecken, M. D. & Theis, F. J. Current best practices in single-cell RNA-seq analysis: a tutorial. Mol. Syst. Biol. 15, e8746 (2019)."
+                    - paragraph [ref=e527]:
+                      - link "Article reference 1" [ref=e528] [cursor=pointer]:
+                        - /url: https://doi.org/10.15252%2Fmsb.20188746
+                        - text: Article
+                      - link "PubMed reference 1" [ref=e529] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=31217225
+                        - text: PubMed
+                      - link "PubMed Central reference 1" [ref=e530] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC6582955
+                        - text: PubMed Central
+                      - link "Google Scholar reference 1" [ref=e531] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Current%20best%20practices%20in%20single-cell%20RNA-seq%20analysis%3A%20a%20tutorial&journal=Mol.%20Syst.%20Biol.&doi=10.15252%2Fmsb.20188746&volume=15&publication_year=2019&author=Luecken%2CMD&author=Theis%2CFJ
+                        - text: Google Scholar
+                  - listitem [ref=e532]:
+                    - text: "2."
+                    - paragraph [ref=e533]: Lähnemann, D. et al. Eleven grand challenges in single-cell data science. Genome Biol. 21, 31 (2020).
+                    - paragraph [ref=e534]:
+                      - link "Article reference 2" [ref=e535] [cursor=pointer]:
+                        - /url: https://link.springer.com/doi/10.1186/s13059-020-1926-6
+                        - text: Article
+                      - link "PubMed reference 2" [ref=e536] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=32033589
+                        - text: PubMed
+                      - link "PubMed Central reference 2" [ref=e537] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC7007675
+                        - text: PubMed Central
+                      - link "Google Scholar reference 2" [ref=e538] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Eleven%20grand%20challenges%20in%20single-cell%20data%20science&journal=Genome%20Biol.&doi=10.1186%2Fs13059-020-1926-6&volume=21&publication_year=2020&author=L%C3%A4hnemann%2CD
+                        - text: Google Scholar
+                  - listitem [ref=e539]:
+                    - text: "3."
+                    - paragraph [ref=e540]: Wagner, A., Regev, A. & Yosef, N. Revealing the vectors of cellular identity with single-cell genomics. Nat. Biotechnol. 34, 1145–1160 (2016).
+                    - paragraph [ref=e541]:
+                      - link "Article reference 3" [ref=e542] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fnbt.3711
+                        - text: Article
+                      - link "PubMed reference 3" [ref=e543] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=27824854
+                        - text: PubMed
+                      - link "PubMed Central reference 3" [ref=e544] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC5465644
+                        - text: PubMed Central
+                      - link "CAS reference 3" [ref=e545] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC28XhvVWhsr7I
+                        - text: CAS
+                      - link "Google Scholar reference 3" [ref=e546] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Revealing%20the%20vectors%20of%20cellular%20identity%20with%20single-cell%20genomics&journal=Nat.%20Biotechnol.&doi=10.1038%2Fnbt.3711&volume=34&pages=1145-1160&publication_year=2016&author=Wagner%2CA&author=Regev%2CA&author=Yosef%2CN
+                        - text: Google Scholar
+                  - listitem [ref=e547]:
+                    - text: "4."
+                    - paragraph [ref=e548]: Pasquini, G., Rojo Arias, J. E., Schäfer, P. & Busskamp, V. Automated methods for cell type annotation on scRNA-seq data. Comput. Struct. Biotechnol. J. 19, 961–969 (2021).
+                    - paragraph [ref=e549]:
+                      - link "Article reference 4" [ref=e550] [cursor=pointer]:
+                        - /url: https://doi.org/10.1016%2Fj.csbj.2021.01.015
+                        - text: Article
+                      - link "PubMed reference 4" [ref=e551] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=33613863
+                        - text: PubMed
+                      - link "PubMed Central reference 4" [ref=e552] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC7873570
+                        - text: PubMed Central
+                      - link "CAS reference 4" [ref=e553] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3MXms1yrsL0%3D
+                        - text: CAS
+                      - link "Google Scholar reference 4" [ref=e554] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Automated%20methods%20for%20cell%20type%20annotation%20on%20scRNA-seq%20data&journal=Comput.%20Struct.%20Biotechnol.%20J.&doi=10.1016%2Fj.csbj.2021.01.015&volume=19&pages=961-969&publication_year=2021&author=Pasquini%2CG&author=Rojo%20Arias%2CJE&author=Sch%C3%A4fer%2CP&author=Busskamp%2CV
+                        - text: Google Scholar
+                  - listitem [ref=e555]:
+                    - text: "5."
+                    - paragraph [ref=e556]: "Clarke, Z. A. et al. Tutorial: guidelines for annotating single-cell transcriptomic maps using automated and manual methods. Nat. Protoc. 16, 2749–2764 (2021)."
+                    - paragraph [ref=e557]:
+                      - link "Article reference 5" [ref=e558] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41596-021-00534-0
+                        - text: Article
+                      - link "PubMed reference 5" [ref=e559] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=34031612
+                        - text: PubMed
+                      - link "CAS reference 5" [ref=e560] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3MXhtFGltbbF
+                        - text: CAS
+                      - link "Google Scholar reference 5" [ref=e561] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Tutorial%3A%20guidelines%20for%20annotating%20single-cell%20transcriptomic%20maps%20using%20automated%20and%20manual%20methods&journal=Nat.%20Protoc.&doi=10.1038%2Fs41596-021-00534-0&volume=16&pages=2749-2764&publication_year=2021&author=Clarke%2CZA
+                        - text: Google Scholar
+                  - listitem [ref=e562]:
+                    - text: "6."
+                    - paragraph [ref=e563]: Osumi-Sutherland, D. et al. Cell type ontologies of the Human Cell Atlas. Nat. Cell Biol. 23, 1129–1135 (2021).
+                    - paragraph [ref=e564]:
+                      - link "Article reference 6" [ref=e565] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41556-021-00787-7
+                        - text: Article
+                      - link "PubMed reference 6" [ref=e566] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=34750578
+                        - text: PubMed
+                      - link "CAS reference 6" [ref=e567] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3MXisVCgs77P
+                        - text: CAS
+                      - link "Google Scholar reference 6" [ref=e568] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Cell%20type%20ontologies%20of%20the%20Human%20Cell%20Atlas&journal=Nat.%20Cell%20Biol.&doi=10.1038%2Fs41556-021-00787-7&volume=23&pages=1129-1135&publication_year=2021&author=Osumi-Sutherland%2CD
+                        - text: Google Scholar
+                  - listitem [ref=e569]:
+                    - text: "7."
+                    - paragraph [ref=e570]: "Jones, R. C. et al. The Tabula Sapiens: a multiple-organ, single-cell transcriptomic atlas of humans. Science 376, eabl4896 (2022)."
+                    - paragraph [ref=e571]:
+                      - link "Article reference 7" [ref=e572] [cursor=pointer]:
+                        - /url: https://doi.org/10.1126%2Fscience.abl4896
+                        - text: Article
+                      - link "PubMed reference 7" [ref=e573] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=35549404
+                        - text: PubMed
+                      - link "CAS reference 7" [ref=e574] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB38XhsVSlurvN
+                        - text: CAS
+                      - link "Google Scholar reference 7" [ref=e575] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=The%20Tabula%20Sapiens%3A%20a%20multiple-organ%2C%20single-cell%20transcriptomic%20atlas%20of%20humans&journal=Science&doi=10.1126%2Fscience.abl4896&volume=376&publication_year=2022&author=Jones%2CRC
+                        - text: Google Scholar
+                  - listitem [ref=e576]:
+                    - text: "8."
+                    - paragraph [ref=e577]: "Pedregosa, F. et al. Scikit-learn: machine learning in Python. J. Mach. Learn. Res. 12, 2825–2830 (2011)."
+                    - paragraph [ref=e578]:
+                      - link "Google Scholar reference 8" [ref=e579] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Scikit-learn%3A%20machine%20learning%20in%20Python&journal=J.%20Mach.%20Learn.%20Res.&volume=12&pages=2825-2830&publication_year=2011&author=Pedregosa%2CF
+                        - text: Google Scholar
+                  - listitem [ref=e580]:
+                    - text: "9."
+                    - paragraph [ref=e581]: Xu, C. et al. Probabilistic harmonization and annotation of single-cell transcriptomics data with deep generative models. Mol. Syst. Biol. 17, e9620 (2021).
+                    - paragraph [ref=e582]:
+                      - link "Article reference 9" [ref=e583] [cursor=pointer]:
+                        - /url: https://doi.org/10.15252%2Fmsb.20209620
+                        - text: Article
+                      - link "PubMed reference 9" [ref=e584] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=33491336
+                        - text: PubMed
+                      - link "PubMed Central reference 9" [ref=e585] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC7829634
+                        - text: PubMed Central
+                      - link "Google Scholar reference 9" [ref=e586] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Probabilistic%20harmonization%20and%20annotation%20of%20single-cell%20transcriptomics%20data%20with%20deep%20generative%20models&journal=Mol.%20Syst.%20Biol.&doi=10.15252%2Fmsb.20209620&volume=17&publication_year=2021&author=Xu%2CC
+                        - text: Google Scholar
+                  - listitem [ref=e587]:
+                    - text: "10."
+                    - paragraph [ref=e588]: Wang, S. et al. Leveraging the Cell Ontology to classify unseen cell types. Nat. Commun. 12, 5556 (2021).
+                    - paragraph [ref=e589]:
+                      - link "Article reference 10" [ref=e590] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41467-021-25725-x
+                        - text: Article
+                      - link "PubMed reference 10" [ref=e591] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=34548483
+                        - text: PubMed
+                      - link "PubMed Central reference 10" [ref=e592] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC8455606
+                        - text: PubMed Central
+                      - link "CAS reference 10" [ref=e593] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3MXitFSmu77L
+                        - text: CAS
+                      - link "Google Scholar reference 10" [ref=e594] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Leveraging%20the%20Cell%20Ontology%20to%20classify%20unseen%20cell%20types&journal=Nat.%20Commun.&doi=10.1038%2Fs41467-021-25725-x&volume=12&publication_year=2021&author=Wang%2CS
+                        - text: Google Scholar
+                  - listitem [ref=e595]:
+                    - text: "11."
+                    - paragraph [ref=e596]: Conde, C. D. et al. Cross-tissue immune cell analysis reveals tissue-specific features in humans. Science 376, eabl5197 (2022).
+                    - paragraph [ref=e597]:
+                      - link "Article reference 11" [ref=e598] [cursor=pointer]:
+                        - /url: https://doi.org/10.1126%2Fscience.abl5197
+                        - text: Article
+                      - link "CAS reference 11" [ref=e599] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB38XhsVSlurvJ
+                        - text: CAS
+                      - link "Google Scholar reference 11" [ref=e600] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Cross-tissue%20immune%20cell%20analysis%20reveals%20tissue-specific%20features%20in%20humans&journal=Science&doi=10.1126%2Fscience.abl5197&volume=376&publication_year=2022&author=Conde%2CCD
+                        - text: Google Scholar
+                  - listitem [ref=e601]:
+                    - text: "12."
+                    - paragraph [ref=e602]: Lopez, R., Regier, J., Cole, M. B., Jordan, M. I. & Yosef, N. Deep generative modeling for single-cell transcriptomics. Nat. Methods 15, 1053–1058 (2018).
+                    - paragraph [ref=e603]:
+                      - link "Article reference 12" [ref=e604] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41592-018-0229-2
+                        - text: Article
+                      - link "PubMed reference 12" [ref=e605] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=30504886
+                        - text: PubMed
+                      - link "PubMed Central reference 12" [ref=e606] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC6289068
+                        - text: PubMed Central
+                      - link "CAS reference 12" [ref=e607] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1cXitl2hs77J
+                        - text: CAS
+                      - link "Google Scholar reference 12" [ref=e608] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Deep%20generative%20modeling%20for%20single-cell%20transcriptomics&journal=Nat.%20Methods&doi=10.1038%2Fs41592-018-0229-2&volume=15&pages=1053-1058&publication_year=2018&author=Lopez%2CR&author=Regier%2CJ&author=Cole%2CMB&author=Jordan%2CMI&author=Yosef%2CN
+                        - text: Google Scholar
+                  - listitem [ref=e609]:
+                    - text: "13."
+                    - paragraph [ref=e610]: "Polanski, K. et al. BBKNN: fast batch alignment of single cell transcriptomes. Bioinformatics 36, 964–965 (2020)."
+                    - paragraph [ref=e611]:
+                      - link "Article reference 13" [ref=e612] [cursor=pointer]:
+                        - /url: https://doi.org/10.1093%2Fbioinformatics%2Fbtz625
+                        - text: Article
+                      - link "PubMed reference 13" [ref=e613] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=31400197
+                        - text: PubMed
+                      - link "CAS reference 13" [ref=e614] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3cXhslentLzL
+                        - text: CAS
+                      - link "Google Scholar reference 13" [ref=e615] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=BBKNN%3A%20fast%20batch%20alignment%20of%20single%20cell%20transcriptomes&journal=Bioinformatics&doi=10.1093%2Fbioinformatics%2Fbtz625&volume=36&pages=964-965&publication_year=2020&author=Polanski%2CK
+                        - text: Google Scholar
+                  - listitem [ref=e616]:
+                    - text: "14."
+                    - paragraph [ref=e617]: Hie, B., Bryson, B. & Berger, B. Efficient integration of heterogeneous single-cell transcriptomes using Scanorama. Nat. Biotechnol. 37, 685–691 (2019).
+                    - paragraph [ref=e618]:
+                      - link "Article reference 14" [ref=e619] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41587-019-0113-3
+                        - text: Article
+                      - link "PubMed reference 14" [ref=e620] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=31061482
+                        - text: PubMed
+                      - link "PubMed Central reference 14" [ref=e621] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC6551256
+                        - text: PubMed Central
+                      - link "CAS reference 14" [ref=e622] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1MXptFGqsLY%3D
+                        - text: CAS
+                      - link "Google Scholar reference 14" [ref=e623] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Efficient%20integration%20of%20heterogeneous%20single-cell%20transcriptomes%20using%20Scanorama&journal=Nat.%20Biotechnol.&doi=10.1038%2Fs41587-019-0113-3&volume=37&pages=685-691&publication_year=2019&author=Hie%2CB&author=Bryson%2CB&author=Berger%2CB
+                        - text: Google Scholar
+                  - listitem [ref=e624]:
+                    - text: "15."
+                    - paragraph [ref=e625]: Abdelaal, T. et al. A comparison of automatic cell identification methods for single-cell RNA sequencing data. Genome Biol. 20, 194 (2019).
+                    - paragraph [ref=e626]:
+                      - link "Article reference 15" [ref=e627] [cursor=pointer]:
+                        - /url: https://link.springer.com/doi/10.1186/s13059-019-1795-z
+                        - text: Article
+                      - link "PubMed reference 15" [ref=e628] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=31500660
+                        - text: PubMed
+                      - link "PubMed Central reference 15" [ref=e629] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC6734286
+                        - text: PubMed Central
+                      - link "Google Scholar reference 15" [ref=e630] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=A%20comparison%20of%20automatic%20cell%20identification%20methods%20for%20single-cell%20RNA%20sequencing%20data&journal=Genome%20Biol.&doi=10.1186%2Fs13059-019-1795-z&volume=20&publication_year=2019&author=Abdelaal%2CT
+                        - text: Google Scholar
+                  - listitem [ref=e631]:
+                    - text: "16."
+                    - paragraph [ref=e632]: Luecken, M. D. et al. Benchmarking atlas-level data integration in single-cell genomics. Nat. Methods 19, 41–50 (2021).
+                    - paragraph [ref=e633]:
+                      - link "Article reference 16" [ref=e634] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41592-021-01336-8
+                        - text: Article
+                      - link "PubMed reference 16" [ref=e635] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=34949812
+                        - text: PubMed
+                      - link "PubMed Central reference 16" [ref=e636] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC8748196
+                        - text: PubMed Central
+                      - link "Google Scholar reference 16" [ref=e637] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Benchmarking%20atlas-level%20data%20integration%20in%20single-cell%20genomics&journal=Nat.%20Methods&doi=10.1038%2Fs41592-021-01336-8&volume=19&pages=41-50&publication_year=2021&author=Luecken%2CMD
+                        - text: Google Scholar
+                  - listitem [ref=e638]:
+                    - text: "17."
+                    - paragraph [ref=e639]: Korsunsky, I. et al. Fast, sensitive and accurate integration of single-cell data with Harmony. Nat. Methods 16, 1289–1296 (2019).
+                    - paragraph [ref=e640]:
+                      - link "Article reference 17" [ref=e641] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41592-019-0619-0
+                        - text: Article
+                      - link "PubMed reference 17" [ref=e642] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=31740819
+                        - text: PubMed
+                      - link "PubMed Central reference 17" [ref=e643] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC6884693
+                        - text: PubMed Central
+                      - link "CAS reference 17" [ref=e644] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1MXitFOqsr7N
+                        - text: CAS
+                      - link "Google Scholar reference 17" [ref=e645] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Fast%2C%20sensitive%20and%20accurate%20integration%20of%20single-cell%20data%20with%20Harmony&journal=Nat.%20Methods&doi=10.1038%2Fs41592-019-0619-0&volume=16&pages=1289-1296&publication_year=2019&author=Korsunsky%2CI
+                        - text: Google Scholar
+                  - listitem [ref=e646]:
+                    - text: "18."
+                    - paragraph [ref=e647]:
+                      - text: Ergen, C. PopV pretrained models for Tabula Sapiens reference and helper files. Zenodo
+                      - link "https://doi.org/10.5281/zenodo.7580707" [ref=e648] [cursor=pointer]:
+                        - /url: https://doi.org/10.5281/zenodo.7580707
+                      - text: (2023).
+                  - listitem [ref=e649]:
+                    - text: "19."
+                    - paragraph [ref=e650]: Lotfollahi, M. et al. Mapping single-cell data to reference atlases by transfer learning. Nat. Biotechnol. 40, 121–130 (2021).
+                    - paragraph [ref=e651]:
+                      - link "Article reference 19" [ref=e652] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41587-021-01001-7
+                        - text: Article
+                      - link "PubMed reference 19" [ref=e653] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=34462589
+                        - text: PubMed
+                      - link "PubMed Central reference 19" [ref=e654] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC8763644
+                        - text: PubMed Central
+                      - link "Google Scholar reference 19" [ref=e655] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Mapping%20single-cell%20data%20to%20reference%20atlases%20by%20transfer%20learning&journal=Nat.%20Biotechnol.&doi=10.1038%2Fs41587-021-01001-7&volume=40&pages=121-130&publication_year=2021&author=Lotfollahi%2CM
+                        - text: Google Scholar
+                  - listitem [ref=e656]:
+                    - text: "20."
+                    - paragraph [ref=e657]: Travaglini, K. J. et al. A molecular cell atlas of the human lung from single-cell RNA sequencing. Nature 587, 619–625 (2020).
+                    - paragraph [ref=e658]:
+                      - link "Article reference 20" [ref=e659] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41586-020-2922-4
+                        - text: Article
+                      - link "PubMed reference 20" [ref=e660] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=33208946
+                        - text: PubMed
+                      - link "PubMed Central reference 20" [ref=e661] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC7704697
+                        - text: PubMed Central
+                      - link "CAS reference 20" [ref=e662] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3cXitlOgs7rE
+                        - text: CAS
+                      - link "Google Scholar reference 20" [ref=e663] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=A%20molecular%20cell%20atlas%20of%20the%20human%20lung%20from%20single-cell%20RNA%20sequencing&journal=Nature&doi=10.1038%2Fs41586-020-2922-4&volume=587&pages=619-625&publication_year=2020&author=Travaglini%2CKJ
+                        - text: Google Scholar
+                  - listitem [ref=e664]:
+                    - text: "21."
+                    - paragraph [ref=e665]: Stuart, T. et al. Comprehensive integration of single-cell data. Cell 177, 1888–1902 (2019).
+                    - paragraph [ref=e666]:
+                      - link "Article reference 21" [ref=e667] [cursor=pointer]:
+                        - /url: https://doi.org/10.1016%2Fj.cell.2019.05.031
+                        - text: Article
+                      - link "PubMed reference 21" [ref=e668] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=31178118
+                        - text: PubMed
+                      - link "PubMed Central reference 21" [ref=e669] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC6687398
+                        - text: PubMed Central
+                      - link "CAS reference 21" [ref=e670] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1MXhtFens77L
+                        - text: CAS
+                      - link "Google Scholar reference 21" [ref=e671] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Comprehensive%20integration%20of%20single-cell%20data&journal=Cell&doi=10.1016%2Fj.cell.2019.05.031&volume=177&pages=1888-1902&publication_year=2019&author=Stuart%2CT
+                        - text: Google Scholar
+                  - listitem [ref=e672]:
+                    - text: "22."
+                    - paragraph [ref=e673]: Park, J.-E. et al. A cell atlas of human thymic development defines T cell repertoire formation. Science 367, eaay3224 (2020).
+                    - paragraph [ref=e674]:
+                      - link "Article reference 22" [ref=e675] [cursor=pointer]:
+                        - /url: https://doi.org/10.1126%2Fscience.aay3224
+                        - text: Article
+                      - link "PubMed reference 22" [ref=e676] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=32079746
+                        - text: PubMed
+                      - link "PubMed Central reference 22" [ref=e677] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC7611066
+                        - text: PubMed Central
+                      - link "CAS reference 22" [ref=e678] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3cXjs1KnsLo%3D
+                        - text: CAS
+                      - link "Google Scholar reference 22" [ref=e679] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=A%20cell%20atlas%20of%20human%20thymic%20development%20defines%20T%20cell%20repertoire%20formation&journal=Science&doi=10.1126%2Fscience.aay3224&volume=367&publication_year=2020&author=Park%2CJ-E
+                        - text: Google Scholar
+                  - listitem [ref=e680]:
+                    - text: "23."
+                    - paragraph [ref=e681]: Rode, I. & Boehm, T. Regenerative capacity of adult cortical thymic epithelial cells. Proc. Natl Acad. Sci. USA 109, 3463–3468 (2012).
+                    - paragraph [ref=e682]:
+                      - link "Article reference 23" [ref=e683] [cursor=pointer]:
+                        - /url: https://doi.org/10.1073%2Fpnas.1118823109
+                        - text: Article
+                      - link "PubMed reference 23" [ref=e684] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=22331880
+                        - text: PubMed
+                      - link "PubMed Central reference 23" [ref=e685] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3295321
+                        - text: PubMed Central
+                      - link "CAS reference 23" [ref=e686] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC38XksVyhtb4%3D
+                        - text: CAS
+                      - link "Google Scholar reference 23" [ref=e687] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Regenerative%20capacity%20of%20adult%20cortical%20thymic%20epithelial%20cells&journal=Proc.%20Natl%20Acad.%20Sci.%20USA&doi=10.1073%2Fpnas.1118823109&volume=109&pages=3463-3468&publication_year=2012&author=Rode%2CI&author=Boehm%2CT
+                        - text: Google Scholar
+                  - listitem [ref=e688]:
+                    - text: "24."
+                    - paragraph [ref=e689]: Wang, A. et al. Single-cell multiomic profiling of human lungs reveals cell-type-specific and age-dynamic control of SARS-CoV2 host genes. eLife 9, e62522 (2020).
+                    - paragraph [ref=e690]:
+                      - link "Article reference 24" [ref=e691] [cursor=pointer]:
+                        - /url: https://doi.org/10.7554%2FeLife.62522
+                        - text: Article
+                      - link "PubMed reference 24" [ref=e692] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=33164753
+                        - text: PubMed
+                      - link "PubMed Central reference 24" [ref=e693] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC7688309
+                        - text: PubMed Central
+                      - link "CAS reference 24" [ref=e694] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3MXmslSru78%3D
+                        - text: CAS
+                      - link "Google Scholar reference 24" [ref=e695] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Single-cell%20multiomic%20profiling%20of%20human%20lungs%20reveals%20cell-type-specific%20and%20age-dynamic%20control%20of%20SARS-CoV2%20host%20genes&journal=eLife&doi=10.7554%2FeLife.62522&volume=9&publication_year=2020&author=Wang%2CA
+                        - text: Google Scholar
+                  - listitem [ref=e696]:
+                    - text: "25."
+                    - paragraph [ref=e697]:
+                      - text: Strunz, M. et al. Alveolar regeneration through a Krt8
+                      - superscript [ref=e698]: +
+                      - text: transitional stem cell state that persists in human lung fibrosis. Nat. Commun. 11, 3559 (2020).
+                    - paragraph [ref=e699]:
+                      - link "Article reference 25" [ref=e700] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41467-020-17358-3
+                        - text: Article
+                      - link "PubMed reference 25" [ref=e701] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=32678092
+                        - text: PubMed
+                      - link "PubMed Central reference 25" [ref=e702] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC7366678
+                        - text: PubMed Central
+                      - link "CAS reference 25" [ref=e703] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3cXhsVWhtb%2FK
+                        - text: CAS
+                      - link "Google Scholar reference 25" [ref=e704] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Alveolar%20regeneration%20through%20a%20Krt8%2B%20transitional%20stem%20cell%20state%20that%20persists%20in%20human%20lung%20fibrosis&journal=Nat.%20Commun.&doi=10.1038%2Fs41467-020-17358-3&volume=11&publication_year=2020&author=Strunz%2CM
+                        - text: Google Scholar
+                  - listitem [ref=e705]:
+                    - text: "26."
+                    - paragraph [ref=e706]: Engelmann, J. et al. Uncertainty quantification for atlas-level cell type transfer. Preprint at arXiv 10.48550/arXiv.2211.03793 (2022).
+                  - listitem [ref=e707]:
+                    - text: "27."
+                    - paragraph [ref=e708]: Dong, W., Moses, C. & Li, K. Efficient k-nearest neighbor graph construction for generic similarity measures. Proceedings of the 20th International Conference on World Wide Web 577–586 (Association for Computing Machinery, 2011).
+                  - listitem [ref=e709]:
+                    - text: "28."
+                    - paragraph [ref=e710]:
+                      - text: Wells, S. B. et al. Multimodal profiling reveals tissue-directed signatures of human immune cells altered with age. Preprint at bioRxiv
+                      - link "https://doi.org/10.1101/2024.01.03.573877" [ref=e711] [cursor=pointer]:
+                        - /url: https://doi.org/10.1101/2024.01.03.573877
+                      - text: (2024).
+                  - listitem [ref=e712]:
+                    - text: "29."
+                    - paragraph [ref=e713]: "Wolf, F. A., Angerer, P. & Theis, F. J. SCANPY: large-scale single-cell gene expression data analysis. Genome Biol. 19, 15 (2018)."
+                    - paragraph [ref=e714]:
+                      - link "Article reference 29" [ref=e715] [cursor=pointer]:
+                        - /url: https://link.springer.com/doi/10.1186/s13059-017-1382-0
+                        - text: Article
+                      - link "PubMed reference 29" [ref=e716] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=29409532
+                        - text: PubMed
+                      - link "PubMed Central reference 29" [ref=e717] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC5802054
+                        - text: PubMed Central
+                      - link "Google Scholar reference 29" [ref=e718] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=SCANPY%3A%20large-scale%20single-cell%20gene%20expression%20data%20analysis&journal=Genome%20Biol.&doi=10.1186%2Fs13059-017-1382-0&volume=19&publication_year=2018&author=Wolf%2CFA&author=Angerer%2CP&author=Theis%2CFJ
+                        - text: Google Scholar
+                  - listitem [ref=e719]:
+                    - text: "30."
+                    - paragraph [ref=e720]: "Virshup, I., Rybakov, S., Theis, F. J., Angerer, P. & Alexander Wolf, F. anndata: access and store annotated data matrices. J. Open Source Softw. 9, 4371 (2024)."
+                    - paragraph [ref=e721]:
+                      - link "Article reference 30" [ref=e722] [cursor=pointer]:
+                        - /url: https://doi.org/10.21105%2Fjoss.04371
+                        - text: Article
+                      - link "Google Scholar reference 30" [ref=e723] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=anndata%3A%20access%20and%20store%20annotated%20data%20matrices&journal=J.%20Open%20Source%20Softw.&doi=10.21105%2Fjoss.04371&volume=9&publication_year=2024&author=Virshup%2CI&author=Rybakov%2CS&author=Theis%2CFJ&author=Angerer%2CP&author=Alexander%20Wolf%2CF
+                        - text: Google Scholar
+                  - listitem [ref=e724]:
+                    - text: "31."
+                    - paragraph [ref=e725]: Wang, S., Cho, H., Zhai, C., Berger, B. & Peng, J. Exploiting ontology graph for predicting sparsely annotated gene function. Bioinformatics 31, i357–64 (2015).
+                    - paragraph [ref=e726]:
+                      - link "Article reference 31" [ref=e727] [cursor=pointer]:
+                        - /url: https://doi.org/10.1093%2Fbioinformatics%2Fbtv260
+                        - text: Article
+                      - link "PubMed reference 31" [ref=e728] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=26072504
+                        - text: PubMed
+                      - link "PubMed Central reference 31" [ref=e729] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4542782
+                        - text: PubMed Central
+                      - link "CAS reference 31" [ref=e730] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC28Xht1Cit7fI
+                        - text: CAS
+                      - link "Google Scholar reference 31" [ref=e731] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Exploiting%20ontology%20graph%20for%20predicting%20sparsely%20annotated%20gene%20function&journal=Bioinformatics&doi=10.1093%2Fbioinformatics%2Fbtv260&volume=31&pages=i357-64&publication_year=2015&author=Wang%2CS&author=Cho%2CH&author=Zhai%2CC&author=Berger%2CB&author=Peng%2CJ
+                        - text: Google Scholar
+                  - listitem [ref=e732]:
+                    - text: "32."
+                    - paragraph [ref=e733]:
+                      - text: Ergen, C. Tabula Sapiens filtered data (v1.0). Zenodo
+                      - link "https://doi.org/10.5281/zenodo.7580683" [ref=e734] [cursor=pointer]:
+                        - /url: https://doi.org/10.5281/zenodo.7580683
+                      - text: (2023).
+                  - listitem [ref=e735]:
+                    - text: "33."
+                    - paragraph [ref=e736]:
+                      - text: Ergen, C. YosefLab/popv-reproducibility. Zenodo
+                      - link "https://doi.org/10.5281/zenodo.12587267" [ref=e737] [cursor=pointer]:
+                        - /url: https://doi.org/10.5281/zenodo.12587267
+                      - text: (2024).
+                  - listitem [ref=e738]:
+                    - text: "34."
+                    - paragraph [ref=e739]:
+                      - text: "Ergen, C., Xing, G., Jayasuriya, M. & Kim, M. YosefLab/PopV: Paper version (v0.9). Zenodo"
+                      - link "https://doi.org/10.5281/zenodo.12561242" [ref=e740] [cursor=pointer]:
+                        - /url: https://doi.org/10.5281/zenodo.12561242
+                      - text: (2024).
+                - paragraph [ref=e741]:
+                  - link "Download references" [ref=e742] [cursor=pointer]:
+                    - /url: https://citation-needed.springer.com/v2/references/10.1038/s41588-024-01993-3?format=refman&flavour=references
+                    - text: Download references
+                    - img [ref=e743]
+          - generic [ref=e746]:
+            - heading "Acknowledgements" [level=2] [ref=e747]
+            - paragraph [ref=e749]:
+              - text: This publication is part of the Human Cell Atlas (
+              - link "www.humancellatlas.org/publications/" [ref=e750] [cursor=pointer]:
+                - /url: http://www.humancellatlas.org/publications/
+              - text: ). We acknowledge the critical feedback provided by the Human Cell Atlas Cell Annotation Platform team. We thank L. Dorman for the extensive benchmarking of popV. We thank the Graphics Department at Weizmann Institute of Science, especially I. Sher, for helping with the graphics in this manuscript. We acknowledge members of the Yosef Laboratories for general feedback. N.Y. was supported by the Chan Zuckerberg Initiative Essential Open Source Software Cycle 4 grant (EOSS4-0000000121) for scvi-tools. C.E. was supported by the German Research Council (DFG Walter Benjamin Stipendium 448802458). A.S. is a Chan Zuckerberg Biohub Investigator. A.P. and N.Y. received funding through grants 2019-203354, 2020-224249, 2021-237288, 2021-006486 and 2022-316725 from the Chan Zuckerberg Initiative DAF, an advised fund of the Silicon Valley Community Foundation and support from the Chan Zuckerberg Biohub. The funders had no role in study design, data collection and analysis, decision to publish or preparation of the manuscript.
+          - region "Author information" [ref=e751]:
+            - generic [ref=e752]:
+              - heading "Author information" [level=2] [ref=e753]
+              - generic [ref=e754]:
+                - generic [ref=e755]: Author notes
+                - list [ref=e756]:
+                  - listitem [ref=e757]:
+                    - paragraph [ref=e758]: Galen Xing
+                    - paragraph [ref=e759]: "Present address: Gladstone Institute of Genomic Immunology, San Francisco, CA, USA"
+                  - listitem [ref=e760]:
+                    - paragraph [ref=e761]: Angela Oliveira Pisco
+                    - paragraph [ref=e762]: "Present address: Insitro, South San Francisco, CA, USA"
+                - heading "Authors and Affiliations" [level=3] [ref=e763]
+                - list [ref=e764]:
+                  - listitem [ref=e765]:
+                    - paragraph [ref=e766]: Center for Computational Biology, University of California, Berkeley, Berkeley, CA, USA
+                    - paragraph [ref=e767]: Can Ergen, Galen Xing, Chenling Xu, Aaron Streets & Nir Yosef
+                  - listitem [ref=e768]:
+                    - paragraph [ref=e769]: Department of Electrical Engineering and Computer Sciences, University of California, Berkeley, Berkeley, CA, USA
+                    - paragraph [ref=e770]: Can Ergen, Martin Kim, Michael Jayasuriya & Nir Yosef
+                  - listitem [ref=e771]:
+                    - paragraph [ref=e772]: Chan Zuckerberg Biohub—San Francisco, San Francisco, CA, USA
+                    - paragraph [ref=e773]: Galen Xing, Erin McGeever, Angela Oliveira Pisco & Aaron Streets
+                  - listitem [ref=e774]:
+                    - paragraph [ref=e775]: Department of Bioengineering, University of California, Berkeley, Berkeley, CA, USA
+                    - paragraph [ref=e776]: Aaron Streets
+                  - listitem [ref=e777]:
+                    - paragraph [ref=e778]: System Immunology, Weizmann Institute of Science, Rehovot, Israel
+                    - paragraph [ref=e779]: Nir Yosef
+                  - listitem [ref=e780]:
+                    - paragraph [ref=e781]: Ragon Institute of MGH, MIT, and Harvard, Cambridge, MA, USA
+                    - paragraph [ref=e782]: Nir Yosef
+                - heading "Contributions" [level=3] [ref=e783]
+                - paragraph [ref=e784]: C.E., C.X., G.X. and N.Y. conceptualized the study. G.X. and C.E. conceptualized the statistical model with contributions from C.X., M.J. and A.M. C.E. designed and implemented popV with contributions from G.X. and C.X. N.Y., A.P. and A.S. supervised the work. C.E. and N.Y. wrote the paper.
+                - heading "Corresponding author" [level=3] [ref=e785]
+                - paragraph [ref=e786]:
+                  - text: Correspondence to
+                  - link "email Nir Yosef" [ref=e787] [cursor=pointer]:
+                    - /url: mailto:nir.yosef@weizmann.ac.il
+                    - text: Nir Yosef
+                  - text: .
+          - generic [ref=e789]:
+            - heading "Ethics declarations" [level=2] [ref=e790]
+            - generic [ref=e791]:
+              - heading "Competing interests" [level=3] [ref=e792]
+              - paragraph [ref=e793]: The authors declare no competing interests.
+          - generic [ref=e795]:
+            - heading "Peer review" [level=2] [ref=e796]
+            - generic [ref=e797]:
+              - heading "Peer review information" [level=3] [ref=e798]
+              - paragraph [ref=e799]: Nature Genetics thanks Tallulah Andrews, Helene Kretzmer and the other, anonymous, reviewer(s) for their contribution to the peer review of this work.
+          - generic [ref=e801]:
+            - heading "Additional information" [level=2] [ref=e802]
+            - paragraph [ref=e804]: Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+          - generic [ref=e806]:
+            - heading "Extended data" [level=2] [ref=e807]
+            - generic [ref=e809]:
+              - generic [ref=e810]:
+                - heading "Extended Data Fig. 1 Comparison of majority voting and popV prediction score." [level=3] [ref=e811]:
+                  - link "Extended Data Fig. 1 Comparison of majority voting and popV prediction score." [ref=e812] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3/figures/4
+                - paragraph [ref=e814]:
+                  - text: A single cell is annotated by eight different algorithms. OnClass uses a two-step annotation procedure, in which the second can predict cell types that are not part of the reference dataset (here CD4+ CD25
+                  - superscript [ref=e815]: +
+                  - text: T
+                  - subscript [ref=e816]: reg
+                  - text: cell). For simple majority voting, we use the prediction of OnClass at step 1, where it is bound to the cell types observed in the reference dataset (OnClass_seen) and count the predictions of each algorithm. For popV scoring, we propagate the prediction of OnClass along the Cell Ontology graph (shortest path to the root node). Every cell along the path from the root term to the predicted term receives a score of 1, and majority voting is performed for these propagated votes. In the case here, using majority voting, we would classify the cell as a CD8
+                  - superscript [ref=e817]: +
+                  - text: T cell with a score of 4, while using the popV consensus score, we would classify the cell as a CD4
+                  - superscript [ref=e818]: +
+                  - text: T cell with a score of 4.
+              - generic [ref=e819]:
+                - heading "Extended Data Fig. 2 scANVI shows the highest integration of query cells, and popV shows low confidence for lowly abundant cell types." [level=3] [ref=e820]:
+                  - link "Extended Data Fig. 2 scANVI shows the highest integration of query cells, and popV shows low confidence for lowly abundant cell types." [ref=e821] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3/figures/5
+                - paragraph [ref=e823]: a, ScIB metrics comparing integration scores after integrating query and reference dataset showed the best integration using scANVI and improvement over uncorrected data. Labels from the original Lung Cell Atlas paper were used to compute cell type-dependent scores, and scores were computed only on query cells. b, Displayed is the number of each predicted cell type in query cells and the accuracy for each annotated cell type. c, Absolute accuracy corresponds to exact match, while neighbor-only accuracy corresponds to all adjacent cell types (all accuracy terms except no match). Cells that were rarely predicted (smooth muscle cells and blood vessel endothelial cells showed the lowest accuracy). Most cell types have an accuracy greater than 0.9.
+              - generic [ref=e824]:
+                - heading "Extended Data Fig. 3 Analysis of T cell sub-clustering in Lung Cell Atlas and Tabula Sapiens." [level=3] [ref=e825]:
+                  - link "Extended Data Fig. 3 Analysis of T cell sub-clustering in Lung Cell Atlas and Tabula Sapiens." [ref=e826] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3/figures/6
+                - paragraph [ref=e828]: a, UMAP of cells from the reference dataset labeled with Tabula Sapiens cell type labels highlights the overlap of these labels in integrated space without a clear distinction between CD4 and CD8 T cells. Differential expression analysis identifies surfactant protein genes as markers for annotated effector T cells, which is likely due to ambient counts and no strong marker gene expression in CD4 T cells. b, UMAP of cells from the query dataset labeled with cell type labels from the Lung Cell Atlas shows a clear distinction between different cell types. Differentially expressed genes for those cell types align well with the respective literature. c, Canonical marker genes for various subtypes show a clear split between T cells and NK cells, as well as CD8 and CD4 T cells. GZMA but not GZMB is also expressed in CD4 T cells.
+              - generic [ref=e829]:
+                - heading "Extended Data Fig. 4 Comparison of popV against majority voting of multiple SVM classifiers." [level=3] [ref=e830]:
+                  - link "Extended Data Fig. 4 Comparison of popV against majority voting of multiple SVM classifiers." [ref=e831] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3/figures/7
+                - paragraph [ref=e833]:
+                  - text: All plots are displayed for query cells of the lung cell query dataset. We compare popV against majority voting after SVM, for which different kernels (radial basis function, polynomial, linear and sigmoid) and the cost were varied (0.1 and 1.0). a, UMAP-highlighting cells with a consensus score of 4 or less (low consensus). We compare popV here with the majority vote of eight distinct SVM classifiers, which differ in their choice of the kernel and c parameters. b, Accuracy versus consensus score (left) and majority voting score (right) for both consensus algorithms colored by ontology accuracy terms (
+                  - link "Methods" [ref=e834] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#Sec7
+                  - text: ). c, Hamming distance between the underlying classifiers of popV and SVM majority voting. d, Precision–recall curves for both algorithms. We used all exact match as the label for the metric calculation. In the legend, area under the precision–recall curve is given (AUPRC). In addition, the F1 score at best decision boundary is given, along with the confidence level at the decision boundary as well as the ratio of cells annotated above this threshold. popV shows the higher AUPRC and F1 scores at the decision boundary. e, Focus on T cells and NK cells (circle in a). UMAP of the consensus voting as well as underlying classifiers. Top, PopV classifiers are displayed. The main disagreement is between CD8 and CD4 T cells. Middle, Majority voting after SVM shows disagreement between NK and CD8
+                  - superscript [ref=e835]: +
+                  - text: T cells. Bottom right, Original annotation of query cells shows agreement for NK cells and no clear separation between different T cell labels.
+              - generic [ref=e836]:
+                - heading "Extended Data Fig. 5 Calibration of certainty and accuracy for all methods evaluated on all query cells from the thymus." [level=3] [ref=e837]:
+                  - link "Extended Data Fig. 5 Calibration of certainty and accuracy for all methods evaluated on all query cells from the thymus." [ref=e838] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3/figures/8
+                - paragraph [ref=e840]: Displayed is the accuracy for bins of internal classification certainty. X-axis labels highlight the number of cells in each bin. PopV, OnClass_seen and random forest show the strongest correlation between exact match and certainty. PopV shows the highest number of high-confidence predictions. Several methods show a high number of incorrect results for predictions with confidence above >87.5%. The coloring of the bars is calculated for the prediction of the respective algorithm, standardized to a height of one per confidence level.
+              - generic [ref=e841]:
+                - heading "Extended Data Fig. 6 Precision–recall curves for all classifiers evaluated on all query cells from the thymus." [level=3] [ref=e842]:
+                  - link "Extended Data Fig. 6 Precision–recall curves for all classifiers evaluated on all query cells from the thymus." [ref=e843] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3/figures/9
+                - paragraph [ref=e845]: Precision–recall curves are evaluated for all query cells. We used all exact match as the label for the metric calculation. In the legend, area under the precision–recall curve is given (AUPRC). F1 score at best decision boundary is given, along with the confidence level at the decision boundary as well as the ratio of cells annotated above this threshold. PopV shows the highest AUPRC and F1 score at the decision boundary. The decision boundary corresponds to a consensus score of 7 and above.
+              - generic [ref=e846]:
+                - heading "Extended Data Fig. 7 Predictions of cell-type labels across different technologies." [level=3] [ref=e847]:
+                  - link "Extended Data Fig. 7 Predictions of cell-type labels across different technologies." [ref=e848] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3/figures/10
+                - paragraph [ref=e850]:
+                  - text: Confusion matrix of cell-type labels for (a) nucleus as well as (b) Drop-seq query cells using cells sequenced with 10× from Fig.
+                  - link "2" [ref=e851] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#Fig2
+                  - text: as the reference dataset. Matrix is column normalized on the respective y-axis; the predicted label from popV is given, and on the x-axis, the original label is provided. Displayed is the ratio of predicted cell types with popV for each ground truth cell type.
+              - generic [ref=e852]:
+                - heading "Extended Data Fig. 8 PopV accurately performs labeling of cell types across different brain regions and highlights region-specific neurons." [level=3] [ref=e853]:
+                  - link "Extended Data Fig. 8 PopV accurately performs labeling of cell types across different brain regions and highlights region-specific neurons." [ref=e854] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3/figures/11
+                - paragraph [ref=e856]: a, UMAP embedding after scANVI integration of reference nuclei (motor cortex, M1G) and query nuclei (medial temporal gyrus, MTG) labeled with consensus score, brain region (ROI), popV prediction and original annotation (supercluster term). b, Confusion matrix for the cell types predicted by popV and their respective manual annotations highlights the agreement between both annotations. Displayed is the ratio of predicted cell types with popV for each ground truth cell type. c, Mean agreement score per cell type shows that confused cell types also exhibit a lower agreement score and can be detected based on their score. d, Differentially expressed genes for cluster ID for upper-layer intratelencephalic neurons. Highlighted are cluster IDs 135 and 138, which are over-represented in the MTG over the M1G. These clusters show an overexpression of FOXP2 and TSHZ2 and are very similar to each other.
+              - generic [ref=e857]:
+                - heading "Extended Data Fig. 9 Precision–recall curves for popV prediction when removing classifiers from voting scheme." [level=3] [ref=e858]:
+                  - link "Extended Data Fig. 9 Precision–recall curves for popV prediction when removing classifiers from voting scheme." [ref=e859] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3/figures/12
+                - paragraph [ref=e861]:
+                  - text: We evaluated the performance of popV when disabling a subset of algorithms. We removed OnClass from the algorithms so that majority voting and popV consensus scoring yield the same result. We evaluated the performance of popV using a subset of 5 algorithms each. On the respective y- and x-axes, the two algorithms removed from popV for the respective trial are displayed. The difference between the accuracy or auPRC between the original prediction and the prediction after subsetting the algorithm is displayed. Each metric obtained when using all algorithms in popV is given in the plot title. a and b denote the thymus experiment (Fig.
+                  - link "3" [ref=e862] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#Fig3
+                  - text: ) evaluated on all query cells. c and d correspond to the nucleus dataset (Extended Data Fig.
+                  - link "7" [ref=e863] [cursor=pointer]:
+                    - /url: /articles/s41588-024-01993-3#Fig10
+                  - text: ).
+          - generic [ref=e865]:
+            - heading "Supplementary information" [level=2] [ref=e866]
+            - generic [ref=e868]:
+              - generic [ref=e869]:
+                - heading "Supplementary Information (download PDF )" [level=3] [ref=e870]:
+                  - link "Supplementary Information (download PDF )" [ref=e871] [cursor=pointer]:
+                    - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41588-024-01993-3/MediaObjects/41588_2024_1993_MOESM1_ESM.pdf
+                    - text: Supplementary Information (download PDF
+                    - img [ref=e872]
+                    - text: )
+                - paragraph [ref=e875]: Supplementary Note, Supplementary Figs. 1–19 and Supplementary Tables 1–11.
+              - heading "Reporting Summary (download PDF )" [level=3] [ref=e877]:
+                - link "Reporting Summary (download PDF )" [ref=e878] [cursor=pointer]:
+                  - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41588-024-01993-3/MediaObjects/41588_2024_1993_MOESM2_ESM.pdf
+                  - text: Reporting Summary (download PDF
+                  - img [ref=e879]
+                  - text: )
+          - generic [ref=e882]:
+            - heading "Rights and permissions" [level=2] [ref=e883]
+            - generic [ref=e884]:
+              - paragraph [ref=e885]:
+                - text: Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit
+                - link "http://creativecommons.org/licenses/by-nc-nd/4.0/" [ref=e886] [cursor=pointer]:
+                  - /url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+                - text: .
+              - paragraph [ref=e887]:
+                - link "Reprints and permissions" [ref=e888] [cursor=pointer]:
+                  - /url: https://s100.copyright.com/AppDispatchServlet?title=Consensus%20prediction%20of%20cell%20type%20labels%20in%20single-cell%20data%20with%20popV&author=Can%20Ergen%20et%20al&contentID=10.1038%2Fs41588-024-01993-3&copyright=The%20Author%28s%29&publication=1061-4036&publicationDate=2024-11-20&publisherName=SpringerNature&orderBeanReset=true&oa=CC%20BY-NC-ND
+          - region "About this article" [ref=e889]:
+            - generic [ref=e890]:
+              - heading "About this article" [level=2] [ref=e891]
+              - generic [ref=e893]:
+                - link "Check for updates. Verify currency and authenticity via CrossMark" [ref=e895] [cursor=pointer]:
+                  - /url: https://crossmark.crossref.org/dialog/?doi=10.1038/s41588-024-01993-3
+                  - img "Check for updates. Verify currency and authenticity via CrossMark" [ref=e896]
+                - generic [ref=e897]:
+                  - heading "Cite this article" [level=3] [ref=e898]
+                  - paragraph [ref=e899]: Ergen, C., Xing, G., Xu, C. et al. Consensus prediction of cell type labels in single-cell data with popV. Nat Genet 56, 2731–2738 (2024). https://doi.org/10.1038/s41588-024-01993-3
+                  - paragraph [ref=e900]:
+                    - link "Download citation" [ref=e901] [cursor=pointer]:
+                      - /url: https://citation-needed.springer.com/v2/references/10.1038/s41588-024-01993-3?format=refman&flavour=citation
+                      - text: Download citation
+                      - img [ref=e902]
+                  - list [ref=e904]:
+                    - listitem [ref=e905]:
+                      - paragraph [ref=e906]:
+                        - text: Received
+                        - time [ref=e908]: 02 September 2023
+                    - listitem [ref=e909]:
+                      - paragraph [ref=e910]:
+                        - text: Accepted
+                        - time [ref=e912]: 18 October 2024
+                    - listitem [ref=e913]:
+                      - paragraph [ref=e914]:
+                        - text: Published
+                        - time [ref=e916]: 20 November 2024
+                    - listitem [ref=e917]:
+                      - paragraph [ref=e918]:
+                        - text: Version of record
+                        - time [ref=e920]: 20 November 2024
+                    - listitem [ref=e921]:
+                      - paragraph [ref=e922]:
+                        - text: Issue date
+                        - time [ref=e924]: December 2024
+                    - listitem [ref=e925]:
+                      - paragraph [ref=e926]:
+                        - text: DOI
+                        - generic [ref=e927]: https://doi.org/10.1038/s41588-024-01993-3
+                  - generic [ref=e929]:
+                    - heading "Share this article" [level=3] [ref=e930]
+                    - paragraph [ref=e931]: "Anyone you share the following link with will be able to read this content:"
+                    - button "Get shareable link" [ref=e932] [cursor=pointer]
+                    - paragraph [ref=e933]: Provided by the Springer Nature SharedIt content-sharing initiative
+                  - generic [ref=e934]:
+                    - heading "Subjects" [level=3] [ref=e935]
+                    - list [ref=e936]:
+                      - listitem [ref=e937]:
+                        - link "Data processing" [ref=e938] [cursor=pointer]:
+                          - /url: /subjects/data-processing
+                      - listitem [ref=e939]:
+                        - link "Software" [ref=e940] [cursor=pointer]:
+                          - /url: /subjects/software
+        - generic [ref=e942]:
+          - heading "This article is cited by" [level=2] [ref=e943]
+          - list [ref=e945]:
+            - listitem [ref=e946]:
+              - heading "Improving atlas-scale single-cell annotation models with hierarchical cross-entropy loss" [level=3] [ref=e947]:
+                - link "Improving atlas-scale single-cell annotation models with hierarchical cross-entropy loss" [ref=e948] [cursor=pointer]:
+                  - /url: https://doi.org/10.1038/s43588-025-00945-z
+              - list [ref=e949]:
+                - listitem [ref=e950]: Sebastiano Cultrera di Montesano
+                - listitem [ref=e951]: ", Davide D’Ascenzo"
+                - listitem [ref=e952]: ... Lorin Crawford
+              - paragraph [ref=e953]: Nature Computational Science (2026)
+            - listitem [ref=e954]:
+              - 'heading "Reusability report: Exploring the transferability of self-supervised learning models from single-cell to spatial transcriptomics" [level=3] [ref=e955]':
+                - 'link "Reusability report: Exploring the transferability of self-supervised learning models from single-cell to spatial transcriptomics" [ref=e956] [cursor=pointer]':
+                  - /url: https://doi.org/10.1038/s42256-025-01097-5
+              - list [ref=e957]:
+                - listitem [ref=e958]: Chuangyi Han
+                - listitem [ref=e959]: ", Senlin Lin"
+                - listitem [ref=e960]: ... Zhiyuan Yuan
+              - paragraph [ref=e961]: Nature Machine Intelligence (2025)
+            - listitem [ref=e962]:
+              - heading "Construction, Deployment, and Usage of the Human Reference Atlas Knowledge Graph" [level=3] [ref=e963]:
+                - link "Construction, Deployment, and Usage of the Human Reference Atlas Knowledge Graph" [ref=e964] [cursor=pointer]:
+                  - /url: https://doi.org/10.1038/s41597-025-05183-6
+              - list [ref=e965]:
+                - listitem [ref=e966]: Andreas Bueckle
+                - listitem [ref=e967]: ", Bruce W. Herr"
+                - listitem [ref=e968]: ... Katy Börner
+              - paragraph [ref=e969]: Scientific Data (2025)
+            - listitem [ref=e970]:
+              - heading "Multimodal profiling reveals tissue-directed signatures of human immune cells altered with age" [level=3] [ref=e971]:
+                - link "Multimodal profiling reveals tissue-directed signatures of human immune cells altered with age" [ref=e972] [cursor=pointer]:
+                  - /url: https://doi.org/10.1038/s41590-025-02241-4
+              - list [ref=e973]:
+                - listitem [ref=e974]: Steven B. Wells
+                - listitem [ref=e975]: ", Daniel B. Rainbow"
+                - listitem [ref=e976]: ... Nir Yosef
+              - paragraph [ref=e977]: Nature Immunology (2025)
+            - listitem [ref=e978]:
+              - heading "Computational technologies of the Human Cell Atlas" [level=3] [ref=e979]:
+                - link "Computational technologies of the Human Cell Atlas" [ref=e980] [cursor=pointer]:
+                  - /url: https://doi.org/10.1038/d41586-024-03762-y
+              - list [ref=e981]:
+                - listitem [ref=e982]: Amber Dance
+              - paragraph [ref=e983]: Nature (2024)
+  - contentinfo [ref=e984]:
+    - generic [ref=e988]:
+      - paragraph [ref=e989]: Nature Genetics (Nat Genet)
+      - paragraph [ref=e990]: ISSN 1546-1718 (online)
+      - paragraph [ref=e991]: ISSN 1061-4036 (print)
+    - generic [ref=e992]:
+      - generic [ref=e993]:
+        - heading "nature.com footer links" [level=2] [ref=e994]
+        - generic [ref=e996]:
+          - generic [ref=e997]:
+            - heading "About Nature Portfolio" [level=3] [ref=e998]
+            - list [ref=e999]:
+              - listitem [ref=e1000]:
+                - link "About us" [ref=e1001] [cursor=pointer]:
+                  - /url: https://www.nature.com/npg_/company_info/index.html
+              - listitem [ref=e1002]:
+                - link "Press releases" [ref=e1003] [cursor=pointer]:
+                  - /url: https://www.nature.com/npg_/press_room/press_releases.html
+              - listitem [ref=e1004]:
+                - link "Press office" [ref=e1005] [cursor=pointer]:
+                  - /url: https://press.nature.com/
+              - listitem [ref=e1006]:
+                - link "Contact us" [ref=e1007] [cursor=pointer]:
+                  - /url: https://support.nature.com/support/home
+          - generic [ref=e1008]:
+            - heading "Discover content" [level=3] [ref=e1009]
+            - list [ref=e1010]:
+              - listitem [ref=e1011]:
+                - link "Journals A-Z" [ref=e1012] [cursor=pointer]:
+                  - /url: https://www.nature.com/siteindex
+              - listitem [ref=e1013]:
+                - link "Articles by subject" [ref=e1014] [cursor=pointer]:
+                  - /url: https://www.nature.com/subjects
+              - listitem [ref=e1015]:
+                - link "protocols.io" [ref=e1016] [cursor=pointer]:
+                  - /url: https://www.protocols.io/
+              - listitem [ref=e1017]:
+                - link "Nature Index" [ref=e1018] [cursor=pointer]:
+                  - /url: https://www.natureindex.com/
+          - generic [ref=e1019]:
+            - heading "Publishing policies" [level=3] [ref=e1020]
+            - list [ref=e1021]:
+              - listitem [ref=e1022]:
+                - link "Nature portfolio policies" [ref=e1023] [cursor=pointer]:
+                  - /url: https://www.nature.com/authors/editorial_policies
+              - listitem [ref=e1024]:
+                - link "Open access" [ref=e1025] [cursor=pointer]:
+                  - /url: https://www.nature.com/nature-research/open-access
+          - generic [ref=e1026]:
+            - heading "Author & Researcher services" [level=3] [ref=e1027]
+            - list [ref=e1028]:
+              - listitem [ref=e1029]:
+                - link "Reprints & permissions" [ref=e1030] [cursor=pointer]:
+                  - /url: https://www.nature.com/reprints
+              - listitem [ref=e1031]:
+                - link "Research data" [ref=e1032] [cursor=pointer]:
+                  - /url: https://www.springernature.com/gp/authors/research-data
+              - listitem [ref=e1033]:
+                - link "Language editing" [ref=e1034] [cursor=pointer]:
+                  - /url: https://authorservices.springernature.com/language-editing/
+              - listitem [ref=e1035]:
+                - link "Scientific editing" [ref=e1036] [cursor=pointer]:
+                  - /url: https://authorservices.springernature.com/scientific-editing/
+              - listitem [ref=e1037]:
+                - link "Nature Masterclasses" [ref=e1038] [cursor=pointer]:
+                  - /url: https://masterclasses.nature.com/
+              - listitem [ref=e1039]:
+                - link "Research Solutions" [ref=e1040] [cursor=pointer]:
+                  - /url: https://solutions.springernature.com/
+          - generic [ref=e1041]:
+            - heading "Libraries & institutions" [level=3] [ref=e1042]
+            - list [ref=e1043]:
+              - listitem [ref=e1044]:
+                - link "Librarian service & tools" [ref=e1045] [cursor=pointer]:
+                  - /url: https://www.springernature.com/gp/librarians/tools-services
+              - listitem [ref=e1046]:
+                - link "Librarian portal" [ref=e1047] [cursor=pointer]:
+                  - /url: https://www.springernature.com/gp/librarians/manage-your-account/librarianportal
+              - listitem [ref=e1048]:
+                - link "Open research" [ref=e1049] [cursor=pointer]:
+                  - /url: https://www.nature.com/openresearch/about-open-access/information-for-institutions
+              - listitem [ref=e1050]:
+                - link "Recommend to library" [ref=e1051] [cursor=pointer]:
+                  - /url: https://www.springernature.com/gp/librarians/recommend-to-your-library
+          - generic [ref=e1052]:
+            - heading "Advertising & partnerships" [level=3] [ref=e1053]
+            - list [ref=e1054]:
+              - listitem [ref=e1055]:
+                - link "Advertising" [ref=e1056] [cursor=pointer]:
+                  - /url: https://partnerships.nature.com/product/digital-advertising/
+              - listitem [ref=e1057]:
+                - link "Partnerships & Services" [ref=e1058] [cursor=pointer]:
+                  - /url: https://partnerships.nature.com/
+              - listitem [ref=e1059]:
+                - link "Media kits" [ref=e1060] [cursor=pointer]:
+                  - /url: https://partnerships.nature.com/media-kits/
+              - listitem [ref=e1061]:
+                - link "Branded content" [ref=e1062] [cursor=pointer]:
+                  - /url: https://partnerships.nature.com/product/branded-content-native-advertising/
+          - generic [ref=e1063]:
+            - heading "Professional development" [level=3] [ref=e1064]
+            - list [ref=e1065]:
+              - listitem [ref=e1066]:
+                - link "Nature Awards" [ref=e1067] [cursor=pointer]:
+                  - /url: https://www.nature.com/immersive/natureawards/index.html
+              - listitem [ref=e1068]:
+                - link "Nature Careers" [ref=e1069] [cursor=pointer]:
+                  - /url: https://www.nature.com/naturecareers/
+              - listitem [ref=e1070]:
+                - link "Nature Conferences" [ref=e1071] [cursor=pointer]:
+                  - /url: https://conferences.nature.com
+                  - text: Nature
+                  - text: Conferences
+          - generic [ref=e1073]:
+            - heading "Regional websites" [level=3] [ref=e1074]
+            - list [ref=e1075]:
+              - listitem [ref=e1076]:
+                - link "Nature Africa" [ref=e1077] [cursor=pointer]:
+                  - /url: https://www.nature.com/natafrica
+              - listitem [ref=e1078]:
+                - link "Nature China" [ref=e1079] [cursor=pointer]:
+                  - /url: http://www.naturechina.com
+              - listitem [ref=e1080]:
+                - link "Nature India" [ref=e1081] [cursor=pointer]:
+                  - /url: https://www.nature.com/nindia
+              - listitem [ref=e1082]:
+                - link "Nature Japan" [ref=e1083] [cursor=pointer]:
+                  - /url: https://www.natureasia.com/ja-jp
+              - listitem [ref=e1084]:
+                - link "Nature Middle East" [ref=e1085] [cursor=pointer]:
+                  - /url: https://www.nature.com/nmiddleeast
+        - list [ref=e1087]:
+          - listitem [ref=e1088]:
+            - link "Privacy Policy" [ref=e1089] [cursor=pointer]:
+              - /url: https://www.nature.com/info/privacy
+          - listitem [ref=e1090]:
+            - link "Use of cookies" [ref=e1091] [cursor=pointer]:
+              - /url: https://www.nature.com/info/cookies
+          - listitem [ref=e1092]:
+            - button "Your privacy choices/Manage cookies" [ref=e1093] [cursor=pointer]
+          - listitem [ref=e1094]:
+            - link "Legal notice" [ref=e1095] [cursor=pointer]:
+              - /url: https://www.nature.com/info/legal-notice
+          - listitem [ref=e1096]:
+            - link "Accessibility statement" [ref=e1097] [cursor=pointer]:
+              - /url: https://www.nature.com/info/accessibility-statement
+          - listitem [ref=e1098]:
+            - link "Terms & Conditions" [ref=e1099] [cursor=pointer]:
+              - /url: https://www.nature.com/info/terms-and-conditions
+          - listitem [ref=e1100]:
+            - link "Your US state privacy rights" [ref=e1101] [cursor=pointer]:
+              - /url: https://www.springernature.com/ccpa
+      - generic [ref=e1102]:
+        - link "Springer Nature" [ref=e1103] [cursor=pointer]:
+          - /url: https://www.springernature.com/
+          - img "Springer Nature" [ref=e1104]
+        - paragraph [ref=e1105]: © 2026 Springer Nature Limited
+    - img [ref=e1107]
+  - generic [ref=e1119]:
+    - button "Close" [ref=e1121] [cursor=pointer]:
+      - img [ref=e1122]
+      - generic [ref=e1126]: Close
+    - generic [ref=e1128]:
+      - generic [ref=e1129]:
+        - img "Nature Briefing AI and Robotics" [ref=e1130]
+        - paragraph [ref=e1131]:
+          - text: Sign up for the
+          - emphasis [ref=e1132]: "Nature Briefing: AI and Robotics"
+          - text: newsletter — what matters in AI and robotics research, free to your inbox weekly.
+      - generic [ref=e1134]:
+        - generic [ref=e1135]: Email address
+        - generic [ref=e1136]:
+          - textbox "Email address" [ref=e1137]:
+            - /placeholder: e.g. jo.smith@university.ac.uk
+          - button "Sign up" [ref=e1138] [cursor=pointer]
+        - generic [ref=e1139]:
+          - checkbox "I agree my information will be processed in accordance with the Nature and Springer Nature Limited Privacy Policy." [ref=e1140] [cursor=pointer]
+          - generic [ref=e1141] [cursor=pointer]:
+            - text: I agree my information will be processed in accordance with the
+            - emphasis [ref=e1142]: Nature
+            - text: and Springer Nature Limited
+            - link "Privacy Policy" [ref=e1143]:
+              - /url: https://www.nature.com/info/privacy
+            - text: .

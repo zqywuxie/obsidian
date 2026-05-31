@@ -1,0 +1,413 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to Main Content" [ref=e3] [cursor=pointer]:
+      - /url: "#page-body-id"
+    - link "Skip to Main Menu" [ref=e4] [cursor=pointer]:
+      - /url: "#mega-menu-nav"
+  - generic [ref=e6]:
+    - generic [ref=e10]:
+      - banner [ref=e11]:
+        - img "Advertisement" [ref=e17]
+        - generic [ref=e18]:
+          - generic:
+            - generic [ref=e19]:
+              - link "Cell Press" [ref=e20] [cursor=pointer]:
+                - /url: /home
+                - img [ref=e21]
+              - link "Cell Reports" [ref=e26] [cursor=pointer]:
+                - /url: /cell-reports/home
+                - img "Cell Reports" [ref=e27]
+            - list [ref=e31]:
+              - listitem [ref=e32]:
+                - button "open links dialog" [ref=e34]:
+                  - generic [ref=e35]: open links dialog
+                  - generic [ref=e36]: 
+      - navigation "Main" [ref=e41]:
+        - generic:
+          - link "Skip menu":
+            - /url: "#searchText"
+        - generic [ref=e42]:
+          - button "menu-toggle" [ref=e43]:
+            - generic [ref=e44]: Main menu
+            - generic [ref=e45]: 
+          - text:     
+          - generic "Quick Search" [ref=e49]:
+            - generic [ref=e50]:
+              - textbox "Search for..." [ref=e51]
+              - status [ref=e52]
+              - button "Submit the search form" [ref=e53] [cursor=pointer]: 
+            - text: 
+      - generic:
+        - generic:
+          - generic: 
+      - text: 
+    - main [ref=e57]
+    - generic [ref=e64]:
+      - img "Advertisement" [ref=e70]
+      - generic [ref=e72]:
+        - link "Cell Press" [ref=e74] [cursor=pointer]:
+          - /url: /home
+          - img [ref=e75]
+        - list [ref=e90]:
+          - listitem [ref=e91]:
+            - link "Facebook" [ref=e92] [cursor=pointer]:
+              - /url: https://on.fb.me/1tgHakh
+              - generic [ref=e93]: 
+          - listitem [ref=e94]:
+            - link "Instagram" [ref=e95] [cursor=pointer]:
+              - /url: https://www.instagram.com/cellpress/
+              - img [ref=e96]
+          - listitem [ref=e103]:
+            - link "LinkedIn" [ref=e104] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/cell-press/
+              - generic [ref=e105]: 
+          - listitem [ref=e106]:
+            - link "Twitter" [ref=e107] [cursor=pointer]:
+              - /url: http://bit.ly/1zq7Q5T
+              - img [ref=e108]
+          - listitem [ref=e110]:
+            - link "WeChat" [ref=e111] [cursor=pointer]:
+              - /url: /pb-assets/marketing/WeChat/WeChat-1557753222727.jpg
+              - img [ref=e112]
+          - listitem [ref=e118]:
+            - link "Weibo" [ref=e119] [cursor=pointer]:
+              - /url: https://www.weibo.com/CellPress
+              - img [ref=e120]
+          - listitem [ref=e126]:
+            - link "YouTube" [ref=e127] [cursor=pointer]:
+              - /url: https://www.youtube.com/user/cellvideoabstracts
+              - img [ref=e128]
+      - generic [ref=e133]:
+        - generic:
+          - generic [ref=e136]:
+            - generic [ref=e137]:
+              - heading "Life & medical sciences journals" [level=2] [ref=e138]
+              - list [ref=e139]:
+                - listitem [ref=e140]:
+                  - link "Cell" [ref=e141] [cursor=pointer]:
+                    - /url: /cell/home
+                - listitem [ref=e142]:
+                  - link "Cancer Cell" [ref=e143] [cursor=pointer]:
+                    - /url: /cancer-cell/home
+                - listitem [ref=e144]:
+                  - link "Cell Chemical Biology" [ref=e145] [cursor=pointer]:
+                    - /url: /cell-chemical-biology
+                - listitem [ref=e146]:
+                  - link "Cell Genomics" [ref=e147] [cursor=pointer]:
+                    - /url: /cell-genomics/home
+                - listitem [ref=e148]:
+                  - link "Cell Host & Microbe" [ref=e149] [cursor=pointer]:
+                    - /url: /cell-host-microbe/home
+                - listitem [ref=e150]:
+                  - link "Cell Metabolism" [ref=e151] [cursor=pointer]:
+                    - /url: /cell-metabolism/home
+                - listitem [ref=e152]:
+                  - link "Cell Reports" [ref=e153] [cursor=pointer]:
+                    - /url: /cell-reports/home
+                - listitem [ref=e154]:
+                  - link "Cell Reports Medicine" [ref=e155] [cursor=pointer]:
+                    - /url: /cell-reports-medicine/home
+                - listitem [ref=e156]:
+                  - link "Cell Stem Cell" [ref=e157] [cursor=pointer]:
+                    - /url: /cell-stem-cell/home
+                - listitem [ref=e158]:
+                  - link "Cell Systems" [ref=e159] [cursor=pointer]:
+                    - /url: /cell-systems/home
+                - listitem [ref=e160]:
+                  - link "Current Biology" [ref=e161] [cursor=pointer]:
+                    - /url: /current-biology/home
+                - listitem [ref=e162]:
+                  - link "Developmental Cell" [ref=e163] [cursor=pointer]:
+                    - /url: /developmental-cell/home
+                - listitem [ref=e164]:
+                  - link "Immunity" [ref=e165] [cursor=pointer]:
+                    - /url: /immunity/home
+                - listitem [ref=e166]:
+                  - link "Med" [ref=e167] [cursor=pointer]:
+                    - /url: /med/home
+                - listitem [ref=e168]:
+                  - link "Molecular Cell" [ref=e169] [cursor=pointer]:
+                    - /url: /molecular-cell/home
+                - listitem [ref=e170]:
+                  - link "Neuron" [ref=e171] [cursor=pointer]:
+                    - /url: /neuron/home
+                - listitem [ref=e172]:
+                  - link "Structure" [ref=e173] [cursor=pointer]:
+                    - /url: /structure/home
+                - listitem [ref=e174]:
+                  - link "American Journal of Human Genetics (partner)" [ref=e175] [cursor=pointer]:
+                    - /url: /ajhg/home
+                - listitem [ref=e176]:
+                  - link "Biophysical Journal (partner)" [ref=e177] [cursor=pointer]:
+                    - /url: /biophysj/home
+                - listitem [ref=e178]:
+                  - link "Biophysical Reports (partner)" [ref=e179] [cursor=pointer]:
+                    - /url: /biophysreports/home
+                - listitem [ref=e180]:
+                  - link "Human Genetics and Genomics Advances (partner)" [ref=e181] [cursor=pointer]:
+                    - /url: /hgg-advances/home
+                - listitem [ref=e182]:
+                  - link "Molecular Plant (partner)" [ref=e183] [cursor=pointer]:
+                    - /url: /molecular-plant/home
+                - listitem [ref=e184]:
+                  - link "Molecular Therapy (partner)" [ref=e185] [cursor=pointer]:
+                    - /url: /molecular-therapy-family/molecular-therapy/home
+                - listitem [ref=e186]:
+                  - link "Molecular Therapy Advances (partner)" [ref=e187] [cursor=pointer]:
+                    - /url: /molecular-therapy-family/advances/home
+                - listitem [ref=e188]:
+                  - link "Molecular Therapy Nucleic Acids (partner)" [ref=e189] [cursor=pointer]:
+                    - /url: /molecular-therapy-family/nucleic-acids/home
+                - listitem [ref=e190]:
+                  - link "Molecular Therapy Oncology (partner)" [ref=e191] [cursor=pointer]:
+                    - /url: /molecular-therapy-family/oncology/home
+                - listitem [ref=e192]:
+                  - link "Plant Communications (partner)" [ref=e193] [cursor=pointer]:
+                    - /url: /plant-communications/home
+                - listitem [ref=e194]:
+                  - link "Stem Cell Reports (partner)" [ref=e195] [cursor=pointer]:
+                    - /url: /stem-cell-reports/home
+                - listitem [ref=e196]:
+                  - link "Trends in Biochemical Sciences" [ref=e197] [cursor=pointer]:
+                    - /url: /trends/biochemical-sciences/home
+                - listitem
+                - listitem [ref=e198]:
+                  - link "Trends in Cancer" [ref=e199] [cursor=pointer]:
+                    - /url: /trends/cancer/home
+                - listitem [ref=e200]:
+                  - link "Trends in Cell Biology" [ref=e201] [cursor=pointer]:
+                    - /url: /trends/cell-biology/home
+                - listitem [ref=e202]:
+                  - link "Trends in Ecology & Evolution" [ref=e203] [cursor=pointer]:
+                    - /url: /trends/ecology-evolution/home
+                - listitem [ref=e204]:
+                  - link "Trends in Endocrinology & Metabolism" [ref=e205] [cursor=pointer]:
+                    - /url: /trends/endocrinology-metabolism/home
+                - listitem [ref=e206]:
+                  - link "Trends in Genetics" [ref=e207] [cursor=pointer]:
+                    - /url: /trends/genetics/home
+                - listitem [ref=e208]:
+                  - link "Trends in Immunology" [ref=e209] [cursor=pointer]:
+                    - /url: /trends/immunology/home
+                - listitem [ref=e210]:
+                  - link "Trends in Microbiology" [ref=e211] [cursor=pointer]:
+                    - /url: /trends/microbiology/home
+                - listitem [ref=e212]:
+                  - link "Trends in Molecular Medicine" [ref=e213] [cursor=pointer]:
+                    - /url: /trends/molecular-medicine/home
+                - listitem [ref=e214]:
+                  - link "Trends in Neurosciences" [ref=e215] [cursor=pointer]:
+                    - /url: /trends/neurosciences/home
+                - listitem [ref=e216]:
+                  - link "Trends in Parasitology" [ref=e217] [cursor=pointer]:
+                    - /url: /trends/parasitology/home
+                - listitem [ref=e218]:
+                  - link "Trends in Pharmacological Sciences" [ref=e219] [cursor=pointer]:
+                    - /url: /trends/pharmacological-sciences/home
+                - listitem [ref=e220]:
+                  - link "Trends in Plant Science" [ref=e221] [cursor=pointer]:
+                    - /url: /trends/plant-science/home
+            - generic [ref=e222]:
+              - heading "Physical sciences & engineering journals" [level=2] [ref=e223]
+              - list [ref=e224]:
+                - listitem [ref=e225]:
+                  - link "Cell Biomaterials" [ref=e226] [cursor=pointer]:
+                    - /url: /cell-biomaterials/home
+                - listitem [ref=e227]:
+                  - link "Cell Reports Physical Science" [ref=e228] [cursor=pointer]:
+                    - /url: /cell-reports-physical-science/home
+                - listitem [ref=e229]:
+                  - link "Chem" [ref=e230] [cursor=pointer]:
+                    - /url: /chem/home
+                - listitem [ref=e231]:
+                  - link "Chem Catalysis" [ref=e232] [cursor=pointer]:
+                    - /url: /chem-catalysis/home
+                - listitem [ref=e233]:
+                  - link "Chem Circularity" [ref=e234] [cursor=pointer]:
+                    - /url: /chem-circularity/home
+                - listitem [ref=e235]:
+                  - link "Device" [ref=e236] [cursor=pointer]:
+                    - /url: /device/home
+                - listitem [ref=e237]:
+                  - link "Joule" [ref=e238] [cursor=pointer]:
+                    - /url: /joule/home
+                - listitem [ref=e239]:
+                  - link "Matter" [ref=e240] [cursor=pointer]:
+                    - /url: /matter/home
+                - listitem [ref=e241]:
+                  - link "Matter & Light" [ref=e242] [cursor=pointer]:
+                    - /url: /matter-light/home
+                - listitem [ref=e243]:
+                  - link "Newton" [ref=e244] [cursor=pointer]:
+                    - /url: /newton/home
+                - listitem [ref=e245]:
+                  - link "Trends in Chemistry" [ref=e246] [cursor=pointer]:
+                    - /url: /trends/chemistry/home
+            - generic [ref=e247]:
+              - heading "Multidisciplinary journals" [level=2] [ref=e248]
+              - list [ref=e249]:
+                - listitem [ref=e250]:
+                  - link "Cell Press Blue" [ref=e251] [cursor=pointer]:
+                    - /url: /cell-press-blue/home
+                - listitem [ref=e252]:
+                  - link "Cell Reports Methods" [ref=e253] [cursor=pointer]:
+                    - /url: /cell-reports-methods/home
+                - listitem [ref=e254]:
+                  - link "Cell Reports Sustainability" [ref=e255] [cursor=pointer]:
+                    - /url: /cell-reports-sustainability/home
+                - listitem [ref=e256]:
+                  - link "Heliyon" [ref=e257] [cursor=pointer]:
+                    - /url: /heliyon/home
+                - listitem [ref=e258]:
+                  - link "iScience" [ref=e259] [cursor=pointer]:
+                    - /url: /iscience/home
+                - listitem [ref=e260]:
+                  - link "One Earth" [ref=e261] [cursor=pointer]:
+                    - /url: /one-earth/home
+                - listitem [ref=e262]:
+                  - link "Patterns" [ref=e263] [cursor=pointer]:
+                    - /url: /patterns/home
+                - listitem [ref=e264]:
+                  - link "STAR Protocols" [ref=e265] [cursor=pointer]:
+                    - /url: /star-protocols/home
+                - listitem [ref=e266]:
+                  - link "Nexus (partner)" [ref=e267] [cursor=pointer]:
+                    - /url: /nexus/home
+                - listitem [ref=e268]:
+                  - link "The Innovation (partner)" [ref=e269] [cursor=pointer]:
+                    - /url: /the-innovation/home
+                - listitem [ref=e270]:
+                  - link "Trends in Biotechnology" [ref=e271] [cursor=pointer]:
+                    - /url: /trends/biotechnology/home
+                - listitem [ref=e272]:
+                  - link "Trends in Cognitive Sciences" [ref=e273] [cursor=pointer]:
+                    - /url: /trends/cognitive-sciences/home
+                - listitem [ref=e274]:
+                  - link "Trends Open" [ref=e275] [cursor=pointer]:
+                    - /url: /trends-open/home
+          - generic [ref=e279]:
+            - generic [ref=e280]:
+              - heading "Authors" [level=2] [ref=e281]
+              - list [ref=e282]:
+                - listitem [ref=e283]:
+                  - link "Submit article" [ref=e284] [cursor=pointer]:
+                    - /url: /submit-to-cell-press
+                - listitem [ref=e285]:
+                  - link "Multi-Journal Submission" [ref=e286] [cursor=pointer]:
+                    - /url: /multi-journal-submission
+                - listitem [ref=e287]:
+                  - link "STAR Methods" [ref=e288] [cursor=pointer]:
+                    - /url: /star-authors-guide
+                - listitem [ref=e289]:
+                  - link "Sneak Peek – Preprints" [ref=e290] [cursor=pointer]:
+                    - /url: /sneakpeek
+                - listitem [ref=e291]
+              - heading "Reviewers" [level=2] [ref=e292]
+              - list [ref=e293]:
+                - listitem [ref=e294]:
+                  - link "Information for reviewers" [ref=e295] [cursor=pointer]:
+                    - /url: /reviewers
+                - listitem [ref=e296]
+              - heading "News & events" [level=2] [ref=e297]
+              - list [ref=e298]:
+                - listitem [ref=e299]:
+                  - link "Newsroom" [ref=e300] [cursor=pointer]:
+                    - /url: /newsroom
+                - listitem [ref=e301]:
+                  - link "Events" [ref=e302] [cursor=pointer]:
+                    - /url: /events
+                - listitem [ref=e303]:
+                  - link "Cell Press Symposia" [ref=e304] [cursor=pointer]:
+                    - /url: /symposia
+                - listitem [ref=e305]:
+                  - link "Consortia Hub" [ref=e306] [cursor=pointer]:
+                    - /url: /consortia
+                - listitem [ref=e307]:
+                  - link "Webinars" [ref=e308] [cursor=pointer]:
+                    - /url: /webinars
+                - listitem [ref=e309]
+            - generic [ref=e310]:
+              - heading "About" [level=2] [ref=e311]
+              - list [ref=e312]:
+                - listitem [ref=e313]:
+                  - link "About Cell Press" [ref=e314] [cursor=pointer]:
+                    - /url: /about
+                - listitem [ref=e315]:
+                  - link "Open access" [ref=e316] [cursor=pointer]:
+                    - /url: /open-access
+                - listitem [ref=e317]:
+                  - link "COVID Hub" [ref=e318] [cursor=pointer]:
+                    - /url: /covid-19
+                - listitem [ref=e319]:
+                  - link "Sustainability hub" [ref=e320] [cursor=pointer]:
+                    - /url: /sustainability
+                - listitem [ref=e321]:
+                  - link "Inclusion" [ref=e322] [cursor=pointer]:
+                    - /url: /inclusion
+                - listitem [ref=e323]
+              - heading "Careers" [level=2] [ref=e324]
+              - list [ref=e325]:
+                - listitem [ref=e326]:
+                  - link "Cell Press Careers" [ref=e327] [cursor=pointer]:
+                    - /url: https://relx.wd3.myworkdayjobs.com/en-US/ElsevierJobs
+          - generic [ref=e330]:
+            - generic [ref=e331]:
+              - heading "Access" [level=2] [ref=e332]
+              - list [ref=e333]:
+                - listitem [ref=e334]:
+                  - link "Subscribe" [ref=e335] [cursor=pointer]:
+                    - /url: /subscribe
+                - listitem [ref=e336]:
+                  - link "Claim" [ref=e337] [cursor=pointer]:
+                    - /url: /activate
+                - listitem [ref=e338]:
+                  - link "Read-It-Now" [ref=e339] [cursor=pointer]:
+                    - /url: /read-it-now
+                - listitem [ref=e340]:
+                  - link "Recommend to Librarian" [ref=e341] [cursor=pointer]:
+                    - /url: http://info.cell.com/request-access-to-cell-press-content
+                - listitem [ref=e342]:
+                  - link "Publication Alerts" [ref=e343] [cursor=pointer]:
+                    - /url: /action/showPreferences?menuTab=Alerts
+            - generic [ref=e344]:
+              - heading "Collections" [level=2] [ref=e345]
+              - list [ref=e346]:
+                - listitem [ref=e347]:
+                  - link "Best of Cell Press" [ref=e348] [cursor=pointer]:
+                    - /url: /bestof
+                - listitem [ref=e349]:
+                  - link "Cell Press Reviews" [ref=e350] [cursor=pointer]:
+                    - /url: /reviews
+            - generic [ref=e351]:
+              - heading "Information" [level=2] [ref=e352]
+              - list [ref=e353]:
+                - listitem [ref=e354]:
+                  - link "For Librarians" [ref=e355] [cursor=pointer]:
+                    - /url: https://www.elsevier.com/products/sciencedirect/journals/direct-subscription-journals
+      - generic [ref=e357]:
+        - separator [ref=e358]
+        - paragraph [ref=e359]: The content on this site is intended for healthcare professionals and researchers across all fields of science.
+        - separator [ref=e360]
+        - generic [ref=e361]:
+          - paragraph [ref=e362]:
+            - text: "All content on this site: Copyright © 2026 Elsevier Inc., its licensors, and contributors."
+            - text: All rights are reserved, including those for text and data mining, AI training, and similar technologies.
+            - text: For all open access content, the relevant licensing terms apply.
+          - paragraph [ref=e363]:
+            - link "Privacy Policy" [ref=e364] [cursor=pointer]:
+              - /url: https://www.elsevier.com/legal/privacy-policy
+            - button "Manage cookie consent preferences" [ref=e365]: Cookie settings
+            - link "Terms & Conditions" [ref=e366] [cursor=pointer]:
+              - /url: https://www.elsevier.com/legal/elsevier-website-terms-and-conditions
+            - link "Accessibility" [ref=e367] [cursor=pointer]:
+              - /url: /accessibility
+            - link "Help & Support" [ref=e368] [cursor=pointer]:
+              - /url: https://www.elsevier.support/cell-press
+            - link "Contact" [ref=e369] [cursor=pointer]:
+              - /url: /contact
+            - link "Responsible AI" [ref=e370] [cursor=pointer]:
+              - /url: https://www.elsevier.com/about/responsible-ai
+          - paragraph [ref=e371]:
+            - link "RELX" [ref=e372] [cursor=pointer]:
+              - /url: https://www.relx.com
+              - img "RELX" [ref=e373]

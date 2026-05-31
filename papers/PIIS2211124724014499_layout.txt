@@ -1,0 +1,1448 @@
+                                                                                         Article
+
+The T cell receptor sequence influences the
+likelihood of T cell memory formation
+
+Graphical abstract                                            Authors
+
+                                                              Kaitlyn A. Lagattuta, Ayano C. Kohlgruber,
+                                                              Nouran S. Abdelfattah, ...,
+                                                              Michael E. Birnbaum, Stephen J. Elledge,
+                                                              Soumya Raychaudhuri
+
+                                                              Correspondence
+
+                                                              soumya@broadinstitute.org
+
+                                                              In brief
+
+                                                              The human immune system contains a
+                                                              vast repertoire of somatically recombined
+                                                              T cell receptor (TCR) sequences. To
+                                                              connect TCR sequence to T cell function,
+                                                              Lagattuta et al. analyze the paired abTCR
+                                                              and transcriptome of >960,000 T cells.
+                                                              They identify TCR amino acids that
+                                                              promote T cell activation and
+                                                              immunological memory.
+
+Highlights
+
+d Machine learning with scRNA-seq elucidates links between
+   TCR sequence and T cell function
+
+d Four TCR scoring functions quantify T cell fate
+   predispositions encoded in the TCR
+
+d A common set of amino acid features enhances activation of
+   TCRs for different antigens
+
+Lagattuta et al., 2025, Cell Reports 44, 115098
+
+January 28, 2025 ª 2024 The Author(s). Published by Elsevier Inc.                        ll
+https://doi.org/10.1016/j.celrep.2024.115098
+                                                                                    ll
+
+                                                                                                                                                    OPEN ACCESS
+
+Article
+
+The T cell receptor sequence influences
+the likelihood of T cell memory formation
+
+Kaitlyn A. Lagattuta,1,2,3,4,5 Ayano C. Kohlgruber,2,6,7 Nouran S. Abdelfattah,2,6 Aparna Nathan,1,2,3,4,5
+Laurie Rumker,1,2,3,4,5 Michael E. Birnbaum,8,9,10 Stephen J. Elledge,2,6,11 and Soumya Raychaudhuri1,2,3,4,5,12,*
+1Center for Data Sciences, Brigham and Women's Hospital, Boston, MA, USA
+2Division of Genetics, Department of Medicine, Brigham and Women's Hospital and Harvard Medical School, Boston, MA, USA
+3Department of Biomedical Informatics, Harvard Medical School, Boston, MA, USA
+4Program in Medical and Population Genetics, Broad Institute of MIT and Harvard, Cambridge, MA, USA
+5Division of Rheumatology, Inflammation, and Immunity, Department of Medicine, Brigham and Women's Hospital and Harvard Medical
+School, Boston, MA, USA
+6Department of Genetics, Harvard Medical School, Boston, MA, USA
+7Division of Immunology, Boston Children's Hospital, Boston, MA, USA
+8Koch Institute for Integrative Cancer Research, Cambridge, MA, USA
+9Department of Biomedical Engineering, Massachusetts Institute of Technology, Cambridge, MA, USA
+10Ragon Institute of MGH, MIT, and Harvard, Cambridge, MA, USA
+11Howard Hughes Medical Institute, Chevy Chase, MD, USA
+12Lead contact
+*Correspondence: soumya@broadinstitute.org
+https://doi.org/10.1016/j.celrep.2024.115098
+
+SUMMARY
+
+The amino acid sequence of the T cell receptor (TCR) varies between T cells of an individual's immune
+system. Particular TCR residues nearly guarantee mucosal-associated invariant T (MAIT) and natural
+killer T (NKT) cell transcriptional fates. To define how the TCR sequence affects T cell fates, we analyze
+the paired abTCR sequence and transcriptome of 961,531 single cells. We find that hydrophobic
+complementarity-determining region (CDR)3 residues promote regulatory T cell fates in both the CD8
+and CD4 lineages. Most strikingly, we find a set of TCR sequence features that promote the T cell tran-
+sition from naive to memory. We quantify the extent of these features through our TCR scoring function
+``TCR-mem.'' Using TCR transduction experiments, we demonstrate that increased TCR-mem promotes
+T cell activation, even among T cells that recognize the same antigen. Our results reveal a common set
+of TCR sequence features that enable T cell activation and immunological memory.
+
+INTRODUCTION                                                              Now, single-cell sequencing assays enable joint profiling of
+                                                                       the TCR and transcriptome. In contrast to bulk sequencing
+T cells are critical lymphocytes of the adaptive immune system.        methods, single-cell technology anchors a and b TCR reads to
+Early in T cell development, stochastic genome rearrangement           individual cells, allowing reconstruction of the full TCR a/b heter-
+on chromosomes 7 and 14 defines each T cell with its own               odimer. Moreover, genome-wide transcriptional analysis can
+T cell receptor (TCR).1 In the thymus and periphery, T cell differ-    comprehensively define T cell states. Early methods to jointly
+entiation depends critically on TCR activation.2­8 One prominent       analyze TCR and transcriptional data17,18 have suggested that
+example is the PLZFhigh, innate-like transcriptional fate, which is    TCR sequence similarity may correspond to similarity in tran-
+nearly guaranteed when V(D)J recombination selects TRAV1-2             scriptional state.
+and TRAJ33, TRAJ20, or TRAJ12.9
+                                                                          To statistically define the relationship between the TCR
+   Given the central role of the TCR in T cell activation and differ-  sequence and T cell state, we analyze 961,531 T cells with qual-
+entiation, we10 and others11­16 have identified differences in TCR     ity-controlled abTCR and transcriptional profiling at single-cell
+sequences (e.g., hydrophobicity, V gene selection) using bulk          resolution from seven published datasets (Table 1). Rather
+sequencing of flow-sorted T cell populations. However, bulk            than pre-specifying transcriptional states, we use paired dimen-
+sequencing obscures the pairing of TCR a and b chains. Further-        sionality reduction to uncover relevant transcriptional states
+more, flow sorting requires predefining T cell states for investiga-   in an unbiased fashion. Our results define four TCR scoring
+tion and may miss important transcriptional heterogeneity of           functions that quantify the transcriptional fate predisposition
+T cells.                                                               conferred by the TCR. We apply these scoring functions to better
+
+             Cell Reports 44, 115098, January 28, 2025 ª 2024 The Author(s). Published by Elsevier Inc. 1
+This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+   ll                                                                                                              Article
+
+OPEN ACCESS
+
+Table 1. Datasets analyzed in this study
+
+Name         Reference                       Sample size and attributes                      No. of T cells after  Purpose
+Dataset 1    COMBAT19                                                                        quality control
+                                             77 individuals with COVID-                      282,639               twin TCR analysis,
+Dataset 2    Ren et al.20                    19, 23 with sepsis, 12 with                                           developing TCR scoring
+Dataset 3    Stephenson et al.21             influenza, 10 healthy controls                  211,780               functions
+Dataset 4    Domi´nguez Conde et al.22       117 individuals with COVID-                     144,175
+Dataset 5                                    19, 17 healthy controls                         30,702                developing TCR scoring
+                                                                                             136,546               functions
+                                             89 individuals with COVID-
+                                             19, 26 healthy controls                         13,930                validating TCR scoring
+                                             8 organ donors                                  141,759               functions
+
+             Boutet et al.23                 4 heathy individuals                                                  validating TCR scoring
+                                                                                                                   functions
+Dataset 6    Suo et al.24                    6 prenatal samples
+                                                                                                                   assessing TCR scoring
+HLA-genotyped dataset Su et al.25            129 individuals with                                                  functions within antigen-
+                                             COVID-19                                                              specific populations
+
+                                                                                                                   assessing TCR scoring
+                                                                                                                   functions in the thymus
+
+                                                                                                                   twin TCR analysis,
+                                                                                                                   accounting for HLA
+                                                                                                                   genotypes
+
+List of published single-cell datasets used in this study, their attributes, and their use.
+
+understand thymic selection as well as cell state variation within    quences (Figure 1D; STAR Methods). To test the general rela-
+antigen-specific T cell populations.                                  tionship between the TCR sequence and T cell state, we asked
+                                                                      whether the transcriptional states of TCR twins were concordant
+RESULTS                                                               more often than expected by chance. For statistical power in this
+                                                                      analysis, we used relatively coarse clusters to define transcrip-
+T cell transcriptional state annotation                               tional states (A1­A9; Figure 1A).
+To construct an accurately annotated reference of T cells, we
+used dataset 1 (from the COMBAT consortium19; Table 1) with              Under the null, we would expect 25 (of 115) transcriptionally
+371,621 T cells from 122 individuals with multimodal TotalSeq         concordant TCR-twin pairs (see STAR Methods). Instead, we
+profiling of mRNA and surface proteins. We clustered the cells        observed 80 (p = 6.1 3 10À28, exact binomial test, Figure 1E;
+in two ways: first, agnostic to protein expression (clusters A1­      STAR Methods). To assess if this enrichment was explained by
+A9; Figures 1A and S1), and second, incorporating traditional         major histocompatibility complex (MHC)(-like) restriction, we
+surface markers via a linear multimodal strategy26,27 (clusters       repeated our analysis with MAIT cell and NKT cell TCRs removed
+B1­B9; Figure S2). Cluster A9, representing the PLZFhigh              and observed an enrichment in concordant states (p = 2.3 3 10À21,
+innate-like T cell state, accounted for nearly all canonical          exact binomial test). Partitioning into CD4+ and CD8+ populations
+mucosal-associated invariant T (MAIT) or natural killer T (NKT)       did not obviate enrichment either (p = 4.0 3 10À9, p = 0.00018,
+TCRs (Figures 1B and 1C). Clusters B1­B9 delineated CD4,              exact binomial test). Recognizing that SARS-CoV-2 infection is a
+CD8, central memory (CM), and effector memory (EM) states             potential confound, we filtered to individuals that were PCR nega-
+based on a curated list of 10 surface proteins, including             tive for SARS-CoV-2 but continued to observe enrichment in both
+CD45RO and CD45RA (Figure S2; STAR Methods). To stan-                 dataset 1 and dataset 2 (13 matches versus 6 expected by chance,
+dardize cell state definitions across datasets, we projected all      p = 0.00048, exact binomial test; 11 matches versus 6 expected by
+additional datasets (Table 1) into these two embeddings and           chance, p = 0.00138, exact binomial test). To account for shared
+transferred annotations via k-nearest-neighbors classification        human leukocyte antigen (HLA) alleles, we repeated this analysis
+(k = 5; STAR Methods).                                                in an HLA-genotyped dataset25 and continued to observe enrich-
+                                                                      ment regardless of whether the TCR twins were sampled from in-
+Transcriptional fate matching between T cells with the                dividuals with a shared HLA allele (p = 2.9 3 10À101, exact binomial
+same TCR sequence from different individuals                          test). Indeed, neither matched SARS-CoV-2 status nor matched
+We first used dataset 1 (Table 1) to assess whether perfect TCR       HLA allele(s) significantly increased TCR twinning or similarity.
+sequence matching raised the likelihood of T cell state matching.     These results suggest a consistent influence of TCR sequence
+Within an individual, identical TCR sequences likely reflect an       on T cell fate in unrelated individuals.
+expanded T cell clone, comprised of cells that tend to be tran-
+scriptionally similar. To avoid clonally related cells, we focused       This analysis is limited to TCRs found in more than one individ-
+on identical TCR sequences sampled from two different individ-        ual (``public TCRs''), which comprise <0.01% of the TCRs in this
+uals. We identified 115 pairs of ``TCR twins'': two T cells from two  cohort. Public TCRs have distinct structural features28 and could
+different individuals with the same TCR a and b amino acid se-        demonstrate transcriptional state matching due to recognition of
+                                                                      common antigens. We hypothesized, however, that these results
+                                                                      were driven to some extent by the distinct biophysical features of
+
+2 Cell Reports 44, 115098, January 28, 2025
+Article  B                                                                            ll
+         C
+ A                                                                                               OPEN ACCESS
+             E
+ D                                                                Figure 1. T cells with matching TCR se-
+                                                                  quences reach similar transcriptional fates
+                                                                  in different individuals
+                                                                  (A) Uniform manifold approximation and projec-
+                                                                  tion (UMAP) of T cells from dataset 1 based on the
+                                                                  first 20 batch-corrected principal components
+                                                                  (PCs) of gene expression. Cells are colored by
+                                                                  transcriptional cluster, named according to
+                                                                  expression of marker genes and proteins (see
+                                                                  Figure S1).
+                                                                  (B and C) T cells from dataset 1, colored yellow
+                                                                  (B) if their paired TCR sequence includes the ca-
+                                                                  nonical genes for MAIT cells (TRAV*1-2 with
+                                                                  TRAJ*20, -*33, or -*12 and TRBV*6 or -*20) or
+                                                                  colored red (C) if their paired TCR sequence in-
+                                                                  cludes the canonical genes for NKT cells (TRAV10
+                                                                  with TRAJ18 and TRBV25-1) or gray otherwise.
+                                                                  (D) Seven example TCR-twin cell pairs from da-
+                                                                  taset 1 are highlighted in distinct colors. Within a
+                                                                  twin pair, TCRs with matching sequences were
+                                                                  observed in two different individuals.
+                                                                  (E) Number of transcriptional cluster matches for
+                                                                  TCR-twin cell pairs in each cluster. Real observed
+                                                                  counts are compared to expected counts based
+                                                                  on random sampling of T cells without regard for
+                                                                  TCR sequence. p value is computed by binomial
+                                                                  exact test with n = 115 TCR-twin pairs.
+
+the TCR sequences. If so, similar, but not identical, TCR se-                                   work regions of the TCR yielded 1190
+quences would also promote similar T cell fates.                                                biophysical features. Excluding invariant
+                                                                                                positions and framework regions and
+A multidimensional approach to uncover TCR sequence                                             adding interaction terms between adja-
+features that guide T cell fate                                                                 cent residues yielded 1,250 TCR features
+To extend our study to private TCRs, we converted each TCR                                      (Figures 2A and 2B; Table S2; STAR
+sequence into a vector of biophysical features. Consistent with                                 Methods).
+other numerical representations of the TCR,17,29 we translated
+each amino acid residue in both the a and b chains of the TCR                                      We aimed to identify TCR sequence
+into five Atchley factors.30 These factors correspond to hydro-                                 effects on T cell state in an unbiased
+phobicity, size, charge, secondary structure, and heat capacity.                                fashion, without restricting to prese-
+Applying this to a and b complementarity-determining and frame-                                 lected cell states. To find generalizable
+                                                                                                associations, we combined dataset 1
+                                                                                                with a second published dataset (dataset
+                                                                                                2, Table 1; STAR Methods), resulting in
+                                                                                                494,419 quality-controlled T cells from
+                                                                                                256 individuals. We applied regularized
+                                                                                                canonical correlation analysis (rCCA)
+                                                                                                (STAR Methods). Each axis identified by
+                                                                  rCCA denotes a weighted sum of gene expression principal
+                                                                  component (PC) scores (a transcriptional state) that correlates
+                                                                  with a weighted sum of TCR sequence features.
+                                                                     We mitigated technical confounding in our rCCA implementa-
+                                                                  tion. First, to prevent confounding by variable clone size, we
+                                                                  selected one cell at random to represent each clone. We
+                                                                  confirmed that results were invariant to the specific set of cells
+                                                                  sampled (STAR Methods). To mitigate overfitting, we added a
+                                                                  ridge regularization to the covariance matrix for each of the in-
+                                                                  puts to rCCA, using 5-fold cross-validation to tune both lambda
+                                                                  penalty values. To assess overfitting, we randomly assigned 68
+                                                                  donors to a validation test set, such that $30% of clones
+                                                                  (29.3%) were held out from training.
+
+                                                                  Cell Reports 44, 115098, January 28, 2025 3
+      ll                                                                                                                                                                                                                                                                                                 Article
+
+   OPEN ACCESS
+
+A                                                                                           B                                                                                                                                                   C
+                                                                                               1250 TCR sequence features
+                     TCR                    V         J                                     275,064 single cells                                                                                                                                    0.5
+                     DNA                                                                                                                                                                                                                            0.4
+                                                                                                                                                      Canonical Correlation                                                                         0.3
+                                            V         DJ                                                                                                                                                                                            0.2
+                                                                                                                                                                                                                                                    0.1
+                                 D
+                                                                                                                                                                                                                                                               123456
+     TCR                  chain                     chain
+   protein                                                                                                                                                                                                                                                      CCaannoonicaall VVaarriaiatete(C(CVV) )
+                CDR1 CDR3 CDR2
+                      CDR2 CDR3 CDR1
+
+                                                      antigenic                                                    TCR                                              TCR
+                                                       peptide
+             MHC(-like)
+            presentation
+
+                molecule(s)
+
+D                                                                    E                                                                            F                                                                        G                                            H
+
+                                                          0.6               8                                                                            8                                                                                  8                                     8
+                                                          0.4
+                                                          0.2                4                                                                            4                                                                                 4                                     4
+                                                          0
+                                                          -0.2                                                CV1                                                                          CV2                                                                    CV3                                           CV4
+                                                          -0.4                                                                            12
+                                                          -0.6       UMAP2                                                                8       UMAP2                                                                4             UMAP2                        7.5      UMAP2                                    5
+                                                                                                                                                                                                                       2
+                                                                             0                                                                                                                                                                                    5.0                                               0
+                                                                                                                                                          0
+                                                                                                                                          4                                                                                                 0                     2.5             0
+                                                                                                                                          0                                                                            0
+                                                                                                                                                                                                                       -2                                         0.0                                               -5
+                                                                            -4
+                                                                                                                                                         -4                                                                                                       -2.5
+
+                                                                                                                                                                                                                                            -4                                    -4
+
+                                                                               -5           0            5                                                      -5  0      5                                                                    -5  0      5                          -5             0       5
+
+                                                                                            UMAP1                                                                   UMAP1                                                                           UMAP1                                         UMAP1
+
+   CDR3, J-region                I                                                                      J                                                                              K                                                                                              L
+   CDR3, mid-region
+   CDR3, V-region                          A                                                                    A                                                                              A                                                                                               A
+   CDR2
+   CDR1                                    Bchain                                                           chain                                                                                                          chain                                                      chain
+
+                                                                                                                   B                                                                                                              B                                                          B
+
+                                                   0  20         40                                                   0                       20            40                                                                              0   20  40                                            0      20     40
+
+                                                   percent contribution                                               percent contribution                                                                                                  percent contribution                                  percent contribution
+
+                          M                                                                 N                                                                              O                                                                                           P
+                                  1.0                                                              1.0                                                                            1.0                                                                                         1.0
+
+   hydrophobic                  0.5                                                                0.5                                                                           0.5                                                                                       0.5
+
+   hydrophobic/aromatic                                                                                                                                                                                                                                                 R  0.0
+
+   basic                  R     0.0                                                         R      0.0                                                                        R  0.0
+
+   acidic                       -0.5                                                               -0.5                                                                          -0.5                                                                                      -0.5
+
+   neutral
+
+                                -1.0                                                               -1.0                                                                          -1.0                                                                                      -1.0
+
+                                       111111111111111110211011101110019818660047735259                    105106107108109110111112113114115116117118119120                              105106107108109110111112113114115116117118119120                                          105106107108109110111112113114115116117118119120
+                                                                                                                      IMGT position                                                                 IMGT position                                                                             IMGT position
+                                                      IMGT position
+
+                             R  1.0                                                         R      1.0                                                                        R  1.0                                                                                    R  1.0
+                                0.5
+                                0.0                                                                0.5                                                                           0.5                                                                                       0.5
+                                -0.5
+                                -1.0                                                               0.0                                                                           0.0                                                                                       0.0
+
+                                                   IMGT position                                   -0.5                                                                          -0.5                                                                                      -0.5
+                                       111111111111111111121111112100010074905620118835796
+                                                                                                   -1.0                                                                          -1.0                                                                                      -1.0
+                                                                                                           105106107108109110111112113114115116117118119120121                           105106107108109110111112113114115116117118119120121                                       105106107108109110111112113114115116117118119120121
+                                                                                                                      IMGT position                                                                 IMGT position                                                                             IMGT position
+
+Figure 2. A quantitative approach to uncover TCR sequence features that influence T cell fate
+(A) Schematic of a T cell recognizing antigen through the T cell receptor (TCR), an ab heterodimeric surface protein encoded by V, D, and J genes that are
+stochastically rearranged in each T cell. Black regions in between V, D, and J genes represent non-templated nucleotide insertions. The TCR surface protein
+contains six complementarity-determining regions (CDRs) that protrude toward the presented antigen: CDR1a, CDR2a, CDR3a, CDR1b, CDR2b, and CDR3b.
+(B) Our quantitative representation of TCR sequence data. We extract 1,250 sequence features from each TCR sequence, representing hydrophobicity, size,
+charge, secondary structure, and heat capacity of the amino acids in the six CDRs.
+(C) Canonical correlations between TCR and T cell state detected in training and held-out testing observations. Error bars denote the minimum and maximum
+canonical correlations observed in 1,000 permutations of the data.
+(D) Heatmap depicting Pearson correlation between genes and proteins in dataset 1 and the continuous T cell state identified by each canonical variate (CV).
+(E­H) UMAP of dataset 1 T cells, colored by T cell state scores for CV1, CV2, CV3, and CV4, respectively.
+(I­L) Percentage of contribution from each TCR region toward the TCR scoring function.
+(M­P) CDR3 amino acid contributions to each TCR scoring function, visualized as marginal correlations to the TCR score. Contributions from other TCR regions
+are displayed in Figure S4.
+
+4 Cell Reports 44, 115098, January 28, 2025
+Article                                                                   ll
+
+                                                                       OPEN ACCESS
+
+rCCA identifies four T cell fates informed by TCR                      mining region (CDR) and amino acid residue (Figures 2I­2P
+sequence                                                               and S4C­S4F; STAR Methods). TCR-innate was characterized
+We observed canonical correlations between the TCR sequence            by critical amino acids in CDR2a, reflecting TRAV gene selection
+and T cell state descending from R = 0.54. To assess the statis-       (Figure S4C). As expected from previous studies,13,14 TCR-CD8-
+tical significance of each canonical correlation, we permuted our      high sequences were depleted for positive charge in the
+data 1,000 times and re-applied rCCA (STAR Methods). We                junctional mid-region of CDR3 (Figure 2N). TCR-reg reflected
+observed empirical p values <0.001 for both training and held-         increased hydrophobic CDR3b residues in CD4 Treg cells,
+out testing data for the first four canonical variates (CVs)           consistent with previous reports.10,12 Paired ab TCR sequencing
+(Figure 2C).                                                           data revealed that enrichment for hydrophobic amino acids
+                                                                       extended to CDR3a (Figure 2O). For TCR-mem, feature depen-
+   To interpret the four continuous T cell states identified by rCCA,  dence analysis highlighted the importance of CDR3a and
+we examined CVs 1­4 in terms of cell scores and expression cor-        CDR3b (Figure 2L). We assessed TCR-reg and TCR-mem sepa-
+relates (Figures 2D­2H; Table S3; STAR Methods). Cells scoring         rately in CD4+ and CD8+ T cells and observed that these TCR
+the highest on CV1 localized to transcriptional cluster A9             scoring functions were equally applicable to both lineages
+(Figures 2E and S3A), the innate-like, PLZFhigh transcriptional        (Figures S4G and S4H; STAR Methods).
+fate for canonical MAIT and NKT cell TCRs (Figures 1B and 1C).
+CV2 tracked closely with CD8 versus CD4 surface expression,            TCR scoring functions generalize across individuals
+delineating CD4+ T versus CD8+ T populations (Figures 2F and           We considered the possibility that the associations between
+S3B­S3D). These results point to families of peptide presentation      the TCR sequence and T cell state were driven by a subset
+molecules as the primary source of covariation between the TCR         of individuals. We first stratified each dataset by clinical status
+sequence and T cell state. Indeed, it is well established that un-     (COVID, sepsis, influenza, none of the above) and used mixed-
+conventional (MR1, CD1d), MHC class I, and MHC class II families       effects logistic regression to calculate bTCRscore, the association
+each prefer biophysically distinct abTCR sequences.9,13,14,31­35       between the TCR score calculated based on both a and b
+                                                                       chains, and the target T cell state (bTCRscore = log odds ratio
+   In addition to these known relationships, rCCA proposed pre-        [OR] per standard deviation increase in TCR score; see STAR
+viously unknown connections between the TCR sequence and T             Methods). In each clinical stratum, we observed a statistically
+cell state. CV3 highlighted TCR sequence similarity between            significant positive association for each TCR scoring function
+FOXP3-expressing CD4+ regulatory T (Treg) cells and KIR+HE-            (24 tests, maximum p = 0.001; Figures 3A­3D; Table S4). Reas-
+LIOS+ CD8 T cells (Figures 2G and S3E­S3K), which have                 sured that our TCR scoring functions were not driven by the
+recently been described as human CD8+ Treg cells.36 This sug-          clinical subset, we considered the possibility of an unknown in-
+gests that the same TCR sequence features may promote                  dividual-level mediator, such as HLA genotype. We computed
+suppressive functional states in both the CD4 and CD8 compart-         bTCR-innate, bTCR-CD8, bTCR-reg, and bTCR-mem within each individ-
+ments. Most strikingly, CV4 appeared to capture TCR sequence           ual's T cells separately and estimated the proportion of individ-
+differences between naive and memory T cells (Figures 2H and           uals for whom our TCR score does not raise the odds of its
+S3L). Surface protein measurements indicated that both EM              target T cell state(the local false sign rate37). Random effects
+and CM CD4+ and CD8+ T cells scored highly on CV4 (Figures             meta-analysis indicated a near-zero proportion for each of
+S3M and S3N). This raises the intriguing possibility that some         our four TCR scoring functions (<1 3 10À6; Figures S4I­S4L;
+sequence features render the TCR more generally prone to               STAR Methods). We concluded that since our TCR scoring
+activation.                                                            functions were robust to inter-individual variation, they should
+                                                                       generalize to unseen samples.
+TCR scoring functions quantify TCR sequence features
+that inform T cell fate                                                   We next applied our TCR scoring functions to data outside of
+The continuous T cell states defined by rCCA nominated four            our training set. In the 30% of dataset 1 and dataset 2 T cell
+contrasts in T cell state for further study: PLZFhigh versus other,    clones held out from training, we observed replication of each
+CD8T versus CD4T, regulatory T (Treg) versus conventional T            TCR scoring function (Figures 3E­3H; STAR Methods). In an
+(Tconv), and memory versus naive. For each of these recognizable       external dataset of peripheral blood T cells (dataset 3, Table 1),
+T cell fate decisions, we used logistic regression on the same ob-     we observed a consistent and statistically significant increase
+servations from datasets 1 and 2 to learn a more precise predic-       in the odds of the T cell state of interest for each TCR scoring
+tive weighting scheme on the 1,250 TCR sequence features               function (Figures 3I­3P; Table S4). Compared to T cells in the
+(Table S2; STAR Methods). As a secondary analysis, we trained          lowest TCR-mem decile, T cells in the highest TCR-mem decile
+separately on COVID-positive and COVID-negative samples and            had a 66% greater odds of being observed in a memory state
+verified that these predictive weighting schemes were robust to        (OR = 1.66, 95% confidence interval [CI] = [1.57­1.76], p =
+infection status (Figures S4A and S4B). We named each predic-          3.5 3 10À68; Table S4). These results indicate a substantial
+tive weighting scheme, or TCR scoring function, by the T cell          role for TCR-mem in shaping the odds of T cell memory
+state of interest: ``TCR-innate''' to predict the innate-like,         formation.
+PLZFhigh state, ``TCR-CD8'' to predict the CD8+ state, ``TCR-
+reg'' to predict the Treg cell state, and ``TCR-mem'' to predict       Alternative TCR scoring schemes
+the memory state.                                                      We next benchmarked our TCR scoring functions against
+                                                                       existing TCR metrics. We previously developed a Treg cell
+   To interpret each of these TCR scoring functions, we exam-
+ined relative contributions from each complementarity-deter-
+
+                                                                       Cell Reports 44, 115098, January 28, 2025 5
+   ll                                                                   Article
+
+OPEN ACCESS                                  B                    C  D
+
+    A
+
+E                                            F                    G  H
+
+             I                               J                    K  L
+
+             M                               N                    O  P
+
+Figure 3. TCR scoring functions generalize across individuals
+(A) Forest plot depicting the association between TCR-innate and PLZFhigh T cell state for T cells from each subset of individuals. bTCR-innate is computed via
+mixed-effects logistic regression, with TCR-innate scaled to mean 0, variance 1. Error bars denote 95% confidence intervals. Meta-analytic bTCR-innate is esti-
+mated by fixed-effects inverse-variance-weighted meta-analysis.
+(B­D) Remaining forest plots depict the same association tests for (B) TCR-CD8 and CD8T cell state, (C) TCR-reg and Treg cell state, and (D) TCR-mem and
+memory T cell state.
+(E­H) 95% confidence intervals for bTCR-innate, bTCR-innate, bTCR-innate, and bTCR-innate, respectively, in the individuals from dataset 1 and dataset 2 held out from TCR
+score training.
+(I­L) Proportion of T cell clones from an external validation dataset (dataset 3) observed in each T cell state of interest within each decile of its corresponding TCR
+score.
+(M) Each point represents a decile of the TCR-innate score in dataset 3, with a horizontal bar spanning from its minimum to maximum value. We compute the odds
+ratio (OR; y axis) for the PLZFhigh T cell state for T cells in each decile compared to T cells in the fifth decile. 95% CIs (error bars) and p values were computed via
+mixed-effects logistic regression.
+(N­P) Dataset 3 T cells as in (M) but for CD8T, Treg, and memory T cell states and their corresponding TCR scores.
+For (A)­(H), data are represented as log OR ± 95% confidence interval. For (M)­(P), data are represented as OR ± 95% confidence interval. p values were
+computed by the Wald test through mixed-effects logistic regression, n = 106,129 T cells.
+
+TCR scoring function, ``TiRP,'' using the TCR b chain alone.10    0.02, 95% CI = [0.003­0.03], p = 0.008). The effect size for AAIS
+                                                                  was minimal compared to TCR-mem (bTCR-mem = 0.14, 95%
+With the additional information of the a chain, TCR-reg           CI = [0.12­0.15]), however. Including AAIS as a covariate did
+clearly outperformed TiRP (bTiRP = 0.14, 95% CI = [0.10­          not substantially change the estimated effect size of TCR-
+0.18]; bTCR-reg = 0.29, 95% CI = [0.25­0.32]; dataset 3 CD4T      mem (conditional bTCR-mem = 0.14, 95% CI = [0.12­0.15], het-
+cells). Amino acid interaction strength38 (AAIS) has been postu-  erogeneity p = 0.92). TCR-reg and TCR-mem clearly outper-
+                                                                  form these alternative TCR scoring functions by capturing
+lated to estimate a TCR's average affinity to peptide-MHC         both a and b TCR sequence features that promote recognition
+(pMHC),39 but this has not been directly tested. In dataset 3,    in the context of the TCR-pMHC interface.
+
+increasing AAIS corresponded to an increase in the odds of
+memory state only when applied to CDR3 amino acids (bAAIS =
+
+6 Cell Reports 44, 115098, January 28, 2025
+Article                                                                  ll
+
+                                                                      OPEN ACCESS
+
+   We next wanted to assess if more complex models would pro-         the range of our TCR-mem metric and transduced each TCR
+vide better TCR scoring functions. For each of the four T cell        into Jurkat cells (Figure 4B). All four TCR sequences recognize
+states of interest, we trained a convolutional neural network         the same ``ELA-'' antigenic peptide from melanoma-associated
+(CNN) to detect possibly nonlinear associations between TCR           antigen recognized by T cells (MART-1), presented on HLA-
+amino acid motifs and T cell fate (STAR Methods). However,            A*02:01.23 Thus, this array of TCR sequences allows us to
+this deep learning approach provided no substantial benefit in        examine whether changes in amino acid composition that in-
+discovery or external validation data (Figure S5; Table S6).          crease TCR-mem indeed causally promote T cell memory forma-
+                                                                      tion while controlling for cognate antigen and HLA (Table 2).
+Untranslated products of V(D)J recombination do not
+affect T cell fate                                                       Each TCR sequence exhibited greater CD69 upregulation
+Because stochastic V(D)J recombination precedes T cell fate           compared to baseline (fold change > 1), confirming specific
+decisions, TCR sequence associations to T cell state likely           reactivity to the MART-1 antigen. However, the extent of activa-
+reflect causal effects of V(D)J recombination. However, a causal      tion, quantified by the percentage of CD69+ cells compared to
+pathway that begins with V(D)J recombination and ends with the        baseline, clearly tracked with the TCR-mem score (Figure 4C).
+T cell state likely includes several important biological mediators.  Thus, the TCR sequence features that we have observed to differ
+To better understand these mediators, we decomposed V(D)J             between memory and naive cells in vivo appear to causally pro-
+recombination into three products: (1) DNA-level excisions and        mote T cell activation in vitro.
+insertions, (2) amino acid changes in the surface TCR, and (3) an-
+tigen recognition. To isolate (1) from (2), we analyzed nonproduc-       To assess the stability of this finding, we examined the CD69
+tive V(D)J recombination sequences that are not translated into       response at different antigen doses. We titrated the amount
+surface TCR proteins. Then, to distinguish (3) from (2), we exam-     of MART-1-expressing antigen-presenting cells (APCs) and
+ined the TCR sequences and T cell states of antigen-labeled sin-      repeated the overnight co-culture. These titrations showed the
+gle cells.                                                            expected dose-response relationship, which indeed escalated
+                                                                      with increasing TCR-mem (Figure S6A). At each antigen dose,
+   Nonproductive TCR sequence transcripts can be detected             increased TCR-mem scores corresponded to greater CD69
+when an out-of-frame V(D)J recombination event on one chro-           responses.
+mosome is followed by an in-frame V(D)J recombination event
+on the other.40 Due to stop codons and frameshift errors, these          We next assessed if altering individual residues to increase or
+nonproductive TCRs represent V(D)J genome rearrangements              decrease TCR-mem tracked with changes in activation. For this,
+that are not translated into surface antigen receptors.41 To          we examined a different antigen, the ``NLV-'' peptide from the
+assess whether these DNA-level changes are sufficient to pro-         cytomegalovirus (CMV) antigen pp65 presented on HLA-
+duce the observed effects on T cell state, we applied our TCR         A*02:01. We repeated the co-culture experiment with four TCR
+scoring functions to nonproductive TCR sequences (dataset 4,          sequences that differ by one to four amino acids in CDR3a but
+Table 1). We observed no evidence of association for any of           are otherwise identical in sequence (Table 2). These TCRs
+the four TCR scoring functions (p > 0.05). Down-sampling did          were synthetically engineered and previously shown to recog-
+not obviate associations for productive TCRs, confirming that         nize the ``NLV-'' antigenic peptide (Schub et al.44 and Abdelfat-
+the lack of association was not due to reduced statistical power      tah et al.45). As in the MART-1 experiments, we saw that each in-
+(Table S4; STAR Methods). We concluded that the DNA-level ex-         cremental gain in TCR-mem induced a greater fold change in
+cisions and insertions from V(D)J recombination are, in general,      activation (Figures 4D and S6B). Thus, our TCR-mem metric
+not sufficient to affect T cell state; recombination products         identifies replicable differences in immune reactivity between
+must be expressed at the protein level.                               TCR sequences, even when sequence differences are as minor
+                                                                      as one CDR3a amino acid.
+TCR-mem predicts increased T cell activation within
+antigen-specific populations                                             To extend our analyses beyond these two HLA-A*02:01 anti-
+T cell activation, marked by CD69 upregulation, is a critical first   gens, we examined single-cell profiling data23 (dataset 5, Table 1)
+step in T cell memory formation.42,43 If TCR-mem increases the        with 44 Dextramers, including HLA-A*02:01, HLA-B*07:02, and
+odds of memory formation by promoting early activation, then          HLA-B*35:01. Briefly, 80 million CD8+ T cells from the peripheral
+(1) recently activated T cells (CD69high, MK67high, CD38+, HLA-       blood of four human donors were exposed to 44 pMHC-bar-
+DR+) should exhibit high TCR-mem, and (2) this phenomenon             coded Dextramers. Multimodal sequencing then assayed the
+should be apparent in Jurkat cells, which biologically resemble       abTCR sequence, transcriptome-wide expression, and pMHC
+T cells in activation but not the subsequent steps of memory          Dextramer counts for each Dextramer-positive cell. Using Sym-
+formation. We identified recently activated T cells (CD69high,        phony and k-nearest neighbors, we assigned T cell states based
+MK67high, CD38+, HLA-DR+) in dataset 1 and observed that              on our multimodal T cell reference (Figure 4E).
+TCR-mem in this subset was just as high as TCR-mem in other
+memory subsets (Figure 4A). Thus, we hypothesized that TCR-              Following custom normalization of Dextramer Unique Molecu-
+mem sequence features promote T cell activation.                      lar Identifier (UMI) counts (Figures S7A­S7D; STAR Methods),
+                                                                      we observed a mixture of transcriptional states within each anti-
+   First, we tested whether higher TCR-mem led to greater             gen-specific population (Figure S7E). This transcriptional hetero-
+cellular activation in Jurkat cells. We selected four naturally       geneity is consistent with other tetramer-sorted single-cell RNA
+occurring TCR sequences found in human data23 that spanned            sequencing (scRNA-seq) studies,46­48 demonstrating that T cells
+                                                                      with the same antigen specificity vary in transcriptional pheno-
+                                                                      type. We wondered if TCR-mem helped to explain naive versus
+                                                                      memory phenotypes within each antigen-specific population.
+
+                                                                      Cell Reports 44, 115098, January 28, 2025 7
+   ll                                                                  Article
+
+OPEN ACCESS
+
+A                                            B
+
+C                                                                   D
+
+E                                                                F
+
+Figure 4. TCR sequences that recognize the same antigen can be poised for different fates
+(A) Mean TCR-mem scores of four mutually exclusive groups of T cells in dataset 1: naive (CCR7highCD45RA+CD45ROÀ), CD69high (CD69high
+MK67highCD38+HLA-DR+), central memory (CM; CCR7lowCD27highCD45RAÀCD45RO+), and effector memory (EM; CCR7lowCD27lowCD45RA+ for CD8s and
+CD45RO+ for CD4s). Data are represented as mean ± 95% confidence interval.
+(B) Schematic of our experimental validation using either MART-1 or NLV-reactive TCRs: TCR-knockout Jurkat cells were transduced with four antigen-reactive
+
+TCRs from the Dextramer dataset, co-cultured with antigen-presenting cells (APCs) expressing the antigen of interest, and stained for CD69 to screen for cellular
+
+activation.
+(C) For each MART-reactive TCR sequence, we compared its TCR-mem score (x axis) to the fold change in the frequency of CD69+ Jurkat cells (y axis) following
+exposure to antigen, compared to background CD69+ frequency in the absence of the MART-1 antigen. Measurements are in triplicate.
+(D) For each NLV-reactive TCR sequence, we compared its TCR-mem score (x axis) to the fold change in the frequency of CD69+ Jurkat cells (y axis) following
+exposure to antigen, compared to background CD69+ frequency in the absence of the NLV- antigen. Each measurement was done in triplicate.
+
+(E) T cells from Dextramer-labeled dataset (dataset 5) projected onto UMAP coordinates of a low-dimensional transcriptional space defined by dataset 1, with
+
+strong influence from Total-seq antibody counts for CD4, CD8, CD45RO, and CD45RA. Four T cells, with TCR sequences we refer to as MART-a, MART-b,
+
+MART-c, and MART-d, respectively, are labeled.
+(F) Histogram of 29 bTCR-mem estimates for the 29 Dextramer-specific populations. Data are represented as log odds ratio ± 95% confidence interval. p value is
+computed by random effects meta-analysis, n = 29 bTCR-mem estimates for the 29 Dextramer-specific populations.
+
+   Within each antigen-specific population, we tested the asso-     ulations with a nominally significant (one-tailed p < 0.05)
+ciation between TCR-mem and memory state using a single             result (Table S7). For example, among T cells recognizing IP-
+cell per TCR clone (STAR Methods). Consistent with our TCR          SINVHHY presented on HLA-B*35:01, memory T cells bore
+transduction experiments, we observed b > 0 for the majority        TCRs with significantly higher TCR-mem scores (logistic
+of antigens (19/29), including seven antigen-specific pop-          regression bTCR-mem = 0.36, p = 0.02).
+
+8 Cell Reports 44, 115098, January 28, 2025
+Article                                                                                  ll
+
+                                                                                      OPEN ACCESS
+
+Table 2. TCR sequences used in transduction experiments
+
+       Cognate                                                                                           TCR-mem
+                                                                                                         score
+ID     antigen Va       J  CDR3a                                   Vb        Jb       CDR3b
+                                                                   TRBV6-2   TRBJ2-7  CASTDSPGLAGGYEQYF  À2.25
+MART-a MART-1 TRAV12-2 TRAJ45 CGVSGGGADGLTF                        TRBV28    TRBJ1-5  CASRGTGLGNQPQHF    À0.92
+                                                                   TRBV7-2   TRBJ2-7  CASSLNDFYEQYF      À0.02
+MART-b MART-1 TRAV12-2 TRAJ31 CAGNNARLMF                           TRBV20-1  TRBJ2-7  CSARVETSGIHEQYF    1.35
+                                                                   TRBV12-4  TRBJ1-2  CASSSANYGYTF       À0.84
+MART-c MART-1 TRAV12-2 TRAJ17 CAVKNAGNKLTF                         TRBV12-4  TRBJ1-2  CASSSANYGYTF       À0.59
+                                                                   TRBV12-4  TRBJ1-2  CASSSANYGYTF       À0.11
+MART-d MART-1 TRAV12-2 TRAJ11 CASSWGGYSTLTF                        TRBV12-4  TRBJ1-2  CASSSANYGYTF       0.03
+
+NLV-a  pp65     TRAV35  TRAJ50 CAGPMITSQDKVIF
+
+NLV-b  pp65     TRAV35  TRAJ50 CAGPMLTSQDKVIF
+
+NLV-c  pp65     TRAV35  TRAJ50 CAGPNPTTYDKVIF
+
+NLV-d  pp65     TRAV35  TRAJ50 CAGPMKTSYDKVIF
+
+List of TCR sequences used in transduction experiments.
+
+   Given a lack of statistical power within each antigen-specific  neously measures two-dimensional (2D) TCR affinity and TCR
+population (Figure S7F), we conducted a meta-analysis across       sequence (iTAST).53 Compared to tetramers, micropipette adhe-
+antigen-specific populations. We observed a significant effect     sion assays are better able to detect low-affinity interactions, and
+of TCR-mem on memory state, adjusted for antigen specificity       better correspond to gold-standard surface plasmon resonance
+(Figures 4F and S7G, logistic regression bTCR-mem = 0.11, p =      (SPR) affinity measurements.51,53 Moreover, iTAST enables the
+0.002; STAR Methods). We observed minimal evidence for a dif-      study of receptors and ligands in their native cell membrane
+ference in bTCR-mem before and after adjusting for antigen         context, without the possible confound of TCR transduction
+specificity (heterogeneity p = 0.45) and minimal heterogeneity     rate. The published iTAST dataset53 includes 33 ab-paired
+in bTCR-mem across antigen-specific populations (I2 = 29.2%,       TCRs that bind the hepatitis C virus (HCV) antigen KLVALGINAV
+H2 = 1.41, Q = 39.6, p = 0.07). TCR-mem associations hold after    complexed with HLA-A*02. We calculated TCR-mem scores for
+adjusting for Dextramer staining intensity (STAR Methods) as a     these 33 TCR sequences and again observed no clear relation-
+proxy for TCR-pMHC affinity, which is thought to contribute to     ship between TCR-mem score and binding affinity (R = À0.1;
+memory T cell development.49 These results suggest that TCR-       Figure S6F).
+mem sequence features predispose pMHC recognition in gen-
+eral, regardless of the cognate antigen.                              Third, we analyzed crystal structures of abTCRs complexed
+                                                                   with class I MHC from the Protein Data Bank (PDB). Following
+TCR-mem is distinct from antigen binding affinity                  quality control, we obtained 138 structures, corresponding to
+While TCR-mem is a property of the TCR sequence alone, bind-       86 unique epitopes and 17 unique class I HLA alleles. We used
+ing affinity is a property of a TCR and antigen pair. For a given  PDBePISA to estimate the amount of surface area buried be-
+TCR sequence, binding affinity varies widely with choice of anti-  tween the TCR and pMHC, a known proxy for binding affinity.54
+gen. For example, TCR 1E650 exhibits approximately eight times     We observed no significant relationship between TCR-mem and
+greater binding affinity to RQFGPDWIVA-HLA-A*02 compared           binding affinity (R = 0.009; Figure S6G). Thus, three lines of evi-
+to ALWGPDPAAA-HLA-A*02 (buried surface area: 32,593.7              dence (Figures S6E­S6G) indicate minimal correspondence be-
+compared to 3,956.5 A° 2, PDBePISA). Thus, we did not expect       tween TCR-mem and binding affinity. TCR-mem appears to cap-
+TCR-mem to correspond to binding affinity for any particular       ture a TCR characteristic that is distinct from binding affinity yet
+antigen.                                                           reliably promotes T cell activation. Investigators have found the
+                                                                   relationship between TCR-pMHC binding and T cell activation
+   To assess whether TCR-mem corresponds to TCR-pMHC               to be complex.55,56
+binding affinity, we (1) conducted tetramer dilution experiments,
+(2) examined published micropipette adhesion data, and (3)         Thymic selection pressures on the TCR sequence
+computed buried surface areas in crystal structures. First, we     continue in the periphery
+stained each of our four MART-1-specific Jurkat populations        Given the consistent association of TCR-mem to memory
+with increasing concentrations of MART-1 tetramer (Figure S6C).    state across antigenic peptides, we hypothesized that TCR-
+We approximated each TCR's affinity to the MART-1 tetramer         mem reflects reactivity to the underlying MHC(-like) molecule.
+with EC5, the tetramer concentration at which 5% of Jurkat cells   Specifically, to promote recognition of many different pMHCs,
+stain positively for tetramer. This 5% threshold allowed us to     such reactivity would be focused on elements of MHC
+learn dose-response relationships without inducing tetramer ag-    that are conserved across MHC genes and alleles. This TCR
+gregation, extrapolating beyond the observed measurements, or      property, referred to as ``generic MHC reactivity,'' has been
+generating false positives from negative control tetramers (Fig-   theorized based on thymic development in TCR-transgenic
+ure S6D). EC5 measurements for the MART-reactive TCRs did          mice.57
+not reveal a clear relationship between TCR-mem and binding
+affinity (Figure S6E).                                                If TCR-mem reflects generic MHC reactivity, then TCR-mem
+                                                                   sequence features should also help to explain which T cells sur-
+   Given the potential limitations of tetramers,51,52 we next      vive thymic positive selection. Only T cells with a sufficient
+analyzed data from a micropipette adhesion assay that simulta-     signaling response to pMHC survive thymic positive selection,
+
+                                                                             Cell Reports 44, 115098, January 28, 2025 9
+   ll                                                                                       Article
+
+OPEN ACCESS                                                            C
+
+A            B
+
+D                                                                   E  F
+
+Figure 5. Thymic selection pressures on the TCR sequence continue in the periphery
+(A) Proportion of SP thymocytes in dataset 6 within each quintile of TCR-mem score. b and p are computed by mixed-effects logistic regression predicting SP
+status based on TCR-mem score, n = 7,453 thymocytes.
+(B) Each point represents a TCR-mem decile, plotted according to its association with positive selection in the thymus (dataset 6, x axis) and its association with
+transitioning from naive to memory in the periphery (dataset 3, y axis). Data are represented as odds ratio ± 95% confidence interval. ORs and 95% CIs are
+estimated via mixed-effects logistic regression.
+(C) Heatmap of SP proportion for each combination of TCR-mem score decile and number of TCR nucleotide insertions in dataset 6.
+(D) Dataset 6 (prenatal thymic) T cells with canonical MAIT cell TCRs (colored yellow, TRAV1-2 and select TRAJ and TRBV genes; see STAR Methods) or NKT cell
+TCRs (colored red, TRAV10-TRAJ18-TRBV25) projected into our T cell state reference UMAP constructed from dataset 1 (colored gray).
+(E) Proportion of SP thymocytes in dataset 6 observed in a CD8 T cell state within each quintile of TCR-CD8 score. bTCR-CD8 and p are computed via mixed-effects
+logistic regression predicting CD8 T cell state based on TCR-CD8 score, n = 4,313 SP thymocytes.
+(F) Proportion of SP thymocytes in dataset 6 observed in a Treg cell state within each quintile of TCR-reg score. bTCR-reg and p are computed via mixed-effects
+logistic regression predicting Treg cell state based on TCR-reg score, n = 4,313 SP thymocytes.
+
+which is marked by progression from a double-positive (DP)             An alternative possibility we considered is that higher TCR-
+phenotype to a single-positive (SP) phenotype. Thus, if TCR-        mem T cells had developed earlier in life and therefore
+mem reflects generic MHC reactivity, then SP T cells should         accrued more opportunities to transition their transcriptional
+have higher TCR-mem compared to DP T cells, 90%2 of which           state. This time-related confound would require systematic
+never progress to the SP stage.                                     shifts in V(D)J recombination with human age. However, we
+                                                                    observed no relationship between age and TCR-mem
+   Thus, we compared TCR-mem scores between SP and DP               (Figure S6H).
+prenatal T cells (14,584 cells, dataset 6, Table 1; STAR Methods).
+TCR-mem was designed to describe differences between naive             Prenatal TCR sequences from dataset 6 allowed us to further
+and memory TCRs in the periphery. We observed, however, that        extend our age-related line of inquiry. Some prenatal T cells lack
+the same TCR sequence weighting scheme also described dif-          DNTT expression, precluding non-templated insertion of TCR
+ferences between DP and SP TCRs (Figure 5A, bTCR-mem =              nucleotides and resulting in systemically shorter TCR se-
+0.14, p = 1.3 3 10À7; Table S4). Strikingly, the TCR-mem differ-    quences.58 To identify these age-related TCRs, we applied
+ence between SP and DP thymic T cells was statistically indistin-   IGoR59 to infer the number of nucleotide insertions in each
+guishable from the TCR-mem difference between memory and            thymic TCR. We observed that additional nucleotide insertions
+naive peripheral T cells (heterogeneity p = 0.86). Thus, TCR dif-   corresponded to a decrease in the odds of thymic positive selec-
+ferences between peripheral naive and memory T cells appear         tion, but this effect did not account for the effect of TCR-mem
+to echo TCR filtering by thymic positive selection (Figure 5B).     (Figure 5C). Controlling for the number of nucleotide insertions,
+The influence of TCR-mem persists in the absence of foreign         TCR-mem actually demonstrated a stronger effect on the
+and peripheral antigens, suggesting that TCR-mem reflects           odds of positive selection (conditional bTCR-mem = 0.22, 95%
+generic pMHC reactivity. While thymic selection imposes a min-      CI = [0.13­0.30], p = 3.8 3 10À7, compared to unconditional
+imum threshold for pMHC reactivity, TCRs that survive this          bTCR-mem = 0.14, 95% CI = [0.09­0.19], p = 1.3 3 10À7;
+threshold by a wider margin appear more likely to reach a mem-      Table S4; STAR Methods). Thus, TCR-mem associations are
+ory T cell state in the periphery.                                  not explained by developmental time points.
+
+10 Cell Reports 44, 115098, January 28, 2025
+Article                                                                 ll
+
+                                                                     OPEN ACCESS
+
+   In contrast to TCR-mem, TCR-innate was not applicable to          also have higher reactivity to foreign antigens.65­67 With TCR-
+thymic data. Thymic T cells expressing canonical TCRs for            mem, we have identified a common set of TCR sequence fea-
+MAIT cells and NKT cells had not yet reached the innate-like,        tures that promote both central and peripheral68 selection of
+PLZFhigh transcriptional fate (Figure 5D). This is consistent with   the T cell repertoire.
+previous reports showing that PLZFhigh fate acquisition is depen-
+dent on peripheral antigen recognition.60­62 TCR-reg and TCR-           It is now clear that a TCR sequence conveys two types of in-
+CD8, however, were applicable to thymic data (Figures 5E and         formation: transcriptional fate bias and antigen specificity.
+5F, bTCR-CD8 = 0.78, p = 4.3 3 10À97; bTCR-reg = 0.14, p =           Both types of information may be crucial to the immune
+2.8 3 10À5; Table S4; STAR Methods), indicating that these as-       response in autoimmunity, cancer, and infection. TCR features
+sociations between TCR sequence and T cell state are not             may play a particularly important role in influencing T cell fate
+dependent on peripheral antigen recognition. Evidently, TCR          for T cells that recognize autoantigens, which ought to be rela-
+sequence features shape T cell differentiation outcomes in           tively anergic. The therapeutic design of TCRs may need to
+both the thymus and periphery, influencing which T cells are         consider not only recognition of the antigenic target but also dif-
+able to generate an effective immune response.                       ferentiation into an effective T cell state.
+
+DISCUSSION                                                           Limitations of the study
+                                                                     There are several limitations to our study. First, our study is
+In this study, we define four TCR scoring functions that estimate    restricted to ab TCR sequences by virtue of the standard custom
+the TCR's contribution to four T cell fates. These scoring func-     primer set for V(D)J amplification. The usage of gamma-delta,
+tions are robust across numerous genetic and clinical contexts.      rather than ab, TCR genes, has clear effects on the transcrip-
+Even among T cells that recognize the same antigen, these TCR        tional state69 that merit further study. Second, our approach to
+scores help to explain variation in T cell states.                   defining a standard set of TCR sequence features excluded
+                                                                     T cells in which more than one a or one more than one b chain
+   Our CCA-based quantitative approach allows us to under-           was detected. We expect that dual-a chain T cells follow similar
+stand the relative strength of previously observed connection        relationships between the TCR sequence and T cell state, but
+between TCR sequence and T cell state. The most deterministic        demonstrating this would require separate analysis approaches.
+relationship belongs to MAIT cells. Structural studies have          Lastly, our TCR scoring functions are consistent across individ-
+shown that MHC-like molecule MR1 buries small metabolite an-         uals and antigens, but they are insufficient to accurately classify
+tigens so that they do not contact TCR.63,64 Consequently, MAIT      T cell states. After all, the TCR sequence is only one minor influ-
+cell TCRs need only recognize MR1, which marks a highly              ence on the transcriptional state of a given T cell.
+distinct transcriptional population of PLZFhigh, innate-like
+T cells. This tight link from ab TCR sequence to T cell fate is un-  RESOURCE AVAILABILITY
+usual; were there other relationships of similar magnitude, we
+believe that our model would have identified them.                   Lead contact
+                                                                     Further information and requests for resources and reagents should be
+   We observe elevated CDR3 hydrophobicity in KIR+HELIOS+            directed to and will be fulfilled by the lead contact, Soumya Raychaudhuri
+CD8 T cells, consistent with a previous report.18 Schattgen          (soumya@broadinstitute.org).
+et al.18 hypothesized that this CD8 population may be ``MHC-in-
+dependent, noncanonical, or self-specific.'' Our framework           Materials availability
+unifies this observation with CD4 investigations10,16: KIR+CD8+      Primary materials generated during this study are available upon request
+T cells, which may functionally represent human CD8 Treg cells,36    through the lead contact.
+appear to resemble CD4 Treg cells in terms of TCR sequence. In
+general, hydrophobic and aromatic (F, L, I, C, Y, W) junctional      Data and code availability
+CDR3 residues (both a and b) may increase a T cell's likelihood           d All sequencing data analyzed in this study were previously deposited in
+of recognizing self-antigens, driving FOXP3 Treg cell fate in the            online databases (Table S1).
+case of CD4 co-receptors and KIR+HELIOS+ fate in the case                 d Custom analysis code for this manuscript is available at https://github.
+of CD8 co-receptors.                                                         com/immunogenomics/tcrpheno_analysis. An R package to apply our
+                                                                             TCR scoring functions to new data is available at https://github.com/
+   We take particular interest in TCR-mem because it describes               kalaga27/tcrpheno.
+TCR sequence features that are generally advantageous for                 d Any additional information required to reanalyze the data reported in this
+reaching a memory T cell state. Our own tetramer dilution ex-                paper is available from the lead contact upon request.
+periments, external micropipette adhesion data, and buried
+surface area calculations each indicate that TCR-mem is              ACKNOWLEDGMENTS
+distinct from antigen binding affinity. Rather, our TCR-mem
+scoring function can distinguish which TCR sequences recog-          We thank M. Kwun, D.A. Rao, and A.H. Jonsson for helpful scientific conversa-
+nizing a common antigen are more likely to activate. We have         tions regarding this work. K.A.L. is supported by award 1F30AI176724 from the
+shown this with respect to endogenous TCR sequences recog-           National Institute of Allergy and Infectious Diseases and award T32GM007753
+nizing a self-antigen (MART-1) and engineered TCR sequences          from the National Institute of General Medical Sciences. A.C.K. is supported
+recognizing a viral antigen (pp65). Increased TCR-mem also           by the Mark Foundation for Cancer Research of the Life Science Research Foun-
+corresponds to positive selection in the thymus, extending pre-      dation. L.R. is supported by award F30AI157385 from the National Institute of Al-
+vious observations that T cells with high self-reactivity (CD5high)  lergy and Infectious Diseases. M.E.B. is supported by NIH grant DP2AI158126.
+                                                                     S.J.E. is supported by NIH grant R01CA234600 and the Cancer Research UK/
+                                                                     Mark Foundation for Cancer Research grant CGCATF-2023/100005. S.R. is
+
+                                                                     Cell Reports 44, 115098, January 28, 2025 11
+   ll                                                                              Article
+
+OPEN ACCESS
+
+supported by NIH grants U19-AI111224-01, P01AI148102-01A1, U01-                     5. Nakayama, T., and Yamashita, M. (2010). The TCR-mediated signaling
+HG009379-04S1, 1R01AR063759, and UH2-AR067677. K.A.L. and L.R. are                      pathways that control the direction of helper T cell differentiation. Semin.
+supported by award T32GM144273 from the National Institute of General                   Immunol. 22, 303­309.
+Medical Sciences. The graphical abstract was created in BioRender.
+                                                                                    6. Hogquist, K.A., and Jameson, S.C. (2014). The self-obsession of T cells:
+AUTHOR CONTRIBUTIONS                                                                    how TCR signaling thresholds affect fate ``decisions'' and effector func-
+                                                                                        tion. Nat. Immunol. 15, 815­823.
+Conceptualization, K.A.L. and S.R.; methodology, all authors; experimental
+validation, K.A.L., A.C.K., and N.S.A.; formal analysis, K.A.L.; writing, K.A.L.;   7. Kaech, S.M., and Cui, W. (2012). Transcriptional control of effector and
+review and editing, all authors.                                                        memory CD8+ T cell differentiation. Nat. Rev. Immunol. 12, 749­761.
+
+DECLARATION OF INTERESTS                                                            8. Pauken, K.E., Lagattuta, K.A., Lu, B.Y., Lucca, L.E., Daud, A.I., Hafler,
+                                                                                        D.A., Kluger, H.M., Raychaudhuri, S., and Sharpe, A.H. (2022). TCR-
+M.E.B. is an equity holder in 3T Biosciences, Abata Therapeutics, and Kelonia           sequencing in cancer and autoimmunity: barcodes and beyond. Trends
+Therapeutics, none of which directly affect this work. S.J.E. is a founder of           Immunol. 43, 180­194.
+ImmuneID, MAZE Therapeutics, Mirimus, and T-Scan Therapeutics and
+serves on the scientific advisory boards of Homology Medicines and MPM              9. Treiner, E., Duban, L., Bahram, S., Radosavljevic, M., Wanner, V., Tilloy, F.,
+Capital, none of which directly affect this work. S.R. is a founder of Mestag,          Affaticati, P., Gilfillan, S., and Lantz, O. (2003). Selection of evolutionarily
+serves on the scientific advisory boards of Jannsen, Pfizer, and Sonoma,                conserved mucosal-associated invariant T cells by MR1. Nature 422,
+and consults for Abbvie, Nimbus, Biogen, Magnet, and Third Rock Ventures,               164­169.
+none of which directly affect this work.
+                                                                                   10. Lagattuta, K.A., Kang, J.B., Nathan, A., Pauken, K.E., Jonsson, A.H., Rao,
+STAR+METHODS                                                                            D.A., Sharpe, A.H., Ishigaki, K., and Raychaudhuri, S. (2022). Repertoire
+                                                                                        analyses reveal T cell antigen receptor sequence features that influence
+Detailed methods are provided in the online version of this paper and include           T cell fate. Nat. Immunol. 23, 446­457.
+the following:
+                                                                                   11. DerSimonian, H., Band, H., and Brenner, M.B. (1991). Increased frequency
+     d KEY RESOURCES TABLE                                                              of T cell receptor V alpha 12.1 expression on CD8+ T cells: evidence that V
+     d EXPERIMENTAL MODEL AND STUDY PARTICIPANT DETAILS                                 alpha participates in shaping the peripheral T cell repertoire. J. Exp. Med.
+                                                                                        174, 1287.
+          B Human samples
+          B Cell lines                                                             12. Stadinski, B.D., Shekhar, K., Go´ mez-Tourin~ o, I., Jung, J., Sasaki, K., Sew-
+     d METHOD DETAILS                                                                   ell, A.K., Peakman, M., Chakraborty, A.K., and Huseby, E.S. (2016). Hydro-
+          B Generation of antigen-specific Jurkat cell lines                            phobic CDR3 residues promote the development of self-reactive T cells.
+          B Tetramer generation                                                         Nat. Immunol. 17, 946­955.
+          B Endogenous antigen expression cocultures
+          B Flow cytometry                                                         13. Li, H.M., Hiroi, T., Zhang, Y., Shi, A., Chen, G., De, S., Metter, E.J., Wood,
+     d QUANTIFICATION AND STATISTICAL ANALYSIS                                          W.H., 3rd, Sharov, A., Milner, J.D., et al. (2016). TCRb repertoire of CD4+
+          B Sequencing read alignment                                                   and CD8+ T cells is distinct in richness, distribution, and CDR3 amino acid
+          B Quality control and normalization                                           composition. J. Leukoc. Biol. 99, 505­513.
+          B Quality control for TCR sequence data
+          B Defining TCR clonotypes                                                14. Carter, J.A., Preall, J.B., Grigaityte, K., Goldfless, S.J., Jeffery, E., Briggs,
+                                                                                        A.W., Vigneault, F., and Atwal, G.S. (2019). Single T Cell Sequencing Dem-
+SUPPLEMENTAL INFORMATION                                                                onstrates the Functional Role of ab TCR Pairing in Cell Lineage and Anti-
+                                                                                        gen Specificity. Front. Immunol. 10, 1516.
+Supplemental information can be found online at https://doi.org/10.1016/j.
+celrep.2024.115098.                                                                15. Daley, S.R., Koay, H.F., Dobbs, K., Bosticardo, M., Wirasinha, R.C., Pala,
+                                                                                        F., Castagnoli, R., Rowe, J.H., Ott de Bruin, L.M., Keles, S., et al. (2019).
+Received: July 31, 2024                                                                 Cysteine and hydrophobic residues in CDR3 serve as distinct T-cell self-
+Revised: September 19, 2024                                                             reactivity indices. J. Allergy Clin. Immunol. 144, 333­336.
+Accepted: December 2, 2024
+Published: December 27, 2024                                                       16. Kasatskaya, S.A., Ladell, K., Egorov, E.S., Miners, K.L., Davydov, A.N.,
+                                                                                        Metsger, M., Staroverov, D.B., Matveyshina, E.K., Shagina, I.A., Mame-
+REFERENCES                                                                              dov, I.Z., et al. (2020). Functionally specialized human CD4+ T-cell subsets
+                                                                                        express physicochemically distinct TCRs. Elife 9, e57063.
+ 1. Chi, X., Li, Y., and Qiu, X. (2020). J recombination, somatic hypermutation
+     and class switch recombination of immunoglobulins: mechanism and              17. Zhang, Z., Xiong, D., Wang, X., Liu, H., and Wang, T. (2021). Mapping the
+     regulation. Immunology 160, 233­247.                                               functional landscape of T cell receptor repertoires by single-T cell tran-
+                                                                                        scriptomics. Nat. Methods 18, 92­99.
+ 2. Klein, L., Kyewski, B., Allen, P.M., and Hogquist, K.A. (2014). Positive and
+     negative selection of the T cell repertoire: what thymocytes see (and don't   18. Schattgen, S.A., Guion, K., Crawford, J.C., Souquette, A., Barrio, A.M.,
+     see). Nat. Rev. Immunol. 14, 377­391.                                              Stubbington, M.J.T., Thomas, P.G., and Bradley, P. (2022). Integrating
+                                                                                        T cell receptor sequences and transcriptional profiles by clonotype
+ 3. Merkenschlager, M., Graf, D., Lovatt, M., Bommhardt, U., Zamoyska, R.,              neighbor graph analysis (CoNGA). Nat. Biotechnol. 40, 54­63.
+     and Fisher, A.G. (1997). How many thymocytes audition for selection?
+     J. Exp. Med. 186, 1149­1158.                                                  19. COvid-19 Multi-omics Blood ATlas COMBAT Consortium Electronic
+                                                                                        address julianknight@welloxacuk; COvid-19 Multi-omics Blood ATlas
+ 4. Yun, T.J., and Bevan, M.J. (2001). The Goldilocks conditions applied to             COMBAT Consortium; Electronic address: julian.knight@well.ox.ac.uk &
+     T cell development. Nat. Immunol. 2, 13­14.                                        COvid-19 Multi-omics Blood ATlas (COMBAT) Consortium (2022). A blood
+                                                                                        atlas of COVID-19 defines hallmarks of disease severity and specificity.
+                                                                                        Cell 185, 916­938.e58.
+
+                                                                                   20. Ren, X., Wen, W., Fan, X., Hou, W., Su, B., Cai, P., Li, J., Liu, Y., Tang, F.,
+                                                                                        Zhang, F., et al. (2021). COVID-19 immune features revealed by a large-
+                                                                                        scale single-cell transcriptome atlas. Cell 184, 5838.
+
+                                                                                   21. Stephenson, E., Reynolds, G., Botting, R.A., Calero-Nieto, F.J., Morgan,
+                                                                                        M.D., Tuong, Z.K., Bach, K., Sungnak, W., Worlock, K.B., Yoshida, M.,
+
+12 Cell Reports 44, 115098, January 28, 2025
+Article                                                                                  ll
+
+                                                                                      OPEN ACCESS
+
+     et al. (2021). Single-cell multi-omics analysis of the immune response in        37. Stephens, M. (2017). False discovery rates: a new deal. Biostatistics 18,
+     COVID-19. Nat. Med. 27, 904­916.                                                      275­294.
+
+22. Domi´nguez Conde, C., Xu, C., Jarvis, L.B., Rainbow, D.B., Wells, S.B.,           38. Zeldovich, K.B., Berezovsky, I.N., and Shakhnovich, E.I. (2007). Protein
+     Gomes, T., Howlett, S.K., Suchanek, O., Polanski, K., King, H.W., et al.              and DNA sequence determinants of thermophilic adaptation. PLoS Com-
+     (2022). Cross-tissue immune cell analysis reveals tissue-specific features            put. Biol. 3, e5.
+     in humans. Science 376, eabl5197.
+                                                                                      39. Egorov, E.S., Kasatskaya, S.A., Zubov, V.N., Izraelson, M., Nakonech-
+23. Boutet, S.C., Walter, D., Stubbington, M.J.T., Pfeiffer, K.A., Lee, J.Y., Tay-         naya, T.O., Staroverov, D.B., Angius, A., Cucca, F., Mamedov, I.Z., Rosati,
+     lor, S.E.B., Montesclaros, L., Lau, J.K., Riordan, D.P., Barrio, A.M., et al.         E., et al. (2018). The Changing Landscape of Naive T Cell Receptor Reper-
+     (2019). Scalable and comprehensive characterization of antigen-specific               toire With Human Aging. Front. Immunol. 9, 1618.
+     CD8 T cells using multi-omics single cell analysis. J. Immunol. 202,
+     131­134.                                                                         40. Janeway, C.A., Jr., Travers, P., Walport, M., and Shlomchik, M.J. (2001).
+                                                                                           The Rearrangement of Antigen-Receptor Gene Segments Controls
+24. Suo, C., Dann, E., Goh, I., Jardine, L., Kleshchevnikov, V., Park, J.E., Bot-          Lymphocyte Development : The Immune System (Garland Science).
+     ting, R.A., Stephenson, E., Engelbert, J., Tuong, Z.K., et al. (2022). Map-
+     ping the developing human immune system across organs. Science                   41. Manfras, B.J., Terjung, D., and Boehm, B.O. (1999). Non-productive hu-
+     376, eabo0510.                                                                        man TCR b chain genes represent VDJ diversity before selection upon
+                                                                                           function: insight into biased usage of TCRBD and TCRBJ genes and diver-
+25. Su, Y., Chen, D., Yuan, D., Lausted, C., Choi, J., Dai, C.L., Voillet, V., Duv-        sity of CDR3 region length. Hum. Immunol. 60, 1090­1100.
+     vuri, V.R., Scherler, K., Troisch, P., et al. (2020). Multi-Omics Resolves a
+     Sharp Disease-State Shift between Mild and Moderate COVID-19. Cell               42. Kaech, S.M., and Ahmed, R. (2001). Memory CD8+ T cell differentiation:
+     183, 1479­1495.e20.                                                                   initial antigen encounter triggers a developmental program in nai¨ve cells.
+                                                                                           Nat. Immunol. 2, 415­422.
+26. Nathan, A., Asgari, S., Ishigaki, K., Valencia, C., Amariuta, T., Luo, Y., Be-
+     ynor, J.I., Baglaenko, Y., Suliman, S., Price, A.L., et al. (2022). Single-cell  43. Shinoda, K., Tokoyoda, K., Hanazawa, A., Hayashizaki, K., Zehentmeier,
+     eQTL models reveal dynamic T cell state dependence of disease loci. Na-               S., Hosokawa, H., Iwamura, C., Koseki, H., Tumes, D.J., Radbruch, A.,
+     ture 606, 120­128.                                                                    and Nakayama, T. (2012). Type II membrane protein CD69 regulates the
+                                                                                           formation of resting T-helper memory. Proc. Natl. Acad. Sci. USA 109,
+27. Nathan, A., Beynor, J.I., Baglaenko, Y., Suliman, S., Ishigaki, K., Asgari, S.,        7409­7414.
+     Huang, C.C., Luo, Y., Zhang, Z., Lopez, K., et al. (2021). Multimodally
+     profiling memory T cells from a tuberculosis cohort identifies cell state as-    44. Schub, A., Schuster, I.G., Hammerschmidt, W., and Moosmann, A. (2009).
+     sociations with demographics, environment and disease. Nat. Immunol.                  CMV-specific TCR-transgenic T cells for immunotherapy. J. Immunol.
+     22, 781­793.                                                                          183, 6819­6830.
+
+28. Trofimov, A., Brouillard, P., Larouche, J.-D., Se´ guin, J., Laverdure, J.-P.,    45. Abdelfattah, N.S., Kula, T., and Elledge, S.J. (2024). T-Switch: A speci-
+     Brasey, A., Ehx, G., Roy, D.-C., Busque, L., Lachance, S., et al. (2002).             ficity-based engineering platform for developing safe and effective T cell
+     Two types of human TCR differentially regulate reactivity to self and                 therapeutics. Immunity 57, 2945­2958.e5.
+     non-self antigens. iScience 25, 104968.
+                                                                                      46. Zhang, W., Hawkins, P.G., He, J., Gupta, N.T., Liu, J., Choonoo, G., Jeong,
+29. Lu, T., Zhang, Z., Zhu, J., Wang, Y., Jiang, P., Xiao, X., Bernatchez, C.,             S.W., Chen, C.R., Dhanik, A., Dillon, M., et al. (2021). A framework for high-
+     Heymach, J.V., Gibbons, D.L., Wang, J., et al. (2021). Deep learning--                ly multiplexed dextramer mapping and prediction of T cell receptor se-
+     based prediction of the T cell receptor-antigen binding specificity. Nat.             quences to antigen specificity. Sci. Adv. 7, eabf5835.
+     Mach. Intell. 3, 864­875.
+                                                                                      47. Chiang, D., Chen, X., Jones, S.M., Wood, R.A., Sicherer, S.H., Burks,
+30. Atchley, W.R., Zhao, J., Fernandes, A.D., and Druke, T. (2005). Solving the            A.W., Leung, D.Y.M., Agashe, C., Grishin, A., Dawson, P., et al. (2018). Sin-
+     protein sequence metric problem. Proc. Natl. Acad. Sci. USA 102,                      gle-cell profiling of peanut-responsive T cells in patients with peanut al-
+     6395­6400.                                                                            lergy reveals heterogeneous effector TH2 subsets. J. Allergy Clin. Immu-
+                                                                                           nol. 141, 2107­2120.
+31. Tilloy, F., Treiner, E., Park, S.H., Garcia, C., Lemonnier, F., de la Salle, H.,
+     Bendelac, A., Bonneville, M., and Lantz, O. (1999). An Invariant T Cell Re-      48. Rajasekaran, K., Guan, X., Tafazzol, A., Hamidi, H., Darwish, M., and Ya-
+     ceptor a Chain Defines a Novel TAP-independent Major Histocompatibility               dav, M. (2023). Tetramer-aided sorting and single-cell RNA sequencing
+     Complex Class Ib­restricted a/b T Cell Subpopulation in Mammals. J. Exp.              facilitate transcriptional profiling of antigen-specific CD8+ T cells. Transl.
+     Med. 189, 1907­1921.                                                                  Oncol. 27, 101559.
+
+32. Porcelli, S., Morita, C.T., and Brenner, M.B. (1992). CDlb restricts the          49. Solouki, S., Huang, W., Elmore, J., Limper, C., Huang, F., and August, A.
+     response of human CD4À8ÀT lymphocytes to a microbial antigen. Nature                  (2020). TCR Signal Strength and Antigen Affinity Regulate CD8+ Memory
+     360, 593­597.                                                                         T Cells. J. Immunol. 205, 1217­1227.
+
+33. Miescher, G.C., Howe, R.C., Lees, R.K., and MacDonald, H.R. (1988).               50. Skowera, A., Ellis, R.J., Varela-Calvin~ o, R., Arif, S., Huang, G.C., Van-
+     CD3-associated alpha/beta and gamma/delta heterodimeric receptors                     Krinks, C., Zaremba, A., Rackham, C., Allen, J.S., Tree, T.I.M., et al. (10
+     are expressed by distinct populations of CD4- CD8- thymocytes.                        2008). CTLs are targeted to kill b cells in patients with type 1 diabetes
+     J. Immunol. 140, 1779­1782.                                                           through recognition of a glucose-regulated preproinsulin epitope. J. Clin.
+                                                                                           Invest. 118, 3390­3402.
+34. Lantz, O., and Bendelac, A. (1994). An invariant T cell receptor alpha chain
+     is used by a unique subset of major histocompatibility complex class             51. Kolawole, E.M., Lamb, T.J., and Evavold, B.D. (2020). Relationship of 2D
+     I-specific CD4+ and CD4-8- T cells in mice and humans. J. Exp. Med.                   Affinity to T Cell Functional Outcomes. Int. J. Mol. Sci. 21, 7969.
+     180, 1097­1106.
+                                                                                      52. Martinez, R.J., Andargachew, R., Martinez, H.A., and Evavold, B.D. (2016).
+35. Teh, H.S., Kisielow, P., Scott, B., Kishi, H., Uematsu, Y., Bluthmann, H.,             Low-affinity CD4+ T cells are major responders in the primary immune
+     and von Boehmer, H. (1988). Thymic major histocompatibility complex an-               response. Nat. Commun. 7, 13848.
+     tigens and the alpha beta T-cell receptor determine the CD4/CD8 pheno-
+     type of T cells. Nature 335, 229­233.                                            53. Zhang, S.-Q., Parker, P., Ma, K.Y., He, C., Shi, Q., Cui, Z., Williams, C.M.,
+                                                                                           Wendel, B.S., Meriwether, A.I., Salazar, M.A., and Jiang, N. (2016). Direct
+36. Li, J., Zaslavsky, M., Su, Y., Guo, J., Sikora, M.J., van Unen, V., Christo-           measurement of T cell receptor affinity and sequence from nai¨ve antiviral
+     phersen, A., Chiou, S.H., Chen, L., Li, J., et al. (2022). KIR+CD8+ T cells           T cells. Sci. Transl. Med. 8, 341ra77.
+     suppress pathogenic T cells and are active in autoimmune diseases and
+     COVID-19. Science 376, eabi9591.                                                 54. Chen, J., Sawyer, N., and Regan, L. (2013). Protein-protein interactions:
+                                                                                           general trends in the relationship between binding affinity and interfacial
+                                                                                           buried surface area. Protein Sci. 22, 510­515.
+
+                                                                                      Cell Reports 44, 115098, January 28, 2025 13
+   ll                                                                                 Article
+
+OPEN ACCESS
+
+55. Lever, M., Maini, P.K., van der Merwe, P.A., and Dushek, O. (2014). Pheno-             nition of vitamin B metabolites by mucosal-associated invariant T cells.
+     typic models of T cell activation. Nat. Rev. Immunol. 14, 619­629.                    Nat. Commun. 4, 2142.
+
+56. Zhao, X., Kolawole, E.M., Chan, W., Feng, Y., Yang, X., Gee, M.H., Jude,          65. Ernst, B., Lee, D.S., Chang, J.M., Sprent, J., and Surh, C.D. (1999). The
+     K.M., Sibener, L.V., Fordyce, P.M., Germain, R.N., et al. (2022). Tuning              peptide ligands mediating positive selection in the thymus control T cell
+     T cell receptor sensitivity through catch bond engineering. Science 376,              survival and homeostatic proliferation in the periphery. Immunity 11,
+     eabl5282.                                                                             173­181.
+
+57. Scott-Browne, J.P., White, J., Kappler, J.W., Gapin, L., and Marrack, P.          66. Mandl, J.N., Monteiro, J.P., Vrisekoop, N., and Germain, R.N. (2013). T
+     (2009). Germline-encoded amino acids in the alphabeta T-cell receptor                 cell-positive selection uses self-ligand binding strength to optimize reper-
+     control thymic selection. Nature 458, 1043­1046.                                      toire recognition of foreign antigens. Immunity 38, 263­274.
+
+58. Deibel, M.R., Riley, L.K., Coleman, M.S., Cibull, M.L., Fuller, S.A., and         67. Fulton, R.B., Hamilton, S.E., Xing, Y., Best, J.A., Goldrath, A.W., Hogquist,
+     Todd, E. (1983). Expression of terminal deoxynucleotidyl transferase in hu-           K.A., and Jameson, S.C. (2015). The TCR's sensitivity to self peptide­MHC
+     man thymus during ontogeny and development. J. Immunol. 131,                          dictates the ability of naive CD8+ T cells to respond to foreign antigens.
+     195­200.                                                                              Nat. Immunol. 16, 107­117.
+
+59. Marcou, Q., Mora, T., and Walczak, A.M. (2018). High-throughput immune            68. Rocha, B., and von Boehmer, H. (1991). Peripheral selection of the T cell
+     repertoire analysis with IGoR. Nat. Commun. 9, 561.                                   repertoire. Science 251, 1225­1228.
+
+60. Berzins, S.P., Cochrane, A.D., Pellicci, D.G., Smyth, M.J., and Godfrey,          69. Parker, M.E., and Ciofani, M. (2020). Regulation of gd T Cell Effector Diver-
+     D.I. (2005). Limited correlation between human thymus and blood NKT                   sification in the Thymus. Front. Immunol. 11, 42.
+     cell content revealed by an ontogeny study of paired tissue samples.
+     Eur. J. Immunol. 35, 1399­1407.                                                  70. Kula, T., Dezfulian, M.H., Wang, C.I., Abdelfattah, N.S., Hartman, Z.C.,
+                                                                                           Wucherpfennig, K.W., Lyerly, H.K., and Elledge, S.J. (2019). T-Scan: A
+61. Martin, E., Treiner, E., Duban, L., Guerri, L., Laude, H., Toly, C., Premel, V.,       genome-wide method for the systematic discovery of T cell epitopes.
+     Devys, A., Moura, I.C., Tilloy, F., et al. (2009). Stepwise development of            Cell 178, 1016­1028.e13.
+     MAIT cells in mouse and human. PLoS Biol. 7, e54.
+                                                                                      71. Korsunsky, I., Millard, N., Fan, J., Slowikowski, K., Zhang, F., Wei, K., Ba-
+62. Leeansyah, E., Loh, L., Nixon, D.F., and Sandberg, J.K. (2014). Acquisition            glaenko, Y., Brenner, M., Loh, P.R., and Raychaudhuri, S. (2019). Fast,
+     of innate-like microbial reactivity in mucosal tissues during human fetal             sensitive and accurate integration of single-cell data with Harmony. Nat.
+     MAIT-cell development. Nat. Commun. 5, 3143.                                          Methods 16, 1289­1296.
+
+63. Lo´ pez-Sagaseta, J., Dulberger, C.L., Crooks, J.E., Parks, C.D., Luoma,          72. Kang, J.B., Nathan, A., Weinand, K., Zhang, F., Millard, N., Rumker, L.,
+     A.M., McFedries, A., Van Rhijn, I., Saghatelian, A., and Adams, E.J.                  Moody, D.B., Korsunsky, I., and Raychaudhuri, S. (2021). Efficient and
+     (2013). The molecular basis for Mucosal-Associated Invariant T cell recog-            precise single-cell reference atlas mapping with Symphony. Nat. Com-
+     nition of MR1 proteins. Proc. Natl. Acad. Sci. USA 110, E1771­E1778.                  mun. 12, 5890.
+
+64. Patel, O., Kjer-Nielsen, L., Le Nours, J., Eckle, S.B.G., Birkinshaw, R., Bed-    73. Amari, S., Murata, N., Muller, K.R., Finke, M., and Yang, H.H. (1997).
+     doe, T., Corbett, A.J., Liu, L., Miles, J.J., Meehan, B., et al. (2013). Recog-       Asymptotic statistical theory of overtraining and cross-validation. IEEE
+                                                                                           Trans. Neural Network. 8, 985­996.
+
+14 Cell Reports 44, 115098, January 28, 2025
+Article                                                                                                   ll
+
+STAR+METHODS                                                                                                         OPEN ACCESS
+
+KEY RESOURCES TABLE                                                                  IDENTIFIER
+
+REAGENT or RESOURCE                            SOURCE                                Cat# 124637; RRID:AB_2860658
+                                                                                     Cat# 310906; RRID:AB_314841
+Antibodies                                     BioLegend                             Cat# 300434; RRID:AB_10962690
+APC anti-mouse CD40, clone 3/23
+                                                                                     N/A
+PE anti-human CD69, clone FN50                 BioLegend                             N/A
+                                                                                     N/A
+BV241 anti-human CD3                           BioLegend                             Cat# TB-7308-K2
+                                                                                     Cat# TB-7308-K1
+Chemicals, peptides, and recombinant proteins
+                                                                                     CRL-3216
+MART-1 peptide                                 Genscript                             J.RT3-T3.5
+
+pp65 peptide                                   Genscript                             Zenodo: https://doi.org/10.5281/zenodo.
+                                                                                     14205113
+Tax peptide                                    Genscript                             Zenodo: https://doi.org/10.5281/zenodo.
+                                                                                     14213211
+APC QuickSwitch Quant HLA-A*02:01              MBL International
+
+PE QuickSwitch Quant HLA-A*02:01               MBL International
+
+Experimental models: Cell lines                American Type Culture Collection
+HEK-293T
+
+TCRb-null Jurkat                               American Type Culture Collection
+
+Software and algorithms                        https://github.com/kalaga27/tcrpheno
+R package tcrpheno
+
+Manuscript analyses                            https://github.com/immunogenomics/
+                                               tcrpheno_analysis
+
+EXPERIMENTAL MODEL AND STUDY PARTICIPANT DETAILS
+
+Human samples
+All human samples analyzed in this study were downloaded from online repositories from prior publications (Table S1), which list de-
+mographic characteristics. Sample sizes are listed in Table 1. Human samples were not divided into experimental groups. There was
+minimal influence of sex on the results of the study (Table S4).
+
+Cell lines
+TCRb-null Jurkat (J.RT3-T3.5, male) and HEK-293T (CRL-3216, female) cell lines were obtained from the American Type
+Culture Collection (ATCC). HEK-293T cells were engineered to express HLA-A2 and authenticated by flow cytometry as
+described previously.70 TCRb-null Jurkat cells were authenticated by flow cytometry, verifying that they do not express
+TCR at the cell surface. TCRb-null Jurkat cells were cultured in RPMI (Gibco, A10491-01) with 10% FBS (HyClone) and
+1% penicillin­streptomycin (Invitrogen, 15140-122). HEK-293T cells were cultured in DMEM (Gibco, 11995065) with 10%
+FBS (HyClone) and 1% penicillin­streptomycin (Invitrogen, 15140- 122). Cells were regularly tested for mycoplasma; results
+were always negative.
+
+METHOD DETAILS
+
+Generation of antigen-specific Jurkat cell lines
+TCRb-null Jurkat cells were spinfected with lentivirus at varying concentrations to achieve a multiplicity of infection (MOI) < 1 and
+introduced with TCRs of interest. Each TCR was encoded by a single construct containing the mouse TCR constant region. A total
+of 1 3 106 cells were spun with 8 mg mLÀ1 polybrene (Millipore, TR-1003-G) and lentivirus for 30 min at 800g in 12-well plates. Cells
+were incubated at 37C and the virus was washed off after 24 h. After spinfection for 48 h, surface expression of TCR constructs was
+confirmed by flow cytometry.
+
+Tetramer generation
+The HLA-A*02:01 MART-1 and pp65 peptides were synthesized by Genscript and loaded onto APC QuickSwitch Quant HLA-A*02:01
+tetramers (MBL International). Negative control tetramers were prepared with Tax peptide (LLFGYPVYV) and loaded onto PE
+QuickSwitch Quant HLA-A*0201 tetramers (MBL International).
+
+                                                                                                                        Cell Reports 44, 115098, January 28, 2025 15
+   ll                                         Article
+
+OPEN ACCESS
+
+Endogenous antigen expression cocultures
+Following 8­16-h incubation at 37C, cells were washed twice with PBS supplemented with 2 mM EDTA (PBE) and 0.5% BSA. For
+endogenous antigen expression, 56-mer peptide fragments were reverse-translated and synthesized as gBlocks (IDT) with 50 and 30
+BP recombination sites and cloned into pDONR221. Peptide antigens were subsequently cloned into pHAGE-CMV-Nflag-HA-DEST-
+IRES-Puro destination vectors using LR clonase (ThermoFisher Scientific Gateway Clonase).
+
+   pp65 56-mer: RLKAESTVAPEEDTDEDSDNEIHNPAVFTWPPWQAGILARNLVPMVATVQSGARA*
+   MART-1 56-mer: MPREDAHFIYGYPKKGHGHSYTTAEEAAGIGILTVILGVLLLIGCWYCRRRNGYRA
+
+Flow cytometry
+All antibodies were purchased from BioLegend and were used at 1 mL per million cells. Cells were stained with antibodies for at least
+30 min in PBE and then washed in PBE twice. Samples were acquired through the CytoFLEX (Beckman Coulter) flow cytometer and
+data were analyzed through FlowJo (version 5.0.0) software. When screening for Jurkat activation following coculture with 293T cells,
+Jurkat cells were sorted from 293T cells based on CD40 expression (APC anti-mouse CD40 clone 3/23), and then stained for CD69
+expression (PE anti-human CD69, clone FN50). For tetramer dilution experiments, CD3high Jurkat cells (BV421 anti-human CD3,
+300434) were isolated, and then stained for tetramer positive-control (APC QuickSwitch, MBL International) and tetramer nega-
+tive-control (PE QuickSwitch, MBL International).
+
+QUANTIFICATION AND STATISTICAL ANALYSIS
+
+The details of each statistical test can be found in the corresponding figure legend.
+
+Sequencing read alignment
+Sequencing data were deposited and downloaded as aligned sequencing reads (raw UMI counts for genes, ADTs, or TCR contigs) for
+Datasets 1­4, and Dataset 6. For TCRs in Dataset 4, we downloaded .fastqs from the European Nucleotide Archive (ENA). We used
+cellranger vdj version 5.0.1 to align reads to reference GRCh38 5.0.0.
+
+Quality control and normalization
+For all single-cell datasets, we removed cells with UMIs for less than 500 genes and cells with greater than 10% of UMIs derived from
+mitochondrial genes. We then normalized UMIs for each gene in each cell to log(UMI counts per 10,000) and normalized UMIs for
+each surface protein in each cell via the centered-log-ratio (CLR) transformation.
+Unimodal dimensionality reduction
+To identify clusters A1-A9, we applied a unimodal dimensionality reduction pipeline to Dataset 1, using mRNA information alone. After
+normalizing gene expression, we used the variance-stabilizing transformation (VST) to select the 200 most variable genes in each
+sample, excluding TCR genes. The union of variable genes across samples totaled 6358 genes. To conduct principal component
+analysis (PCA), we used R package ``irlba'' (v2.3.3) on normalized expression of these 6358 genes, each scaled to mean 0 variance
+1. We then used the R package Harmony71 (v1.0) to remove batch effects from the per-cell principal component scores. We applied
+Harmony to three batch variables: `scRNASeq_sample_ID', `Institute', and `Pool_ID.' We used q values 1, 0.5 and 0.5 for these batch
+variables, respectively. We used UMAP to visualize the resultant cell embedding in two dimensions, computed through the R pack-
+age Symphony72 (v1.0). We built a shared-nearest-neighbor (SNN) graph of cells based on the first 20 batch-corrected gene expres-
+sion PCs, using R package ``singlecellmethods'' (v0.1.0, parameters: prune_snn = 1/25, nn_k = 10, nn_eps = 0.5). To identify tran-
+scriptional clusters, we applied Louvain clustering to the SNN graph at multiple resolutions, through the RunModularityClustering
+function from the R package Seurat (v3.2.2). Clusters A1-A9 were identified by clustering resolution 0.5.
+Multimodal dimensionality reduction
+To identify clusters B1-B9, we applied a multimodal dimensionality reduction pipeline27 to Dataset 1, incorporating both mRNA
+and surface protein information. We used the VST to select the 100 most variable genes in each sample, excluding TCR genes.
+The union of variable genes across samples totaled 4423 genes. We applied Canonical Correlation Analysis (CCA) to paired mRNA
+and protein measurements, using the expression of these 4423 genes as input matrix 1 and the expression of 10 surface proteins
+as input matrix 2 (R package ``CCA'' v1.2.1). To emphasize traditional T cell populations, we selected TotalSeq antibodies for 10
+surface proteins critical to distinguish between CD4, CD8, central memory (CM) and effector memory (EM) T cells: CD4, CD8,
+CD45RO, CD45A, CD197_CCR7, CD62L, CD27, CD11a, CX3CR1, and KLRG1. Input gene expression was log10CPK-normalized
+and scaled to mean 0 variance 1; input protein expression was CLR-normalized and scaled to mean 0 variance 1. As in our un-
+imodal dimensionality reduction pipeline, we then removed batch effects from the per-cell mRNA-based canonical variate (CV)
+scores, constructed a UMAP and SNN graph based on the 10 batch-corrected CVs, and identified cell clusters. Clusters B1-
+B9 were identified through clustering at resolution 4.0, and collapsing clusters with similar marker expression (Figures S2Q
+and S2R).
+Standardizing T cell states across datasets
+To annotate T cell states in a consistent manner across datasets, we conducted reference mapping with Symphony72 (v1.0). Our
+unimodal T cell state reference (Figure S1) and multimodal T cell state reference (Figure S2) were constructed from Dataset 1 (T cells
+
+16 Cell Reports 44, 115098, January 28, 2025
+Article                                                                          ll
+
+                                                                              OPEN ACCESS
+
+in peripheral blood). To annotate T cell states in Datasets 2­5, we projected cells into these references. Symphony's reference map-
+ping includes correction for batch variables, which we specified for each dataset. For all datasets, we corrected for the individual's
+donor ID. For Dataset 2, we additionally corrected for batch variables ``Sample.type'' and ``PMID.'' For Dataset 3, we additionally
+corrected for batch variable ``Site.'' For Dataset 4, we additionally corrected for batch variable ``Chemistry,'' and conducted Sym-
+phony mapping separately for each tissue.
+
+   For each projected cell, we used the R package ``class'' (v7.3.17) to identify the five nearest neighbor cells from Dataset 1. We
+transferred the majority cell state label among these five to the projected cell.
+
+   We did not transfer cell state annotations for Dataset 6, because prenatal thymic tissue includes progenitor T cell states not
+observed in peripheral blood. Instead, we used T cell state annotations provided by the authors.24
+
+Quality control for TCR sequence data
+TCR sequence data deposited for Dataset 2 included only cells with exactly one TCR chain and exactly one TCRb chain, with V, J,
+Vb, and Jb gene names resolved. In keeping with this quality control by Ren et al.,20 we filtered all other scRNAseq-TCR datasets to
+include only TCRs with exactly one TCR chain, exactly one TCRb chain, and V, J, Vb, and Jb gene names resolved. For analyses
+purely focused on cell state, such as dimensionality reduction and clustering, we did not apply TCR-based filtering.
+
+Defining TCR clonotypes
+
+To define the TCR clonotype for each cell, we concatenated the IMGT V, J, Vb, and Jb gene names with the CDR3 amino acid
+
+sequence and CDR3b amino acid sequence. To be considered a ``TCR-twin,'' TCRs from two different individuals were required to
+
+match exactly for each of these TCR components. To be considered part of the same expanded clone, TCRs had to match exactly for
+
+each of these TCR components, and be sampled from the same individual. We recognize that it is optimal to identify expanded clones
+
+by nucleotide rather than amino acid sequence, because different ancestral V(D)J nucleotide recombinations can converge to the
+
+same amino acid sequence. However, only amino acid sequences were made publicly available for the TCR chain for Dataset 1.
+In practice, because amino acid convergence is rare, TCR clones are often identified via amino acid sequence.19
+
+TCR twin analysis
+
+To identify ``TCR twins'' in Dataset 1, we counted the number of individuals observed for each TCR clonotype. The vast majority of
+
+TCR clonotypes (234131/234265, 99.9%) were observed in only one individual from Dataset 1, and would be considered ``private
+
+TCRs.'' 134 TCR clonotypes were observed in more than one individual (``public TCRs''), and we analyzed the 115 TCR clonotypes
+
+that were observed in exactly two individuals.
+
+We next assigned a transcriptional state to each TCR twin member. 115 TCR clonotypes, each observed in two individuals, implies
+
+230 twin members. For 163/230 twin members (70%), we observed no evidence of clonal expansion (there was only one cell sampled
+
+from the individual with the TCR clonotype of interest), and we used the cluster identity of its single cell. For 37 twin members (16%),
+
+we observed clonal expansion within a single transcriptional cluster (resolution 0.5, Figure 1A), and we used this cluster to annotate
+
+the TCR twin member. For 30 twin members (13%), we observed clonal expansion across multiple clusters, and we used the tran-
+
+scriptional cluster that contained the greatest number of constituent cells.
+
+We then counted how many of the 115 TCR twins were assigned the same transcriptional cluster in both individuals. To assess
+
+statistical significance, we conducted a binomial test with N = 115 trials and Pnull = the probability of concordant transcriptional clus-
+
+ters by chance. To calculate Pnull, we summed the probabilities of randomly drawing two observations with the same cluster assign-
+
+ment for each of the nine transcriptional clusters (A1-A9, Figure 1A). For transcriptional cluster j including nj of the 230 T cells with
+
+twinned TCRs, this probability can be computed as:
+
+                                                             
+                                                               nj
+
+                                                    Pj  =  2                  (Equation 1)
+                                                             230
+
+                                                             2
+
+Pnull can then be found by summation:
+
+                                                    Pnull =  X9   Pj          (Equation 2)
+
+                                                             j=1
+
+TCR featurization
+Cellranger vdj output provides amino acid sequence for CDR3 regions, but IMGT gene names only for other regions of the TCR. To
+translate IMGT gene names into CDR1 and CDR2 amino acids, we downloaded amino acid sequences for each gene from https://
+www.imgt.org.
+
+   We removed all TCR sequences for which the V gene is unresolved. To focus on functional TCRs, we removed V genes listed as
+pseudogenes in IMGT. We used TCR position numbers from IMGT to describe the location of each TCR amino acid. To maintain a
+tractable number of TCR positions, we consider only TCR sequences with CDR3a length ranging from 10 to 17 amino acids and
+CDR3b length ranging from 11 to 18 amino acids.
+
+                                                                              Cell Reports 44, 115098, January 28, 2025 17
+   ll                                                                                   Article
+
+OPEN ACCESS
+
+   To convert each TCR amino acid into a vector of quantitative features, we translated each TCR amino acid into its five Atchley
+factors.30 This process results in 290 TCR features, extracted from the 58 TCR amino acid positions that comprise CDR1a,
+
+CDR2a, CDR3a, CDR1b, CDR2b, and CDR3b. We also computed the percentage of each CDR loop occupied by 19 of the
+
+20 amino acids, excluding Glycine as a reference. We also included six TCR features corresponding to the length (in amino
+
+acids) of each of the CDR loops. Finally, for each pair of adjacent residues within a TCR chain, we multiplied each possible
+
+combination of the five Atchley factors, resulting in 25 interactive TCR features per pair of adjacent residues. The resultant
+
+list of 1250 TCR sequence features is listed in Table S2. For all analyses, we scaled each TCR feature such that it would
+
+have mean 0 and variance 1 in the training dataset. Because the number of amino acids in a TCR sequence varies from cell
+
+to cell, shorter TCR sequences contain gaps at some IMGT positions. We fill these entries with the value 0, following the scaling
+
+transformation.
+
+Developing TCR scoring functions
+
+For our purposes, a TCR scoring function takes an amino acid TCR sequence as input and returns a numeric value proportional to the
+
+odds of that TCR being observed in the T cell state of interest. This transformation is accomplished by a set of TCR sequence feature
+
+weights, which can be learned from our training observations (70% of clones in Dataset 1 and Dataset 2). After training, the TCR
+
+sequence feature weights were fixed, and the resultant TCR scoring function can be applied to external data (e.g., Datasets 3­6).
+
+We considered three methods to construct TCR scoring functions:
+
+Method 1: Regularized Canonical Correlation Analysis (rCCA)
+
+By identifying axes of covariation between TCR sequence features and T cell state features across cells, rCCA produces a series of
+
+correlated TCR and T cell state scoring functions. rCCA does not require the analyst to pre-specify T cell states of interest. Instead, it
+
+identifies continuous T cell states, which may not exactly align with preexisting T cell state definitions. We applied rCCA via R pack-
+
+age ``mixOmics'' (v6.19.1), tuning ridge penalties via 5-fold cross-validation. For ease of interpretation, we reversed the sign of CV1
+
+scores and CV3 scores.
+
+Method 2: Logistic Regression with Ridge Penalty
+
+Results from rCCA clearly pointed to four recognizable T cell states. rCCA-based TCR scoring functions are optimized to predict
+
+the continuous-valued T cell states identified by rCCA, rather than recognizable and reproducible T cell state distinctions. Thus, to
+
+enhance biological interpretability, we translated the continuous T cell state values identified by rCCA into binary contrasts: 1)
+
+whether the cell belonged to transcriptional cluster A9 (innate-like T), 2) whether the cell belonged to transcriptional clusters B1-
+
+B3 (CD8T), 3) whether the cell belonged to the union of transcriptional cluster A5 or transcriptional cluster C15 (CD4+ Treg and
+CD8+ Treg, respectively, Figure S3K), and 4) whether the cell did not belong to transcriptional clusters B3 or B9 (memory T). We fit
+
+a logistic regression to each of these four binary T cell state contrasts:
+
+                                  logit ðTCSiÞ =                           !
+                                                  X 1250
+                                                             bjTCR featurej;i + b0 + i  (Equation 3)
+
+                                                  j=1
+
+   Each observation i represents one T cell. Consistent with our input to rCCA, we used one cell selected at random to represent each
+expanded clone. TCSi equals 1 if cell i is observed in the T cell state of interest; 0 otherwise.
+
+   We used the same 1250 TCR sequence features as predictors, and the same set of training observations as in Method 1. To handle
+collinearity between these TCR sequence features, we implemented ridge regularization via R package ``glmnet'' (v4.0.2), using
+5-fold cross-validation within the training set to select the optimal penalty weight. We removed innate-like cells (transcriptional cluster
+A9) from regressions focused on CD8T, Treg, or memory T cell fate.
+
+   Method 3: Convolutional Neural Network (CNN) Binary Classifier.
+   Methods 1 and 2 only consider linear effects of TCR sequence features and interactive effects limited to adjacent TCR residues.
+To assess whether nonlinear and/or motif-based TCR sequence feature effects would improve T cell state predictions, we imple-
+mented a Convolutional Neural Network (CNN) binary classifier for each of the four T cell state contrasts described above. In the
+CNN framework, each TCR sequence is represented by a 5 x 58 matrix, corresponding to 5 Atchley factors at each of the 58 res-
+idues comprising CDR1a, CDR2a, CDR3a, CDR1b, CDR2b, and CDR3b. After applying convolution and average pooling to this
+matrix, we concatenate the resultant hidden layer to the TCR score learned through logistic regression. This ensures that the
+CNN does not have to re-learn linear effects, and can instead focus on potential nonlinear and motif-based effects. We imple-
+mented these CNN binary classifiers via python package ``torch'' (v1.4.0), using the same training and testing split (within Dataset
+1 and Dataset 2) as in Method 1 and 2. We used the Adam optimizer and the binary cross-entropy with logits loss function (``BCE-
+WithLogitsLoss'' from python package torch), and iterated over a grid of hyperparameters corresponding to batch size, learning
+rate, and size of hidden layers. For each of these hyperparameter combinations for each of the four cell state contrasts (3 3 2 3 3 x
+4 = 72 models), we trained a CNN on Datasets 1 and 2, and applied the resultant classifier to Dataset 3. We observed minimal
+impact of hyperparameters on AUC, and therefore selected the least complex model (10 nodes in hidden layer, learning rate
+0.0003, and batch size of 256). We used early stopping73 to mitigate overfitting, training only until classification performance
+stopped improving in the held-out testing data (Figures S5A­S5D).
+   Benchmarking: To benchmark these different TCR scoring functions methods, we applied them to a dataset external to training
+(Dataset 3), and scaled each type of TCR score to have mean 0 variance 1 prior to association testing via Equation 4.
+
+18 Cell Reports 44, 115098, January 28, 2025
+Article                                                                                              ll
+
+                                                                                                  OPEN ACCESS
+
+Applying TCR scoring functions to data outside of the training set
+To apply the TCR scoring functions to data outside of the training set, we extracted the same 1250 TCR sequence features, multiplied
+each TCR feature value by its respective weight learned in from Dataset 1 and 2, and took the sum of these 1250 products. For each
+TCR feature value, we subtracted its mean value in Datasets 1­2 and divided the result by its standard deviation in Datasets 1­2.
+Similarly, for each summation over TCR feature value-weight products, we subtracted the Dataset 1­2 mean and divided the result
+by the Dataset 1­2 standard deviation. Thus, one unit of TCR-mem in any dataset corresponds to one standard deviation of TCR-
+mem in Datasets 1­2.
+TCR sequence feature dependence analysis
+Given the correlation structure of TCR sequence features, we iteratively masked out correlated blocks of features using the Partition
+Explainer of the python package ``shap''. To estimate the relative contribution of each CDR loop, we took the absolute value of Shap-
+ley scores and summed over examples in the positive class for each TCR scoring function.
+Association testing between TCR and T cell state
+To test for an association between a TCR score and T cell state (TCS) contrast of interest, we used mixed-effects logistic regression.
+Using R package ``lme4'' (v1.1.23), we fit the following regression:
+
+                                            logitðTCSiÞ = bTCR score , TCR scorei + b0 + b0j + i  (Equation 4)
+
+Each observation i represents one T cell from individual j. Consistent with our input to rCCA, we used one cell selected at random
+
+to represent each expanded clone. TCSi equals 1 if cell i is observed in the T cell state of interest; 0 otherwise. b0 is the global inter-
+cept; b0j is a modification to the global intercept fit for each individual j. TCRscorei represents TCR score values, which are standard-
+ized to have mean 0 and variance 1 in the training observations from Dataset 1 and Dataset 2.
+
+   To estimate bTCR-innate, bTCR-CD8, bTCR-reg, and bTCR-mem separately for each individual from Dataset 1 and Dataset 2 (Figures S4I­
+S4L), we followed the same procedure with the removal of the b0j term. Removing b0j reduces the mixed-effects logistic regression to
+a logistic regression, requiring R package ``stats'' (v3.6.3) rather than ``lme4'' for parameter estimation. We included only individuals
+
+with at least 100 cells including at least 10 cells that matched the cell state of interest and at least 10 cells that did not match the cell
+
+state of interest in the regression. Then, to estimate the distribution of bTCR-innate across individuals, we used to these per-individual
+estimates as input to R function ``rma'' (from R package ``metafor'', v4.0.0), using the maximum likelihood estimator of heterogeneity
+
+(method = ``ML'').
+
+Analysis of nonproductive TCRs
+
+To test whether our TCR scoring functions explained T cell state only when applied to the surface-expressed TCR, we analyzed
+
+nonproductive TCRs from blood and secondary lymphoid tissue (Dataset 4). We collected all contigs annotated as high confi-
+
+dence, full length, and nonproductive by cellranger vdj (v5.0.1). Many nonproductive TCRs are short in length due to a stop codon;
+
+accordingly, we lifted our minimum CDR3 amino acid requirement. Because nonproductive TCRs are lowly expressed, it is un-
+
+common for both a nonproductive alpha chain and a nonproductive beta chain to be detected in the same cell. Thus, to attain
+
+statistical power, we did not require cells to have both a nonproductive alpha and a nonproductive beta chain. Instead, for
+
+each of our TCR scoring functions, we created a version that used only TCR alpha chain information and a version that used
+
+only TCR beta chain information (4 3 2 = 8 single-chain TCR scoring functions). As before, we used productive TCRs from Dataset
+
+1 and Dataset 2 to train TCR feature weights. We then applied these single-chain TCR scoring functions to nonproductive TCRs
+
+from Dataset 4. We removed clonal expansion from Dataset 4 as before, using productive TCR sequences to define T cell clones
+
+and selecting one cell at random to represent each expanded clone. We then tested for associations to T cell state as outlined by
+
+Equation 4. To confirm that lack of association for nonproductive TCRs was not due to statistical power or dataset, we down-
+
+sampled productive TCRs from Dataset 4 to match the sample size of nonproductive TCRs and repeated association testing
+
+(Table S4).
+
+TCR-mem within antigen-specific populations
+
+To stringently remove background Dextramer counts, we fit a negative binomial regression for each of the 44 Dextramers, estimating
+
+contributions from technical factors:
+
+                                         !                                                                         !
+                    X6                                                                            X4
+logðdUMIiÞ =             bk , ncUMIk;i + bTCRexpTCRexpi + bCD3 expCD3 expi + bCD8 expCD8 expi +
+                                                                                                      bjdonorj;i + b0 + i
+                    k=1
+                                                                                                  j=2
+
+                                                                                                  (Equation 5)
+
+dUMIi denotes the count of UMIs for cell i for the Dextramer of interest. ncUMIk;i denotes the count of UMIs for negative control Dex-
+tramer k collected for cell i. We include bTCRexpTCRexpi and bCD3 expCD3 expi to correct for TCR expression level, as more TCRs ex-
+pressed at the cell surface should render more opportunities to bind Dextramer. TCRexpi equals the log(CP10K + 1) normalized
+expression for CDR3 UMIs (alpha and beta summed) for cell i; CD3expi equals the CLR-normalized expression of the CD3 protein
+for cell i. We include CD8 expi (CLR-normalized expression of the CD8 protein for cell i) to adjust for the possibility that greater
+co-receptor expression renders more opportunities to bind Dextramer. We used R package ``MASS'' (v7.3.54) to fit the negative bino-
+
+mial regressions.
+
+                                             Cell Reports 44, 115098, January 28, 2025 19
+   ll                                                                                                          Article
+
+OPEN ACCESS
+
+To normalize Dextramer staining values, we replaced each cell's raw Dextramer UMI count with an expression of its negative bino-
+
+mial regression residual:
+
+                                                              observed UMIi + 1  
+                                                              expected UMIi
+                                              Dnormi = log                                                     (Equation 6)
+
+Dnormi equals the normalized Dextramer staining value for cell i. expected UMIi equals the negative binomial prediction based on
+technical factors for cell i. For most Dextramers, we observed a bimodal distribution of normalized Dextramer staining values, dis-
+
+tinguishing a background population from an antigen-binding population with Dextramer UMI counts than could be attributed to
+
+technical factors. T cells in this putative antigen-specific population were less likely to have other Dextramers with non-zero UMI
+
+counts (Figures S7A and S7B). By careful visual inspection, we set a normalized Dextramer staining threshold for each antigen-spe-
+
+cific population to distinguish binders from non-binders (Figures S7A­S7B).
+
+If T cells assigned to the same antigen specificity based on Dextramer UMI counts really do share antigen specifiity, they should
+
+have similar TCR sequences. Thus, we turned to TCR sequences to validate our inferences about antigen specificity. We observed
+
+significant TCR sequence conservation within our inferred antigen-specific populations (Figures S7C and S7D).
+
+Within each group of T cells assigned the same antigen specificity, we fit the following logistic regression (R package stats v3.6.3):
+
+                           logitðmemoryiÞ = bTCRmem TCRmemi + bDnormDnormi +                   !
+                                                                              X4
+                                                                                   bjdonorj;i + b0 + i         (Equation 7)
+
+                                                                              j=2
+
+   memoryi takes the value 1 if T cell i is observed in a memory state (clusters B1, B2, B4) and value 0 if T cell i is observed in a naive
+state (cluster B3). As in previous analyses, we chose one cell at random to represent each expanded clone. To adjust for affinity be-
+
+tween the TCR and Dextramer in question, we include Dnormi as a covariate, equal to the extent of Dextramer staining following our
+custom normalization for cell i (see Equation 6). For antigen-specific populations that span more than one of the four donors in Data-
+
+set 5, we include donor covariate terms to adjust for donor-specific effects. We required that the antigen-specific population have at
+least 10 distinct TCR clones. Altogether, this process yielded 29 estimates of bTCR À mem for 29 groups of T cells, each specific to a
+different Dextramer.
+
+   We next wanted to understand the typical value of bTCR À mem in any antigen-specific T cell population. With the 29 antigen-specific
+bTCR À mem estimates and their standard errors, we conducted a random-effects meta-analysis (R package ``metafor'', v4.0.0). We
+used the maximum likelihood estimator of heterogeneity (method = ``ML'').
+
+20 Cell Reports 44, 115098, January 28, 2025
+

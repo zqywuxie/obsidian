@@ -1,0 +1,1824 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#content"
+    - complementary [ref=e4]:
+      - paragraph [ref=e6]: Advertisement
+    - banner [ref=e7]:
+      - generic [ref=e10]:
+        - link "Nature Biotechnology" [ref=e12] [cursor=pointer]:
+          - /url: /nbt
+          - img "Nature Biotechnology" [ref=e14]
+        - list [ref=e15]:
+          - listitem [ref=e16]:
+            - link "View all journals" [ref=e17] [cursor=pointer]:
+              - /url: https://www.nature.com/siteindex
+              - generic [ref=e18]: View all journals
+          - listitem [ref=e19]:
+            - button "Search" [ref=e20] [cursor=pointer]:
+              - img [ref=e21]
+              - generic [ref=e23]: Search
+          - listitem [ref=e24]:
+            - link "Log in" [ref=e25] [cursor=pointer]:
+              - /url: https://idp.nature.com/auth/personal/springernature?redirect_uri=https://www.nature.com/articles/s41587-021-00989-2
+              - generic [ref=e26]: Log in
+      - list [ref=e30]:
+        - listitem [ref=e31]:
+          - button "Explore content" [ref=e32] [cursor=pointer]:
+            - generic [ref=e33]: Explore content
+            - img [ref=e34]
+        - listitem [ref=e36]:
+          - button "About the journal" [ref=e37] [cursor=pointer]:
+            - generic [ref=e38]: About the journal
+            - img [ref=e39]
+        - listitem [ref=e41]:
+          - button "Publish with us" [ref=e42] [cursor=pointer]:
+            - generic [ref=e43]: Publish with us
+            - img [ref=e44]
+    - navigation "breadcrumbs" [ref=e46]:
+      - list [ref=e48]:
+        - listitem [ref=e49]:
+          - link "nature" [ref=e50] [cursor=pointer]:
+            - /url: /
+          - img [ref=e51]
+        - listitem [ref=e53]:
+          - link "nature biotechnology" [ref=e54] [cursor=pointer]:
+            - /url: /nbt
+          - img [ref=e55]
+        - listitem [ref=e57]:
+          - link "articles" [ref=e58] [cursor=pointer]:
+            - /url: /nbt/articles?type=article
+          - img [ref=e59]
+        - listitem [ref=e61]: article
+  - main [ref=e63]:
+    - article [ref=e64]:
+      - generic [ref=e66]:
+        - list [ref=e67]:
+          - listitem [ref=e68]: Article
+          - listitem [ref=e69]:
+            - text: "Published:"
+            - time [ref=e70]: 23 August 2021
+        - heading "Integrating T cell receptor sequences and transcriptional profiles by clonotype neighbor graph analysis (CoNGA)" [level=1] [ref=e71]
+        - list [ref=e72]:
+          - listitem [ref=e73]:
+            - link "Stefan A. Schattgen" [ref=e74] [cursor=pointer]:
+              - /url: "#auth-Stefan_A_-Schattgen-Aff1"
+            - text: ","
+          - listitem [ref=e75]:
+            - link "Kate Guion" [ref=e76] [cursor=pointer]:
+              - /url: "#auth-Kate-Guion-Aff2-Aff3"
+            - text: ","
+          - listitem [ref=e77]:
+            - link "Jeremy Chase Crawford" [ref=e78] [cursor=pointer]:
+              - /url: "#auth-Jeremy_Chase-Crawford-Aff1"
+            - text: ","
+          - listitem [ref=e79]:
+            - link "Aisha Souquette" [ref=e80] [cursor=pointer]:
+              - /url: "#auth-Aisha-Souquette-Aff1-Aff4"
+            - text: ","
+          - listitem [ref=e81]:
+            - link "Alvaro Martinez Barrio" [ref=e82] [cursor=pointer]:
+              - /url: "#auth-Alvaro_Martinez-Barrio-Aff5"
+            - text: ","
+          - listitem [ref=e83]:
+            - link "Michael J. T. Stubbington" [ref=e84] [cursor=pointer]:
+              - /url: "#auth-Michael_J__T_-Stubbington-Aff5"
+            - text: ","
+          - listitem [ref=e85]:
+            - link "Paul G. Thomas" [ref=e86] [cursor=pointer]:
+              - /url: "#auth-Paul_G_-Thomas-Aff1-Aff4"
+              - text: Paul G. Thomas
+              - img [ref=e87]
+            - text: "&"
+          - listitem [ref=e89]:
+            - link "Philip Bradley" [ref=e90] [cursor=pointer]:
+              - /url: "#auth-Philip-Bradley-Aff2-Aff6"
+              - text: Philip Bradley
+              - img [ref=e91]
+        - paragraph [ref=e93]:
+          - link "Nature Biotechnology" [ref=e94] [cursor=pointer]:
+            - /url: /nbt
+          - generic [ref=e95]:
+            - generic [ref=e96]: volume
+            - text: "40"
+          - text: ","
+          - generic [ref=e97]: pages
+          - text: 54–63 (2022)
+          - link "Cite this article" [ref=e98] [cursor=pointer]:
+            - /url: "#citeas"
+        - list [ref=e100]:
+          - listitem [ref=e101]:
+            - paragraph [ref=e102]: 23k Accesses
+          - listitem [ref=e103]:
+            - paragraph [ref=e104]: 125 Citations
+          - listitem [ref=e105]:
+            - paragraph [ref=e106]: 161 Altmetric
+          - listitem [ref=e107]:
+            - paragraph [ref=e108]:
+              - link "Metrics details" [ref=e109] [cursor=pointer]:
+                - /url: /articles/s41587-021-00989-2/metrics
+                - text: Metrics
+                - generic [ref=e110]: details
+      - generic [ref=e111]:
+        - region "Abstract" [ref=e112]:
+          - generic [ref=e113]:
+            - heading "Abstract" [level=2] [ref=e114]
+            - paragraph [ref=e116]:
+              - text: Links between T cell clonotypes, as defined by T cell receptor (TCR) sequences, and phenotype, as reflected in gene expression (GEX) profiles, surface protein expression and peptide:major histocompatibility complex binding, can reveal functional relationships beyond the features shared by clonally related cells. Here we present clonotype neighbor graph analysis (CoNGA), a graph theoretic approach that identifies correlations between GEX profile and TCR sequence through statistical analysis of GEX and TCR similarity graphs. Using CoNGA, we uncovered associations between TCR sequence and GEX profiles that include a previously undescribed ‘natural lymphocyte’ population of human circulating CD8
+              - superscript [ref=e117]: +
+              - text: T cells and a set of TCR sequence determinants of differentiation in thymocytes. These examples show that CoNGA might help elucidate complex relationships between TCR sequence and T cell phenotype in large, heterogeneous, single-cell datasets.
+        - paragraph [ref=e119]:
+          - text: This is a preview of subscription content,
+          - link "access via your institution" [ref=e120] [cursor=pointer]:
+            - /url: https://wayf.springernature.com?redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41587-021-00989-2
+        - heading "Access options" [level=2] [ref=e121]
+        - link "Access through your institution" [ref=e124] [cursor=pointer]:
+          - /url: https://wayf.springernature.com?redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41587-021-00989-2
+          - img [ref=e125]
+          - generic [ref=e127]: Access through your institution
+        - generic [ref=e129]:
+          - generic [ref=e131]:
+            - paragraph [ref=e132]: Access Nature and 54 other Nature Portfolio journals
+            - paragraph [ref=e133]: Get Nature+, our best-value online-access subscription
+            - generic [ref=e134]:
+              - paragraph [ref=e135]:
+                - generic [ref=e136]: $32.99 / 30 days
+              - paragraph [ref=e137]: cancel any time
+            - link "Learn more" [ref=e139] [cursor=pointer]:
+              - /url: https://shop-amers.nature.com/products/plus/?region=US
+              - generic [ref=e140]: Learn more
+          - generic [ref=e142]:
+            - paragraph [ref=e143]: Subscribe to this journal
+            - paragraph [ref=e144]: Receive 12 print issues and online access
+            - generic [ref=e145]:
+              - paragraph [ref=e146]: $259.00 per year
+              - paragraph [ref=e147]: only $21.58 per issue
+            - link "Learn more" [ref=e149] [cursor=pointer]:
+              - /url: /nbt/subscribe
+              - generic [ref=e150]: Learn more
+          - generic [ref=e152]:
+            - paragraph [ref=e153]: Buy this article
+            - list [ref=e154]:
+              - listitem [ref=e155]: Purchase on SpringerLink
+              - listitem [ref=e156]: Instant access to the full article PDF.
+            - paragraph [ref=e158]: USD 39.95
+            - button "Buy Now" [ref=e162] [cursor=pointer]
+          - paragraph [ref=e163]: Prices may be subject to local taxes which are calculated during checkout
+        - navigation [ref=e164]:
+          - heading "Additional access options:" [level=3] [ref=e165]
+          - list [ref=e166]:
+            - listitem [ref=e167]:
+              - link "Log in" [ref=e168] [cursor=pointer]:
+                - /url: https://idp.nature.com/authorize/natureuser?client_id=grover&redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41587-021-00989-2
+            - listitem [ref=e169]:
+              - link "Learn about institutional subscriptions" [ref=e170] [cursor=pointer]:
+                - /url: https://www.springernature.com/gp/librarians/licensing/license-options
+            - listitem [ref=e171]:
+              - link "Read our FAQs" [ref=e172] [cursor=pointer]:
+                - /url: https://support.nature.com/en/support/home
+            - listitem [ref=e173]:
+              - link "Contact customer support" [ref=e174] [cursor=pointer]:
+                - /url: https://www.springernature.com/gp/contact
+        - region "Similar content being viewed by others" [ref=e175]:
+          - heading "Similar content being viewed by others" [level=3] [ref=e176]
+          - generic [ref=e177]:
+            - article [ref=e179]:
+              - generic [ref=e181]:
+                - heading "Repertoire analyses reveal T cell antigen receptor sequence features that influence T cell fate" [level=3] [ref=e182]:
+                  - link "Repertoire analyses reveal T cell antigen receptor sequence features that influence T cell fate" [ref=e183] [cursor=pointer]:
+                    - /url: https://www.nature.com/articles/s41590-022-01129-x?fromPaywallRec=true
+                - generic [ref=e184]: Article 17 February 2022
+            - article [ref=e186]:
+              - generic [ref=e188]:
+                - heading "High-throughput and high-dimensional single-cell analysis of antigen-specific CD8+ T cells" [level=3] [ref=e189]:
+                  - link "High-throughput and high-dimensional single-cell analysis of antigen-specific CD8+ T cells" [ref=e190] [cursor=pointer]:
+                    - /url: https://www.nature.com/articles/s41590-021-01073-2?fromPaywallRec=true
+                    - text: High-throughput and high-dimensional single-cell analysis of antigen-specific CD8
+                    - superscript [ref=e191]: +
+                    - text: T cells
+                - generic [ref=e192]: Article 22 November 2021
+            - article [ref=e194]:
+              - generic [ref=e196]:
+                - heading "Cell activation-based screening of natively paired human T cell receptor repertoires" [level=3] [ref=e197]:
+                  - link "Cell activation-based screening of natively paired human T cell receptor repertoires" [ref=e198] [cursor=pointer]:
+                    - /url: https://www.nature.com/articles/s41598-023-31858-4?fromPaywallRec=true
+                - generic [ref=e199]:
+                  - text: Article Open access
+                  - generic [ref=e200]: 17 May 2023
+        - generic [ref=e201]:
+          - generic [ref=e203]:
+            - heading "Data availability" [level=2] [ref=e204]
+            - paragraph [ref=e206]:
+              - text: All datasets analyzed here are openly available and accessible at
+              - link "https://www.10xgenomics.com/resources/datasets/" [ref=e207] [cursor=pointer]:
+                - /url: https://www.10xgenomics.com/resources/datasets/
+              - text: and
+              - link "https://developmentcellatlas.ncl.ac.uk/" [ref=e208] [cursor=pointer]:
+                - /url: https://developmentcellatlas.ncl.ac.uk/
+              - text: (human thymic T cell data) (see Supplementary Table
+              - link "1" [ref=e209] [cursor=pointer]:
+                - /url: /articles/s41587-021-00989-2#MOESM1
+              - text: for details).
+              - link "Source data" [ref=e210] [cursor=pointer]:
+                - /url: /articles/s41587-021-00989-2#Sec23
+              - text: are provided with this paper.
+          - generic [ref=e212]:
+            - heading "Code availability" [level=2] [ref=e213]
+            - paragraph [ref=e215]:
+              - text: The CoNGA software repository is available on GitHub (
+              - link "https://github.com/phbradley/conga" [ref=e216] [cursor=pointer]:
+                - /url: https://github.com/phbradley/conga
+              - text: ).
+          - region "References" [ref=e218]:
+            - generic [ref=e219]:
+              - heading "References" [level=2] [ref=e220]
+              - generic [ref=e222]:
+                - list [ref=e223]:
+                  - listitem [ref=e224]:
+                    - text: "1."
+                    - paragraph [ref=e225]: Yost, K. E. et al. Clonal replacement of tumor-specific T cells following PD-1 blockade. Nat. Med. 25, 1251–1259 (2019).
+                    - paragraph [ref=e226]:
+                      - link "Article reference 1" [ref=e227] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41591-019-0522-3
+                        - text: Article
+                      - link "CAS reference 1" [ref=e228] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1MXhsVKnsbvI
+                        - text: CAS
+                      - link "PubMed reference 1" [ref=e229] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=31359002
+                        - text: PubMed
+                      - link "PubMed Central reference 1" [ref=e230] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC6689255
+                        - text: PubMed Central
+                      - link "Google Scholar reference 1" [ref=e231] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Clonal%20replacement%20of%20tumor-specific%20T%20cells%20following%20PD-1%20blockade&journal=Nat.%20Med.&doi=10.1038%2Fs41591-019-0522-3&volume=25&pages=1251-1259&publication_year=2019&author=Yost%2CKE
+                        - text: Google Scholar
+                  - listitem [ref=e232]:
+                    - text: "2."
+                    - paragraph [ref=e233]: Wu, T. D. et al. Peripheral T cell expansion predicts tumour infiltration and clinical response. Nature 579, 274–278 (2020).
+                    - paragraph [ref=e234]:
+                      - link "Article reference 2" [ref=e235] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41586-020-2056-8
+                        - text: Article
+                      - link "CAS reference 2" [ref=e236] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3cXnsVGnu7c%3D
+                        - text: CAS
+                      - link "PubMed reference 2" [ref=e237] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=32103181
+                        - text: PubMed
+                      - link "Google Scholar reference 2" [ref=e238] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Peripheral%20T%20cell%20expansion%20predicts%20tumour%20infiltration%20and%20clinical%20response&journal=Nature&doi=10.1038%2Fs41586-020-2056-8&volume=579&pages=274-278&publication_year=2020&author=Wu%2CTD
+                        - text: Google Scholar
+                  - listitem [ref=e239]:
+                    - text: "3."
+                    - paragraph [ref=e240]: Guo, X. et al. Global characterization of T cells in non-small-cell lung cancer by single-cell sequencing. Nat. Med. 24, 978–985 (2018).
+                    - paragraph [ref=e241]:
+                      - link "Article reference 3" [ref=e242] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41591-018-0045-3
+                        - text: Article
+                      - link "CAS reference 3" [ref=e243] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1cXht1WqsLjE
+                        - text: CAS
+                      - link "PubMed reference 3" [ref=e244] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=29942094
+                        - text: PubMed
+                      - link "Google Scholar reference 3" [ref=e245] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Global%20characterization%20of%20T%20cells%20in%20non-small-cell%20lung%20cancer%20by%20single-cell%20sequencing&journal=Nat.%20Med.&doi=10.1038%2Fs41591-018-0045-3&volume=24&pages=978-985&publication_year=2018&author=Guo%2CX
+                        - text: Google Scholar
+                  - listitem [ref=e246]:
+                    - text: "4."
+                    - paragraph [ref=e247]: Emmi, J., Huuhtanen, J., Mustjoki, S., Heinonen, M. & Lähdesmäki, H. Predicting recognition between T cell receptors and epitopes with TCRGP. PLoS Comput. Biol. 17, e1008814 (2021).
+                    - paragraph [ref=e248]:
+                      - link "Article reference 4" [ref=e249] [cursor=pointer]:
+                        - /url: https://doi.org/10.1371%2Fjournal.pcbi.1008814
+                        - text: Article
+                      - link "Google Scholar reference 4" [ref=e250] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Predicting%20recognition%20between%20T%20cell%20receptors%20and%20epitopes%20with%20TCRGP&journal=PLoS%20Comput.%20Biol.&doi=10.1371%2Fjournal.pcbi.1008814&volume=17&publication_year=2021&author=Emmi%2CJ&author=Huuhtanen%2CJ&author=Mustjoki%2CS&author=Heinonen%2CM&author=L%C3%A4hdesm%C3%A4ki%2CH
+                        - text: Google Scholar
+                  - listitem [ref=e251]:
+                    - text: "5."
+                    - paragraph [ref=e252]: Zheng, C. et al. Landscape of infiltrating T cells in liver cancer revealed by single-cell sequencing. Cell 169, 1342–1356 (2017).
+                    - paragraph [ref=e253]:
+                      - link "Article reference 5" [ref=e254] [cursor=pointer]:
+                        - /url: https://doi.org/10.1016%2Fj.cell.2017.05.035
+                        - text: Article
+                      - link "CAS reference 5" [ref=e255] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC2sXhtVWrtrvE
+                        - text: CAS
+                      - link "PubMed reference 5" [ref=e256] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=28622514
+                        - text: PubMed
+                      - link "Google Scholar reference 5" [ref=e257] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Landscape%20of%20infiltrating%20T%20cells%20in%20liver%20cancer%20revealed%20by%20single-cell%20sequencing&journal=Cell&doi=10.1016%2Fj.cell.2017.05.035&volume=169&pages=1342-1356&publication_year=2017&author=Zheng%2CC
+                        - text: Google Scholar
+                  - listitem [ref=e258]:
+                    - text: "6."
+                    - paragraph [ref=e259]: Zhang, L. et al. Lineage tracking reveals dynamic relationships of T cells in colorectal cancer. Nature 564, 268–272 (2018).
+                    - paragraph [ref=e260]:
+                      - link "Article reference 6" [ref=e261] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41586-018-0694-x
+                        - text: Article
+                      - link "CAS reference 6" [ref=e262] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1cXisVarsr7F
+                        - text: CAS
+                      - link "PubMed reference 6" [ref=e263] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=30479382
+                        - text: PubMed
+                      - link "Google Scholar reference 6" [ref=e264] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Lineage%20tracking%20reveals%20dynamic%20relationships%20of%20T%20cells%20in%20colorectal%20cancer&journal=Nature&doi=10.1038%2Fs41586-018-0694-x&volume=564&pages=268-272&publication_year=2018&author=Zhang%2CL
+                        - text: Google Scholar
+                  - listitem [ref=e265]:
+                    - text: "7."
+                    - paragraph [ref=e266]:
+                      - text: Gueguen, P. et al. Contribution of resident and circulating precursors to tumor-infiltrating CD8
+                      - superscript [ref=e267]: +
+                      - text: T cell populations in lung cancer. Sci. Immunol. 6, eabd5778 (2021).
+                    - paragraph [ref=e268]:
+                      - link "Article reference 7" [ref=e269] [cursor=pointer]:
+                        - /url: https://doi.org/10.1126%2Fsciimmunol.abd5778
+                        - text: Article
+                      - link "CAS reference 7" [ref=e270] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3MXjsFCrtbk%3D
+                        - text: CAS
+                      - link "PubMed reference 7" [ref=e271] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=33514641
+                        - text: PubMed
+                      - link "Google Scholar reference 7" [ref=e272] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Contribution%20of%20resident%20and%20circulating%20precursors%20to%20tumor-infiltrating%20CD8%2B%20T%20cell%20populations%20in%20lung%20cancer&journal=Sci.%20Immunol.&doi=10.1126%2Fsciimmunol.abd5778&volume=6&publication_year=2021&author=Gueguen%2CP
+                        - text: Google Scholar
+                  - listitem [ref=e273]:
+                    - text: "8."
+                    - paragraph [ref=e274]: Azizi, E. et al. Single-cell map of diverse immune phenotypes in the breast tumor microenvironment. Cell 174, 1293–1308 (2018).
+                    - paragraph [ref=e275]:
+                      - link "Article reference 8" [ref=e276] [cursor=pointer]:
+                        - /url: https://doi.org/10.1016%2Fj.cell.2018.05.060
+                        - text: Article
+                      - link "CAS reference 8" [ref=e277] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1cXht1Cis7vN
+                        - text: CAS
+                      - link "PubMed reference 8" [ref=e278] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=29961579
+                        - text: PubMed
+                      - link "PubMed Central reference 8" [ref=e279] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC6348010
+                        - text: PubMed Central
+                      - link "Google Scholar reference 8" [ref=e280] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Single-cell%20map%20of%20diverse%20immune%20phenotypes%20in%20the%20breast%20tumor%20microenvironment&journal=Cell&doi=10.1016%2Fj.cell.2018.05.060&volume=174&pages=1293-1308&publication_year=2018&author=Azizi%2CE
+                        - text: Google Scholar
+                  - listitem [ref=e281]:
+                    - text: "9."
+                    - paragraph [ref=e282]: Minervina, A. A. et al. Primary and secondary anti-viral response captured by the dynamics and phenotype of individual T cell clones. eLife 9, e53704 (2020).
+                    - paragraph [ref=e283]:
+                      - link "Article reference 9" [ref=e284] [cursor=pointer]:
+                        - /url: https://doi.org/10.7554%2FeLife.53704
+                        - text: Article
+                      - link "PubMed reference 9" [ref=e285] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=32081129
+                        - text: PubMed
+                      - link "PubMed Central reference 9" [ref=e286] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC7060039
+                        - text: PubMed Central
+                      - link "Google Scholar reference 9" [ref=e287] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Primary%20and%20secondary%20anti-viral%20response%20captured%20by%20the%20dynamics%20and%20phenotype%20of%20individual%20T%20cell%20clones&journal=eLife&doi=10.7554%2FeLife.53704&volume=9&publication_year=2020&author=Minervina%2CAA
+                        - text: Google Scholar
+                  - listitem [ref=e288]:
+                    - text: "10."
+                    - paragraph [ref=e289]: Zemmour, D. et al. Single-cell gene expression reveals a landscape of regulatory T cell phenotypes shaped by the TCR. Nat. Immunol. 19, 291–301 (2018).
+                    - paragraph [ref=e290]:
+                      - link "Article reference 10" [ref=e291] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41590-018-0051-0
+                        - text: Article
+                      - link "CAS reference 10" [ref=e292] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1cXmtVCktLw%3D
+                        - text: CAS
+                      - link "PubMed reference 10" [ref=e293] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=29434354
+                        - text: PubMed
+                      - link "PubMed Central reference 10" [ref=e294] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC6069633
+                        - text: PubMed Central
+                      - link "Google Scholar reference 10" [ref=e295] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Single-cell%20gene%20expression%20reveals%20a%20landscape%20of%20regulatory%20T%20cell%20phenotypes%20shaped%20by%20the%20TCR&journal=Nat.%20Immunol.&doi=10.1038%2Fs41590-018-0051-0&volume=19&pages=291-301&publication_year=2018&author=Zemmour%2CD
+                        - text: Google Scholar
+                  - listitem [ref=e296]:
+                    - text: "11."
+                    - paragraph [ref=e297]: Godfrey, D. I., Stankovic, S. & Baxter, A. G. Raising the NKT cell family. Nat. Immunol. 11, 197–206 (2010).
+                    - paragraph [ref=e298]:
+                      - link "Article reference 11" [ref=e299] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fni.1841
+                        - text: Article
+                      - link "CAS reference 11" [ref=e300] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC3cXhs1Onsbo%3D
+                        - text: CAS
+                      - link "PubMed reference 11" [ref=e301] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=20139988
+                        - text: PubMed
+                      - link "Google Scholar reference 11" [ref=e302] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Raising%20the%20NKT%20cell%20family&journal=Nat.%20Immunol.&doi=10.1038%2Fni.1841&volume=11&pages=197-206&publication_year=2010&author=Godfrey%2CDI&author=Stankovic%2CS&author=Baxter%2CAG
+                        - text: Google Scholar
+                  - listitem [ref=e303]:
+                    - text: "12."
+                    - paragraph [ref=e304]: Toubal, A., Nel, I., Lotersztajn, S. & Lehuen, A. Mucosal-associated invariant T cells and disease. Nat. Rev. Immunol. 19, 643–657 (2019).
+                    - paragraph [ref=e305]:
+                      - link "Article reference 12" [ref=e306] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41577-019-0191-y
+                        - text: Article
+                      - link "CAS reference 12" [ref=e307] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1MXhtlOgurfP
+                        - text: CAS
+                      - link "PubMed reference 12" [ref=e308] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=31308521
+                        - text: PubMed
+                      - link "Google Scholar reference 12" [ref=e309] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Mucosal-associated%20invariant%20T%20cells%20and%20disease&journal=Nat.%20Rev.%20Immunol.&doi=10.1038%2Fs41577-019-0191-y&volume=19&pages=643-657&publication_year=2019&author=Toubal%2CA&author=Nel%2CI&author=Lotersztajn%2CS&author=Lehuen%2CA
+                        - text: Google Scholar
+                  - listitem [ref=e310]:
+                    - text: "13."
+                    - paragraph [ref=e311]: "Schattgen, S. A. & Thomas, P. G. Bohemian T cell receptors: sketching the repertoires of unconventional lymphocytes. Immunol. Rev. 284, 79–90 (2018)."
+                    - paragraph [ref=e312]:
+                      - link "Article reference 13" [ref=e313] [cursor=pointer]:
+                        - /url: https://doi.org/10.1111%2Fimr.12668
+                        - text: Article
+                      - link "CAS reference 13" [ref=e314] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1cXhtF2mt7jJ
+                        - text: CAS
+                      - link "PubMed reference 13" [ref=e315] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=29944761
+                        - text: PubMed
+                      - link "PubMed Central reference 13" [ref=e316] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC6128411
+                        - text: PubMed Central
+                      - link "Google Scholar reference 13" [ref=e317] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Bohemian%20T%20cell%20receptors%3A%20sketching%20the%20repertoires%20of%20unconventional%20lymphocytes&journal=Immunol.%20Rev.&doi=10.1111%2Fimr.12668&volume=284&pages=79-90&publication_year=2018&author=Schattgen%2CSA&author=Thomas%2CPG
+                        - text: Google Scholar
+                  - listitem [ref=e318]:
+                    - text: "14."
+                    - paragraph [ref=e319]: Dash, P. et al. Quantifiable predictive features define epitope-specific T cell receptor repertoires. Nature 547, 89–93 (2017).
+                    - paragraph [ref=e320]:
+                      - link "Article reference 14" [ref=e321] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fnature22383
+                        - text: Article
+                      - link "CAS reference 14" [ref=e322] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC2sXhtVequrbP
+                        - text: CAS
+                      - link "PubMed reference 14" [ref=e323] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=28636592
+                        - text: PubMed
+                      - link "PubMed Central reference 14" [ref=e324] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC5616171
+                        - text: PubMed Central
+                      - link "Google Scholar reference 14" [ref=e325] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Quantifiable%20predictive%20features%20define%20epitope-specific%20T%20cell%20receptor%20repertoires&journal=Nature&doi=10.1038%2Fnature22383&volume=547&pages=89-93&publication_year=2017&author=Dash%2CP
+                        - text: Google Scholar
+                  - listitem [ref=e326]:
+                    - text: "15."
+                    - paragraph [ref=e327]: Glanville, J. et al. Identifying specificity groups in the T cell receptor repertoire. Nature 547, 94–98 (2017).
+                    - paragraph [ref=e328]:
+                      - link "Article reference 15" [ref=e329] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fnature22976
+                        - text: Article
+                      - link "CAS reference 15" [ref=e330] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC2sXhtVequrbE
+                        - text: CAS
+                      - link "PubMed reference 15" [ref=e331] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=28636589
+                        - text: PubMed
+                      - link "PubMed Central reference 15" [ref=e332] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC5794212
+                        - text: PubMed Central
+                      - link "Google Scholar reference 15" [ref=e333] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Identifying%20specificity%20groups%20in%20the%20T%20cell%20receptor%20repertoire&journal=Nature&doi=10.1038%2Fnature22976&volume=547&pages=94-98&publication_year=2017&author=Glanville%2CJ
+                        - text: Google Scholar
+                  - listitem [ref=e334]:
+                    - text: "16."
+                    - paragraph [ref=e335]: Zhang, H. et al. Investigation of antigen-specific T-cell receptor clusters in human cancers. Clin. Cancer Res. 26, 1359–1371 (2020).
+                    - paragraph [ref=e336]:
+                      - link "Article reference 16" [ref=e337] [cursor=pointer]:
+                        - /url: https://doi.org/10.1158%2F1078-0432.CCR-19-3249
+                        - text: Article
+                      - link "CAS reference 16" [ref=e338] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3cXhvValtr%2FM
+                        - text: CAS
+                      - link "PubMed reference 16" [ref=e339] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=31831563
+                        - text: PubMed
+                      - link "Google Scholar reference 16" [ref=e340] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Investigation%20of%20antigen-specific%20T-cell%20receptor%20clusters%20in%20human%20cancers&journal=Clin.%20Cancer%20Res.&doi=10.1158%2F1078-0432.CCR-19-3249&volume=26&pages=1359-1371&publication_year=2020&author=Zhang%2CH
+                        - text: Google Scholar
+                  - listitem [ref=e341]:
+                    - text: "17."
+                    - paragraph [ref=e342]:
+                      - text: Tubo, N. J. et al. Single naive CD4
+                      - superscript [ref=e343]: +
+                      - text: T cells from a diverse repertoire produce different effector cell types during infection. Cell 153, 785–796 (2013).
+                    - paragraph [ref=e344]:
+                      - link "Article reference 17" [ref=e345] [cursor=pointer]:
+                        - /url: https://doi.org/10.1016%2Fj.cell.2013.04.007
+                        - text: Article
+                      - link "CAS reference 17" [ref=e346] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC3sXnsFSrsLc%3D
+                        - text: CAS
+                      - link "PubMed reference 17" [ref=e347] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=23663778
+                        - text: PubMed
+                      - link "PubMed Central reference 17" [ref=e348] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3766899
+                        - text: PubMed Central
+                      - link "Google Scholar reference 17" [ref=e349] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Single%20naive%20CD4%2B%20T%20cells%20from%20a%20diverse%20repertoire%20produce%20different%20effector%20cell%20types%20during%20infection&journal=Cell&doi=10.1016%2Fj.cell.2013.04.007&volume=153&pages=785-796&publication_year=2013&author=Tubo%2CNJ
+                        - text: Google Scholar
+                  - listitem [ref=e350]:
+                    - text: "18."
+                    - paragraph [ref=e351]: Khatun, A. et al. Single-cell lineage mapping of a diverse virus-specific naive CD4 T cell repertoire. J. Exp. Med. 218, e20200650 (2021).
+                    - paragraph [ref=e352]:
+                      - link "Article reference 18" [ref=e353] [cursor=pointer]:
+                        - /url: https://doi.org/10.1084%2Fjem.20200650
+                        - text: Article
+                      - link "CAS reference 18" [ref=e354] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3cXisFKkt7%2FI
+                        - text: CAS
+                      - link "PubMed reference 18" [ref=e355] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=33201171
+                        - text: PubMed
+                      - link "Google Scholar reference 18" [ref=e356] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Single-cell%20lineage%20mapping%20of%20a%20diverse%20virus-specific%20naive%20CD4%20T%20cell%20repertoire&journal=J.%20Exp.%20Med.&doi=10.1084%2Fjem.20200650&volume=218&publication_year=2021&author=Khatun%2CA
+                        - text: Google Scholar
+                  - listitem [ref=e357]:
+                    - text: "19."
+                    - paragraph [ref=e358]: "McInnes, L., Healy, J., Saul, N. & Großberger, L. UMAP: uniform manifold approximation and projection. J. Open Source Softw. 3, 861 (2018)."
+                    - paragraph [ref=e359]:
+                      - link "Article reference 19" [ref=e360] [cursor=pointer]:
+                        - /url: https://doi.org/10.21105%2Fjoss.00861
+                        - text: Article
+                      - link "Google Scholar reference 19" [ref=e361] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=UMAP%3A%20uniform%20manifold%20approximation%20and%20projection&journal=J.%20Open%20Source%20Softw.&doi=10.21105%2Fjoss.00861&volume=3&publication_year=2018&author=McInnes%2CL&author=Healy%2CJ&author=Saul%2CN&author=Gro%C3%9Fberger%2CL
+                        - text: Google Scholar
+                  - listitem [ref=e362]:
+                    - text: "20."
+                    - paragraph [ref=e363]: Blondel, V. D., Guillaume, J.-L., Lambiotte, R. & Lefebvre, E. Fast unfolding of communities in large networks. J. Stat. Mech. 2008, P10008 (2008).
+                    - paragraph [ref=e364]:
+                      - link "Article reference 20" [ref=e365] [cursor=pointer]:
+                        - /url: https://doi.org/10.1088%2F1742-5468%2F2008%2F10%2FP10008
+                        - text: Article
+                      - link "Google Scholar reference 20" [ref=e366] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Fast%20unfolding%20of%20communities%20in%20large%20networks&journal=J.%20Stat.%20Mech.&doi=10.1088%2F1742-5468%2F2008%2F10%2FP10008&volume=2008&publication_year=2008&author=Blondel%2CVD&author=Guillaume%2CJ-L&author=Lambiotte%2CR&author=Lefebvre%2CE
+                        - text: Google Scholar
+                  - listitem [ref=e367]:
+                    - text: "21."
+                    - paragraph [ref=e368]:
+                      - text: "Traag, V. louvain-igraph: v0.5.3."
+                      - link "https://zenodo.org/record/35117#.YN8BzruSlPY" [ref=e369] [cursor=pointer]:
+                        - /url: https://zenodo.org/record/35117#.YN8BzruSlPY
+                      - text: (2015).
+                  - listitem [ref=e370]:
+                    - text: "22."
+                    - paragraph [ref=e371]: "Schneider, T. D. & Stephens, R. M. Sequence logos: a new way to display consensus sequences. Nucleic Acids Res. 18, 6097–6100 (1990)."
+                    - paragraph [ref=e372]:
+                      - link "Article reference 22" [ref=e373] [cursor=pointer]:
+                        - /url: https://doi.org/10.1093%2Fnar%2F18.20.6097
+                        - text: Article
+                      - link "CAS reference 22" [ref=e374] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DyaK3MXitVGmuw%3D%3D
+                        - text: CAS
+                      - link "PubMed reference 22" [ref=e375] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=2172928
+                        - text: PubMed
+                      - link "PubMed Central reference 22" [ref=e376] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC332411
+                        - text: PubMed Central
+                      - link "Google Scholar reference 22" [ref=e377] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Sequence%20logos%3A%20a%20new%20way%20to%20display%20consensus%20sequences&journal=Nucleic%20Acids%20Res.&doi=10.1093%2Fnar%2F18.20.6097&volume=18&pages=6097-6100&publication_year=1990&author=Schneider%2CTD&author=Stephens%2CRM
+                        - text: Google Scholar
+                  - listitem [ref=e378]:
+                    - text: "23."
+                    - paragraph [ref=e379]: Godfrey, D. I., Koay, H.-F., McCluskey, J. & Gherardin, N. A. The biology and functional importance of MAIT cells. Nat. Immunol. 20, 1110–1128 (2019).
+                    - paragraph [ref=e380]:
+                      - link "Article reference 23" [ref=e381] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41590-019-0444-8
+                        - text: Article
+                      - link "CAS reference 23" [ref=e382] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1MXhsFKju7%2FP
+                        - text: CAS
+                      - link "PubMed reference 23" [ref=e383] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=31406380
+                        - text: PubMed
+                      - link "Google Scholar reference 23" [ref=e384] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=The%20biology%20and%20functional%20importance%20of%20MAIT%20cells&journal=Nat.%20Immunol.&doi=10.1038%2Fs41590-019-0444-8&volume=20&pages=1110-1128&publication_year=2019&author=Godfrey%2CDI&author=Koay%2CH-F&author=McCluskey%2CJ&author=Gherardin%2CNA
+                        - text: Google Scholar
+                  - listitem [ref=e385]:
+                    - text: "24."
+                    - paragraph [ref=e386]:
+                      - text: "10x Genomics. A new way of exploring immunity: linking highly multiplexed antigen recognition to immune repertoire and phenotype (Application Note)."
+                      - link "https://pages.10xgenomics.com/rs/446-PBO-704/images/10x_AN047_IP_A_New_Way_of_Exploring_Immunity_Digital.pdf" [ref=e387] [cursor=pointer]:
+                        - /url: https://pages.10xgenomics.com/rs/446-PBO-704/images/10x_AN047_IP_A_New_Way_of_Exploring_Immunity_Digital.pdf
+                      - text: (2020).
+                  - listitem [ref=e388]:
+                    - text: "25."
+                    - paragraph [ref=e389]: Lu, J. et al. Molecular constraints on CDR3 for thymic selection of MHC-restricted TCRs from a random pre-selection repertoire. Nat. Commun. 10, 1019 (2019).
+                    - paragraph [ref=e390]:
+                      - link "Article reference 25" [ref=e391] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41467-019-08906-7
+                        - text: Article
+                      - link "PubMed reference 25" [ref=e392] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=30833553
+                        - text: PubMed
+                      - link "PubMed Central reference 25" [ref=e393] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC6399321
+                        - text: PubMed Central
+                      - link "Google Scholar reference 25" [ref=e394] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Molecular%20constraints%20on%20CDR3%20for%20thymic%20selection%20of%20MHC-restricted%20TCRs%20from%20a%20random%20pre-selection%20repertoire&journal=Nat.%20Commun.&doi=10.1038%2Fs41467-019-08906-7&volume=10&publication_year=2019&author=Lu%2CJ
+                        - text: Google Scholar
+                  - listitem [ref=e395]:
+                    - text: "26."
+                    - paragraph [ref=e396]: Elhanati, Y., Murugan, A., Callan, C. G. Jr, Mora, T. & Walczak, A. M. Quantifying selection in immune receptor repertoires. Proc. Natl. Acad. Sci. USA 111, 9875–9880 (2014).
+                    - paragraph [ref=e397]:
+                      - link "Article reference 26" [ref=e398] [cursor=pointer]:
+                        - /url: https://doi.org/10.1073%2Fpnas.1409572111
+                        - text: Article
+                      - link "CAS reference 26" [ref=e399] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC2cXhtVShu7rJ
+                        - text: CAS
+                      - link "PubMed reference 26" [ref=e400] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=24941953
+                        - text: PubMed
+                      - link "PubMed Central reference 26" [ref=e401] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4103359
+                        - text: PubMed Central
+                      - link "Google Scholar reference 26" [ref=e402] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Quantifying%20selection%20in%20immune%20receptor%20repertoires&journal=Proc.%20Natl.%20Acad.%20Sci.%20USA&doi=10.1073%2Fpnas.1409572111&volume=111&pages=9875-9880&publication_year=2014&author=Elhanati%2CY&author=Murugan%2CA&author=Callan%2CCG&author=Mora%2CT&author=Walczak%2CAM
+                        - text: Google Scholar
+                  - listitem [ref=e403]:
+                    - text: "27."
+                    - paragraph [ref=e404]: Krovi, S. H., Kappler, J. W., Marrack, P. & Gapin, L. Inherent reactivity of unselected TCR repertoires to peptide-MHC molecules. Proc. Natl Acad. Sci. USA 116, 22252–22261 (2019).
+                    - paragraph [ref=e405]:
+                      - link "Article reference 27" [ref=e406] [cursor=pointer]:
+                        - /url: https://doi.org/10.1073%2Fpnas.1909504116
+                        - text: Article
+                      - link "CAS reference 27" [ref=e407] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1MXitVOhtLbL
+                        - text: CAS
+                      - link "PubMed reference 27" [ref=e408] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=31570608
+                        - text: PubMed
+                      - link "PubMed Central reference 27" [ref=e409] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC6825295
+                        - text: PubMed Central
+                      - link "Google Scholar reference 27" [ref=e410] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Inherent%20reactivity%20of%20unselected%20TCR%20repertoires%20to%20peptide-MHC%20molecules&journal=Proc.%20Natl%20Acad.%20Sci.%20USA&doi=10.1073%2Fpnas.1909504116&volume=116&pages=22252-22261&publication_year=2019&author=Krovi%2CSH&author=Kappler%2CJW&author=Marrack%2CP&author=Gapin%2CL
+                        - text: Google Scholar
+                  - listitem [ref=e411]:
+                    - text: "28."
+                    - paragraph [ref=e412]: Stadinski, B. D. et al. Hydrophobic CDR3 residues promote the development of self-reactive T cells. Nat. Immunol. 17, 946–955 (2016).
+                    - paragraph [ref=e413]:
+                      - link "Article reference 28" [ref=e414] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fni.3491
+                        - text: Article
+                      - link "CAS reference 28" [ref=e415] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC28XhtVCjurrO
+                        - text: CAS
+                      - link "PubMed reference 28" [ref=e416] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=27348411
+                        - text: PubMed
+                      - link "PubMed Central reference 28" [ref=e417] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4955740
+                        - text: PubMed Central
+                      - link "Google Scholar reference 28" [ref=e418] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Hydrophobic%20CDR3%20residues%20promote%20the%20development%20of%20self-reactive%20T%20cells&journal=Nat.%20Immunol.&doi=10.1038%2Fni.3491&volume=17&pages=946-955&publication_year=2016&author=Stadinski%2CBD
+                        - text: Google Scholar
+                  - listitem [ref=e419]:
+                    - text: "29."
+                    - paragraph [ref=e420]: Wirasinha, R. C. et al. αβ T-cell receptors with a central CDR3 cysteine are enriched in CD8αα intraepithelial lymphocytes and their thymic precursors. Immunol. Cell Biol. 96, 553–561 (2018).
+                    - paragraph [ref=e421]:
+                      - link "Article reference 29" [ref=e422] [cursor=pointer]:
+                        - /url: https://doi.org/10.1111%2Fimcb.12047
+                        - text: Article
+                      - link "CAS reference 29" [ref=e423] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1cXhtlWjsrrF
+                        - text: CAS
+                      - link "PubMed reference 29" [ref=e424] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=29726044
+                        - text: PubMed
+                      - link "Google Scholar reference 29" [ref=e425] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=%CE%B1%CE%B2%20T-cell%20receptors%20with%20a%20central%20CDR3%20cysteine%20are%20enriched%20in%20CD8%CE%B1%CE%B1%20intraepithelial%20lymphocytes%20and%20their%20thymic%20precursors&journal=Immunol.%20Cell%20Biol.&doi=10.1111%2Fimcb.12047&volume=96&pages=553-561&publication_year=2018&author=Wirasinha%2CRC
+                        - text: Google Scholar
+                  - listitem [ref=e426]:
+                    - text: "30."
+                    - paragraph [ref=e427]:
+                      - text: Schattgen, S. A. et al. Intestinal intraepithelial lymphocyte repertoires are imprinted clonal structures selected for MHC reactivity. Immunity
+                      - link "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3467160" [ref=e428] [cursor=pointer]:
+                        - /url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3467160
+                      - text: (2019).
+                  - listitem [ref=e429]:
+                    - text: "31."
+                    - paragraph [ref=e430]: Park, J.-E. et al. A cell atlas of human thymic development defines T cell repertoire formation. Science 367, eaay3224 (2020).
+                    - paragraph [ref=e431]:
+                      - link "Article reference 31" [ref=e432] [cursor=pointer]:
+                        - /url: https://doi.org/10.1126%2Fscience.aay3224
+                        - text: Article
+                      - link "CAS reference 31" [ref=e433] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3cXjs1KnsLo%3D
+                        - text: CAS
+                      - link "PubMed reference 31" [ref=e434] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=32079746
+                        - text: PubMed
+                      - link "PubMed Central reference 31" [ref=e435] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC7611066
+                        - text: PubMed Central
+                      - link "Google Scholar reference 31" [ref=e436] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=A%20cell%20atlas%20of%20human%20thymic%20development%20defines%20T%20cell%20repertoire%20formation&journal=Science&doi=10.1126%2Fscience.aay3224&volume=367&publication_year=2020&author=Park%2CJ-E
+                        - text: Google Scholar
+                  - listitem [ref=e437]:
+                    - text: "32."
+                    - paragraph [ref=e438]: Carter, J. A. et al. Single T cell sequencing demonstrates the functional role of αβ TCR pairing in cell lineage and antigen specificity. Front. Immunol. 10, 1516 (2019).
+                    - paragraph [ref=e439]:
+                      - link "Article reference 32" [ref=e440] [cursor=pointer]:
+                        - /url: https://doi.org/10.3389%2Ffimmu.2019.01516
+                        - text: Article
+                      - link "CAS reference 32" [ref=e441] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3cXksFSqs7Y%3D
+                        - text: CAS
+                      - link "PubMed reference 32" [ref=e442] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=31417541
+                        - text: PubMed
+                      - link "PubMed Central reference 32" [ref=e443] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC6684766
+                        - text: PubMed Central
+                      - link "Google Scholar reference 32" [ref=e444] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Single%20T%20cell%20sequencing%20demonstrates%20the%20functional%20role%20of%20%CE%B1%CE%B2%20TCR%20pairing%20in%20cell%20lineage%20and%20antigen%20specificity&journal=Front.%20Immunol.&doi=10.3389%2Ffimmu.2019.01516&volume=10&publication_year=2019&author=Carter%2CJA
+                        - text: Google Scholar
+                  - listitem [ref=e445]:
+                    - text: "33."
+                    - paragraph [ref=e446]: Klarenbeek, P. L. et al. Somatic variation of T-cell receptor genes strongly associate with HLA class restriction. PLoS ONE 10, e0140815 (2015).
+                    - paragraph [ref=e447]:
+                      - link "Article reference 33" [ref=e448] [cursor=pointer]:
+                        - /url: https://doi.org/10.1371%2Fjournal.pone.0140815
+                        - text: Article
+                      - link "PubMed reference 33" [ref=e449] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=26517366
+                        - text: PubMed
+                      - link "PubMed Central reference 33" [ref=e450] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4627806
+                        - text: PubMed Central
+                      - link "Google Scholar reference 33" [ref=e451] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Somatic%20variation%20of%20T-cell%20receptor%20genes%20strongly%20associate%20with%20HLA%20class%20restriction&journal=PLoS%20ONE&doi=10.1371%2Fjournal.pone.0140815&volume=10&publication_year=2015&author=Klarenbeek%2CPL
+                        - text: Google Scholar
+                  - listitem [ref=e452]:
+                    - text: "34."
+                    - paragraph [ref=e453]:
+                      - text: Emerson, R. et al. Estimating the ratio of CD4
+                      - superscript [ref=e454]: +
+                      - text: to CD8
+                      - superscript [ref=e455]: +
+                      - text: T cells using high-throughput sequence data. J. Immunol. Methods 391, 14–21 (2013).
+                    - paragraph [ref=e456]:
+                      - link "Article reference 34" [ref=e457] [cursor=pointer]:
+                        - /url: https://doi.org/10.1016%2Fj.jim.2013.02.002
+                        - text: Article
+                      - link "CAS reference 34" [ref=e458] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC3sXksFOktro%3D
+                        - text: CAS
+                      - link "PubMed reference 34" [ref=e459] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=23428915
+                        - text: PubMed
+                      - link "Google Scholar reference 34" [ref=e460] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Estimating%20the%20ratio%20of%20CD4%2B%20to%20CD8%2B%20T%20cells%20using%20high-throughput%20sequence%20data&journal=J.%20Immunol.%20Methods&doi=10.1016%2Fj.jim.2013.02.002&volume=391&pages=14-21&publication_year=2013&author=Emerson%2CR
+                        - text: Google Scholar
+                  - listitem [ref=e461]:
+                    - text: "35."
+                    - paragraph [ref=e462]:
+                      - text: Li, H. M. et al. TCRβ repertoire of CD4
+                      - superscript [ref=e463]: +
+                      - text: and CD8
+                      - superscript [ref=e464]: +
+                      - text: T cells is distinct in richness, distribution, and CDR3 amino acid composition. J. Leukoc. Biol. 99, 505–513 (2016).
+                    - paragraph [ref=e465]:
+                      - link "Article reference 35" [ref=e466] [cursor=pointer]:
+                        - /url: https://doi.org/10.1189%2Fjlb.6A0215-071RR
+                        - text: Article
+                      - link "CAS reference 35" [ref=e467] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC28XhtV2jsrjK
+                        - text: CAS
+                      - link "PubMed reference 35" [ref=e468] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=26394815
+                        - text: PubMed
+                      - link "Google Scholar reference 35" [ref=e469] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=TCR%CE%B2%20repertoire%20of%20CD4%2B%20and%20CD8%2B%20T%20cells%20is%20distinct%20in%20richness%2C%20distribution%2C%20and%20CDR3%20amino%20acid%20composition&journal=J.%20Leukoc.%20Biol.&doi=10.1189%2Fjlb.6A0215-071RR&volume=99&pages=505-513&publication_year=2016&author=Li%2CHM
+                        - text: Google Scholar
+                  - listitem [ref=e470]:
+                    - text: "36."
+                    - paragraph [ref=e471]: Majumder, K., Bassing, C. H. & Oltz, E. M. Regulation of Tcrb gene assembly by genetic, epigenetic, and topological mechanisms. Adv. Immunol. 128, 273–306 (2015).
+                    - paragraph [ref=e472]:
+                      - link "Article reference 36" [ref=e473] [cursor=pointer]:
+                        - /url: https://doi.org/10.1016%2Fbs.ai.2015.07.001
+                        - text: Article
+                      - link "CAS reference 36" [ref=e474] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1MXnsVShtL0%3D
+                        - text: CAS
+                      - link "PubMed reference 36" [ref=e475] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=26477369
+                        - text: PubMed
+                      - link "Google Scholar reference 36" [ref=e476] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Regulation%20of%20Tcrb%20gene%20assembly%20by%20genetic%2C%20epigenetic%2C%20and%20topological%20mechanisms&journal=Adv.%20Immunol.&doi=10.1016%2Fbs.ai.2015.07.001&volume=128&pages=273-306&publication_year=2015&author=Majumder%2CK&author=Bassing%2CCH&author=Oltz%2CEM
+                        - text: Google Scholar
+                  - listitem [ref=e477]:
+                    - text: "37."
+                    - paragraph [ref=e478]: Luo, H., Yu, G., Wu, Y. & Wu, J. EphB6 crosslinking results in costimulation of T cells. J. Clin. Invest. 110, 1141–1150 (2002).
+                    - paragraph [ref=e479]:
+                      - link "Article reference 37" [ref=e480] [cursor=pointer]:
+                        - /url: https://doi.org/10.1172%2FJCI0215883
+                        - text: Article
+                      - link "CAS reference 37" [ref=e481] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BD38XotFGlu7w%3D
+                        - text: CAS
+                      - link "PubMed reference 37" [ref=e482] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=12393850
+                        - text: PubMed
+                      - link "PubMed Central reference 37" [ref=e483] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC150798
+                        - text: PubMed Central
+                      - link "Google Scholar reference 37" [ref=e484] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=EphB6%20crosslinking%20results%20in%20costimulation%20of%20T%20cells&journal=J.%20Clin.%20Invest.&doi=10.1172%2FJCI0215883&volume=110&pages=1141-1150&publication_year=2002&author=Luo%2CH&author=Yu%2CG&author=Wu%2CY&author=Wu%2CJ
+                        - text: Google Scholar
+                  - listitem [ref=e485]:
+                    - text: "38."
+                    - paragraph [ref=e486]: Luo, H., Yu, G., Tremblay, J. & Wu, J. EphB6-null mutation results in compromised T cell function. J. Clin. Invest. 114, 1762–1773 (2004).
+                    - paragraph [ref=e487]:
+                      - link "Article reference 38" [ref=e488] [cursor=pointer]:
+                        - /url: https://doi.org/10.1172%2FJCI21846
+                        - text: Article
+                      - link "CAS reference 38" [ref=e489] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BD2cXhtFaiur%2FN
+                        - text: CAS
+                      - link "PubMed reference 38" [ref=e490] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=15599401
+                        - text: PubMed
+                      - link "PubMed Central reference 38" [ref=e491] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC535066
+                        - text: PubMed Central
+                      - link "Google Scholar reference 38" [ref=e492] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=EphB6-null%20mutation%20results%20in%20compromised%20T%20cell%20function&journal=J.%20Clin.%20Invest.&doi=10.1172%2FJCI21846&volume=114&pages=1762-1773&publication_year=2004&author=Luo%2CH&author=Yu%2CG&author=Tremblay%2CJ&author=Wu%2CJ
+                        - text: Google Scholar
+                  - listitem [ref=e493]:
+                    - text: "39."
+                    - paragraph [ref=e494]: Huang, H., Wang, C., Rubelt, F., Scriba, T. J. & Davis, M. M. Analyzing the Mycobacterium tuberculosis immune response by T-cell receptor clustering with GLIPH2 and genome-wide antigen screening. Nat. Biotechnol. 38, 1194–1202 (2020).
+                    - paragraph [ref=e495]:
+                      - link "Article reference 39" [ref=e496] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fs41587-020-0505-4
+                        - text: Article
+                      - link "CAS reference 39" [ref=e497] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3cXotVCisrc%3D
+                        - text: CAS
+                      - link "PubMed reference 39" [ref=e498] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=32341563
+                        - text: PubMed
+                      - link "PubMed Central reference 39" [ref=e499] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC7541396
+                        - text: PubMed Central
+                      - link "Google Scholar reference 39" [ref=e500] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Analyzing%20the%20Mycobacterium%20tuberculosis%20immune%20response%20by%20T-cell%20receptor%20clustering%20with%20GLIPH2%20and%20genome-wide%20antigen%20screening&journal=Nat.%20Biotechnol.&doi=10.1038%2Fs41587-020-0505-4&volume=38&pages=1194-1202&publication_year=2020&author=Huang%2CH&author=Wang%2CC&author=Rubelt%2CF&author=Scriba%2CTJ&author=Davis%2CMM
+                        - text: Google Scholar
+                  - listitem [ref=e501]:
+                    - text: "40."
+                    - paragraph [ref=e502]: Jameson, S. C. & Masopust, D. Understanding subset diversity in T cell memory. Immunity 48, 214–226 (2018).
+                    - paragraph [ref=e503]:
+                      - link "Article reference 40" [ref=e504] [cursor=pointer]:
+                        - /url: https://doi.org/10.1016%2Fj.immuni.2018.02.010
+                        - text: Article
+                      - link "CAS reference 40" [ref=e505] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1cXjtVGis70%3D
+                        - text: CAS
+                      - link "PubMed reference 40" [ref=e506] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=29466754
+                        - text: PubMed
+                      - link "PubMed Central reference 40" [ref=e507] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC5863745
+                        - text: PubMed Central
+                      - link "Google Scholar reference 40" [ref=e508] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Understanding%20subset%20diversity%20in%20T%20cell%20memory&journal=Immunity&doi=10.1016%2Fj.immuni.2018.02.010&volume=48&pages=214-226&publication_year=2018&author=Jameson%2CSC&author=Masopust%2CD
+                        - text: Google Scholar
+                  - listitem [ref=e509]:
+                    - text: "41."
+                    - paragraph [ref=e510]: Fischer, D. S. et al. Predicting antigen specificity of single T cells based on TCR CDR3 regions. Mol. Systems Biol. 16, e9416 (2020).
+                    - paragraph [ref=e511]:
+                      - link "Article reference 41" [ref=e512] [cursor=pointer]:
+                        - /url: https://doi.org/10.15252%2Fmsb.20199416
+                        - text: Article
+                      - link "CAS reference 41" [ref=e513] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3cXhsleltbjK
+                        - text: CAS
+                      - link "Google Scholar reference 41" [ref=e514] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Predicting%20antigen%20specificity%20of%20single%20T%20cells%20based%20on%20TCR%20CDR3%20regions&journal=Mol.%20Systems%20Biol.&doi=10.15252%2Fmsb.20199416&volume=16&publication_year=2020&author=Fischer%2CDS
+                        - text: Google Scholar
+                  - listitem [ref=e515]:
+                    - text: "42."
+                    - paragraph [ref=e516]: "Thomas, P. G. & Crawford, J. C. Selected before selection: a case for inherent antigen bias in the T-cell receptor repertoire. Curr. Opin. Syst. Biol. 18, 36–43 (2019)."
+                  - listitem [ref=e517]:
+                    - text: "43."
+                    - paragraph [ref=e518]: "Wolf, F. A., Angerer, P. & Theis, F. J. SCANPY: large-scale single-cell gene expression data analysis. Genome Biol. 19, 15 (2018)."
+                    - paragraph [ref=e519]:
+                      - link "Article reference 43" [ref=e520] [cursor=pointer]:
+                        - /url: https://link.springer.com/doi/10.1186/s13059-017-1382-0
+                        - text: Article
+                      - link "PubMed reference 43" [ref=e521] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=29409532
+                        - text: PubMed
+                      - link "PubMed Central reference 43" [ref=e522] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC5802054
+                        - text: PubMed Central
+                      - link "Google Scholar reference 43" [ref=e523] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=SCANPY%3A%20large-scale%20single-cell%20gene%20expression%20data%20analysis&journal=Genome%20Biol.&doi=10.1186%2Fs13059-017-1382-0&volume=19&publication_year=2018&author=Wolf%2CFA&author=Angerer%2CP&author=Theis%2CFJ
+                        - text: Google Scholar
+                  - listitem [ref=e524]:
+                    - text: "44."
+                    - paragraph [ref=e525]: Berg, J. M., Tymoczko, J. L. & Stryer, L. Biochemistry (W. H. Freeman, 2002).
+                  - listitem [ref=e526]:
+                    - text: "45."
+                    - paragraph [ref=e527]: Miyazawa, S. & Jernigan, R. L. Residue–residue potentials with a favorable contact pair term and an unfavorable high packing density term, for simulation and threading. J. Mol. Biol. 256, 623–644 (1996).
+                    - paragraph [ref=e528]:
+                      - link "Article reference 45" [ref=e529] [cursor=pointer]:
+                        - /url: https://doi.org/10.1006%2Fjmbi.1996.0114
+                        - text: Article
+                      - link "CAS reference 45" [ref=e530] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DyaK28XhtlGhsr8%3D
+                        - text: CAS
+                      - link "PubMed reference 45" [ref=e531] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=8604144
+                        - text: PubMed
+                      - link "Google Scholar reference 45" [ref=e532] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Residue%E2%80%93residue%20potentials%20with%20a%20favorable%20contact%20pair%20term%20and%20an%20unfavorable%20high%20packing%20density%20term%2C%20for%20simulation%20and%20threading&journal=J.%20Mol.%20Biol.&doi=10.1006%2Fjmbi.1996.0114&volume=256&pages=623-644&publication_year=1996&author=Miyazawa%2CS&author=Jernigan%2CRL
+                        - text: Google Scholar
+                  - listitem [ref=e533]:
+                    - text: "46."
+                    - paragraph [ref=e534]: Kosmrlj, A., Jha, A. K., Huseby, E. S., Kardar, M. & Chakraborty, A. K. How the thymus designs antigen-specific and self-tolerant T cell receptor sequences. Proc. Natl Acad. Sci. USA 105, 16671–16676 (2008).
+                    - paragraph [ref=e535]:
+                      - link "Article reference 46" [ref=e536] [cursor=pointer]:
+                        - /url: https://doi.org/10.1073%2Fpnas.0808081105
+                        - text: Article
+                      - link "CAS reference 46" [ref=e537] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BD1cXhtleksrfF
+                        - text: CAS
+                      - link "PubMed reference 46" [ref=e538] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=18946038
+                        - text: PubMed
+                      - link "PubMed Central reference 46" [ref=e539] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2575478
+                        - text: PubMed Central
+                      - link "Google Scholar reference 46" [ref=e540] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=How%20the%20thymus%20designs%20antigen-specific%20and%20self-tolerant%20T%20cell%20receptor%20sequences&journal=Proc.%20Natl%20Acad.%20Sci.%20USA&doi=10.1073%2Fpnas.0808081105&volume=105&pages=16671-16676&publication_year=2008&author=Kosmrlj%2CA&author=Jha%2CAK&author=Huseby%2CES&author=Kardar%2CM&author=Chakraborty%2CAK
+                        - text: Google Scholar
+                  - listitem [ref=e541]:
+                    - text: "47."
+                    - paragraph [ref=e542]: Martin, J. & Lavery, R. Arbitrary protein−protein docking targets biologically relevant interfaces. BMC Biophys. 5, 7 (2012).
+                    - paragraph [ref=e543]:
+                      - link "Article reference 47" [ref=e544] [cursor=pointer]:
+                        - /url: https://link.springer.com/doi/10.1186/2046-1682-5-7
+                        - text: Article
+                      - link "CAS reference 47" [ref=e545] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC38Xhslaisr7E
+                        - text: CAS
+                      - link "PubMed reference 47" [ref=e546] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=22559010
+                        - text: PubMed
+                      - link "PubMed Central reference 47" [ref=e547] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3441232
+                        - text: PubMed Central
+                      - link "Google Scholar reference 47" [ref=e548] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Arbitrary%20protein%E2%88%92protein%20docking%20targets%20biologically%20relevant%20interfaces&journal=BMC%20Biophys.&doi=10.1186%2F2046-1682-5-7&volume=5&publication_year=2012&author=Martin%2CJ&author=Lavery%2CR
+                        - text: Google Scholar
+                  - listitem [ref=e549]:
+                    - text: "48."
+                    - paragraph [ref=e550]: Dunker, A. K. et al. Intrinsically disordered protein. J. Mol. Graph. Model. 19, 26–59 (2001).
+                    - paragraph [ref=e551]:
+                      - link "Article reference 48" [ref=e552] [cursor=pointer]:
+                        - /url: https://doi.org/10.1016%2FS1093-3263%2800%2900138-8
+                        - text: Article
+                      - link "CAS reference 48" [ref=e553] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BD3MXjtFGmsro%3D
+                        - text: CAS
+                      - link "PubMed reference 48" [ref=e554] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=11381529
+                        - text: PubMed
+                      - link "Google Scholar reference 48" [ref=e555] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Intrinsically%20disordered%20protein&journal=J.%20Mol.%20Graph.%20Model.&doi=10.1016%2FS1093-3263%2800%2900138-8&volume=19&pages=26-59&publication_year=2001&author=Dunker%2CAK
+                        - text: Google Scholar
+                  - listitem [ref=e556]:
+                    - text: "49."
+                    - paragraph [ref=e557]: Kidera, A., Konishi, Y., Oka, M., Ooi, T. & Scheraga, H. A. Statistical analysis of the physical properties of the 20 naturally occurring amino acids. J. Protein Chem. 4, 23–55 (1985).
+                    - paragraph [ref=e558]:
+                      - link "Article reference 49" [ref=e559] [cursor=pointer]:
+                        - /url: https://link.springer.com/doi/10.1007/BF01025492
+                        - text: Article
+                      - link "CAS reference 49" [ref=e560] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DyaL2MXlvFWltb0%3D
+                        - text: CAS
+                      - link "Google Scholar reference 49" [ref=e561] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Statistical%20analysis%20of%20the%20physical%20properties%20of%20the%2020%20naturally%20occurring%20amino%20acids&journal=J.%20Protein%20Chem.&doi=10.1007%2FBF01025492&volume=4&pages=23-55&publication_year=1985&author=Kidera%2CA&author=Konishi%2CY&author=Oka%2CM&author=Ooi%2CT&author=Scheraga%2CHA
+                        - text: Google Scholar
+                  - listitem [ref=e562]:
+                    - text: "50."
+                    - paragraph [ref=e563]: "Shugay, M. et al. VDJtools: unifying post-analysis of T cell receptor repertoires. PLoS Comput. Biol. 11, e1004503 (2015)."
+                    - paragraph [ref=e564]:
+                      - link "Article reference 50" [ref=e565] [cursor=pointer]:
+                        - /url: https://doi.org/10.1371%2Fjournal.pcbi.1004503
+                        - text: Article
+                      - link "PubMed reference 50" [ref=e566] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=26606115
+                        - text: PubMed
+                      - link "PubMed Central reference 50" [ref=e567] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4659587
+                        - text: PubMed Central
+                      - link "Google Scholar reference 50" [ref=e568] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=VDJtools%3A%20unifying%20post-analysis%20of%20T%20cell%20receptor%20repertoires&journal=PLoS%20Comput.%20Biol.&doi=10.1371%2Fjournal.pcbi.1004503&volume=11&publication_year=2015&author=Shugay%2CM
+                        - text: Google Scholar
+                  - listitem [ref=e569]:
+                    - text: "51."
+                    - paragraph [ref=e570]: Atchley, W. R., Zhao, J., Fernandes, A. D. & Drüke, T. Solving the protein sequence metric problem. Proc. Natl Acad. Sci. USA 102, 6395–6400 (2005).
+                    - paragraph [ref=e571]:
+                      - link "Article reference 51" [ref=e572] [cursor=pointer]:
+                        - /url: https://doi.org/10.1073%2Fpnas.0408677102
+                        - text: Article
+                      - link "CAS reference 51" [ref=e573] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BD2MXktlygt78%3D
+                        - text: CAS
+                      - link "PubMed reference 51" [ref=e574] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=15851683
+                        - text: PubMed
+                      - link "PubMed Central reference 51" [ref=e575] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1088356
+                        - text: PubMed Central
+                      - link "Google Scholar reference 51" [ref=e576] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Solving%20the%20protein%20sequence%20metric%20problem&journal=Proc.%20Natl%20Acad.%20Sci.%20USA&doi=10.1073%2Fpnas.0408677102&volume=102&pages=6395-6400&publication_year=2005&author=Atchley%2CWR&author=Zhao%2CJ&author=Fernandes%2CAD&author=Dr%C3%BCke%2CT
+                        - text: Google Scholar
+                  - listitem [ref=e577]:
+                    - text: "52."
+                    - paragraph [ref=e578]: Emerson, R. O. et al. Immunosequencing identifies signatures of cytomegalovirus exposure history and HLA-mediated effects on the T cell repertoire. Nat. Genet. 49, 659–665 (2017).
+                    - paragraph [ref=e579]:
+                      - link "Article reference 52" [ref=e580] [cursor=pointer]:
+                        - /url: https://doi.org/10.1038%2Fng.3822
+                        - text: Article
+                      - link "CAS reference 52" [ref=e581] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC2sXltl2rurg%3D
+                        - text: CAS
+                      - link "PubMed reference 52" [ref=e582] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=28369038
+                        - text: PubMed
+                      - link "Google Scholar reference 52" [ref=e583] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Immunosequencing%20identifies%20signatures%20of%20cytomegalovirus%20exposure%20history%20and%20HLA-mediated%20effects%20on%20the%20T%20cell%20repertoire&journal=Nat.%20Genet.&doi=10.1038%2Fng.3822&volume=49&pages=659-665&publication_year=2017&author=Emerson%2CRO
+                        - text: Google Scholar
+                  - listitem [ref=e584]:
+                    - text: "53."
+                    - paragraph [ref=e585]: Murugan, A., Mora, T., Walczak, A. M. & Callan, C. G. Statistical inference of the generation probability of T-cell receptors from sequence repertoires. Proc. Natl Acad. Sci. USA 109, 16161–16166 (2012).
+                    - paragraph [ref=e586]:
+                      - link "Article reference 53" [ref=e587] [cursor=pointer]:
+                        - /url: https://doi.org/10.1073%2Fpnas.1212755109
+                        - text: Article
+                      - link "CAS reference 53" [ref=e588] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC38XhsFGhsLjF
+                        - text: CAS
+                      - link "PubMed reference 53" [ref=e589] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=22988065
+                        - text: PubMed
+                      - link "PubMed Central reference 53" [ref=e590] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3479580
+                        - text: PubMed Central
+                      - link "Google Scholar reference 53" [ref=e591] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Statistical%20inference%20of%20the%20generation%20probability%20of%20T-cell%20receptors%20from%20sequence%20repertoires&journal=Proc.%20Natl%20Acad.%20Sci.%20USA&doi=10.1073%2Fpnas.1212755109&volume=109&pages=16161-16166&publication_year=2012&author=Murugan%2CA&author=Mora%2CT&author=Walczak%2CAM&author=Callan%2CCG
+                        - text: Google Scholar
+                  - listitem [ref=e592]:
+                    - text: "54."
+                    - paragraph [ref=e593]: Horn, H. S. Measurement of ‘overlap’ in comparative ecological studies. Amer. Naturalist 100, 419–424 (1966).
+                    - paragraph [ref=e594]:
+                      - link "Article reference 54" [ref=e595] [cursor=pointer]:
+                        - /url: https://doi.org/10.1086%2F282436
+                        - text: Article
+                      - link "Google Scholar reference 54" [ref=e596] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Measurement%20of%20%E2%80%98overlap%E2%80%99%20in%20comparative%20ecological%20studies&journal=Amer.%20Naturalist&doi=10.1086%2F282436&volume=100&pages=419-424&publication_year=1966&author=Horn%2CHS
+                        - text: Google Scholar
+                  - listitem [ref=e597]:
+                    - text: "55."
+                    - paragraph [ref=e598]: "Shugay, M. et al. VDJdb: a curated database of T-cell receptor sequences with known antigen specificity. Nucleic Acids Res. 46, D419–D427 (2018)."
+                    - paragraph [ref=e599]:
+                      - link "Article reference 55" [ref=e600] [cursor=pointer]:
+                        - /url: https://doi.org/10.1093%2Fnar%2Fgkx760
+                        - text: Article
+                      - link "CAS reference 55" [ref=e601] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1cXitlGisbnJ
+                        - text: CAS
+                      - link "PubMed reference 55" [ref=e602] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=28977646
+                        - text: PubMed
+                      - link "Google Scholar reference 55" [ref=e603] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=VDJdb%3A%20a%20curated%20database%20of%20T-cell%20receptor%20sequences%20with%20known%20antigen%20specificity&journal=Nucleic%20Acids%20Res.&doi=10.1093%2Fnar%2Fgkx760&volume=46&pages=D419-D427&publication_year=2018&author=Shugay%2CM
+                        - text: Google Scholar
+                  - listitem [ref=e604]:
+                    - text: "56."
+                    - paragraph [ref=e605]: "Tickotsky, N., Sagiv, T., Prilusky, J., Shifrut, E. & Friedman, N. McPAS-TCR: a manually curated catalogue of pathology-associated T cell receptor sequences. Bioinformatics 33, 2924–2929 (2017)."
+                    - paragraph [ref=e606]:
+                      - link "Article reference 56" [ref=e607] [cursor=pointer]:
+                        - /url: https://doi.org/10.1093%2Fbioinformatics%2Fbtx286
+                        - text: Article
+                      - link "CAS reference 56" [ref=e608] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1cXhvFenu7%2FI
+                        - text: CAS
+                      - link "PubMed reference 56" [ref=e609] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=28481982
+                        - text: PubMed
+                      - link "Google Scholar reference 56" [ref=e610] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=McPAS-TCR%3A%20a%20manually%20curated%20catalogue%20of%20pathology-associated%20T%20cell%20receptor%20sequences&journal=Bioinformatics&doi=10.1093%2Fbioinformatics%2Fbtx286&volume=33&pages=2924-2929&publication_year=2017&author=Tickotsky%2CN&author=Sagiv%2CT&author=Prilusky%2CJ&author=Shifrut%2CE&author=Friedman%2CN
+                        - text: Google Scholar
+                  - listitem [ref=e611]:
+                    - text: "57."
+                    - paragraph [ref=e612]: "Subramanian, A. et al. Gene set enrichment analysis: a knowledge-based approach for interpreting genome-wide expression profiles. Proc. Natl Acad. Sci. USA 102, 15545–15550 (2005)."
+                    - paragraph [ref=e613]:
+                      - link "Article reference 57" [ref=e614] [cursor=pointer]:
+                        - /url: https://doi.org/10.1073%2Fpnas.0506580102
+                        - text: Article
+                      - link "CAS reference 57" [ref=e615] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BD2MXht1ShtrnO
+                        - text: CAS
+                      - link "PubMed reference 57" [ref=e616] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=16199517
+                        - text: PubMed
+                      - link "PubMed Central reference 57" [ref=e617] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1239896
+                        - text: PubMed Central
+                      - link "Google Scholar reference 57" [ref=e618] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Gene%20set%20enrichment%20analysis%3A%20a%20knowledge-based%20approach%20for%20interpreting%20genome-wide%20expression%20profiles&journal=Proc.%20Natl%20Acad.%20Sci.%20USA&doi=10.1073%2Fpnas.0506580102&volume=102&pages=15545-15550&publication_year=2005&author=Subramanian%2CA
+                        - text: Google Scholar
+                  - listitem [ref=e619]:
+                    - text: "58."
+                    - paragraph [ref=e620]: Godec, J. et al. Compendium of immune signatures identifies conserved and species-specific biology in response to inflammation. Immunity 44, 194–206 (2016).
+                    - paragraph [ref=e621]:
+                      - link "Article reference 58" [ref=e622] [cursor=pointer]:
+                        - /url: https://doi.org/10.1016%2Fj.immuni.2015.12.006
+                        - text: Article
+                      - link "CAS reference 58" [ref=e623] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC28XmvVartA%3D%3D
+                        - text: CAS
+                      - link "PubMed reference 58" [ref=e624] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=26795250
+                        - text: PubMed
+                      - link "PubMed Central reference 58" [ref=e625] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC5330663
+                        - text: PubMed Central
+                      - link "Google Scholar reference 58" [ref=e626] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Compendium%20of%20immune%20signatures%20identifies%20conserved%20and%20species-specific%20biology%20in%20response%20to%20inflammation&journal=Immunity&doi=10.1016%2Fj.immuni.2015.12.006&volume=44&pages=194-206&publication_year=2016&author=Godec%2CJ
+                        - text: Google Scholar
+                  - listitem [ref=e627]:
+                    - text: "59."
+                    - paragraph [ref=e628]: Stuart, T. et al. Comprehensive integration of single-cell data. Cell 177, 1888–1902 (2019).
+                    - paragraph [ref=e629]:
+                      - link "Article reference 59" [ref=e630] [cursor=pointer]:
+                        - /url: https://doi.org/10.1016%2Fj.cell.2019.05.031
+                        - text: Article
+                      - link "CAS reference 59" [ref=e631] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BC1MXhtFens77L
+                        - text: CAS
+                      - link "PubMed reference 59" [ref=e632] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=31178118
+                        - text: PubMed
+                      - link "PubMed Central reference 59" [ref=e633] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC6687398
+                        - text: PubMed Central
+                      - link "Google Scholar reference 59" [ref=e634] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Comprehensive%20integration%20of%20single-cell%20data&journal=Cell&doi=10.1016%2Fj.cell.2019.05.031&volume=177&pages=1888-1902&publication_year=2019&author=Stuart%2CT
+                        - text: Google Scholar
+                  - listitem [ref=e635]:
+                    - text: "60."
+                    - paragraph [ref=e636]: "Hänzelmann, S., Castelo, R. & Guinney, J. GSVA: gene set variation analysis for microarray and RNA-seq data. BMC Bioinformatics 14, 7 (2013)."
+                    - paragraph [ref=e637]:
+                      - link "Article reference 60" [ref=e638] [cursor=pointer]:
+                        - /url: https://link.springer.com/doi/10.1186/1471-2105-14-7
+                        - text: Article
+                      - link "PubMed reference 60" [ref=e639] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=23323831
+                        - text: PubMed
+                      - link "PubMed Central reference 60" [ref=e640] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3618321
+                        - text: PubMed Central
+                      - link "Google Scholar reference 60" [ref=e641] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=GSVA%3A%20gene%20set%20variation%20analysis%20for%20microarray%20and%20RNA-seq%20data&journal=BMC%20Bioinformatics&doi=10.1186%2F1471-2105-14-7&volume=14&publication_year=2013&author=H%C3%A4nzelmann%2CS&author=Castelo%2CR&author=Guinney%2CJ
+                        - text: Google Scholar
+                  - listitem [ref=e642]:
+                    - text: "61."
+                    - paragraph [ref=e643]: "Hillje, R., Pelicci, P. G. & Luzi, L. Cerebro: interactive visualization of scRNA-seq data. Bioinformatics 36, 2311–2313 (2020)."
+                    - paragraph [ref=e644]:
+                      - link "Article reference 61" [ref=e645] [cursor=pointer]:
+                        - /url: https://doi.org/10.1093%2Fbioinformatics%2Fbtz877
+                        - text: Article
+                      - link "CAS reference 61" [ref=e646] [cursor=pointer]:
+                        - /url: /articles/cas-redirect/1:CAS:528:DC%2BB3cXitlOmu7fP
+                        - text: CAS
+                      - link "PubMed reference 61" [ref=e647] [cursor=pointer]:
+                        - /url: http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=PubMed&dopt=Abstract&list_uids=31764967
+                        - text: PubMed
+                      - link "Google Scholar reference 61" [ref=e648] [cursor=pointer]:
+                        - /url: http://scholar.google.com/scholar_lookup?&title=Cerebro%3A%20interactive%20visualization%20of%20scRNA-seq%20data&journal=Bioinformatics&doi=10.1093%2Fbioinformatics%2Fbtz877&volume=36&pages=2311-2313&publication_year=2020&author=Hillje%2CR&author=Pelicci%2CPG&author=Luzi%2CL
+                        - text: Google Scholar
+                - paragraph [ref=e649]:
+                  - link "Download references" [ref=e650] [cursor=pointer]:
+                    - /url: https://citation-needed.springer.com/v2/references/10.1038/s41587-021-00989-2?format=refman&flavour=references
+                    - text: Download references
+                    - img [ref=e651]
+          - generic [ref=e654]:
+            - heading "Acknowledgements" [level=2] [ref=e655]
+            - paragraph [ref=e657]: The authors would like to thank J. Park and S. Teichmann for assistance with the thymus atlas T cell dataset, E. Matsen for comments and suggestions on an earlier version of this manuscript, E. Newell and T. Bi for helpful discussions and N. Bradley for suggesting the use of kernel principal components analysis. We would also like to thank the developers of the scanpy single-cell analysis package, which provides the framework on which the CoNGA software is built. This research was supported by National Institutes of Health (NIH) grant R01 AI136514 to P.T., NIH ORIP S10OD028685 to support high-performance computing at the Fred Hutchinson Cancer Research Center, the St. Jude Neoma Boadway Postdoctoral Fellowship to S.S. and the American Lebanese Syrian Associated Charities to P.T.
+          - region "Author information" [ref=e658]:
+            - generic [ref=e659]:
+              - heading "Author information" [level=2] [ref=e660]
+              - generic [ref=e661]:
+                - heading "Authors and Affiliations" [level=3] [ref=e662]
+                - list [ref=e663]:
+                  - listitem [ref=e664]:
+                    - paragraph [ref=e665]: Department of Immunology, St. Jude Children’s Research Hospital, Memphis, TN, USA
+                    - paragraph [ref=e666]: Stefan A. Schattgen, Jeremy Chase Crawford, Aisha Souquette & Paul G. Thomas
+                  - listitem [ref=e667]:
+                    - paragraph [ref=e668]: Herbold Computational Biology Program, Division of Public Health Sciences, Fred Hutchinson Cancer Research Center, Seattle, WA, USA
+                    - paragraph [ref=e669]: Kate Guion & Philip Bradley
+                  - listitem [ref=e670]:
+                    - paragraph [ref=e671]: Department of Quantitative and Computational Biology, University of Southern California, Los Angeles, CA, USA
+                    - paragraph [ref=e672]: Kate Guion
+                  - listitem [ref=e673]:
+                    - paragraph [ref=e674]: Department of Microbiology, Immunology and Biochemistry, University of Tennessee Health Science Center, Memphis, TN, USA
+                    - paragraph [ref=e675]: Aisha Souquette & Paul G. Thomas
+                  - listitem [ref=e676]:
+                    - paragraph [ref=e677]: 10x Genomics, Pleasanton, CA, USA
+                    - paragraph [ref=e678]: Alvaro Martinez Barrio & Michael J. T. Stubbington
+                  - listitem [ref=e679]:
+                    - paragraph [ref=e680]: Institute for Protein Design, University of Washington, Seattle, WA, USA
+                    - paragraph [ref=e681]: Philip Bradley
+                - heading "Contributions" [level=3] [ref=e682]
+                - paragraph [ref=e683]: S.S. designed, conducted and interpreted experiments, analyzed data and helped prepare the manuscript. K.G. and J.C.C. analyzed data and helped prepare the manuscript. A.S. conducted experiments. A.M.B. and M.J.T.S. provided technical expertise and advice. P.T. designed and interpreted experiments and helped prepare the manuscript. P.B. conceptualized and coded the software, analyzed and interpreted data and prepared the manuscript.
+                - heading "Corresponding authors" [level=3] [ref=e684]
+                - paragraph [ref=e685]:
+                  - text: Correspondence to
+                  - link "email Paul G. Thomas" [ref=e686] [cursor=pointer]:
+                    - /url: mailto:paul.thomas@stjude.org
+                    - text: Paul G. Thomas
+                  - text: or
+                  - link "email Philip Bradley" [ref=e687] [cursor=pointer]:
+                    - /url: mailto:pbradley@fredhutch.org
+                    - text: Philip Bradley
+                  - text: .
+          - generic [ref=e689]:
+            - heading "Ethics declarations" [level=2] [ref=e690]
+            - generic [ref=e691]:
+              - heading "Competing interests" [level=3] [ref=e692]
+              - paragraph [ref=e693]: M.J.T.S. is employed by 10x Genomics. M.J.T.S., A.M.B. and J.C.C. are option or shareholders of 10x Genomics. P.B., P.G.T. and J.C.C. served as unpaid consultants for 10x Genomics on the initial data analysis of the 10x_200k dataset. P.G.T. has filed patents related to the cloning, expression and characterization of T cell receptors. P.G.T. has received travel or speaking expenses from 10x Genomics, Illumina and PACT Pharma.
+          - generic [ref=e695]:
+            - heading "Additional information" [level=2] [ref=e696]
+            - generic [ref=e697]:
+              - paragraph [ref=e698]: Peer review information Nature Biotechnology thanks Benny Chain, Dmitriy Chudakov and the other, anonymous, reviewer(s) for their contribution to the peer review of this work.
+              - paragraph [ref=e699]: Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+          - generic [ref=e701]:
+            - heading "Extended data" [level=2] [ref=e702]
+            - generic [ref=e704]:
+              - generic [ref=e705]:
+                - heading "Extended Data Fig. 1 T cells belonging to the same clonotype have similar gene expression profiles." [level=3] [ref=e706]:
+                  - link "Extended Data Fig. 1 T cells belonging to the same clonotype have similar gene expression profiles." [ref=e707] [cursor=pointer]:
+                    - /url: /articles/s41587-021-00989-2/figures/7
+                - paragraph [ref=e709]: Gene expression UMAP projections of the 10x_200k_donor2a dataset before condensing to a single cell per clonotype, with the 16 largest clonotypes shown in blue (one per panel) and the remainder of the dataset in gray.
+              - generic [ref=e710]:
+                - heading "Extended Data Fig. 2 CoNGA graph-vs-graph analysis of human and mouse peripheral blood T cells." [level=3] [ref=e711]:
+                  - link "Extended Data Fig. 2 CoNGA graph-vs-graph analysis of human and mouse peripheral blood T cells." [ref=e712] [cursor=pointer]:
+                    - /url: /articles/s41587-021-00989-2/figures/8
+                - generic [ref=e713]:
+                  - paragraph [ref=e714]:
+                    - text: "CoNGA graph-vs-graph results for PBMC T cell datasets: (a-c) human CD4 and CD8 T cells (human_pbmc1); (d-f) human CD4 and CD8 T cells (human_pbmc2); (g-i) mouse CD4 and CD8 T cells (mouse_pbmc). Same arrangement of plots as in main text Fig."
+                    - link "3" [ref=e715] [cursor=pointer]:
+                      - /url: /articles/s41587-021-00989-2#Fig3
+                    - text: .
+                  - paragraph [ref=e716]:
+                    - link "Source data" [ref=e717] [cursor=pointer]:
+                      - /url: /articles/s41587-021-00989-2#MOESM12
+              - generic [ref=e718]:
+                - heading "Extended Data Fig. 3 Matching of CoNGA cluster TCR sequences to bulk repertoires." [level=3] [ref=e719]:
+                  - link "Extended Data Fig. 3 Matching of CoNGA cluster TCR sequences to bulk repertoires." [ref=e720] [cursor=pointer]:
+                    - /url: /articles/s41587-021-00989-2/figures/9
+                - generic [ref=e721]:
+                  - paragraph [ref=e722]:
+                    - text: TCRβ sequences from human CoNGA clusters were matched to bulk TCRβ repertoires using TCRdist. To score the overlap between the set of TCR sequences in a CoNGA cluster and the set of sequences in a bulk repertoire, we developed a variant of the Morisita-Horn (MH) overlap index that accounts for sequence similarity in addition to exact identity (see
+                    - link "Methods" [ref=e723] [cursor=pointer]:
+                      - /url: /articles/s41587-021-00989-2#Sec9
+                    - text: for further details). (a) The MH overlaps (y-axis) are plotted against subject age (x-axis) for the two CoNGA clusters indicated in the panel titles. The first cluster (a MAIT cluster) appears to decline with subject age, while the second one (a HOBIT cluster) appears to increase (R value and 2-sided P value in legend). (b) The distribution of MH overlaps for a set of CD4+ repertoires is compared with the distribution of MH overlaps for a set of CD8+ repertoires for two different clusters from the thymus_atlas dataset. (c) The distribution of MH overlaps for a set of memory repertoires is compared with the distribution of MH overlaps for a set of naive repertoires for the two clusters indicated in the panel titles. Boxes in panels b and c show quartiles with whiskers extending to 1.5*IQR. (d) All-vs-all scatter plots (with kernel density estimates along the diagonal) for the following CoNGA cluster features (see
+                    - link "Methods" [ref=e724] [cursor=pointer]:
+                      - /url: /articles/s41587-021-00989-2#Sec9
+                    - text: "for feature calculation details): log10_Pgen, the average log"
+                    - subscript [ref=e725]: "10"
+                    - text: generation probability of the cluster TCRβ chains; log10_publicity, the average log
+                    - subscript [ref=e726]: "10"
+                    - text: rate of occurrence in a large (N = 666) dataset of PBMC repertoires; age_correlation, the linear correlation coefficient between MH overlap and subject age (see panel (a)); CD8_vs_CD4, t-statistic comparing MH overlaps for CD8 and CD4 repertoires (higher indicates greater preference for CD8 repertoires; see panel (b)); memory_vs_naive, t-statistic comparing MH overlaps for memory and naive repertoires (higher indicates greater preference for memory repertoires; see panel (c)). The CoNGA clusters are grouped according to the discussion in the main text; ‘pre_hobit’ refers to the two clusters in the thymus_atlas dataset that may be precursors of the HOBIT+ population, (CD8αα(I):2) and (CD8αα(II):2).
+                  - paragraph [ref=e727]:
+                    - link "Source data" [ref=e728] [cursor=pointer]:
+                      - /url: /articles/s41587-021-00989-2#MOESM13
+              - generic [ref=e729]:
+                - heading "Extended Data Fig. 4 Specific versus non-specific binding in the 10x_200k dataset." [level=3] [ref=e730]:
+                  - link "Extended Data Fig. 4 Specific versus non-specific binding in the 10x_200k dataset." [ref=e731] [cursor=pointer]:
+                    - /url: /articles/s41587-021-00989-2/figures/10
+                - paragraph [ref=e733]: Comparison of binding data for four ‘specific’ pMHC multimers (A02_GIL, A02_ELA, B08_RAK, A02_GLC) and four ‘sticky’ pMHC multimers (A03_KLG, A03_RLR, A03_RIA, A11_AVF) in the 10x_200k_donor2 dataset. (a) GEX landscapes colored by pMHC binding signal (log(1+ UMI read count)). (b) TCR landscapes colored by pMHC binding signal. The ‘specific’ pMHCs show binding that is focused in certain areas of the landscapes, whereas the binding of the putative ‘sticky’ pMHCs is dispersed across the landscapes. (c) The Pearson correlation between binding profiles for different pMHCs is shown in matrix form according to the indicated color mapping. The specific pMHCs show little correlation whereas the sticky pMHCs are significantly correlated in their binding, suggesting that a shared cellular property (TCR or CD8 surface expression, expression of other HLA-interacting molecules, general level of activation) is jointly influencing their binding. Note that A11_AVF (and A11_IVT) show additional specific binding in donor 1, who is A*11:01 positive; the A*03:01 pMHC multimers appear non-specific regardless of donor HLA type.
+              - generic [ref=e734]:
+                - heading "Extended Data Fig. 5 Flow cytometry gating strategies for HOBIT/HELIOS CD8 T cells in Fig. 2." [level=3] [ref=e735]:
+                  - link "Extended Data Fig. 5 Flow cytometry gating strategies for HOBIT/HELIOS CD8 T cells in Fig." [ref=e736] [cursor=pointer]:
+                    - /url: /articles/s41587-021-00989-2/figures/11
+                  - link "2" [ref=e737] [cursor=pointer]:
+                    - /url: /articles/s41587-021-00989-2#Fig2
+                  - text: .
+                - generic [ref=e738]:
+                  - paragraph [ref=e739]:
+                    - text: (a) Gating strategy for KLRC2+ KIR2Dmix and KLRC2-KIR2D+ CD8 T cells in panels (b+ c). After gating on single lymphocytes the gating is Ghost510-CD14-CD19-CD3+ CD8B+ CCR7-CD45RA+. (b) Representative example of CD1d:PBS-57 and MR1:5-OP-RU tetramer labeling of KLRC2+ KIR2Dmix, KLRC2-KIR2D+, and CCR7-CD45RO+ CD8 T cells. (c) Frequency of CD1d and MR1-labelled KLRC2+ KIR2Dmix, KLRC2-KIR2D+, and CCR7-CD45RO+ CD8 T cells (n = 12; Supplementary Note
+                    - link "3" [ref=e740] [cursor=pointer]:
+                      - /url: /articles/s41587-021-00989-2#MOESM1
+                    - text: ). P values calculated by 1-sided t-test. The lower limit of the box corresponds to the 1st quartile, center line the median, and upper limit the 3rd quartile (d) Gating strategy for HELIOS intracellular staining of KLRC2+ KIR2Dmix and KLRC2-KIR2D+ CD8 T cells in panels. Single lymphocytes were gated on Ghost510-CD14-CD19-CD3+ CD8B+ CD248-CCR7-CD45RO-CD45RA+.
+                  - paragraph [ref=e741]:
+                    - link "Source data" [ref=e742] [cursor=pointer]:
+                      - /url: /articles/s41587-021-00989-2#MOESM14
+              - generic [ref=e743]:
+                - heading "Extended Data Fig. 6 Detection of GEX neighborhoods with elevated iMHC scores across multiple donors." [level=3] [ref=e744]:
+                  - link "Extended Data Fig. 6 Detection of GEX neighborhoods with elevated iMHC scores across multiple donors." [ref=e745] [cursor=pointer]:
+                    - /url: /articles/s41587-021-00989-2/figures/12
+                - paragraph [ref=e747]: 2D GEX projection of the 10x_200k_donor1 (a), 10x_200k_donor2 (b), 10x_200k_donor3 (c), and 10x_200k_donor4 (d) datasets colored by P values for iMHC enrichment in each clonotype’s graph neighborhood (the set of iMHC scores in each clonotype’s neighborhood are compared to the remainder of the iMHC scores using an unpaired, 1-sided Mann-Whitney-Wilcoxon test). (e) Top 10 DEGs for the clonotypes with significant iMHC enrichment in the 10x_200k_donor1 dataset. (f) Top 10 DEGs for the clonotypes with significant iMHC enrichment in the 10x_200k_donor3 dataset. (g) Top 10 DEGs for the clonotypes with significant iMHC enrichment in the 10x_200k_donor4 dataset. (There were too few clonotypes with significant iMHC enrichment in the 10x_200k_donor2 dataset to identify differentially expressed genes). (h) Graph-vs-feature correlation between a TCR feature, iMHC score (left panel), and 2 scores derived from the GEX profile (right panels, ZNF683 and KLRC3 expression) is illustrated by mapping the scores onto the 2D UMAP GEX landscape for the 10x_200k_donor1 dataset (after Z-score normalization and averaging over graph neighborhoods).
+              - generic [ref=e748]:
+                - heading "Extended Data Fig. 7" [level=3] [ref=e749]:
+                  - link "Extended Data Fig. 7" [ref=e750] [cursor=pointer]:
+                    - /url: /articles/s41587-021-00989-2/figures/13
+                - paragraph [ref=e752]:
+                  - text: Gating strategy for assessment of EPHB6 protein levels in TRBV30 ± CD4+ and CD8+ T cells in Fig.
+                  - link "5f" [ref=e753] [cursor=pointer]:
+                    - /url: /articles/s41587-021-00989-2#Fig5
+                  - text: .
+              - generic [ref=e754]:
+                - heading "Extended Data Fig. 8 Matching of pMHC-positive TCR sequences to bulk repertoires and epitope-specific TCR sequences from the literature." [level=3] [ref=e755]:
+                  - link "Extended Data Fig. 8 Matching of pMHC-positive TCR sequences to bulk repertoires and epitope-specific TCR sequences from the literature." [ref=e756] [cursor=pointer]:
+                    - /url: /articles/s41587-021-00989-2/figures/14
+                - generic [ref=e757]:
+                  - paragraph [ref=e758]:
+                    - text: (a) TCRβ sequences from the pMHC-positive clonotypes in the 10x_200k dataset were matched to bulk TCRβ repertoires using TCRdist. To score the overlap between the set of TCR sequences in a pMHC-positive repertoire and the set of sequences in a bulk repertoire, we developed a variant of the Morisita-Horn (MH) overlap index that accounts for sequence similarity in addition to exact identity (see
+                    - link "Methods" [ref=e759] [cursor=pointer]:
+                      - /url: /articles/s41587-021-00989-2#Sec9
+                    - text: for further details). All-vs-all scatter plots (with kernel density estimates along the diagonal) are shown for the following pMHC-positive repertoire features (see
+                    - link "Methods" [ref=e760] [cursor=pointer]:
+                      - /url: /articles/s41587-021-00989-2#Sec9
+                    - text: "for feature calculation details): log10_Pgen, the average log"
+                    - subscript [ref=e761]: "10"
+                    - text: generation probability of the repertoire TCRβ chains; log10_publicity, the average log
+                    - subscript [ref=e762]: "10"
+                    - text: rate of occurrence in a large (N = 666) dataset of PBMC repertoires; age_correlation, the linear correlation coefficient between MH overlap and subject age in the N = 666 PBMC repertoire dataset (see Extended Data Fig.
+                    - link "3a" [ref=e763] [cursor=pointer]:
+                      - /url: /articles/s41587-021-00989-2#Fig9
+                    - text: ); CD8_vs_CD4, t-statistic comparing MH overlaps for CD8 and CD4 repertoires (higher indicates greater preference for CD8 repertoires; see Extended Data Fig.
+                    - link "3b" [ref=e764] [cursor=pointer]:
+                      - /url: /articles/s41587-021-00989-2#Fig9
+                    - text: ); memory_vs_naive, t-statistic comparing MH overlaps for memory and naive repertoires (higher indicates greater preference for memory repertoires; see Extended Data Fig.
+                    - link "3c" [ref=e765] [cursor=pointer]:
+                      - /url: /articles/s41587-021-00989-2#Fig9
+                    - text: ). (b) The pMHC-positive repertoires were matched against one another and against a set of literature-derived TCR sequences taken primarily from the VDJdb
+                    - superscript [ref=e766]:
+                      - link "Reference 55" [ref=e767] [cursor=pointer]:
+                        - /url: /articles/s41587-021-00989-2#ref-CR55
+                        - text: "55"
+                    - text: and McPAS
+                    - superscript [ref=e768]:
+                      - link "Reference 56" [ref=e769] [cursor=pointer]:
+                        - /url: /articles/s41587-021-00989-2#ref-CR56
+                        - text: "56"
+                    - text: databases (excluding those TCRs in the VDJdb that were themselves derived from the 10x_200k dataset). The heatmap shows MH overlaps calculated using paired-chain TCRdist distances. Reasonable concordance between repertoires positive for the same pMHC from different donors and between pMHC-positive and literature-derived repertoires can be seen.
+                  - paragraph [ref=e770]:
+                    - link "Source data" [ref=e771] [cursor=pointer]:
+                      - /url: /articles/s41587-021-00989-2#MOESM15
+              - generic [ref=e772]:
+                - heading "Extended Data Fig. 9 Epitope-specific T cell populations differ in activation status." [level=3] [ref=e773]:
+                  - link "Extended Data Fig. 9 Epitope-specific T cell populations differ in activation status." [ref=e774] [cursor=pointer]:
+                    - /url: /articles/s41587-021-00989-2/figures/15
+                - generic [ref=e775]:
+                  - paragraph [ref=e776]:
+                    - text: (a) Log-transformed read counts for DNA-barcoded anti-CD45RA (x-axis) and anti-CD45RO (y-axis) antibodies, averaged over pMHC+ clonotypes, are plotted for the pMHCs shown in Fig.
+                    - link "6" [ref=e777] [cursor=pointer]:
+                      - /url: /articles/s41587-021-00989-2#Fig6
+                    - text: . In the panel on the left, clonotypes are weighted equally, while in the panel on the right, larger clonotypes are given more weight (proportional to the logarithm of the clone size) to better reflect the underlying distribution of cells (particularly for the d1_A11 pMHCs, both of which have a relatively large number of positive cells distributed unevenly among a small number of clonotypes). (b) Heatmap of gene set variation analysis (GSVA) scores for pMHC-specific clonotypes by donor. Significant hits (P values < 0.05 after multiple hypothesis correction using the Benjamini-Hochberg method) from the MSigDB (
+                    - link "https://www.gsea-msigdb.org/gsea/msigdb" [ref=e778] [cursor=pointer]:
+                      - /url: https://www.gsea-msigdb.org/gsea/msigdb
+                    - text: ) C7 collection
+                    - superscript [ref=e779]:
+                      - link "Reference 57" [ref=e780] [cursor=pointer]:
+                        - /url: /articles/s41587-021-00989-2#ref-CR57
+                        - text: "57"
+                      - text: ","
+                      - link "Reference 58" [ref=e781] [cursor=pointer]:
+                        - /url: /articles/s41587-021-00989-2#ref-CR58
+                        - text: "58"
+                    - text: are shown. Analysis performed using Seurat
+                    - superscript [ref=e782]:
+                      - link "Reference 59" [ref=e783] [cursor=pointer]:
+                        - /url: /articles/s41587-021-00989-2#ref-CR59
+                        - text: "59"
+                    - text: ", GSVA"
+                    - superscript [ref=e784]:
+                      - link "Reference 60" [ref=e785] [cursor=pointer]:
+                        - /url: /articles/s41587-021-00989-2#ref-CR60
+                        - text: "60"
+                    - text: ", and Cerebro"
+                    - superscript [ref=e786]:
+                      - link "Reference 61" [ref=e787] [cursor=pointer]:
+                        - /url: /articles/s41587-021-00989-2#ref-CR61
+                        - text: "61"
+                    - text: R packages.
+                  - paragraph [ref=e788]:
+                    - link "Source data" [ref=e789] [cursor=pointer]:
+                      - /url: /articles/s41587-021-00989-2#MOESM16
+              - generic [ref=e790]:
+                - heading "Extended Data Fig. 10 CoNGA’s ability to recover invariant T cell subsets depends on their frequency in the dataset." [level=3] [ref=e791]:
+                  - link "Extended Data Fig. 10 CoNGA’s ability to recover invariant T cell subsets depends on their frequency in the dataset." [ref=e792] [cursor=pointer]:
+                    - /url: /articles/s41587-021-00989-2/figures/16
+                - paragraph [ref=e794]: To assess the sensitivity of CoNGA’s graph-vs-graph algorithm in detecting a known GEX/TCR correlation, we created artificial datasets by subsampling the MAIT cell clonotypes (iNKT cell clonotypes in mouse) down to specified levels within the context of five datasets in which those clonotypes could be clearly identified both as a distinct GEX cluster and by virtue of their invariant TCR sequences. (a) The fraction of MAIT or iNKT clonotypes recovered as CoNGA hits (y-axis) is plotted against the frequency to which these clonotypes were downsampled in the dataset. (b) The fraction of recovered clonotypes is plotted against the absolute number of downsampled clonotypes present in the dataset. Recovery rate appears to depend more strongly on the number of downsampled clonotypes than their fraction in the total dataset.
+          - generic [ref=e796]:
+            - heading "Supplementary information" [level=2] [ref=e797]
+            - generic [ref=e799]:
+              - generic [ref=e800]:
+                - heading "Supplementary Information (download PDF )" [level=3] [ref=e801]:
+                  - link "Supplementary Information (download PDF )" [ref=e802] [cursor=pointer]:
+                    - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-021-00989-2/MediaObjects/41587_2021_989_MOESM1_ESM.pdf
+                    - text: Supplementary Information (download PDF
+                    - img [ref=e803]
+                    - text: )
+                - paragraph [ref=e806]: Supplementary Figs. 1–9, Notes 1–3, Tables 1–8 and References.
+              - heading "Reporting Summary (download PDF )" [level=3] [ref=e808]:
+                - link "Reporting Summary (download PDF )" [ref=e809] [cursor=pointer]:
+                  - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-021-00989-2/MediaObjects/41587_2021_989_MOESM2_ESM.pdf
+                  - text: Reporting Summary (download PDF
+                  - img [ref=e810]
+                  - text: )
+              - generic [ref=e812]:
+                - heading "Supplementary Data 1" [level=3] [ref=e813]:
+                  - link "Supplementary Data 1" [ref=e814] [cursor=pointer]:
+                    - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-021-00989-2/MediaObjects/41587_2021_989_MOESM3_ESM.tsv
+                - paragraph [ref=e816]: TCR sequence information on all CoNGA clusters for 10x_200k_donors.
+              - generic [ref=e817]:
+                - heading "Supplementary Data 2 (download XLSX )" [level=3] [ref=e818]:
+                  - link "Supplementary Data 2 (download XLSX )" [ref=e819] [cursor=pointer]:
+                    - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-021-00989-2/MediaObjects/41587_2021_989_MOESM4_ESM.xlsx
+                    - text: Supplementary Data 2 (download XLSX
+                    - img [ref=e820]
+                    - text: )
+                - paragraph [ref=e823]: TCR sequence information for pMHC-specific CD8 T cells from 10x_200k_donors used for analysis
+              - generic [ref=e824]:
+                - heading "Supplementary Data 3 (download TXT )" [level=3] [ref=e825]:
+                  - link "Supplementary Data 3 (download TXT )" [ref=e826] [cursor=pointer]:
+                    - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-021-00989-2/MediaObjects/41587_2021_989_MOESM5_ESM.txt
+                    - text: Supplementary Data 3 (download TXT
+                    - img [ref=e827]
+                    - text: )
+                - paragraph [ref=e830]: Source Data for Supplementary Fig. 3
+              - generic [ref=e831]:
+                - heading "Supplementary Data 4 (download TXT )" [level=3] [ref=e832]:
+                  - link "Supplementary Data 4 (download TXT )" [ref=e833] [cursor=pointer]:
+                    - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-021-00989-2/MediaObjects/41587_2021_989_MOESM6_ESM.txt
+                    - text: Supplementary Data 4 (download TXT
+                    - img [ref=e834]
+                    - text: )
+                - paragraph [ref=e837]: Source Data for Supplementary Fig. 4
+              - generic [ref=e838]:
+                - heading "Supplementary Data 5 (download TXT )" [level=3] [ref=e839]:
+                  - link "Supplementary Data 5 (download TXT )" [ref=e840] [cursor=pointer]:
+                    - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-021-00989-2/MediaObjects/41587_2021_989_MOESM7_ESM.txt
+                    - text: Supplementary Data 5 (download TXT
+                    - img [ref=e841]
+                    - text: )
+                - paragraph [ref=e844]: Source Data for Supplementary Fig. 5
+          - generic [ref=e846]:
+            - heading "Source data" [level=2] [ref=e847]
+            - generic [ref=e849]:
+              - generic [ref=e850]:
+                - heading "Source Data Fig. 1 (download TXT )" [level=3] [ref=e851]:
+                  - link "Source Data Fig. 1 (download TXT )" [ref=e852] [cursor=pointer]:
+                    - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-021-00989-2/MediaObjects/41587_2021_989_MOESM8_ESM.txt
+                    - text: Source Data Fig. 1 (download TXT
+                    - img [ref=e853]
+                    - text: )
+                - paragraph [ref=e856]: Statistical Source Data
+              - generic [ref=e857]:
+                - heading "Source Data Fig. 2 (download XLSX )" [level=3] [ref=e858]:
+                  - link "Source Data Fig. 2 (download XLSX )" [ref=e859] [cursor=pointer]:
+                    - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-021-00989-2/MediaObjects/41587_2021_989_MOESM9_ESM.xlsx
+                    - text: Source Data Fig. 2 (download XLSX
+                    - img [ref=e860]
+                    - text: )
+                - paragraph [ref=e863]: Statistical Source Data
+              - generic [ref=e864]:
+                - heading "Source Data Fig. 3 (download TXT )" [level=3] [ref=e865]:
+                  - link "Source Data Fig. 3 (download TXT )" [ref=e866] [cursor=pointer]:
+                    - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-021-00989-2/MediaObjects/41587_2021_989_MOESM10_ESM.txt
+                    - text: Source Data Fig. 3 (download TXT
+                    - img [ref=e867]
+                    - text: )
+                - paragraph [ref=e870]: Statistical Source Data
+              - generic [ref=e871]:
+                - heading "Source Data Fig. 5 (download XLSX )" [level=3] [ref=e872]:
+                  - link "Source Data Fig. 5 (download XLSX )" [ref=e873] [cursor=pointer]:
+                    - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-021-00989-2/MediaObjects/41587_2021_989_MOESM11_ESM.xlsx
+                    - text: Source Data Fig. 5 (download XLSX
+                    - img [ref=e874]
+                    - text: )
+                - paragraph [ref=e877]: Statistical Source Data
+              - generic [ref=e878]:
+                - heading "Source Data Extended Data Fig. 2 (download XLSX )" [level=3] [ref=e879]:
+                  - link "Source Data Extended Data Fig. 2 (download XLSX )" [ref=e880] [cursor=pointer]:
+                    - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-021-00989-2/MediaObjects/41587_2021_989_MOESM12_ESM.xlsx
+                    - text: Source Data Extended Data Fig. 2 (download XLSX
+                    - img [ref=e881]
+                    - text: )
+                - paragraph [ref=e884]: Statistical Source Data
+              - generic [ref=e885]:
+                - heading "Source Data Extended Data Fig. 3 (download TXT )" [level=3] [ref=e886]:
+                  - link "Source Data Extended Data Fig. 3 (download TXT )" [ref=e887] [cursor=pointer]:
+                    - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-021-00989-2/MediaObjects/41587_2021_989_MOESM13_ESM.txt
+                    - text: Source Data Extended Data Fig. 3 (download TXT
+                    - img [ref=e888]
+                    - text: )
+                - paragraph [ref=e891]: Statistical Source Data
+              - generic [ref=e892]:
+                - heading "Source Data Extended Data Fig. 5 (download XLSX )" [level=3] [ref=e893]:
+                  - link "Source Data Extended Data Fig. 5 (download XLSX )" [ref=e894] [cursor=pointer]:
+                    - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-021-00989-2/MediaObjects/41587_2021_989_MOESM14_ESM.xlsx
+                    - text: Source Data Extended Data Fig. 5 (download XLSX
+                    - img [ref=e895]
+                    - text: )
+                - paragraph [ref=e898]: Statistical Source Data
+              - generic [ref=e899]:
+                - heading "Source Data Extended Data Fig. 8 (download TXT )" [level=3] [ref=e900]:
+                  - link "Source Data Extended Data Fig. 8 (download TXT )" [ref=e901] [cursor=pointer]:
+                    - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-021-00989-2/MediaObjects/41587_2021_989_MOESM15_ESM.txt
+                    - text: Source Data Extended Data Fig. 8 (download TXT
+                    - img [ref=e902]
+                    - text: )
+                - paragraph [ref=e905]: Statistical Source Data
+              - generic [ref=e906]:
+                - heading "Source Data Extended Data Fig. 9 (download TXT )" [level=3] [ref=e907]:
+                  - link "Source Data Extended Data Fig. 9 (download TXT )" [ref=e908] [cursor=pointer]:
+                    - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41587-021-00989-2/MediaObjects/41587_2021_989_MOESM16_ESM.txt
+                    - text: Source Data Extended Data Fig. 9 (download TXT
+                    - img [ref=e909]
+                    - text: )
+                - paragraph [ref=e912]: Statistical Source Data
+          - generic [ref=e914]:
+            - heading "Rights and permissions" [level=2] [ref=e915]
+            - paragraph [ref=e917]:
+              - link "Reprints and permissions" [ref=e918] [cursor=pointer]:
+                - /url: https://s100.copyright.com/AppDispatchServlet?title=Integrating%20T%20cell%20receptor%20sequences%20and%20transcriptional%20profiles%20by%20clonotype%20neighbor%20graph%20analysis%20%28CoNGA%29&author=Stefan%20A.%20Schattgen%20et%20al&contentID=10.1038%2Fs41587-021-00989-2&copyright=The%20Author%28s%29%2C%20under%20exclusive%20licence%20to%20Springer%20Nature%20America%2C%20Inc.&publication=1087-0156&publicationDate=2021-08-23&publisherName=SpringerNature&orderBeanReset=true
+          - region "About this article" [ref=e919]:
+            - generic [ref=e920]:
+              - heading "About this article" [level=2] [ref=e921]
+              - generic [ref=e923]:
+                - link "Check for updates. Verify currency and authenticity via CrossMark" [ref=e925] [cursor=pointer]:
+                  - /url: https://crossmark.crossref.org/dialog/?doi=10.1038/s41587-021-00989-2
+                  - img "Check for updates. Verify currency and authenticity via CrossMark" [ref=e926]
+                - generic [ref=e927]:
+                  - heading "Cite this article" [level=3] [ref=e928]
+                  - paragraph [ref=e929]: Schattgen, S.A., Guion, K., Crawford, J.C. et al. Integrating T cell receptor sequences and transcriptional profiles by clonotype neighbor graph analysis (CoNGA). Nat Biotechnol 40, 54–63 (2022). https://doi.org/10.1038/s41587-021-00989-2
+                  - paragraph [ref=e930]:
+                    - link "Download citation" [ref=e931] [cursor=pointer]:
+                      - /url: https://citation-needed.springer.com/v2/references/10.1038/s41587-021-00989-2?format=refman&flavour=citation
+                      - text: Download citation
+                      - img [ref=e932]
+                  - list [ref=e934]:
+                    - listitem [ref=e935]:
+                      - paragraph [ref=e936]:
+                        - text: Received
+                        - time [ref=e938]: 07 August 2020
+                    - listitem [ref=e939]:
+                      - paragraph [ref=e940]:
+                        - text: Accepted
+                        - time [ref=e942]: 18 June 2021
+                    - listitem [ref=e943]:
+                      - paragraph [ref=e944]:
+                        - text: Published
+                        - time [ref=e946]: 23 August 2021
+                    - listitem [ref=e947]:
+                      - paragraph [ref=e948]:
+                        - text: Version of record
+                        - time [ref=e950]: 23 August 2021
+                    - listitem [ref=e951]:
+                      - paragraph [ref=e952]:
+                        - text: Issue date
+                        - time [ref=e954]: January 2022
+                    - listitem [ref=e955]:
+                      - paragraph [ref=e956]:
+                        - text: DOI
+                        - generic [ref=e957]: https://doi.org/10.1038/s41587-021-00989-2
+                  - generic [ref=e958]:
+                    - heading "Subjects" [level=3] [ref=e959]
+                    - list [ref=e960]:
+                      - listitem [ref=e961]:
+                        - link "Immunological surveillance" [ref=e962] [cursor=pointer]:
+                          - /url: /subjects/immunological-surveillance
+                      - listitem [ref=e963]:
+                        - link "Statistical methods" [ref=e964] [cursor=pointer]:
+                          - /url: /subjects/statistical-methods
+                      - listitem [ref=e965]:
+                        - link "T cells" [ref=e966] [cursor=pointer]:
+                          - /url: /subjects/t-cells
+        - generic [ref=e968]:
+          - heading "This article is cited by" [level=2] [ref=e969]
+          - list [ref=e971]:
+            - listitem [ref=e972]:
+              - heading "A pan-disease and population-level single-cell TCRαβ repertoire reference" [level=3] [ref=e973]:
+                - link "A pan-disease and population-level single-cell TCRαβ repertoire reference" [ref=e974] [cursor=pointer]:
+                  - /url: https://doi.org/10.1038/s41421-025-00836-7
+              - list [ref=e975]:
+                - listitem [ref=e976]: Ziwei Xue
+                - listitem [ref=e977]: ", Lize Wu"
+                - listitem [ref=e978]: ... Wanlu Liu
+              - paragraph [ref=e979]: Cell Discovery (2025)
+            - listitem [ref=e980]:
+              - heading "Integrative mapping of human CD8+ T cells in inflammation and cancer" [level=3] [ref=e981]:
+                - link "Integrative mapping of human CD8+ T cells in inflammation and cancer" [ref=e982] [cursor=pointer]:
+                  - /url: https://doi.org/10.1038/s41592-024-02530-0
+              - list [ref=e983]:
+                - listitem [ref=e984]: Ziwei Xue
+                - listitem [ref=e985]: ", Lize Wu"
+                - listitem [ref=e986]: ... Linrong Lu
+              - paragraph [ref=e987]: Nature Methods (2025)
+            - listitem [ref=e988]:
+              - heading "Remodeling of the immune microenvironment is linked to adverse outcome in pediatric T cell acute lymphoblastic leukemia" [level=3] [ref=e989]:
+                - link "Remodeling of the immune microenvironment is linked to adverse outcome in pediatric T cell acute lymphoblastic leukemia" [ref=e990] [cursor=pointer]:
+                  - /url: https://doi.org/10.1038/s41467-025-65134-y
+              - list [ref=e991]:
+                - listitem [ref=e992]: Caroline R. M. Wiggers
+                - listitem [ref=e993]: ", Eugene Y. Cho"
+                - listitem [ref=e994]: ... Birgit Knoechel
+              - paragraph [ref=e995]: Nature Communications (2025)
+            - listitem [ref=e996]:
+              - 'heading "The Type 1 Diabetes T Cell Receptor and B Cell Receptor Repository in the AIRR Data Commons: a practical guide for access, use and contributions through the Type 1 Diabetes AIRR Consortium" [level=3] [ref=e997]':
+                - 'link "The Type 1 Diabetes T Cell Receptor and B Cell Receptor Repository in the AIRR Data Commons: a practical guide for access, use and contributions through the Type 1 Diabetes AIRR Consortium" [ref=e998] [cursor=pointer]':
+                  - /url: https://doi.org/10.1007/s00125-024-06298-y
+              - list [ref=e999]:
+                - listitem [ref=e1000]: Stephanie J. Hanna
+                - listitem [ref=e1001]: ", Rachel H. Bonami"
+                - listitem [ref=e1002]: ... Luc Teyton
+              - paragraph [ref=e1003]: Diabetologia (2025)
+            - listitem [ref=e1004]:
+              - heading "Integrating single-cell multi-omics and prior biological knowledge for a functional characterization of the immune system" [level=3] [ref=e1005]:
+                - link "Integrating single-cell multi-omics and prior biological knowledge for a functional characterization of the immune system" [ref=e1006] [cursor=pointer]:
+                  - /url: https://doi.org/10.1038/s41590-024-01768-2
+              - list [ref=e1007]:
+                - listitem [ref=e1008]: Philipp Sven Lars Schäfer
+                - listitem [ref=e1009]: ", Daniel Dimitrov"
+                - listitem [ref=e1010]: ... Julio Saez-Rodriguez
+              - paragraph [ref=e1011]: Nature Immunology (2024)
+  - contentinfo [ref=e1012]:
+    - generic [ref=e1016]:
+      - paragraph [ref=e1017]: Nature Biotechnology (Nat Biotechnol)
+      - paragraph [ref=e1018]: ISSN 1546-1696 (online)
+      - paragraph [ref=e1019]: ISSN 1087-0156 (print)
+    - generic [ref=e1020]:
+      - generic [ref=e1021]:
+        - heading "nature.com footer links" [level=2] [ref=e1022]
+        - generic [ref=e1024]:
+          - generic [ref=e1025]:
+            - heading "About Nature Portfolio" [level=3] [ref=e1026]
+            - list [ref=e1027]:
+              - listitem [ref=e1028]:
+                - link "About us" [ref=e1029] [cursor=pointer]:
+                  - /url: https://www.nature.com/npg_/company_info/index.html
+              - listitem [ref=e1030]:
+                - link "Press releases" [ref=e1031] [cursor=pointer]:
+                  - /url: https://www.nature.com/npg_/press_room/press_releases.html
+              - listitem [ref=e1032]:
+                - link "Press office" [ref=e1033] [cursor=pointer]:
+                  - /url: https://press.nature.com/
+              - listitem [ref=e1034]:
+                - link "Contact us" [ref=e1035] [cursor=pointer]:
+                  - /url: https://support.nature.com/support/home
+          - generic [ref=e1036]:
+            - heading "Discover content" [level=3] [ref=e1037]
+            - list [ref=e1038]:
+              - listitem [ref=e1039]:
+                - link "Journals A-Z" [ref=e1040] [cursor=pointer]:
+                  - /url: https://www.nature.com/siteindex
+              - listitem [ref=e1041]:
+                - link "Articles by subject" [ref=e1042] [cursor=pointer]:
+                  - /url: https://www.nature.com/subjects
+              - listitem [ref=e1043]:
+                - link "protocols.io" [ref=e1044] [cursor=pointer]:
+                  - /url: https://www.protocols.io/
+              - listitem [ref=e1045]:
+                - link "Nature Index" [ref=e1046] [cursor=pointer]:
+                  - /url: https://www.natureindex.com/
+          - generic [ref=e1047]:
+            - heading "Publishing policies" [level=3] [ref=e1048]
+            - list [ref=e1049]:
+              - listitem [ref=e1050]:
+                - link "Nature portfolio policies" [ref=e1051] [cursor=pointer]:
+                  - /url: https://www.nature.com/authors/editorial_policies
+              - listitem [ref=e1052]:
+                - link "Open access" [ref=e1053] [cursor=pointer]:
+                  - /url: https://www.nature.com/nature-research/open-access
+          - generic [ref=e1054]:
+            - heading "Author & Researcher services" [level=3] [ref=e1055]
+            - list [ref=e1056]:
+              - listitem [ref=e1057]:
+                - link "Reprints & permissions" [ref=e1058] [cursor=pointer]:
+                  - /url: https://www.nature.com/reprints
+              - listitem [ref=e1059]:
+                - link "Research data" [ref=e1060] [cursor=pointer]:
+                  - /url: https://www.springernature.com/gp/authors/research-data
+              - listitem [ref=e1061]:
+                - link "Language editing" [ref=e1062] [cursor=pointer]:
+                  - /url: https://authorservices.springernature.com/language-editing/
+              - listitem [ref=e1063]:
+                - link "Scientific editing" [ref=e1064] [cursor=pointer]:
+                  - /url: https://authorservices.springernature.com/scientific-editing/
+              - listitem [ref=e1065]:
+                - link "Nature Masterclasses" [ref=e1066] [cursor=pointer]:
+                  - /url: https://masterclasses.nature.com/
+              - listitem [ref=e1067]:
+                - link "Research Solutions" [ref=e1068] [cursor=pointer]:
+                  - /url: https://solutions.springernature.com/
+          - generic [ref=e1069]:
+            - heading "Libraries & institutions" [level=3] [ref=e1070]
+            - list [ref=e1071]:
+              - listitem [ref=e1072]:
+                - link "Librarian service & tools" [ref=e1073] [cursor=pointer]:
+                  - /url: https://www.springernature.com/gp/librarians/tools-services
+              - listitem [ref=e1074]:
+                - link "Librarian portal" [ref=e1075] [cursor=pointer]:
+                  - /url: https://www.springernature.com/gp/librarians/manage-your-account/librarianportal
+              - listitem [ref=e1076]:
+                - link "Open research" [ref=e1077] [cursor=pointer]:
+                  - /url: https://www.nature.com/openresearch/about-open-access/information-for-institutions
+              - listitem [ref=e1078]:
+                - link "Recommend to library" [ref=e1079] [cursor=pointer]:
+                  - /url: https://www.springernature.com/gp/librarians/recommend-to-your-library
+          - generic [ref=e1080]:
+            - heading "Advertising & partnerships" [level=3] [ref=e1081]
+            - list [ref=e1082]:
+              - listitem [ref=e1083]:
+                - link "Advertising" [ref=e1084] [cursor=pointer]:
+                  - /url: https://partnerships.nature.com/product/digital-advertising/
+              - listitem [ref=e1085]:
+                - link "Partnerships & Services" [ref=e1086] [cursor=pointer]:
+                  - /url: https://partnerships.nature.com/
+              - listitem [ref=e1087]:
+                - link "Media kits" [ref=e1088] [cursor=pointer]:
+                  - /url: https://partnerships.nature.com/media-kits/
+              - listitem [ref=e1089]:
+                - link "Branded content" [ref=e1090] [cursor=pointer]:
+                  - /url: https://partnerships.nature.com/product/branded-content-native-advertising/
+          - generic [ref=e1091]:
+            - heading "Professional development" [level=3] [ref=e1092]
+            - list [ref=e1093]:
+              - listitem [ref=e1094]:
+                - link "Nature Awards" [ref=e1095] [cursor=pointer]:
+                  - /url: https://www.nature.com/immersive/natureawards/index.html
+              - listitem [ref=e1096]:
+                - link "Nature Careers" [ref=e1097] [cursor=pointer]:
+                  - /url: https://www.nature.com/naturecareers/
+              - listitem [ref=e1098]:
+                - link "Nature Conferences" [ref=e1099] [cursor=pointer]:
+                  - /url: https://conferences.nature.com
+                  - text: Nature
+                  - text: Conferences
+          - generic [ref=e1101]:
+            - heading "Regional websites" [level=3] [ref=e1102]
+            - list [ref=e1103]:
+              - listitem [ref=e1104]:
+                - link "Nature Africa" [ref=e1105] [cursor=pointer]:
+                  - /url: https://www.nature.com/natafrica
+              - listitem [ref=e1106]:
+                - link "Nature China" [ref=e1107] [cursor=pointer]:
+                  - /url: http://www.naturechina.com
+              - listitem [ref=e1108]:
+                - link "Nature India" [ref=e1109] [cursor=pointer]:
+                  - /url: https://www.nature.com/nindia
+              - listitem [ref=e1110]:
+                - link "Nature Japan" [ref=e1111] [cursor=pointer]:
+                  - /url: https://www.natureasia.com/ja-jp
+              - listitem [ref=e1112]:
+                - link "Nature Middle East" [ref=e1113] [cursor=pointer]:
+                  - /url: https://www.nature.com/nmiddleeast
+        - list [ref=e1115]:
+          - listitem [ref=e1116]:
+            - link "Privacy Policy" [ref=e1117] [cursor=pointer]:
+              - /url: https://www.nature.com/info/privacy
+          - listitem [ref=e1118]:
+            - link "Use of cookies" [ref=e1119] [cursor=pointer]:
+              - /url: https://www.nature.com/info/cookies
+          - listitem [ref=e1120]:
+            - button "Your privacy choices/Manage cookies" [ref=e1121] [cursor=pointer]
+          - listitem [ref=e1122]:
+            - link "Legal notice" [ref=e1123] [cursor=pointer]:
+              - /url: https://www.nature.com/info/legal-notice
+          - listitem [ref=e1124]:
+            - link "Accessibility statement" [ref=e1125] [cursor=pointer]:
+              - /url: https://www.nature.com/info/accessibility-statement
+          - listitem [ref=e1126]:
+            - link "Terms & Conditions" [ref=e1127] [cursor=pointer]:
+              - /url: https://www.nature.com/info/terms-and-conditions
+          - listitem [ref=e1128]:
+            - link "Your US state privacy rights" [ref=e1129] [cursor=pointer]:
+              - /url: https://www.springernature.com/ccpa
+      - generic [ref=e1130]:
+        - link "Springer Nature" [ref=e1131] [cursor=pointer]:
+          - /url: https://www.springernature.com/
+          - img "Springer Nature" [ref=e1132]
+        - paragraph [ref=e1133]: © 2026 Springer Nature Limited
+    - img [ref=e1135]

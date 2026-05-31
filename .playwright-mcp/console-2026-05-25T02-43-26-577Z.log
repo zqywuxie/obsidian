@@ -1,0 +1,3 @@
+[     393ms] [LOG] %c%s color: red; background: yellow; font-size: 24px; 警告！ @ https://www.gstatic.com/_/mss/boq-recaptcha/_/js/k=boq-recaptcha.RecaptchaChallengePageUi.zh_CN.zq2KUNF0jT4.2018.O/am=AAAAAOwE/d=1/excm=_b,_tp,challengeview/ed=1/dg=0/wt=2/ujg=1/rs=AP105ZjiH0jwA_2UZo52UlBYEoUbJqZOIg/dti=1/m=_b,_tp:206
+[     393ms] [LOG] %c%s font-size: 18px; 使用此控制台可能会给攻击者可乘之机，让其通过名为 Self-XSS（自跨站脚本）的攻击方式来冒充你并窃取你的信息。
+请勿输入或粘贴来历不明的代码。 @ https://www.gstatic.com/_/mss/boq-recaptcha/_/js/k=boq-recaptcha.RecaptchaChallengePageUi.zh_CN.zq2KUNF0jT4.2018.O/am=AAAAAOwE/d=1/excm=_b,_tp,challengeview/ed=1/dg=0/wt=2/ujg=1/rs=AP105ZjiH0jwA_2UZo52UlBYEoUbJqZOIg/dti=1/m=_b,_tp:206

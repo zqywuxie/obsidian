@@ -2,7 +2,7 @@
 title: TCR-Epitope Binding Prediction
 tags: [concept, tcr, epitope, prediction, deep-learning, machine-learning]
 created: 2026-05-06
-updated: 2026-05-06
+updated: 2026-05-19
 ---
 
 # TCR-Epitope Binding Prediction（TCR-表位结合预测）
@@ -59,10 +59,18 @@ updated: 2026-05-06
 |------|------|--------|
 | **Zhao et al. Unified** | 2025 | 统一框架同时预测肽-MHC 和 TCR 结合 |
 | **TCR-epiDiff** | 2025 | 扩散模型同时处理 TCR 生成和结合预测 |
+| **PRP (Wang et al.)** | 2026 | 实验PRP+蛋白语言模型，解码TCR特异性，发现自身抗原 |
 
 ---
 
 ## 代表性方法详解
+
+### PRP — 深度肽识别图谱 (Wang et al. 2026)
+- **实验-计算整合**：先用酵母展示系统测定单个 TCR 的肽识别谱（PRP），再用此数据训练蛋白语言模型
+- **核心洞察**：TCR 序列相似 ≠ 功能相似；真正定义 TCR 关系的是 PRP 定义的肽识别模式
+- **关键发现**：PSG5 被鉴定为 HLA-B27 相关自身免疫病的候选自身抗原
+- **泛化机制**：模型对新 TCR 的预测能力取决于 PRP 功能距离，而非序列距离
+- 详见 [[wiki/concepts/deep-peptide-recognition-profiling|Deep Peptide Recognition Profiling (PRP) 概念页]]
 
 ### DeepTCR (Sidhom et al. 2021)
 - VAE 无监督学习 CDR3α 和 CDR3β 序列的潜在表征
@@ -98,8 +106,10 @@ Lu (2025) 对现有计算方法进行了系统性评估。
 | 类型 | 页面 |
 |------|------|
 | 概念 | [[wiki/concepts/tcr-repertoire\|TCR Repertoire]] |
+| 概念 | [[wiki/concepts/deep-peptide-recognition-profiling\|Deep Peptide Recognition Profiling (PRP)]] |
 | 概念 | [[wiki/concepts/single-cell-tcr-seq\|Single-cell TCR-seq]] |
 | 来源 | [[wiki/sources/batch-tcr-epitope-prediction\|TCR-表位预测文献合集]] |
+| 来源 | [[wiki/sources/wang-2026-prp-tcr-specificity\|PRP — Wang et al. 2026]] |
 | 实体 | [[wiki/entities/tcrdb\|TCRdb 数据库]] |
 
-**引用文献**: Sidhom 2021, Fischer 2020, Kim 2023, Zhao 2025, Seo 2025, Jiang 2023, Ostrovsky-Berman 2021, Wu TCR-BERT, Chen TCRdb, Dash 2017
+**引用文献**: Sidhom 2021, Fischer 2020, Kim 2023, Zhao 2025, Seo 2025, Jiang 2023, Ostrovsky-Berman 2021, Wu TCR-BERT, Chen TCRdb, Dash 2017, **Wang 2026 (PRP)**

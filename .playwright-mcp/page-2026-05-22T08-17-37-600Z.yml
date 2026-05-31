@@ -1,0 +1,426 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#content"
+    - complementary [ref=e4]:
+      - paragraph [ref=e6]: Advertisement
+    - banner [ref=e7]:
+      - generic [ref=e10]:
+        - link "Nature Communications" [ref=e12] [cursor=pointer]:
+          - /url: /ncomms
+          - img "Nature Communications" [ref=e14]
+        - list [ref=e15]:
+          - listitem [ref=e16]:
+            - link "View all journals" [ref=e17] [cursor=pointer]:
+              - /url: https://www.nature.com/siteindex
+              - generic [ref=e18]: View all journals
+          - listitem [ref=e19]:
+            - button "Search" [ref=e20] [cursor=pointer]:
+              - img [ref=e21]
+              - generic [ref=e23]: Search
+          - listitem [ref=e24]:
+            - link "Log in" [ref=e25] [cursor=pointer]:
+              - /url: https://idp.nature.com/auth/personal/springernature?redirect_uri=https://www.nature.com/articles/s41467-026-73257-z
+              - generic [ref=e26]: Log in
+      - list [ref=e30]:
+        - listitem [ref=e31]:
+          - button "Explore content" [ref=e32] [cursor=pointer]:
+            - generic [ref=e33]: Explore content
+            - img [ref=e34]
+        - listitem [ref=e36]:
+          - button "About the journal" [ref=e37] [cursor=pointer]:
+            - generic [ref=e38]: About the journal
+            - img [ref=e39]
+        - listitem [ref=e41]:
+          - button "Publish with us" [ref=e42] [cursor=pointer]:
+            - generic [ref=e43]: Publish with us
+            - img [ref=e44]
+    - navigation "breadcrumbs" [ref=e46]:
+      - list [ref=e48]:
+        - listitem [ref=e49]:
+          - link "nature" [ref=e50] [cursor=pointer]:
+            - /url: /
+          - img [ref=e51]
+        - listitem [ref=e53]:
+          - link "nature communications" [ref=e54] [cursor=pointer]:
+            - /url: /ncomms
+          - img [ref=e55]
+        - listitem [ref=e57]:
+          - link "articles" [ref=e58] [cursor=pointer]:
+            - /url: /ncomms/articles?type=article
+          - img [ref=e59]
+        - listitem [ref=e61]: article
+  - main [ref=e63]:
+    - article [ref=e64]:
+      - link "Download PDF" [ref=e69] [cursor=pointer]:
+        - /url: /articles/s41467-026-73257-z_reference.pdf
+        - generic [ref=e70]: Download PDF
+        - img [ref=e71]
+      - generic [ref=e74]:
+        - list [ref=e75]:
+          - listitem [ref=e76]: Article
+          - listitem [ref=e77]:
+            - link "Open access" [ref=e78] [cursor=pointer]:
+              - /url: https://www.springernature.com/gp/open-science/about/the-fundamentals-of-open-access-and-open-research
+          - listitem [ref=e79]:
+            - text: "Published:"
+            - time [ref=e80]: 19 May 2026
+        - heading "Inferring stochastic dynamics by biophysical Neural ODE using single-cell transcriptomics" [level=1] [ref=e81]
+        - list [ref=e82]:
+          - listitem [ref=e83]:
+            - link "Jingyu Dou" [ref=e84] [cursor=pointer]:
+              - /url: "#auth-Jingyu-Dou-Aff1-Aff2"
+            - text: ","
+          - listitem [ref=e85]:
+            - link "Wentao Lyu" [ref=e86] [cursor=pointer]:
+              - /url: "#auth-Wentao-Lyu-Aff2"
+            - text: ","
+          - listitem [ref=e87]:
+            - link "Feng Chen" [ref=e88] [cursor=pointer]:
+              - /url: "#auth-Feng-Chen-Aff1"
+            - text: ","
+          - listitem [ref=e89]:
+            - link "Qing Nie" [ref=e90] [cursor=pointer]:
+              - /url: "#auth-Qing-Nie-Aff3"
+              - text: Qing Nie
+              - img [ref=e91]
+            - text: "&"
+          - listitem [ref=e93]:
+            - link "Chunhe Li" [ref=e94] [cursor=pointer]:
+              - /url: "#auth-Chunhe-Li-Aff1-Aff2-Aff4"
+              - text: Chunhe Li
+              - img [ref=e95]
+        - paragraph [ref=e97]:
+          - link "Nature Communications" [ref=e98] [cursor=pointer]:
+            - /url: /ncomms
+          - text: (2026)
+          - link "Cite this article" [ref=e99] [cursor=pointer]:
+            - /url: "#citeas"
+        - list [ref=e101]:
+          - listitem [ref=e102]:
+            - paragraph [ref=e103]: 711 Accesses
+          - listitem [ref=e104]:
+            - paragraph [ref=e105]: 1 Altmetric
+          - listitem [ref=e106]:
+            - paragraph [ref=e107]:
+              - link "Metrics details" [ref=e108] [cursor=pointer]:
+                - /url: /articles/s41467-026-73257-z/metrics
+                - text: Metrics
+                - generic [ref=e109]: details
+        - paragraph [ref=e110]:
+          - img [ref=e111]
+          - text: We are providing an unedited version of this manuscript to give early access to its findings. Before final publication, the manuscript will undergo further editing. Please note there may be errors present which affect the content, and all legal disclaimers apply.
+      - generic [ref=e113]:
+        - region "Abstract" [ref=e114]:
+          - generic [ref=e115]:
+            - heading "Abstract" [level=2] [ref=e116]
+            - paragraph [ref=e118]: "Single-cell RNA sequencing has revolutionized our ability to dissect cellular heterogeneity and study cell fate mechanisms, yet inferring stochastic dynamics from static snapshots remains a fundamental challenge. Current approaches face a critical trade-off: mechanistic models impose rigid assumptions limiting biological realism, while data-driven methods sacrifice interpretability for deeper mechanistic explorations. Here, we present DynNet, a deep learning method that integrates Neural ODEs with biophysical models and prior knowledge of gene expression dynamics. DynNet learns the stochastic dynamics of gene regulatory systems for cell fate decisions. Benchmarking on synthetic data shows DynNet’s ability to infer stable cell states, reconstruct dynamical trajectories, and characterize multi-stable cell fate transitions. Using hepatocyte differentiation data, DynNet demonstrates its capability to infer developmental trajectory and the underlying cell fate landscape, revealing the stability and transition probabilities among distinct cell states. Applied to Epithelial-mesenchymal transition (EMT) data, DynNet further captures critical gene regulations and transition paths during EMT."
+        - region "Similar content being viewed by others" [ref=e119]:
+          - heading "Similar content being viewed by others" [level=3] [ref=e120]
+          - generic [ref=e121]:
+            - article [ref=e123]:
+              - generic [ref=e125]:
+                - heading "Learning cell dynamics with neural differential equations" [level=3] [ref=e126]:
+                  - link "Learning cell dynamics with neural differential equations" [ref=e127] [cursor=pointer]:
+                    - /url: https://www.nature.com/articles/s42256-025-01150-3?fromPaywallRec=false
+                - generic [ref=e128]: Article 18 December 2025
+            - article [ref=e130]:
+              - generic [ref=e132]:
+                - heading "Multivariate stochastic modeling for transcriptional dynamics with cell-specific latent time using SDEvelo" [level=3] [ref=e133]:
+                  - link "Multivariate stochastic modeling for transcriptional dynamics with cell-specific latent time using SDEvelo" [ref=e134] [cursor=pointer]:
+                    - /url: https://www.nature.com/articles/s41467-024-55146-5?fromPaywallRec=false
+                - generic [ref=e135]:
+                  - text: Article Open access
+                  - generic [ref=e136]: 30 December 2024
+            - article [ref=e138]:
+              - generic [ref=e140]:
+                - heading "Deep model predictive control of gene expression in thousands of single cells" [level=3] [ref=e141]:
+                  - link "Deep model predictive control of gene expression in thousands of single cells" [ref=e142] [cursor=pointer]:
+                    - /url: https://www.nature.com/articles/s41467-024-46361-1?fromPaywallRec=false
+                - generic [ref=e143]:
+                  - text: Article Open access
+                  - generic [ref=e144]: 08 March 2024
+        - generic [ref=e145]:
+          - generic [ref=e147]:
+            - heading "Funding" [level=2] [ref=e148]
+            - paragraph [ref=e150]: C.L. is supported by the National Natural Science Foundation of China (Grant no. 12171102) and the National Key R&D Program of China (Grant no. 2019YFA0709502).
+          - region "Author information" [ref=e151]:
+            - generic [ref=e152]:
+              - heading "Author information" [level=2] [ref=e153]
+              - generic [ref=e154]:
+                - heading "Authors and Affiliations" [level=3] [ref=e155]
+                - list [ref=e156]:
+                  - listitem [ref=e157]:
+                    - paragraph [ref=e158]: Institute of Science and Technology for Brain-Inspired Intelligence, Fudan University, Shanghai, China
+                    - paragraph [ref=e159]: Jingyu Dou, Feng Chen & Chunhe Li
+                  - listitem [ref=e160]:
+                    - paragraph [ref=e161]: Shanghai Center for Mathematical Sciences, Fudan University, Shanghai, China
+                    - paragraph [ref=e162]: Jingyu Dou, Wentao Lyu & Chunhe Li
+                  - listitem [ref=e163]:
+                    - paragraph [ref=e164]: Department of Mathematics and Department of Developmental and Cell Biology, University of California, Irvine, Irvine, CA, USA
+                    - paragraph [ref=e165]: Qing Nie
+                  - listitem [ref=e166]:
+                    - paragraph [ref=e167]: School of Mathematical Sciences, Center for Applied Mathematics, Shanghai Key Laboratory for Contemporary Applied Mathematics, and MOE Frontiers Center for Brain Science, Fudan University, Shanghai, China
+                    - paragraph [ref=e168]: Chunhe Li
+                - heading "Corresponding authors" [level=3] [ref=e169]
+                - paragraph [ref=e170]:
+                  - text: Correspondence to
+                  - link "email Qing Nie" [ref=e171] [cursor=pointer]:
+                    - /url: mailto:qnie@uci.edu
+                    - text: Qing Nie
+                  - text: or
+                  - link "email Chunhe Li" [ref=e172] [cursor=pointer]:
+                    - /url: mailto:chunheli@fudan.edu.cn
+                    - text: Chunhe Li
+                  - text: .
+          - generic [ref=e174]:
+            - heading "Ethics declarations" [level=2] [ref=e175]
+            - generic [ref=e176]:
+              - heading "Competing interests" [level=3] [ref=e177]
+              - paragraph [ref=e178]: The authors declare no competing interests.
+          - generic [ref=e180]:
+            - heading "Additional information" [level=2] [ref=e181]
+            - paragraph [ref=e183]: Publisher’s note Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+          - generic [ref=e185]:
+            - heading "Supplementary information" [level=2] [ref=e186]
+            - generic [ref=e188]:
+              - heading "Reporting Summary (download PDF )" [level=3] [ref=e190]:
+                - link "Reporting Summary (download PDF )" [ref=e191] [cursor=pointer]:
+                  - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-026-73257-z/MediaObjects/41467_2026_73257_MOESM1_ESM.pdf
+                  - text: Reporting Summary (download PDF
+                  - img [ref=e192]
+                  - text: )
+              - heading "Transparent Peer Review file (download PDF )" [level=3] [ref=e195]:
+                - link "Transparent Peer Review file (download PDF )" [ref=e196] [cursor=pointer]:
+                  - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-026-73257-z/MediaObjects/41467_2026_73257_MOESM2_ESM.pdf
+                  - text: Transparent Peer Review file (download PDF
+                  - img [ref=e197]
+                  - text: )
+              - heading "Supplementary Information (download PDF )" [level=3] [ref=e200]:
+                - link "Supplementary Information (download PDF )" [ref=e201] [cursor=pointer]:
+                  - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-026-73257-z/MediaObjects/41467_2026_73257_MOESM3_ESM.pdf
+                  - text: Supplementary Information (download PDF
+                  - img [ref=e202]
+                  - text: )
+          - generic [ref=e205]:
+            - heading "Source data" [level=2] [ref=e206]
+            - heading "Source Data (download XLSX )" [level=3] [ref=e210]:
+              - link "Source Data (download XLSX )" [ref=e211] [cursor=pointer]:
+                - /url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-026-73257-z/MediaObjects/41467_2026_73257_MOESM4_ESM.xlsx
+                - text: Source Data (download XLSX
+                - img [ref=e212]
+                - text: )
+          - generic [ref=e215]:
+            - heading "Rights and permissions" [level=2] [ref=e216]
+            - generic [ref=e217]:
+              - paragraph [ref=e218]:
+                - text: Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit
+                - link "http://creativecommons.org/licenses/by-nc-nd/4.0/" [ref=e219] [cursor=pointer]:
+                  - /url: http://creativecommons.org/licenses/by-nc-nd/4.0/
+                - text: .
+              - paragraph [ref=e220]:
+                - link "Reprints and permissions" [ref=e221] [cursor=pointer]:
+                  - /url: https://s100.copyright.com/AppDispatchServlet?title=Inferring%20stochastic%20dynamics%20by%20biophysical%20Neural%20ODE%20using%20single-cell%20transcriptomics&author=Jingyu%20Dou%20et%20al&contentID=10.1038%2Fs41467-026-73257-z&copyright=The%20Author%28s%29&publication=2041-1723&publicationDate=2026-05-19&publisherName=SpringerNature&orderBeanReset=true&oa=CC%20BY-NC-ND
+          - region "About this article" [ref=e222]:
+            - generic [ref=e223]:
+              - heading "About this article" [level=2] [ref=e224]
+              - generic [ref=e226]:
+                - link "Check for updates. Verify currency and authenticity via CrossMark" [ref=e228] [cursor=pointer]:
+                  - /url: https://crossmark.crossref.org/dialog/?doi=10.1038/s41467-026-73257-z
+                  - img "Check for updates. Verify currency and authenticity via CrossMark" [ref=e229]
+                - generic [ref=e230]:
+                  - heading "Cite this article" [level=3] [ref=e231]
+                  - paragraph [ref=e232]: Dou, J., Lyu, W., Chen, F. et al. Inferring stochastic dynamics by biophysical Neural ODE using single-cell transcriptomics. Nat Commun (2026). https://doi.org/10.1038/s41467-026-73257-z
+                  - paragraph [ref=e233]:
+                    - link "Download citation" [ref=e234] [cursor=pointer]:
+                      - /url: https://citation-needed.springer.com/v2/references/10.1038/s41467-026-73257-z?format=refman&flavour=citation
+                      - text: Download citation
+                      - img [ref=e235]
+                  - list [ref=e237]:
+                    - listitem [ref=e238]:
+                      - paragraph [ref=e239]:
+                        - text: Received
+                        - time [ref=e241]: 16 May 2025
+                    - listitem [ref=e242]:
+                      - paragraph [ref=e243]:
+                        - text: Accepted
+                        - time [ref=e245]: 07 May 2026
+                    - listitem [ref=e246]:
+                      - paragraph [ref=e247]:
+                        - text: Published
+                        - time [ref=e249]: 19 May 2026
+                    - listitem [ref=e250]:
+                      - paragraph [ref=e251]:
+                        - text: DOI
+                        - generic [ref=e252]: https://doi.org/10.1038/s41467-026-73257-z
+                  - generic [ref=e254]:
+                    - heading "Share this article" [level=3] [ref=e255]
+                    - paragraph [ref=e256]: "Anyone you share the following link with will be able to read this content:"
+                    - button "Get shareable link" [ref=e257] [cursor=pointer]
+                    - paragraph [ref=e258]: Provided by the Springer Nature SharedIt content-sharing initiative
+                  - generic [ref=e259]:
+                    - heading "Subjects" [level=3] [ref=e260]
+                    - list [ref=e261]:
+                      - listitem [ref=e262]:
+                        - link "Dynamical systems" [ref=e263] [cursor=pointer]:
+                          - /url: /subjects/dynamical-systems
+                      - listitem [ref=e264]:
+                        - link "Gene regulatory networks" [ref=e265] [cursor=pointer]:
+                          - /url: /subjects/gene-regulatory-networks
+  - contentinfo [ref=e266]:
+    - generic [ref=e270]:
+      - paragraph [ref=e271]: Nature Communications (Nat Commun)
+      - paragraph [ref=e272]: ISSN 2041-1723 (online)
+    - generic [ref=e273]:
+      - generic [ref=e274]:
+        - heading "nature.com footer links" [level=2] [ref=e275]
+        - generic [ref=e277]:
+          - generic [ref=e278]:
+            - heading "About Nature Portfolio" [level=3] [ref=e279]
+            - list [ref=e280]:
+              - listitem [ref=e281]:
+                - link "About us" [ref=e282] [cursor=pointer]:
+                  - /url: https://www.nature.com/npg_/company_info/index.html
+              - listitem [ref=e283]:
+                - link "Press releases" [ref=e284] [cursor=pointer]:
+                  - /url: https://www.nature.com/npg_/press_room/press_releases.html
+              - listitem [ref=e285]:
+                - link "Press office" [ref=e286] [cursor=pointer]:
+                  - /url: https://press.nature.com/
+              - listitem [ref=e287]:
+                - link "Contact us" [ref=e288] [cursor=pointer]:
+                  - /url: https://support.nature.com/support/home
+          - generic [ref=e289]:
+            - heading "Discover content" [level=3] [ref=e290]
+            - list [ref=e291]:
+              - listitem [ref=e292]:
+                - link "Journals A-Z" [ref=e293] [cursor=pointer]:
+                  - /url: https://www.nature.com/siteindex
+              - listitem [ref=e294]:
+                - link "Articles by subject" [ref=e295] [cursor=pointer]:
+                  - /url: https://www.nature.com/subjects
+              - listitem [ref=e296]:
+                - link "protocols.io" [ref=e297] [cursor=pointer]:
+                  - /url: https://www.protocols.io/
+              - listitem [ref=e298]:
+                - link "Nature Index" [ref=e299] [cursor=pointer]:
+                  - /url: https://www.natureindex.com/
+          - generic [ref=e300]:
+            - heading "Publishing policies" [level=3] [ref=e301]
+            - list [ref=e302]:
+              - listitem [ref=e303]:
+                - link "Nature portfolio policies" [ref=e304] [cursor=pointer]:
+                  - /url: https://www.nature.com/authors/editorial_policies
+              - listitem [ref=e305]:
+                - link "Open access" [ref=e306] [cursor=pointer]:
+                  - /url: https://www.nature.com/nature-research/open-access
+          - generic [ref=e307]:
+            - heading "Author & Researcher services" [level=3] [ref=e308]
+            - list [ref=e309]:
+              - listitem [ref=e310]:
+                - link "Reprints & permissions" [ref=e311] [cursor=pointer]:
+                  - /url: https://www.nature.com/reprints
+              - listitem [ref=e312]:
+                - link "Research data" [ref=e313] [cursor=pointer]:
+                  - /url: https://www.springernature.com/gp/authors/research-data
+              - listitem [ref=e314]:
+                - link "Language editing" [ref=e315] [cursor=pointer]:
+                  - /url: https://authorservices.springernature.com/language-editing/
+              - listitem [ref=e316]:
+                - link "Scientific editing" [ref=e317] [cursor=pointer]:
+                  - /url: https://authorservices.springernature.com/scientific-editing/
+              - listitem [ref=e318]:
+                - link "Nature Masterclasses" [ref=e319] [cursor=pointer]:
+                  - /url: https://masterclasses.nature.com/
+              - listitem [ref=e320]:
+                - link "Research Solutions" [ref=e321] [cursor=pointer]:
+                  - /url: https://solutions.springernature.com/
+          - generic [ref=e322]:
+            - heading "Libraries & institutions" [level=3] [ref=e323]
+            - list [ref=e324]:
+              - listitem [ref=e325]:
+                - link "Librarian service & tools" [ref=e326] [cursor=pointer]:
+                  - /url: https://www.springernature.com/gp/librarians/tools-services
+              - listitem [ref=e327]:
+                - link "Librarian portal" [ref=e328] [cursor=pointer]:
+                  - /url: https://www.springernature.com/gp/librarians/manage-your-account/librarianportal
+              - listitem [ref=e329]:
+                - link "Open research" [ref=e330] [cursor=pointer]:
+                  - /url: https://www.nature.com/openresearch/about-open-access/information-for-institutions
+              - listitem [ref=e331]:
+                - link "Recommend to library" [ref=e332] [cursor=pointer]:
+                  - /url: https://www.springernature.com/gp/librarians/recommend-to-your-library
+          - generic [ref=e333]:
+            - heading "Advertising & partnerships" [level=3] [ref=e334]
+            - list [ref=e335]:
+              - listitem [ref=e336]:
+                - link "Advertising" [ref=e337] [cursor=pointer]:
+                  - /url: https://partnerships.nature.com/product/digital-advertising/
+              - listitem [ref=e338]:
+                - link "Partnerships & Services" [ref=e339] [cursor=pointer]:
+                  - /url: https://partnerships.nature.com/
+              - listitem [ref=e340]:
+                - link "Media kits" [ref=e341] [cursor=pointer]:
+                  - /url: https://partnerships.nature.com/media-kits/
+              - listitem [ref=e342]:
+                - link "Branded content" [ref=e343] [cursor=pointer]:
+                  - /url: https://partnerships.nature.com/product/branded-content-native-advertising/
+          - generic [ref=e344]:
+            - heading "Professional development" [level=3] [ref=e345]
+            - list [ref=e346]:
+              - listitem [ref=e347]:
+                - link "Nature Awards" [ref=e348] [cursor=pointer]:
+                  - /url: https://www.nature.com/immersive/natureawards/index.html
+              - listitem [ref=e349]:
+                - link "Nature Careers" [ref=e350] [cursor=pointer]:
+                  - /url: https://www.nature.com/naturecareers/
+              - listitem [ref=e351]:
+                - link "Nature Conferences" [ref=e352] [cursor=pointer]:
+                  - /url: https://conferences.nature.com
+                  - text: Nature
+                  - text: Conferences
+          - generic [ref=e354]:
+            - heading "Regional websites" [level=3] [ref=e355]
+            - list [ref=e356]:
+              - listitem [ref=e357]:
+                - link "Nature Africa" [ref=e358] [cursor=pointer]:
+                  - /url: https://www.nature.com/natafrica
+              - listitem [ref=e359]:
+                - link "Nature China" [ref=e360] [cursor=pointer]:
+                  - /url: http://www.naturechina.com
+              - listitem [ref=e361]:
+                - link "Nature India" [ref=e362] [cursor=pointer]:
+                  - /url: https://www.nature.com/nindia
+              - listitem [ref=e363]:
+                - link "Nature Japan" [ref=e364] [cursor=pointer]:
+                  - /url: https://www.natureasia.com/ja-jp
+              - listitem [ref=e365]:
+                - link "Nature Middle East" [ref=e366] [cursor=pointer]:
+                  - /url: https://www.nature.com/nmiddleeast
+        - list [ref=e368]:
+          - listitem [ref=e369]:
+            - link "Privacy Policy" [ref=e370] [cursor=pointer]:
+              - /url: https://www.nature.com/info/privacy
+          - listitem [ref=e371]:
+            - link "Use of cookies" [ref=e372] [cursor=pointer]:
+              - /url: https://www.nature.com/info/cookies
+          - listitem [ref=e373]:
+            - button "Your privacy choices/Manage cookies" [ref=e374] [cursor=pointer]
+          - listitem [ref=e375]:
+            - link "Legal notice" [ref=e376] [cursor=pointer]:
+              - /url: https://www.nature.com/info/legal-notice
+          - listitem [ref=e377]:
+            - link "Accessibility statement" [ref=e378] [cursor=pointer]:
+              - /url: https://www.nature.com/info/accessibility-statement
+          - listitem [ref=e379]:
+            - link "Terms & Conditions" [ref=e380] [cursor=pointer]:
+              - /url: https://www.nature.com/info/terms-and-conditions
+          - listitem [ref=e381]:
+            - link "Your US state privacy rights" [ref=e382] [cursor=pointer]:
+              - /url: https://www.springernature.com/ccpa
+      - generic [ref=e383]:
+        - link "Springer Nature" [ref=e384] [cursor=pointer]:
+          - /url: https://www.springernature.com/
+          - img "Springer Nature" [ref=e385]
+        - paragraph [ref=e386]: © 2026 Springer Nature Limited
+    - img [ref=e388]

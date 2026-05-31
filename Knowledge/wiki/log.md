@@ -138,6 +138,172 @@ created: 2026-05-06
 - 更新 [[wiki/index]]（38 → 40 页）
 - 原始资料数：3 个文件 + ~44 个 PDF
 
+## [2026-05-15] fetch | Chen et al. 2023 — TCR 序列主导 CD8+ T 细胞表型
+
+抓取并归档 Cell Reports 论文 — 定量比较 TCR 序列 vs 环境信号对 CD8+ T 细胞表型的贡献。
+
+- **URL**：https://www.cell.com/cell-reports/fulltext/S2211-1247(23)01291-3 → DOI: [10.1016/j.celrep.2023.113279](https://doi.org/10.1016/j.celrep.2023.113279)
+- **核心发现**：TCR 序列是 CD8+ T 细胞表型和持久性的**主导因素**，远超环境信号（验证于 SARS-CoV-2/CMV/Influenza 三种抗原）
+- **新页面**：
+  - `raw/Chen_2023_CellReports_TCR_dominant_phenotype.md` — 原始资料
+  - [[wiki/sources/chen-2023-cell-reports-tcr-dominant-phenotype]] — 来源摘要（含与 TCRCellNet 的深度关联分析）
+- **更新 TCRCellNet**：README 新增第 3 篇文献条目
+- **更新 index**：+1 条 Sources 条目（10 → 11），页面总数 46 → 47
+- **PDF**：OA 期刊，需手动从 PMC 保存
+
+## [2026-05-15] update | nature-reader skill — 项目感知输出目录与独立论文目录
+
+优化 nature-reader skill，使精读输出适配当前项目（TCRCellNet）的组织方式。
+
+**skill 更新**：
+- [[.claude/skills/nature-reader/skill.md]] — 新增「Project-Aware Output Directory」章节
+  - 项目上下文检测逻辑（显式指定 → 工作目录 → 源路径 → 关联实体 → 兜底）
+  - 输出目录规范：`{project-root}/papers/{paper-key}/`
+  - paper key 命名规则：`{首姓}-{年份}-{短描述}`
+  - 相对路径要求（自包含、可移植）
+- Workflow 新增 Step 0：确定项目上下文和输出路径
+- Output contract 更新：所有输出移至专属目录，验证清单增加 PDF 存在检查
+
+**现有论文迁移**：
+- `TCRCellNet/papers/` → `TCRCellNet/papers/chen-2023-tcr-dominant-phenotype/`
+  - `paper.md` + `PIIS2211124723012913.pdf` + `assets/` 全部移至独立子目录
+  - 相对路径保持不变，Wiki 链接可用
+- 项目 README 更新：目录结构图 + 已归档文献表新增「精读」链接列
+
+**后续待迁移**：
+- Afik 2017 / Monian 2021 的精读待创建时将自动使用新结构
+
+## [2026-05-15] install | nature-skills — 学术工作流技能包
+
+从 https://github.com/zqywuxie/nature-skills 安装 9 个学术工作流技能到 `.claude/skills/`。
+
+- **安装技能**：
+  - nature-reader — 文献精读（中英对照全文翻译）
+  - nature-figure — 科学图表优化
+  - nature-writing — Nature 风格学术写作
+  - nature-polishing — 论文润色
+  - nature-paper2ppt — 论文转 PPT
+  - nature-citation — 引文管理
+  - nature-data — 数据可用性声明
+  - nature-response — 审稿回复
+  - nature-academic-search — 学术搜索
+- **新增 prompt**：[[prompts/nature-skills]] — 使用指南
+- **更新 index**：+1 prompts 条目（6 → 7）
+
+## [2026-05-15] fetch | Monian et al. 2022 — Peanut OIT 差异化抑制 Th 亚群
+
+抓取并归档 JCI 论文 — 花生 OIT 对克隆性不同的 Th 亚群的差异化抑制。
+
+- **URL**：https://www.jci.org/articles/view/150634 → 追溯 DOI: [10.1172/JCI150634](https://doi.org/10.1172/JCI150634)
+- **追溯资源**：GitHub [mitlovelab/PNOIT2_scRNAseq] | GEO GSE158667 | dbGaP phs001897.v2.p1 | ClinicalTrials.gov NCT01750879
+- **新页面**：
+  - `raw/Monian_2021_JCI_peanut_OIT.md` — 原始资料（全文结构化摘要）
+  - [[wiki/sources/monian-2021-jci-peanut-oit]] — 来源摘要（含方法学亮点与分析笔记）
+- **更新 TCRCellNet**：README 新增第 2 篇文献条目
+- **更新 index**：+1 条 Sources 条目（9 → 10）
+- **PDF**：OA 期刊，当前环境自动下载受限，需手动从 PMC 保存
+
+## [2026-05-15] init | TCRCellNet 课题目录
+
+创建 `TCRCellNet/` 课题文献管理目录。
+
+- **新建目录结构**：
+  - `TCRCellNet/README.md` — 项目索引
+  - `TCRCellNet/papers/` — 核心文献
+  - `TCRCellNet/notes/` — 个人笔记
+  - `TCRCellNet/data/` — 数据资源
+- **首次归档文献**：[[wiki/sources/afik-2017-trapes]] — TRAPeS (Afik et al. 2017, NAR)
+- **原始资料**：`raw/Afik_2017_TRAPeS.md`（元数据 + 摘要）；PDF 待手动从 PMC 下载
+- **更新 index**：+1 条 Sources 条目（8 → 9），+1 课题目录
+
+## [2026-05-18] fetch | popV — Ergen et al. 2024, Nature Genetics
+
+抓取并精读 Nature Genetics 论文 — 集成 8 种细胞类型注释方法以提供共识预测和校准良好的不确定性评分。
+
+- **URL**: https://www.nature.com/articles/s41588-024-01993-3 → DOI: [10.1038/s41588-024-01993-3](https://doi.org/10.1038/s41588-024-01993-3)
+- **追溯资源**:
+  - Code: [YosefLab/popV](https://github.com/YosefLab/popV) | [popv-reproducibility](https://github.com/YosefLab/popv-reproducibility)
+  - Data: Tabula Sapiens (CELLxGENE), Lung Cell Atlas, Thymus (Park 2020), Brain (MTG/M1G)
+  - Pretrained: Zenodo 10.5281/zenodo.7580707
+- **新页面**:
+  - [[Knowledge/papers/popv-2024-cell-type-annotation/paper.md]] — 中英文精读（含3图解读）
+  - [[Knowledge/papers/popv-2024-cell-type-annotation/original.pdf]] — 原始PDF
+  - [[wiki/sources/popv-2024-cell-type-annotation]] — 来源摘要
+- **更新 index**: +1 条 Sources 条目（14 → 15），页面总数 51 → 52
+
+## [2026-05-20] fetch | ProjecTILs — Andreatta & Carmona 2021
+
+Defuddle 提取 Nature Communications 全文 + 中英文精读。
+
+- 关联资源：DOI 10.1038/s41467-021-23324-4 | Code: carmonalab/ProjecTILs, STACAS | Data: figshare atlases + GEO datasets
+- 来源摘要：[[wiki/sources/andreatta-2021-projectils]]
+- 精读笔记：[[Knowledge/papers/projectils-2021/paper.md]]
+- 处理内容：bilingual paper.md (24 source blocks, 9 figure blocks), source_map.json, translation_notes.md, 9 figures (9.5MB total)
+
+## [2026-05-20] fetch | CoNGA — Schattgen et al. 2021
+
+Defuddle 提取 PMC 全文 + 全文精读。
+
+- 关联资源：DOI 10.1038/s41587-021-00989-2 | Code: phbradley/conga | Data: 10x Genomics + Thymus atlas
+- 来源摘要：[[wiki/sources/schatgen-2021-conga]]
+- 精读笔记：[[Knowledge/papers/schatgen-2021-conga/paper.md]]
+- 处理内容：bilingual paper.md (27 个 source blocks, 6 个 figure blocks), source_map.json, translation_notes.md, PDF download (7.4MB), 6 figures downloaded
+
+## [2026-05-19] fetch | PRP — Wang et al. 2026, Nature Biotechnology
+
+From 微信公众号「计算生物前沿」科普文章 → 追溯原始论文。
+
+- **URL**: https://mp.weixin.qq.com/s/YZCDBZkHLuSFPgorCmoW1w → 追溯 DOI: [10.1038/s41587-026-03128-x](https://doi.org/10.1038/s41587-026-03128-x)
+- **新页面**:
+  - `raw/wang-2026-prp-tcr-specificity-nbt.md` — 原始公众号文章存档
+  - [[wiki/sources/wang-2026-prp-tcr-specificity]] — 来源摘要
+  - [[wiki/concepts/deep-peptide-recognition-profiling]] — PRP 概念页（实验PRP+蛋白语言模型范式）
+- **更新概念页**:
+  - [[wiki/concepts/tcr-epitope-prediction]] — 新增 PRP 方法条目 + 交叉引用
+- **更新 index**: +1 Concepts（11→12），+1 Sources（15→16），页面总数 52→54
+
+## [2026-05-16] fetch | DeepTCR — Sidhom et al. 2021, Nature Communications
+
+抓取并精读 Nature Communications 论文 — 用深度学习方法（VAE + CNN + 多实例学习）对 TCR 序列进行建模。
+
+- **URL**: https://www.nature.com/articles/s41467-021-21879-w → DOI: [10.1038/s41467-021-21879-w](https://doi.org/10.1038/s41467-021-21879-w)
+- **追溯资源**:
+  - Code: [sidhomj/DeepTCR](https://github.com/sidhomj/DeepTCR) | PyPI DeepTCR
+  - Data: 10x Genomics multi-chain dataset, McPAS-TCR, tetramer-sorted data
+- **新页面**:
+  - [[Knowledge/papers/sidhom-2021-deeptcr/paper.md]] — 中英文精读（含5图5表解读）
+  - [[Knowledge/papers/sidhom-2021-deeptcr/original.pdf]] — 原始PDF
+  - [[wiki/sources/sidhom-2021-deeptcr]] — 来源摘要
+- **更新 index**: +1 条 Sources 条目（13 → 14），页面总数 50 → 51
+
+## [2026-05-16] fetch | UCell — Andreatta & Carmona 2021, CSBJ
+
+抓取并精读 CSBJ 论文 — 基于 Mann-Whitney U 统计量的单细胞基因签名评分 R 包。
+
+- **URL**: https://spj.science.org/doi/10.1016/j.csbj.2021.06.043 → DOI: [10.1016/j.csbj.2021.06.043](https://doi.org/10.1016/j.csbj.2021.06.043)
+- **追溯资源**:
+  - Code: [carmonalab/UCell](https://github.com/carmonalab/UCell) | [UCell_demo](https://gitlab.unil.ch/carmona/UCell_demo)
+- **新页面**:
+  - [[Knowledge/papers/andreatta-2021-ucell/paper.md]] — 中英文精读
+  - [[Knowledge/papers/andreatta-2021-ucell/original.pdf]] — 原始PDF
+  - [[wiki/sources/andreatta-2021-ucell]] — 来源摘要
+- **更新 index**: +1 条 Sources 条目（12 → 13），页面总数 49 → 50
+
+## [2026-05-16] fetch | cNMF — Kotliar et al. 2019, eLife
+
+抓取并精读 eLife 论文 — 用共识 NMF 从 scRNA-Seq 同时推断身份与活动基因表达程序。
+
+- **URL**：https://elifesciences.org/articles/43803 → DOI: [10.7554/eLife.43803](https://doi.org/10.7554/eLife.43803)
+- **追溯资源**：
+  - Code: [dylkot/cNMF](https://github.com/dylkot/cNMF/) | [dylkot/scsim](https://github.com/dylkot/scsim)
+  - Data: GSE86153 (organoid) | GSE102827 / GSE71585 (visual cortex) | GSE50244 (pancreas)
+  - Reproducible capsule: Code Ocean 10.24433/CO.9044782e-cb96-4733-8a4f-bf42c21399e6
+- **新页面**：
+  - [[Knowledge/papers/kotliar-2019-cnmf/paper.md]] — 中英文精读全文
+  - [[Knowledge/papers/kotliar-2019-cnmf/original.pdf]] — 原始PDF
+  - [[wiki/sources/kotliar-2019-cnmf]] — 来源摘要
+- **更新 index**：+1 条 Sources 条目（11 → 12），页面总数 48 → 49
+
 ## [2026-05-07] update | Xie et al. 2026 — 补充实验方法详解
 
 用 pdftotext 完整提取论文全文文本，详细阅读并整理了全部实验操作细节，更新到知识库。
@@ -162,3 +328,17 @@ created: 2026-05-06
 - [[wiki/entities/chen-dong]], [[wiki/entities/tian-xie]] — 更新日期
 - [[wiki/index]] — 更新日期
 - 总页面数不变（43 页）
+
+## [2026-05-22] fetch | DynNet — Dou et al. 2026, Nature Communications
+
+Defuddle 提取微信公众号科普文章 + 追溯原始 Nature Communications 论文 + 中英文精读。
+
+- **来源**：微信公众号「计算生物前沿」文章 → 追溯 DOI: [10.1038/s41467-026-73257-z](https://doi.org/10.1038/s41467-026-73257-z)
+- **原始资料**：
+  - `raw/dynnet-wechat-article.md` — 公众号文章全文
+  - `raw/dynnet-paper.pdf` — 原始论文 PDF（16.7MB，Article in Press，57页）
+- **精读笔记**：[[Knowledge/papers/dynnet-2026/paper.md]] — 中英文对照全文（24 source blocks, 6 figure blocks）
+- **新页面**：
+  - [[wiki/sources/dynnet-2026]] — 来源摘要
+  - [[wiki/concepts/dynnet]] — DynNet 概念页（含方法对比表）
+- **更新 index**：+1 Sources（18→19），+1 Concepts（12→13），页面总数 56→58

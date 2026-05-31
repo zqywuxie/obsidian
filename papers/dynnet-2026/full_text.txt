@@ -1,0 +1,3400 @@
+
+
+===== PAGE 1 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+https://doi.org/10.1038/s41467-026-73257-z
+Received: 16 May 2025
+Accepted: 7 May 2026
+Cite this article as: Dou, J., Lyu, W.,
+Chen, F. et al. Inferring stochastic
+dynamics by biophysical Neural ODE
+using single-cell transcriptomics. Nat
+Commun (2026). https://doi.org/
+10.1038/s41467-026-73257-z
+Jingyu Dou, Wentao Lyu, Feng Chen, Qing Nie & Chunhe Li
+We are providing an unedited version of this manuscript to give early access to its
+findings. Before final publication, the manuscript will undergo further editing. Please
+note there may be errors present which affect the content, and all legal disclaimers
+apply.
+If this paper is publishing under a Transparent Peer Review model then Peer
+Review reports will publish with the final article.
+© The Author(s) 2026. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
+License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit
+to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do not
+have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this
+article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the
+article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain
+permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+Nature Communications
+Article in Press
+Inferring stochastic dynamics by biophysical Neural
+ODE using single-cell transcriptomics
+
+
+===== PAGE 2 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+Inferring stochastic dynamics by biophysical Neural ODE using 
+single-cell transcriptomics 
+Authors 
+Jingyu Dou1,2, Wentao Lyu2, Feng Chen1, Qing Nie3,*, Chunhe Li1,2,4,* 
+Affiliations 
+1Institute of Science and Technology for Brain-Inspired Intelligence, Fudan University, Shanghai 200433, 
+China 
+2Shanghai Center for Mathematical Sciences, Fudan University, Shanghai 200438, China 
+3Department of Mathematics and Department of Developmental and Cell Biology, University of 
+California, Irvine, Irvine, CA 92612, USA 
+4School of Mathematical Sciences, Center for Applied Mathematics, Shanghai Key Laboratory for 
+Contemporary Applied Mathematics, and MOE Frontiers Center for Brain Science, Fudan University, 
+Shanghai 200433, China 
+ 
+Correspondence to: Qing Nie (qnie@uci.edu) and Chunhe Li (chunheli@fudan.edu.cn) 
+Abstract 
+Single-cell RNA sequencing has revolutionized our ability to dissect cellular heterogeneity and study cell 
+fate mechanisms, yet inferring stochastic dynamics from static snapshots remains a fundamental 
+challenge. Current approaches face a critical trade-off: mechanistic models impose rigid assumptions 
+limiting biological realism, while data-driven methods sacrifice interpretability for deeper mechanistic 
+explorations. Here, we present DynNet, a deep learning method that integrates Neural ODEs with 
+biophysical models and prior knowledge of gene expression dynamics. DynNet learns the stochastic 
+dynamics of gene regulatory systems for cell fate decisions. Benchmarking on synthetic data shows 
+DynNet's ability to infer stable cell states, reconstruct dynamical trajectories, and characterize multi-
+stable cell fate transitions. Using hepatocyte differentiation data, DynNet demonstrates its capability to 
+infer developmental trajectory and the underlying cell fate landscape, revealing the stability and transition 
+probabilities among distinct cell states. Applied to Epithelial-mesenchymal transition (EMT) data, 
+DynNet further captures critical gene regulations and transition paths during EMT. 
+
+
+===== PAGE 3 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+ 
+Introduction 
+Stochastic dynamical transitions are fundamental in biological, physical, and chemical systems1–5 and are 
+especially crucial for understanding cell fate determinations6,7. The existence of multiple stable steady 
+states allows cells to transition between distinct fates in response to external or internal cues. This 
+mechanism is particularly important in stem cell differentiation8, immune cell activation9, and cancer cell 
+phenotypic switching10,11. 
+Single-cell RNA sequencing (scRNA-seq) technology has enabled the study of cellular functions12,13, 
+including lineage decision, gene regulatory networks, and disease mechanisms at cellular resolution14–16. 
+However, scRNA-seq involves the destruction of cells to measure their molecular state, making it 
+impossible to directly track the specific molecular trajectories of individual cells over time17. This 
+limitation in capturing temporal dynamics has spurred the development of computational approaches to 
+reconstruct the dynamics of system behaviours. 
+Various computational methods have been developed, including Markov-model-based approaches and 
+deep learning methods, to reconstruct cell fate trajectories and model gene expression dynamics18–22. 
+These methods are now widely used to reconstruct developmental processes22–26 and disease 
+progression27,28. Markov-model-based methods focus on reconstructing cell state trajectories and ordering 
+cells in pseudo-time. Nevertheless, these types of methods lack a quantitative, interpretable dynamic 
+model explicitly linked to underlying gene regulatory mechanisms18,19,29. Neural ordinary equations 
+(Neural ODEs) use neural networks and differential equations, allowing reconstruction of gene expression 
+dynamics continuously from data20,21,30–32. However, classic deterministic Neural ODEs fail to capture the 
+multi-stable dynamics as only a definite direction of dynamics is allowed at any given point20,33–35. 
+Moreover, it is difficult for Neural ODE frameworks to include prior knowledge, for example, specific 
+gene regulatory interactions, and often the dynamics on low-dimensional latent spaces is derived from the 
+high-dimensional gene expression data, limiting the direct interpretability of the inferred dynamics at the 
+
+
+===== PAGE 4 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+level of individual genes. RNA velocity-based methods like scVelo are effective for inferring cellular 
+dynamics along trajectories by capturing the rates of spliced and unspliced transcripts16,24,31,36. Multi-
+omics data, such as metabolic markers or lineage information, might be used to estimate unspliced RNA 
+sequences37. In the absence of additional measurements, inferring interpretable dynamics involving 
+underlying gene regulatory mechanisms solely from scRNA-seq data remains a challenge. As gene 
+regulatory network (GRN) models provide interpretable frameworks for understanding transition 
+dynamics between different stable states38–42, it’s important to bridge mechanistic modelling and data 
+driven approaches43–47. In addition, energy landscape methods provide effective ways to characterize 
+stability, transitions, and stochastic dynamics for cell fate decision processes in gene regulatory 
+networks41,44,48. 
+Here we present DynNet (Stochastic Dynamics Inference Network) to infer the latent gene regulatory 
+dynamics. Crucially, DynNet leverages scRNA-seq data collected at multiple, discrete, and known time 
+points, utilizing the temporal information as constraints to model the underlying continuous process. Our 
+core idea is to employ stochastic differential equations (SDEs), the natural mathematical framework for 
+stochastic simulation, to mechanistically decouple the dynamics into a deterministic gene regulatory drift 
+term and a diffusion term representing stochastic fluctuations, allowing for interpretable, single-cell level 
+inference. In this approach, the model jointly optimises biophysical parameters and network weights by 
+incorporating prior regulatory knowledge via evidence-tiered constraints. To capture the inherent 
+stochasticity of gene expression dynamics, DynNet employs a neural network to estimate the noise 
+variance dynamically, allowing for a more accurate description of single-cell data. DynNet also integrates 
+landscape reconstruction within its framework to infer the underlying dynamical structure of gene 
+regulatory systems. By embedding energy landscape analysis directly into its modelling process, DynNet 
+provides a tool to identify transition driver genes and important regulations, through perturbation analysis.  
+To evaluate DynNet, we apply it to representative synthetic datasets, including mutually inhibited self-
+activation (MISA) model and cell differentiation gene network. DynNet can efficiently reconstruct steady 
+
+
+===== PAGE 5 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+state distributions, cell state evolution vector field, and cell fate landscape, compared with ground truth 
+data. We further apply DynNet to realistic biological datasets: the epithelial-to-mesenchymal transition 
+(EMT) process with external signalling modulation42 and the hepatocyte differentiation system exhibiting 
+bifurcation behaviour49. Through DynNet, we reconstruct the developmental trajectory and underlying 
+dynamic landscape for the hepatocyte differentiation. We also quantify the most probable state transition 
+paths and identify key regulators driving EMT. 
+Results  
+The overview of the DynNet 
+We developed a hybrid modelling framework, DynNet (Figure 1), based on dynamical systems theory to 
+reconstruct continuous cell fate transition dynamics. DynNet is based on discrete snapshot data in 
+scRNA-seq across multiple time points. We define the cell data as being measured at a total of T time 
+points, 𝑡= 1, 2, 3, … , 𝑇. For any given time point t, the number of cells is 𝑁𝑡, and the number of genes is 
+𝑀. We assume that the initial time point (𝑡 =  1) represents the starting point of the biological process, 
+intermediate time points capture the transition states, and the final time point (𝑡 =  𝑇) corresponds to the 
+terminal phenotype, such as fully differentiated cells or stable states. First, by pre-processing the raw data 
+(Figure 1A), we transform the sequencing data of 𝑁𝑡 cells at each time point into a gene expression 
+matrix 𝐗𝐭∈ℝ𝑁𝑡×𝑀= {𝐱𝑖}, where 𝐱𝑖∈ℝ𝑀 represents a feature vector characterizing the state of the i-
+th cell. The core of this work is to model the unobservable transitions between time points based on 
+dynamical systems theory. SDEs provide a natural formal framework for describing stochastic transitions 
+between cell states50,51. Therefore, we model gene expression dynamics using SDEs 
+d𝐱= 𝐟(𝐱)d𝑡+ 𝛔(𝐱)d𝐖
+(1)  
+where 𝐱∈ℝ𝑀 represents the state of gene expression at a certain time. The term 𝐟(𝐱) ∈ℝ𝑀 describes 
+non-linear gene regulatory interactions, while 𝛔(𝐱) accounts for both biochemical noise (intrinsic 
+
+
+===== PAGE 6 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+fluctuations) and environmental noise (extrinsic fluctuations). The noise 𝐖(𝑡) represents the standard 
+Brownian motion, with independent components satisfying 𝔼[𝐖𝑖(𝑡)] = 0 and 𝔼[𝐖𝑖
+2(𝑡)] = 𝑡. 
+According to SDE theory52, the noise term satisfies 𝛔(𝐱)𝛔(𝐱)T = 2𝐃(𝐱), where 𝐃(𝐱) represents the 
+diffusion coefficient matrix, and ε denotes the noise intensity. Under long-term equilibrium conditions 
+(𝑡→∞), the system dynamics converge to a steady state probability distribution 𝑃ss. We employ a 
+velocity estimation network to estimate 𝐟(𝐱) and a noise estimation network to estimate 𝐃(𝐱). To 
+incorporate prior biological knowledge, the nonlinear function 𝐟(𝐱) explicitly encodes gene regulatory 
+relationships via a neural network layer embedding Hill functions (Figure 1C), with dynamics of gene i 
+governed by 
+𝐟i(𝐱) = ∑
+𝑎ij𝑥𝑗
+𝑛ℎ
+𝑠𝑗
+𝑛ℎ+ 𝑥𝑗
+𝑛ℎ
+𝑁ij=1
++ ∑
+𝑏ij𝑠𝑗
+𝑛ℎ
+𝑠𝑗
+𝑛ℎ+ 𝑥𝑗
+𝑛ℎ
+𝑁ij=−1
+−𝑘𝑖𝑥𝑖,  𝑖= 1,2, ⋯, 𝑀.
+(2) 
+where 𝑎ij and 𝑏ij represent activation and inhibition strengths from gene 𝑗 to gene 𝑖, respectively, 𝑠𝑗 
+denotes the threshold level corresponding to gene j, and 𝑘𝑖 reflects the degradation rate of gene 𝑖. The 
+model is constrained using a prior gene regulatory network (GRN) adjacency matrix 𝑁, where 𝑁ij = 1 
+indicates activation, and 𝑁ij = −1 indicates inhibition (𝑖, 𝑗 =  1,2, … , 𝑀) (Figure 1B). 𝑛ℎ is the Hill 
+coefficient, which was chosen to be 4 in DynNet based on the results of previous works53,54 (see 
+Supplementary Information Section A.2 and Figure S1). 
+To ensure that the learned dynamics align with known biological network structures and to prevent 
+overfitting sparse time-sampled data, we introduce two constraint mechanisms. Hard constraints mask 
+neural connections that do not exist in the GRN, restricting parameter updates only to existing edges. Soft 
+constraints penalize spurious regulatory effects via regularization (Methods). For the stochastic 
+fluctuations in the SDE system, we employ an additional noise estimation network. The diffusion 
+coefficient is estimated by an independent neural network, 𝐃ϑ (Figure 1C, right). This network 
+
+
+===== PAGE 7 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+constructs the diffusion matrix, which is constrained to be a diagonal matrix to model biochemical 
+fluctuations. 
+The training process follows an alternating optimization strategy (Figure 1E). First, the regulatory 
+parameters of the velocity estimator are set as 𝜃= (𝐀, 𝐁, 𝐒). Here, 𝐀 is activation interaction matrix, 
+with its element 𝑎ij representing the activation strength from gene j to gene i. 𝐁 is inhibition interaction 
+matrix, with its element 𝑏ij, representing the inhibition strength from gene j to gene i. 𝐒 is threshold 
+vector, with its component 𝑆𝑗 denoting the half-maximal effective concentration (threshold level) 
+corresponding to gene j. These parameters are optimised by minimizing a composite loss function ℒ𝓋. 
+This composite loss consists of a dynamical consistency loss 𝔼𝑇[|𝐟(𝐱𝑇)|2], a weight-matching loss 
+1
+𝑇∑
+𝔼𝑡
+𝑇
+𝑡=1
+[|𝐰𝑡
+̂ −𝐰𝑡|2], and a constraint term 𝒞(𝜃). The expectation 𝔼𝑡[⋅] in the loss definition is 
+computed as the empirical average over the samples at time 𝑡. The dynamical consistency loss minimizes 
+the drift term when the system is close to stable state, ensuring that the learned dynamics meet the stable 
+state conditions. To guarantee consistent distribution weights among multiple stable states throughout the 
+developmental process, we introduced a weight-matching loss (Figure 1D). This term minimizes the 
+discrepancy between the empirical weights 𝐰, which represents the distribution weights estimated from 
+the data using a Gaussian Mixture Model (GMM), and 𝐰̂, which is estimated from simulated data 
+generated by the DynNet model. We provide the theoretical derivation and verify the stability of our 
+designed loss function on multi-stable datasets (see Supplementary Information Section A.4 and Figure 
+S2-S4). The constraint term imposes restrictions on the parameters in accordance with the prior GRN, 
+thereby preventing overfitting to sparsely sampled temporal data (see Methods). The overall loss function 
+is formulated as 
+ℒ𝑣= 𝜇1𝔼𝑇[|𝐟(𝐱𝑡𝑛)|2] + 𝜇2
+1
+𝑇∑𝔼𝑡
+𝑇
+𝑡=1
+[|𝐰𝑡
+̂ −𝐰𝑡|2] + 𝜆1𝒞(𝜃),
+(3) 
+
+
+===== PAGE 8 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+where different hyperparameters combinations (𝜇1, 𝜇2 and 𝜆1 are determined in pre-experiments, see 
+Supplementary Information Section A.5) are used to alternately train the parameter matrix 𝐀 and 𝐁, as 
+well as the parameter vector 𝐒, until convergence, serving as a description of the deterministic dynamics 
+(Figure S2). After optimizing the velocity estimator parameters, the noise parameters 𝜗 are calibrated by 
+minimizing a Kullback-Leibler (KL) divergence loss, which further refines the model's representation of 
+both biochemical fluctuations and environmental noise. The loss for noise estimator is defined as 
+ℒ𝒟= 1
+T ∑𝔼𝑡[KL(𝑝̂𝑗,𝑡|𝑝𝑗,𝑡)]
+T
+t=1
++ λ2ℛ2(ϑ)
+(4) 
+where ℛ2(𝜗) is a regularization term.  
+The stable state probability distribution 𝑃ss(𝐱) is derived using moment equations and subsequently the 
+energy landscape is calculated as 𝑈(𝐱) = −ln 𝑃ss (𝐱) (Figure 1F), which reveals the attractor structure 
+and cell state stability48,54. In this landscape, local minima correspond to stable cellular phenotypes, while 
+saddle points indicate the critical points of fate transitions. The landscape not only elucidates the global 
+stability of the attractors but also estimates the transition pathways between them. In summary, DynNet 
+reconstructs continuous dynamical trajectories from discrete scRNA-seq data by integrating biophysical 
+modelling with deep learning techniques. Its output includes reconstructing cell fate transitions, 
+constructing cell type transition networks, analysing gene regulatory relationships, and predicting cell 
+fates (Figure 1G). In the following sections, we demonstrate the effectiveness of DynNet by applying it to 
+a variety of synthetic and realistic scRNA-seq datasets.  
+DynNet accurately recovers multi-stable dynamics in simulation data of MISA 
+model 
+
+
+===== PAGE 9 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+The Mutual Inhibition and Self-Activation (MISA) model54,55 is a classical gene regulatory motif in which 
+two genes mutually inhibit each other while self-activating themselves (Figure 2A and Figure S5). The 
+system's multi-stability property makes it a mathematically tractable benchmark for dynamic inference 
+methods. We generated synthetic data comprising five temporal snapshots (2000 samples per time point), 
+capturing transitions from initial states to equilibrium. Phase space analysis of the simulated data revealed 
+three stable states: an X1-dominant differentiated state (S1), an X2-dominant differentiated state (S2), and 
+a balanced pluripotent state (S3) with moderate expression levels (Figure 2B). To evaluate DynNet's 
+performance in multi-stable systems, we established a comprehensive analysis framework assessing three 
+key aspects: stable state localization accuracy, single-cell fate prediction reliability, and global dynamic 
+reconstruction capability. This framework allows for a comprehensive verification of the model's capacity 
+to resolve multi-stable configurations, track single-cell developmental paths, and recover dynamical 
+landscapes. 
+To assess the ability of DynNet to recover and quantify the properties of the system's stable states, we 
+compared its predictions against the ground truth simulation data of MISA. DynNet correctly identified 
+the presence of three stable states at the last time point. We then quantitatively compared DynNet's 
+estimated positions and variances of these stable states to those derived from ground truth data. This 
+comparison indicates that DynNet accurately estimates stable state centers, showing close agreement with 
+observed data (Figure 2C). Furthermore, the covariance regions, reflecting stable state variability, also 
+show alignment with the simulation data. Beyond position and covariance, DynNet's estimates of the 
+marginal distributions for variables X1 and X2 also closely match those observed in the ground truth data 
+(Figure 2D and Figure S6). The reconstructed energy landscape shows agreement with the overall 
+distribution and shape of the data (Figure 2E). Consistent performance in reconstructing stable state 
+properties was also observed when applying DynNet to bistable data (Figure S7 and S8). Collectively, 
+these findings demonstrate DynNet's capacity to accurately identify and quantify key stable state 
+properties, including their number, locations, associated uncertainties and marginal distributions. This 
+
+
+===== PAGE 10 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+demonstrated capacity is crucial for precisely defining distinct cellular states and confirms DynNet's 
+reliability in accurately predicting and comprehensively characterizing the stable states of multi-stable 
+systems.  
+To validate single-cell fate predictability, we assessed DynNet's performance by formulating stable state 
+prediction as a classification task based on decision boundaries. As a quantitative measure of prediction 
+reliability, decision boundaries delineate the regions of phase space leading to different stable states (see 
+Supplementary Information Section D). The grid-structured dataset produced by the MISA model 
+delineates the ground truth decision boundaries, serving as a benchmark for our comparative analysis 
+(Figure 2F left). We then applied the trained DynNet model to predict the stable state for each point in the 
+grid-structured dataset and derived its corresponding decision boundaries (Figure 2F right). DynNet's 
+predicted decision boundaries demonstrate consistency with those obtained from the simulation data, 
+accurately dividing the phase space into the three stable state basins of attraction. This agreement further 
+demonstrates the effectiveness of DynNet in delineating the region of attraction in phase space. We also 
+compare the decision boundaries between DynNet and Neural ODE method as benchmark method (see 
+Supplementary Information Section C). The decision boundaries predicted by DynNet are more accurate 
+than those predicted by the classic Neural ODE method. These results demonstrate that for some cells 
+with an undetermined fate, DynNet can effectively predict their future fate (Figure S9 and S10).  
+To evaluate DynNet's ability to reconstruct the system's global dynamic behaviour, we first assessed its 
+performance in reconstructing the overall velocity field. We computed the velocity field of the simulated 
+data as a benchmark (Figure 2H and Figure S11). The velocity field estimated from DynNet not only 
+captured key features such as decision boundaries and stable states but also demonstrated better 
+performance in approximating the true dynamics compared to the Neural ODE method across datasets 
+with varying numbers of time points (2, 3, and 5) (Figure 2G and Figure S11). Unlike the traditional 
+Neural ODE, which struggled to accurately reconstruct dynamics with fewer time points and required 
+more data for comparable accuracy (Figure S11), DynNet consistently provided more accurate predictions 
+
+
+===== PAGE 11 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+across all time points tested. These results underscore the robustness of DynNet in reconstructing the 
+underlying dynamics of the system with limited temporal data. Beyond reconstructing the overall velocity 
+field, we also evaluated DynNet's ability to capture dynamic transitions between stable states. To 
+specifically validate this ability, we used a perturbed bistable system. Data was simulated from this 
+system by modifying parameters to alter stable state weights without changing their positions, thereby 
+capturing a clear transition from the low-X1/high-X2 state to the high-X1/low-X2 state (Figure S7 and 
+S12). DynNet accurately identified this transition when inferring dynamics from the simulated data 
+(Figure S12). These results support that DynNet can robustly reconstruct the global dynamics and state 
+transitions of multi-stable systems. 
+To validate DynNet's reliability in practical applications, we evaluated its robustness against violations of 
+modeling assumptions and its optimization stability. First, regarding the robustness to noise structures, we 
+verified that DynNet maintains high fidelity even when the underlying data exhibits non-diagonal 
+covariance (Figure S13). Notably, explicitly modeling the full non-diagonal diffusion matrix yielded 
+negligible performance gains on these simulated datasets. These results indicate that the diagonal 
+diffusion assumption provides a robust approximation, effectively balancing computational efficiency 
+with modeling fidelity. To further bridge the gap between continuous SDE modeling and the discrete, 
+sparse nature of scRNA-seq data, we validated DynNet on Gillespie-simulated trajectories with binomial 
+dropout (Figure S14). The model successfully recovered the sparse regulatory topology (with near-zero 
+off-diagonal terms) and accurately quantified cell fate biases, demonstrating robustness to realistic 
+measurement noise. We further evaluated the stability and efficiency of the optimization process, finding 
+that the model exhibits high parametric consistency by converging to the same set of regulatory 
+parameters across independent random initializations (Figure S15). Additionally, a comparison of 
+initialization strategies reveals that incorporating the GRN prior significantly accelerates loss 
+convergence compared to random initialization, empirically validating the computational necessity of our 
+prior-guided training strategy (Figure S16). 
+
+
+===== PAGE 12 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+DynNet accurately recovers simulation data for developmental branching process 
+To further evaluate DynNet's performance, we constructed a gene regulatory network comprising 7 genes 
+(Figure 3A and Figure S17). In this network, red arrows denote activation, while blue arrows indicate 
+repression. Here, G1, G2 and G3 progressively activate G4 and G5, which mutually inhibit each other, 
+forming a toggle switch, and G6 and G7 are downstream targets of G4. BoolODE, a stochastic differential 
+equation-based simulator was used to simulate the multi-stable dynamics56. Training data comprise six 
+temporal snapshots capturing the transition from the initial state to equilibrium, which are reduced in 
+dimensionality using Principal Component Analysis (PCA) (Figure 3B). This system exhibits 
+differentiation-like dynamics, as the system state evolves from a stem-cell-like state (I) into two distinct 
+differentiation states (D1 and D2) over time. Comparing the gene expression in the two differentiation 
+states, we found that genes G4, G5, G6, and G7 showed significant differences between the two stable 
+states, which is consistent with the gene regulatory relationships (Figure 3C). 
+DynNet successfully reconstructed the system's dynamics from simulated data. The marginal distributions 
+of the estimated stable states demonstrate agreement between DynNet's estimates and the data (Figure 
+3D). The estimated velocity field accurately captures gene expression trajectories toward stable states 
+(Figure 3E). However, we also noted that the estimated velocity fields do not fully align with the cell 
+trajectories before cell fate bifurcation. This apparent misalignment may arise because the overlap 
+between pre-bifurcation states and the bifurcation points in the projection space (Figure 3B) makes it 
+challenging to accurately assess the dynamics in this visualization. Despite using data generated by a 
+simulator based on a different dynamic modelling framework from being used by DynNet, the model 
+successfully estimated the dynamics. Using the gene expression dynamics inferred by DynNet, we 
+analysed the temporal changes in individual genes. We specifically observed the cascade activation 
+dynamics involving gene G1, G2, and G3 (Figure S18), which showed characteristic transient expression 
+profiles with levels first increasing and then decreasing over time. Among the downstream targets, we 
+focused on G6 and G7, which serve as marker genes distinguishing different cell fates. The mutual 
+
+
+===== PAGE 13 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+inhibition between G4 and G5, acting as cell fate switches, then causes a significant and synchronous 
+bifurcation in the expression levels of both G6 and G7, clearly marking the system's bistable fate choice 
+(Figure 3F). Consistent with the MISA validation, DynNet accurately recovered the bifurcation dynamics 
+and steady-state distributions from Gillespie simulation data (Figure S19), further confirming its 
+robustness to realistic molecular fluctuations. We also validated the performance of DynNet on this 
+dataset with an extra non-diagonal noise as environment noise (Figure S20 and S21). Despite being 
+trained solely with the diagonal diffusion matrix, we confirmed the DynNet's ability to reconstruct the 
+attractors with accurate noise estimation. Furthermore, quantitative accuracy showed minimal relative 
+error in inferred stable state weights and agreement in the marginal density plots (Figure S22). These 
+results support our modeling choice with the diagonal diffusion matrix assumption. 
+We next investigated the impact of prior knowledge constraints on model inference. Using hard 
+constraints where the regulatory relationships in the simulation data were predefined, the interaction type 
+between two genes remains fixed during optimization, and crucially, parameters for non-existent 
+interactions (not present in the prior) are rigidly masked or fixed to zero. For example, if the prior dictates 
+that gene j has no inhibitory effect on gene i, the corresponding inhibitory parameter is set to zero and is 
+not optimized. In contrast, soft constraints do not rigidly mask parameters but instead penalize them 
+during optimization, driving them to be as small as possible (Figure S23 and S24). Figure 3H illustrates 
+the training loss trajectories, and this flexibility comes at a cost: soft constraints lead to slower 
+convergence compared to hard constraints due to the expanded parameter search space. Despite the 
+computational cost, this difference allows soft constraints to explore the parameter space and potentially 
+discover new interactions. However, we noted that when using soft constraints, the estimated parameters 
+occasionally diverged from the true underlying network (Figure 3G and Figure S24). The edges not 
+present in the original network yet still show nonzero estimated values after optimization (Figure 3G), 
+such as the activating edge from G5 to G7. This phenomenon is biologically explicable by the indirect 
+interaction in the true network: G5 inhibits G4, and G4 in turn inhibits G7. This double-inhibition induces 
+
+
+===== PAGE 14 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+a positive correlation between G5 and G7 expression, which the model interprets as a direct regulatory 
+edge under soft constraints. Nonetheless, for edges present in the prior network, DynNet produced 
+reasonable weight predictions. While soft constraints require careful interpretation of such indirect 
+relationships, they offer the significant advantage of allowing the model to infer potential regulatory 
+relationships, a capability not possible with rigid hard constraints. Notably, this implies that the soft 
+constraint approach may be viewed primarily as a strategy to enhance the reconstruction of system 
+dynamics by capturing functional dependencies, rather than as a dedicated tool for precise structural 
+network inference. Building upon this capacity to capture functional dynamics, DynNet naturally supports 
+in silico perturbations. Simulated suppression of the driver gene (G4) in the 7-gene network correctly 
+predicted a macroscopic shift from a developmental bifurcation to a monostable trajectory (Figure S40). 
+To investigate this discovery capability when prior knowledge is incomplete, we performed experiments 
+on the 7-gene network with only self-activation terms as prior, leaving all cross-gene regulatory 
+interactions to be inferred. In this case, hard constraint did not lead to the desirable dynamics because of 
+the loss of prior information. But DynNet successfully reconstructed the underlying dynamics with a 
+possible GRN structure based on the dynamic data under soft constraint (Figure S25). Furthermore, we 
+demonstrate that DynNet can learn dynamics through a two-step method of topology-hard constraint 
+inference parameters in a soft constraint learning network (see Supplementary Information Section E.2 
+and the Figure S36-38). To validate this structural identifiability and the utility of data-driven priors, we 
+evaluated DynNet across 50 synthetic networks (see Supplementary Information Section E.4). 
+Initialization with a correlation network acted as an optimization accelerator, speeding up convergence 
+while enabling the soft-constraint to robustly correct false prior edges (Figure S46). Consequently, 
+DynNet demonstrated reliable de novo topological recovery, maintaining robust accuracy under purely 
+data-driven settings (correlation network as prior) and even when guided by a 30% corrupted prior 
+(Figure S39). 
+
+
+===== PAGE 15 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+Given these advantages, we further tested DynNet's inference capability under limited observational data. 
+We designed a 9-dimensional gene network and considered the scenario where only a subset of genes 
+could be observed and performed dynamical estimation based on this limited information (Figure S26). 
+The simulated data evolved into three discrete stable states, each corresponding to distinct cell types 
+characterized by the expression of genes G, H, and I. We selected a subset of genes for training DynNet to 
+fit the multi-stability data generated by the model and applied soft constraints for regularization. DynNet's 
+estimated stable states show alignment with the simulation data in terms of their centers, marginal 
+distributions, and covariance regions. Although some deviations were observed between the estimated 
+results and the data, particularly in the marginal distributions of genes E and F where two low-expression 
+states were less distinctly separated in the simulation data compared to the estimates, the overall 
+consistency and biological interpretability remained evident (Figure S26). The test results on the synthetic 
+gene network demonstrate that DynNet effectively handles complex gene regulatory dynamics of cell 
+differentiation, even when data is incomplete, especially through indirect regulation (Figure S27). This 
+capability to reconstruct dynamics from incomplete node observations is particularly crucial given 
+DynNet's fundamental design philosophy. Rather than attempting to model the entire transcriptome, 
+DynNet focuses on capturing the continuous dynamics of a targeted set of core driver genes governing 
+cell fate decisions. Because the complete biological network inevitably involves unobserved intermediate 
+regulators, the ability to effectively absorb these hidden effects into the core network via inferred indirect 
+interactions is paramount. By doing so, DynNet ensures the recovery of macroscopic system dynamics 
+even when the analysis is strictly confined to a limited core gene set. 
+We also investigated the impact of sparse temporal sampling by determining the required temporal 
+resolution on synthetic datasets. We evaluated the impact of sparse temporal sampling across multiple 
+dimensions. While sparse sampling yielded high error and variance, prediction accuracy, loss 
+convergence, and structural recovery all optimally plateaued between 4 and 6 time points (Figures S41-
+S44). This confirms that a practical resolution of 4 to 6 time points, which aligns well with standard 
+
+
+===== PAGE 16 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+scRNA-seq experimental designs, provides sufficient temporal anchors for robust continuous dynamic 
+inference. 
+DynNet deciphers bifurcation dynamics and fate determination in hepatocyte 
+differentiation 
+To assess DynNet's capability in inferring stochastic dynamics in real biological systems, we applied 
+DynNet to a bifurcating dataset from hepatocyte differentiation. In vitro differentiation of pluripotent 
+stem cells bifurcates into distinct cell fates, such as hepatocyte-like cells or liver bud (LB) formation, 
+depending on the culture conditions49. Recent studies have systematically analyzed the differentiation 
+trajectory from induced pluripotent stem cells (iPSCs) to mature hepatocyte-like (MH) state and LB state. 
+During early differentiation, iPSCs first transition to the definitive endoderm (DE) stage before 
+progressing to the hepatic endoderm (HE) state. At this stage, distinct culture conditions drive two 
+divergent pathways: conventional conditions yield immature hepatoblast-like (IH) cells that mature into 
+hepatocyte-like cells, whereas organoid cultures induce the formation of LB tissues (Figure 4A). Here, we 
+evaluate the feasibility of reconstructing this bifurcation process using DynNet. 
+For simplicity, we identified 20 candidate key genes for further investigation through differential gene 
+expression analysis and functional annotation (Figure S28). We computed the asynchronous correlation 
+among candidate genes by matching data across different time points through data-driven method (see 
+Supplementary Information Section F.1). This step ensures that gene regulatory relationships are captured 
+while accounting for temporal dynamics. Based on the calculated asynchronous correlations, we 
+estimated a gene regulatory network from the candidate genes. The estimated gene-gene interactions were 
+visualized using a circular plot, with red edges indicating activation and blue edges indicating inhibition. 
+This network serves as the reference framework for DynNet analysis (Figure 4B and Figure S29). 
+Dimensionality reduction of the key genes revealed the underlying developmental trajectory, where the 
+
+
+===== PAGE 17 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+first principal component primarily captured differentiation progression, and the second one reflected 
+cellular heterogeneity. Notably, the two terminal cell states exhibited clear separation (Figure 4C). 
+To analyze this bifurcation dataset, we employed DynNet to characterize its dynamic properties and 
+regulatory interactions. The dynamic modelling allowed us to validate the branching trajectories and 
+molecular mechanisms that regulate hepatocyte differentiation. Figure 4D presents a comparison between 
+the expression density distributions of several genes in the estimated stable states and the corresponding 
+empirical data. This comparison demonstrates that DynNet accurately estimates the marginal expression 
+profiles observed in both terminal differentiation states. Concurrently, we computed the velocity field and 
+visualized it on the energy landscape to reveal the global dynamic properties of the system. The system 
+showed two stable attractors corresponding to MH and LB states, with velocity streamlines converging 
+towards these attractors. Additionally, the velocity fields at the HE cluster exhibits bifurcation dynamics, 
+consistent with experimental observations of HE cells displaying different differentiation trajectories 
+under varying culture conditions (Figure 4E). To investigate developmental transition pathways, we 
+quantified transition actions between different cell states and estimated their associated probabilities57. 
+The results show that intermediate states lowered transition actions, for example, the DE→HE→early LB 
+path required less action than a direct DE→LB transition (Figure 4F). This is consistent with our previous 
+findings showing that intermediate states can accelerate cell fate transitions42. Reverse transitions 
+consistently exhibit higher action costs than forward developmental transitions. Additionally, transitions 
+to MH states require less action than those to LB states, suggesting a developmental bias toward MH. 
+First passage time (FPT) analysis58 further support this finding, showing that MH states have shorter FPTs 
+than LB states, aligning with their lower transition action costs. To assess robustness, we evaluated 
+DynNet across different simulated timescales and found that FPT estimates remain consistent across 
+stable states, suggesting that DynNet effectively captures the system's global dynamical features (Figure 
+4G). 
+
+
+===== PAGE 18 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+Finally, we performed in silico knockout experiments in DynNet's dynamic model. We targeted highly 
+expressed genes in distinct cell states to assess their impact on differentiation. Knocking out these 
+lineage-specific markers redirected differentiation, highlighting their role in cell fate determination 
+(Figure 4H). Eliminating MH-specific genes such as TOB1, which maintain mature hepatocyte function, 
+accelerated the transition toward LB states, indicating their critical role in preserving mature cell identity, 
+consistent with existing biological evidence59,60. In contrast, removing LB markers such as RANBP1 
+promoted differentiation toward the MH state. This result suggests that these genes play a crucial role in 
+regulating the balance between progenitor and differentiated states, consistent with previous findings on 
+lineage commitment in hepatocyte development61. Similarly, knockout of stem cell markers such as 
+SRGAP2 did not affect the final outcome but altered the speed of differentiation, likely due to the reduced 
+stemness of the cells. This observation aligns with studies indicating that stem cell markers regulate 
+pluripotency and proliferation rather than directly determining cell fate62. First passage time (FPT) 
+analyses further support these findings: knocking out MH markers led to significantly reduced LB FPTs, 
+reflecting a faster transition, and vice versa (Figure 4I and Figure S30). For genes whose mechanisms are 
+not yet well understood, DynNet can predict their impact on the differentiation process through knockout 
+experiments, as demonstrated with CHP1, SRGAP2 and SRSF9. Overall, the knockout simulations 
+provide valuable insights into how intercellular interactions and gene regulatory mechanisms drive cell 
+fate decisions. 
+More broadly, our findings demonstrate that DynNet enables a detailed reconstruction of hepatocyte 
+differentiation dynamics at the single-cell level. The enhanced resolution provided by DynNet allows us 
+to capture the evolving dynamics and regulatory interactions, revealing the gradual transitions between 
+distinct cell fates. Although cell fate bifurcation is a complex process, DynNet reliably recapitulates both 
+the stable state distributions and dynamics observed in experimental data. These results underscore 
+DynNet's potential for revealing the mechanistic underpinnings of cellular differentiation and fate 
+determination. 
+
+
+===== PAGE 19 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+DynNet decodes EMT landscape switching  
+To see the effectiveness of DynNet in different biological data, we applied it to a TGF-β perturbation 
+lung cancer time-course dataset for EMT. We analyzed dynamics of this single-cell dataset measuring 36 
+genes at seven time points (Day 0, 2, 6, 10, 12, 16, and 20) in over 100,000 cells. TGF-β was applied for 
+the first 10 days to induce EMT and then withdrawn for the next 10 days to promote the mesenchymal-to-
+epithelial transition (MET), a reversal in cell fate. We estimated the data-driven energy landscape from 
+the real data, representing it in the projection space (Figure 5A, Figure S31-S33 and Methods) and 
+performed K-means clustering to identify four clusters, corresponding to terminal states E, M, IM (MET), 
+and pEMT (partial EMT state), in agreement with previous work63. First, we focused on the period from 
+Day 10 to Day 20, when cell fate transitions are driven solely by gene regulations.  
+The MET process begins at Day 10 and stabilizes by Day 20. To investigate these dynamics, we first 
+calculated the data-driven landscape, estimated from the distribution of scRNA-seq data (Methods). This 
+landscape was visualized by projecting the high-dimensional data onto a one-dimensional axis using PCA 
+(Figure 5B). The position along this axis represents the progression through the MET process, and the 
+height of the potential landscape at each point indicates the potential (or energy) of the corresponding cell 
+state. At Day 10, the M state exhibits low energy, reflecting its stabilization following the TGF-β-induced 
+transition from the E state (Figure 5B, Top). After TGF-β removal, the M state's energy increases and the 
+E state's decreases (Figure 5B, Bottom). These shifts suggest that the energy landscape underlies the 
+transition from the M state to the E state. The global stability of this system converges to the E state. 
+To simplify DynNet's parameters and reconstruct the MET dynamics, we focused on a subset of key 
+genes driving the cell fate transition. As DynNet can capture indirect regulatory interactions, reducing the 
+gene to a subset should still reveal the main dynamic trajectories. We performed PCA using 𝑃𝐶𝐸 and 
+𝑃𝐶𝑀, derived from E and M markers respectively, and calculated each gene's contribution along these 
+axes (Figure S33). This analysis revealed that only a few genes distinguish the E and M states. Based on 
+
+
+===== PAGE 20 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+the bimodality coefficient of gene expression from Day 10 to Day 20, we selected five core genes (Figure 
+S33 and S34). For the selected core genes, we investigated currently known potential gene interactions 
+and constructed a prior network (see Supplementary Information Section F.2). Since the regulatory 
+relationships among genes are not fully understood, we applied soft constraints as prior information. 
+We trained DynNet on the MET data to estimate the dynamics governing cell fate transitions. Figure 5C 
+displays the model-based energy landscape, derived from DynNet's learned dynamics, with gene 
+expression data at Day 20 overlaid. The alignment of low-energy regions with high-probability areas 
+indicates that DynNet accurately captures the system's dynamic behaviour. Stable state simulations reveal 
+that the potential distributions of E and M markers clearly distinguish the two states, a finding further 
+supported by the marginal gene expression distributions (Figure 5D), which show that DynNet effectively 
+estimates both the width of gene expression peaks and the intrinsic noise levels. In addition, cells in the E 
+state exhibit high E marker expression, while cells in the M state show high M marker expression, and 
+intermediate cells express both (Figure 5E). The velocity field calculated in the projected space (Figure 
+5F) confirms the stability of the E and M states. However, not all cells revert to the E state, suggesting 
+that the M state retains some stability. Furthermore, we estimated a weighted gene regulatory network 
+based on the prior gene network (Figure 5G). The estimated results align well with biological evidence, 
+revealing mutual activation among characteristic genes within the same cell type, while characteristic 
+genes of different cell types predominantly exhibit inhibitory relationships. 
+Identify transition paths and critical genes for EMT 
+As DynNet reconstructs the underlying dynamics of EMT, we performed several downstream analyses. 
+Based on the stable state positions on the landscape, the M-to-E transition likely occurs via the 
+intermediate states IM and pEMT, consistent with previous findings63. To verify this, we applied the 
+minimum action path method based on Freidlin-Wentzell theory57 to compute the transition actions 
+(Figure 6A and B). Without TGF-β (Day 10-20), the transition action for MET is significantly lower than 
+
+
+===== PAGE 21 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+that for the reverse E-to-M transition, indicating that MET is more probable under these conditions. 
+Moreover, Figure 6A shows that EMT follows a direct path, while MET passes through IM, which 
+corresponds to the lowest energy barrier and ensures system stability. Landscape analysis confirms a 
+lower total action for MET, reinforcing the tendency toward the E state. Additionally, the lower action 
+from IM-to-M compared to M-to-IM suggests that IM is a metastable state, with cells often reverting to 
+the more stable M state. Finally, transition network analysis reveals that indirect paths have higher 
+probabilities and lower actions than direct ones, further supporting the role of intermediate states in MET 
+(Figure 6C and Supplementary Information Section F.2). 
+To further explore the effects of different genes on the system's dynamics, we performed a sensitivity 
+analysis of DynNet's regulatory parameters. This analysis compute the changes in transition actions, 
+𝛥𝑆𝐸→𝑀 and 𝛥𝑆𝑀→𝐸 after individually perturbing model parameters. Specifically, we perturbed 
+activation constants within groups and inhibition constants between groups by ±5% (Figure 6F and 
+Supplementary Information Section F.2). The results indicate that enhanced activation between CD44 and 
+VIM significantly increased the M→E transition action while slightly decreased the E→M action, 
+suggesting that stronger activation of M-state markers stabilizes the M state. Conversely, increased 
+activation of E-state markers (e.g., MUC1 and CDH1) raised the E→M transition action and lowered the 
+M→E action, favoring MET and stabilizing the E state. Moreover, stronger mutual inhibition revealed 
+that increased inhibition of E markers reduced the likelihood of MET, whereas enhanced inhibition of M 
+markers made cells in the M state more prone to reverting to the E state. These sensitivity results are 
+qualitatively consistent with known experimental observations 64. 
+To identify key genes driving the EMT, we conducted simulated knockout experiments. Our results show 
+that knocking out CD44 in M-state cells caused a reversion of cell fate back to the E state (Figure 6H, 
+right), indicating that CD44 is crucial for maintaining the M state. In contrast, enforcing low expression 
+of CDH1 in E-state cells promoted their transition to the M state (Figure 6H, left), consistent with the 
+critical role of E-cadherin loss (encoded by CDH1) in EMT65. Furthermore, perturbing the regulatory 
+
+
+===== PAGE 22 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+parameters to assess the influence of CD44 and CDH1 on other genes revealed that changes in these two 
+genes produce significant effects, underscoring their importance in EMT regulation. We analyzed gene 
+expression trends along the MET transition pathway to determine the roles of different genes in the MET 
+process. We found that the transition from the M state to the IM state is primarily driven by MUC1, while 
+the expression of VIM (Vimentin) undergoes significant changes before cells reach the E state, consistent 
+with its role as a downstream gene66,67 (Figure 6G). 
+To investigate cell transitions during EMT, we incorporated exogenous TGF-β into our model, reflecting 
+its role in regulating gene expression. We treated the EMT process as a perturbation of the underlying 
+dynamics trained on the MET process and tracked the EMT dynamics by fine-tuning the parameters of 
+DynNet. TGF-β is present during the first 10 days of EMT but absent in the subsequent MET phase63. It 
+inhibits E-cadherin expression via degradation mechanisms involving SMURF1 and SMURF264,68. To 
+capture this, we added TGF-β as a regulatory node affecting CDH1 and modelled its inhibitory effect as 
+a function of its concentration69. The degradation rate constant k was trained solely on the EMT process. 
+We then compared the stable state distribution estimated by DynNet with real data (Figure 6D and 6E). 
+The marginal distribution of the TGF-β-induced EMT process estimated by DynNet shows good 
+agreement with the data at stable state distribution. This indicates that although the parameters of DynNet 
+were trained on MET data, it can still successfully simulate the EMT process through fine-tuning with 
+TGF-β. In addition, state transition probabilities were calculated (see Supplementary Information Section 
+F.2). Our analysis revealed that the original E state (Day 0) comprises multiple sub-states, E1, E2 and E3, 
+with E1 characterized by high expression of epithelial markers and E2/E3 by partial mesenchymal 
+features. Notably, in the model retrained by adjusting only the degradation rate parameters, cells in the E1 
+state first switched to the E2 state before undergoing EMT (Figure S35). Transition probability 
+calculations further supported a lower transition action for the E1-to-E2 pathway, indicating a higher 
+likelihood for this route. Overall, these results suggest that our original dynamical model effectively 
+captures the essential characteristics of the EMT dynamics. By training the regulatory parameters using 
+
+
+===== PAGE 23 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+MET data and fine-tuning only the degradation rate parameters, we accurately described the dynamics of 
+the EMT process, in line with the known role of TGF-β in modulating degradation rates, particularly for 
+E-cadherin. 
+Collectively, these results demonstrate that DynNet effectively captures the essential characteristics of the 
+EMT process by integrating MET training data, fine-tuning degradation rates, and incorporating TGF-β 
+effects. 
+Discussion  
+Existing methods for inferring dynamics involve trade-offs between interpretability, data requirements, 
+and scalability 18,20,21. DynNet overcomes these limitations by integrating mechanistic biophysical 
+modeling with data-driven neural SDE frameworks. Unlike purely model-driven approaches constrained 
+by oversimplified assumptions or black-box deep learning models that lack interpretability, DynNet 
+explicitly parameterizes gene regulatory interactions using Hill functions while employing a dynamic 
+noise estimator to capture the effects of stochasticity. By parameterizing causal regulatory mechanisms 
+directly within the continuous drift function, it moves beyond traditional models that rely on post-hoc, 
+local Jacobian matrix approximations, thereby granting the inferred dynamics robust global 
+interpretability. Importantly, DynNet is fundamentally designed as a continuous dynamics modeling 
+framework rather than a standalone Gene Regulatory Network (GRN) inference tool. This continuous-
+time integration inherently mitigates interval-induced spurious correlations that typically plague discrete-
+time models. Balancing prior biological information with data evidence, its integrated biophysical 
+component captures both direct and indirect regulatory relationships within the gene network, facilitating 
+dynamics inference from a minimal set of key genes directly in the original gene expression space.  
+On simulation datasets (MISA and branching process), we evaluate the capability of DynNet to infer 
+stable state properties, predict cell fates, and track underlying dynamics, highlighting the value of 
+integrating prior knowledge via constraints. On realistic hepatocyte differentiation dataset, DynNet 
+reconstructs a dynamic landscape featuring two attractor states (MH and LB) and captures bifurcation 
+
+
+===== PAGE 24 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+dynamics at the HE cluster, consistent with experimental observations. On EMT dataset, DynNet 
+quantitatively characterizes the dynamics of EMT and MET processes, predicts transition pathways and 
+identifies key genes as fate determinants, bridging molecular mechanisms with cellular decision-making. 
+This capability allows for direct gene perturbation analysis and facilitates the identification of key genes 
+and mechanistic rules driving cellular state changes. Ultimately, this framework presents a valuable tool 
+for studying functions and mechanisms of complex biological systems, controlling cell fate transitions 
+and proposing therapeutic strategies for disease28,70. 
+To ensure the practical applicability and robustness of this mechanistic framework, several specific 
+strategies and design choices have been incorporated into DynNet. First, to ensure computational 
+feasibility in high-dimensional stochastic modeling, we adopted a diagonal diffusion matrix. Both 
+theoretical and empirical validations confirm the robustness of this simplification: the continuous drift 
+function effectively captures underlying gene-gene correlations, while the learned state-dependent noise 
+dynamically compensates for omitted non-diagonal terms. Second, to facilitate the optimization process, 
+we strategically integrated prior knowledge. While purely data-driven priors are susceptible to spurious 
+correlations, our framework strictly utilizes them as optimization accelerators rather than validation 
+metrics. To mitigate these inherent structural inaccuracies during de novo discovery, we employ an L2 
+soft-constraint, enabling continuous data dynamics to stably override false prior edges. 
+Nevertheless, there are several limitations related to structural assumptions and extreme computational 
+scaling. First, while employing Hill functions significantly enhances mechanistic interpretability, it 
+imposes a rigid structural assumption on the system's dynamics. This restricts the functional flexibility of 
+the drift equation and constrains the optimization landscape. Second, the framework operates under the 
+assumption that the biological system eventually converges to quasi-steady states, which limits its utility 
+in analyzing highly oscillatory or cyclical processes, such as the cell cycle. Finally, despite our 
+mathematical simplifications, the numerical integration of SDEs and the optimization of non-linear drift 
+functions remain computationally demanding. Because this optimization is intensive, DynNet is 
+
+
+===== PAGE 25 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+inherently constrained to targeted sets of core driver genes and cannot currently process genome-wide 
+transcriptomic data now. Given these boundaries, DynNet is optimally positioned as a downstream 
+analytical tool for deep mechanistic dissection rather than broad de novo network discovery. 
+To enhance DynNet's applicability, flexibility, and scalability, several strategies may be utilized. First, a 
+gene encoding method may be adapted to analyze co-expression modules of high-dimensional gene data. 
+Furthermore, a mixed modeling architecture that utilizes lightweight response functions for non-core gene 
+modules can be used. To increase mechanistic modeling flexibility, it may be useful to incorporate a 
+hybrid neural network architecture that combines the core mechanistic Hill function assumption with an 
+assumption-free component (such as a general MLP), allowing DynNet to better describe complex system 
+characteristics. 
+Methods  
+Neural network architecture 
+The proposed network structures are illustrated in Figure 1. Given that cell fate evolution can be 
+expressed by SDEs  
+d𝐱= 𝐟(𝐱)d𝑡+ 𝛔(𝐱)d𝐖,
+(5) 
+the network structure was designed based on the principle of using nonlinear functions to model system 
+dynamics and to account for fluctuations within the biological system. 
+In the proposed Neural SDE framework, the time variable t corresponds strictly to the experimental 
+sampling time (i.e., the elapsed physical time between measurements) rather than an algorithmically 
+inferred pseudotime. In biological developmental systems, cells sampled at a single experimental time 
+point often exhibit significant stage heterogeneity, such as the coexistence of progenitor and differentiated 
+cells. The SDE framework does not assume developmental synchrony within a given time point; rather, it 
+explicitly models this within-timepoint heterogeneity as stochastic fluctuations, allowing individual cells 
+
+
+===== PAGE 26 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+to progress at varying rates. Utilization of experimental real time preserves the temporal asynchrony 
+necessary for estimating true kinetic quantities, such as transition rates and barrier-crossing timescales.  
+Velocity estimator 
+A neural network was developed to estimate 𝐟(𝐱) in Eq.5. The input layer receives gene expression data, 
+then transforms it through a hidden layer using non-linear activation functions inspired by Hill 
+kinetics71,72, which is a form widely applied in describing gene regulation in biological systems43–45. These 
+transformations help the network capture gene regulatory effects in a biologically plausible manner.  
+The overall network structure is defined as follow, 
+𝐟(𝐱) = 𝐀𝐚(𝐱) + 𝐁𝐫(𝐱) −𝐤∘𝐱,
+(6) 
+where ∘ denotes the Hardmard product between vectors, and 𝐤 is the vector of degradation rates. The 
+regulatory coefficients (𝐀, 𝐁) are the weight parameters of the output layer. These matrices are defined 
+such that rows index the target gene i and columns index the source gene j. Therefore, the matrix element 
+𝐴ij represents the activation strength of gene j on gene i, and 𝐵ij represents the inhibition strength of 
+gene j on gene i. To ensure biological interpretability, these matrices are maintained non-negative, 
+allowing the model to decouple activating and inhibitory effects. The activation vector 𝐚(𝐱) and 
+repression vector 𝐫(𝐱) are constructed by using the Hill function with the input state 𝐱. Specifically, the 
+j-th component of 𝐚(𝐱) and 𝐫(𝐱) is defined as: 
+𝑎𝑗(𝑥𝑗) =
+𝑥𝑗
+𝑛ℎ
+𝑆𝑗
+𝑛ℎ+ 𝑥𝑗
+𝑛ℎ, 
+𝑟𝑗(𝑥𝑗) =
+𝑆𝑗
+𝑛ℎ
+𝑆𝑗
+𝑛ℎ+ 𝑥𝑗
+𝑛ℎ,
+(7) 
+where 𝑛ℎ denotes Hill coefficient (see Supplementary Information Section A.2). 𝐒 is a vector 
+representing the half-maximal effective concentration parameters (𝑆𝑗 for gene j). The vector 𝐚(𝐱) is 
+therefore composed of M component, 𝐚(𝐱) = [𝑎1(𝑥𝑖), … , 𝑎𝑀(𝑥𝑀)]𝑇, and similarly for the repression 
+
+
+===== PAGE 27 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+vector 𝐫(𝐱). A neural network 𝐟𝜃 was developed to estimate the drift term 𝐟(𝐱) in Eq.5. The input 
+layer receives gene expression data, then transforms it through a hidden layer using non-linear activation 
+functions explicitly informed by Hill kinetics. These transformations help the network capture gene 
+regulatory effects in a biologically plausible manner. The trainable parameter set of the network 𝐟𝜃 is 
+divided into two components: 𝜃1 = (𝐀, 𝐁) and 𝜃2 = (𝐒). Specifically, 𝐒 denotes the threshold vector 
+associated with the Hill functions in the hidden layer. This vector modulates the sensitivity and steepness 
+of the Hill activation functions, thereby enabling the network to model gene regulatory interactions. The 
+parameters (𝐀, 𝐁), serving as the weights of the output layer, make linear transformation on the 
+embedded feature and generate the drift of SDE.  
+To ensure biological plausibility, we imposed constraints for all matrix elements 𝐴ij, 𝐵ij ≥0, reflecting 
+the activating or enhancing effects commonly observed in gene regulation processes, and 𝑆𝑖> 0, 
+reflecting the half-saturation constant of gene expression is always a positive real number. 
+Noise estimator 
+Stochasticity in gene expression plays vital roles in many of the real biological processes, including 
+differentiation and cell type transition73,74. A Multi-Layer Perceptron (MLP) 𝐷𝜗 is implemented to 
+approximate the diffusion matrix 𝐃(𝐱), where 2𝐃(𝐱) =  𝛔(𝐱)𝛔(𝐱)𝑇 in Eq.5. Specifically, we assume 
+𝐃(𝐱) ∈ℝ𝑀×𝑀 is a diagonal matrix with diagonal elements 𝐷ii(𝐱) = 𝑑𝑖(𝐱) and off-diagonal elements is 
+zero. The MLP takes the gene expression profile of each cell as input and outputs the diffusion term for 
+each gene at the cell's current state. This design enables adaptation to intricate patterns in noise 
+generation, offering a biologically plausible representation of noise intensity across varying expression 
+states. 
+Loss function and optimization strategy 
+Loss function design 
+
+
+===== PAGE 28 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+When the noise level is low in Eq.5, the amplitude of the stochastic perturbation for the diffusion term has 
+small Wasserstein p-norm. This phenomenon is called vanishing viscosity, and a rigorous description 
+about it is in in Supplementary Information Section A.3. In this way, we separate the estimation of 
+stochastic dynamics Eq.5 into 2 steps. The two networks are optimised independently, first optimizing the 
+parameters of 𝐟𝜃(𝐱) and then optimizing the parameters of 𝐃𝜗(𝐱).  
+For gene expression data spanning T time points, denoted as 𝐗= {𝐗1, ⋯, 𝐗𝑡, ⋯, 𝐗𝑇}, where 𝐗𝑡=
+{𝐱1, ⋯, 𝐱𝑁𝑡} is the expression of all 𝑁𝑡 cells at time t, the following three loss terms are considered 
+when training the velocity estimator. First, a loss is introduced to constrain the system's behaviour at 
+steady state. Assuming the final time point 𝑇 represents steady state, the driving term in the stochastic 
+differential equation should be close to zero. Therefore, the first loss term is defined as 
+ℒ1 = 𝔼𝑇[|𝐟(𝐗𝑡)|2] = 1
+𝑁𝑇
+∑|𝐟(𝐱𝑖)|2
+𝑁𝑇
+𝑖=1
+.
+(8) 
+From the energy landscape theory (see Model-based landscape construction part in Methods and 
+Supplementary Information Section B), the dynamic process can be modelled as multiple Gaussian peaks 
+evolving their means and covariances, where the local properties (𝛍𝑖 and 𝚺𝑖) are derived from the 
+approximation of moment equations from Fokker-Planck equation. However, this local approximation 
+inherently does not provide the global probability weights required to characterize the overall population 
+distribution or track the temporal evolution of these state populations. The first term of Loss ℒ1 can only 
+ensure DynNet learn the local properties, but have no effect to match the probability weights of each 
+state. To enable the velocity estimator to track total data dynamics across time points, a second loss term 
+is defined by matching the predicted state weights at each time point. Specifically, for the experimental 
+data, a 𝐾-component GMM is estimated at each time point 𝑡, obtaining the weights 𝑤𝑡
+𝑘 for each 
+Gaussian component, representing a stable state with K attractors. And we design a weight estimation 
+
+
+===== PAGE 29 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+method to predict the weight 𝑤𝑡
+𝑘
+̂  from DynNet simulation data at each stable state. Utilizing these 
+weights, the second loss function is defined as: 
+ℒ2 = 1
+𝑇∑𝔼𝑡
+𝑇
+𝑡=1
+[|𝐰𝑡
+̂ −𝐰𝑡|2] = 1
+TK ∑∑(𝑤𝑡
+𝑘
+̂ −𝑤𝑡
+𝑘)
+2
+𝐾
+𝑘=1
+𝑇
+𝑡=1
+,
+(9) 
+where 𝐰𝑡 is the weight vector estimated from the experimental data at time t, and 𝐰𝑡
+̂ is the weight 
+vector predicted by the model at time 𝑡. Specifically, the dynamic trajectory is simulated starting from 
+the first data point using the ODE (
+dx
+dt = 𝑓θ(𝑥)), and sample points at the corresponding time points along 
+this trajectory are taken as the estimated data 𝑋𝑡
+̂. The k-th component 𝑤𝑡
+𝑘
+̂  represent the weights of the k-
+th attractor, which is obtained by computing 
+𝑤𝑡
+𝑘
+̂ = 1
+𝑁𝑡
+∑𝑅𝑘(𝑥𝑖̂)𝑃(𝐶𝑘|𝑥𝑖̂)
+𝑁𝑡
+𝑖=1
+.
+(10) 
+At a given estimated data point 𝑥𝑖̂, the relative likelihood 𝑅𝑘(𝑥𝑖̂) for the k-th Gaussian component is 
+defined as the ratio of the probability density of 𝑥𝑖̂ under the 𝑘-th Gaussian distribution to the 
+probability density at the mean of that distribution. The posterior probability 𝑃(𝐶𝑘|𝑥𝑖̂) represents the 
+probability that data point 𝑥𝑖 belongs to the k-th Gaussian component (see Supplementary Information 
+Section B). 𝐰𝑡 is the vector of corresponding experimental data weights on each Gaussian component at 
+time 𝑡. 
+Finally, to incorporate structural prior knowledge into the velocity estimator, we implemented both hard 
+and soft constraint mechanisms based on a prior network matrix 𝑁, where 𝑁ij ∈{−1,0,1} indicates the 
+known regulatory relationship between nodes i and j. When using hard constraints, strict sparsity is 
+enforced: parameters corresponding to non-existent edges (𝑁ij = 0) are rigidly fixed to 0 and excluded 
+from the optimization process. Alternatively, when using soft constraints, we apply an L2 regularization 
+
+
+===== PAGE 30 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+penalty to interactions that are absent from or contradict the prior network. Finally, a prior network 
+constraint is considered for the velocity estimator. The constraint term 𝒞(θ) for soft constraints is 
+defined as 
+𝒞(𝜃) =
+∑
+𝐴ij
+2
+𝑖,𝑗,𝑁ij≠1
++
+∑
+𝐵ij
+2
+𝑖,𝑗,𝑁ij≠−1
+.
+(11) 
+Combining these three loss terms, the total loss function for the velocity estimator is defined as: 
+ℒ𝑣= 𝜇1ℒ1 + 𝜇2ℒ2 + 𝜆1𝒞(𝜃).
+(12) 
+During the alternating optimization of the output layer weights (𝐀, 𝐁) and the hidden layer threshold 
+vector 𝐒, different hyperparameters 𝜇1 and 𝜇2 are used for each optimization step. The entire 
+optimization process is described in Algorithm 1. The alternating optimization stops when the change in 
+the velocity field parameters 𝜃1 = (𝐀, 𝐁) between two consecutive iterations is below a predefined 
+threshold (𝛥𝜃1 < 𝜉). The convergence criterion is calculated as: 
+𝛥𝜃1 = ∑|𝜃1
+(𝑛) −𝜃1
+(𝑛−1)|2,
+(13) 
+where n is the iteration index. The algorithm terminates if convergence is reached or the maximum 
+number of iterations is exceeded. This framework aims to enable the learned parameters θ to capture the 
+dynamic characteristics of the system's velocity field and stability. 
+Empirical observations indicate that the loss function ℒ2 is mainly influenced by the parameter 𝐒, while 
+the loss function ℒ1 is influenced by both parameters 𝐀, 𝐁 and 𝐒. Furthermore, the parameter 𝐒 is not 
+included in the constraint term. These findings have implications for the selection of hyperparameters in 
+the algorithm. 
+ 
+
+
+===== PAGE 31 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+Algorithm 1: Optimization Algorithm for Parameters 
+Input: Data 𝒟= {𝐗1, ⋯, 𝐗𝑇}, learning rates η1, η2, number of epochs 𝐸1, 𝐸2, velocity network 𝑓θ(𝑥) 
+with parameters 𝜃1 = (𝐀, 𝐁) and 𝜃2 = 𝐒, threshold ε, hyperparameters 𝜇1, 𝜇2, 𝜆1, maximum iterations 
+𝑁iter 
+1 
+Initialize: Randomly initialize 𝜃1 and 𝜃2. 
+2 
+Set iteration counter 𝑛 ←0. 
+3 
+Set parameter change Δθ1 ←∞. 
+4 
+While Δθ1 ≥𝜉 and 𝑛< 𝑁iter 
+5 
+θ1
+(𝑛) ←θ1. 
+6 
+For 𝑒= 1,2, … , 𝐸1 
+7 
+      Compute loss ℒ𝑣←𝜇1ℒ1 + 𝜆1𝒞(𝜃). 
+8 
+      Update θ1 ←θ1 −η1∇θ1ℒ𝑣. 
+9 
+End 
+10 
+For 𝑒= 1,2, … , 𝐸2 
+11 
+For 𝑡 =  1, 2, … , 𝑇 
+12 
+Estimate GMM weights 𝑤𝑡 from experimental data 𝑋𝑡. 
+13 
+Simulate data 𝐗̂𝑡 using 𝑓θ(𝐱). 
+14 
+Estimate GMM weights 𝑤𝑡
+̂ from simulated data 𝑋̂𝑡. 
+15 
+      Compute loss ℒ2 ←ℒ2 + 𝔼𝑡[|𝐰𝑡
+̂ −𝐰𝑡|2]. 
+16 
+End 
+17 
+Compute loss ℒ1 ←𝔼𝑇[|𝑓θ(𝑋𝑡)|2] 
+18 
+ℒ𝑆←μ1ℒ1 +
+𝜇2
+𝑇ℒ2. 
+19 
+Update 𝜃2 ←𝜃2 −𝜂2𝛻𝜃2ℒ𝑆. 
+20 
+End 
+21 
+    𝑛 ←𝑛 +  1 
+22 
+Compute 𝛥𝜃1 = ∑|𝜃1 −𝜃1
+(𝑛)|2. 
+23 
+End 
+Return: Optimised parameters 𝜃1 and 𝜃2. 
+Next, with the parameters of the velocity estimator 𝜃 fixed, the parameters of the noise network ϑ are 
+optimised. During this phase, the parameters 𝜃1 and 𝜃2 remain fixed while only the noise network 
+parameters 𝜗 are optimised to calibrate the noise characteristics of the system. The noise parameters are 
+
+
+===== PAGE 32 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+optimized by minimizing the discrepancy between the observed probability distribution 𝑝𝑗,t and the 
+model-predicted distribution 𝑝̂𝑗,𝑡 for each gene j at time 𝑡. We employ the Kullback-Leibler (KL) 
+divergence to quantify this difference. To obtain the marginal distributions required for this calculation, 
+we utilize distinct estimation strategies for the experimental and DynNet simulation data. For the 
+experimental data, the overall joint distribution has been estimated using a GMM in the velocity 
+estimation step. The marginal distribution 𝑝𝑗,𝑡 for the jth gene is analytically derived. The predicted 
+distribution 𝑝̂𝑗,𝑡 of DynNet simulation data is derived from data points generated through dynamic 
+simulations by DynNet, with its marginal density estimated using the non-parametric method, Kernel 
+Density Estimation (KDE). The goal is to minimize this discrepancy, thereby optimizing the noise 
+parameters to better fit the stochastic characteristics in the data. The resulting loss function for the noise 
+network is defined as  
+ℒ𝐷= 1
+𝑇∑𝔼𝑡
+𝑇
+𝑡=1
+[KL(𝑝̂𝑗,𝑡|𝑝𝑗,𝑡)] + λ2ℛ2(ϑ),
+(14) 
+where ℛ(ϑ) is the regularization term. The specific optimization process is detailed in Algorithm 2. 
+Algorithm 2: Optimization Algorithm for Noise Network Parameters 𝜗 
+Input: Training data 𝒟= {𝐗1, ⋯, 𝐗𝑇}, learning rate 𝜂3, number of epochs 𝐸3, noise network 𝐷ϑ(𝐱) 
+with parameters ϑ, fixed velocity estimator 𝑓θ(𝐱),  
+1 
+Initialize: Randomly initialize 𝜗. 
+2 
+For 𝑒= 1,2, … , 𝐸3 
+3 
+For 𝑡 =  1, 2, … , 𝑇 
+4 
+Estimate marginal distribution 𝑝𝑡 from experimental data 𝑋𝑡. 
+5 
+Simulate data 𝐗̂𝑡 using 𝑓θ(𝐱) and 𝐷ϑ(𝐱). 
+6 
+Estimate marginal distribution 𝑝̂𝑡 from simulated data 𝐗̂𝑡. 
+7 
+    Compute loss for all genes ℒ𝐷←ℒ𝐷+ ∑
+KL(𝑝̂𝑗,𝑡|𝑝𝑗,𝑡)
+𝑀
+𝑗=1
+. 
+8 
+End 
+9 
+    ℒ𝐷←ℒ𝐷+ λ2ℛ(ϑ). 
+10 
+Update parameters: 𝜗←𝜗−𝜂3∇ϑℒ𝐷. 
+
+
+===== PAGE 33 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+11 End 
+Return: Optimised parameters 𝜗. 
+A detailed analysis of the time complexity is essential to demonstrate the scalability of the DynNet model 
+on large single-cell datasets. Let 𝑀 be the number of genes, 𝑁 be the average number of cells at each 
+time point, and 𝐿 be the number of time steps. The total complexity is dominated by the optimization 
+phases within Algorithm 1 and Algorithm 2. 
+For the Algorithm 1, the complexity is primarily driven by two steps: the network optimization, which 
+involves a dominant 𝒪(𝑀2) operation, and the numerical solving of the ODE via the Euler method, 
+which has a complexity of 𝒪(𝑁𝑀2𝐿). The overall time complexity for Algorithm 1 is thus approximated 
+as 𝒪(𝑁𝑀2𝐿). Similarly, the complexity of Algorithm 2, which involves SDE simulation using the Euler 
+method, is also 𝒪(𝑁𝑀2𝐿). 
+GRN Reconstruction 
+Although DynNet is fundamentally designed for continuous dynamics modeling rather than standalone 
+GRN inference, the constraint method provides utility of GRN reconstruction under purely data-driven 
+settings. Specifically, when the model is optimized using soft constraints without any external prior 
+knowledge, this procedure enables the de novo generation of a reliable reference GRN. This extracted 
+topology can subsequently be utilized as a structural constraint in subsequent training phases to further 
+stabilize and guide the inference of the continuous vector field. To discretize the continuous learned 
+weights into a final sparse network topology without relying on arbitrary, hard-coded cutoffs, we 
+implemented a data-driven thresholding strategy based on GMM (see Supplementary Information Section 
+A.5). Under L2 regularization, the distribution of these normalized weights typically exhibits a dense 
+component near zero (representing regularized, non-essential edges) and a long tail (representing data-
+supported interactions). We fitted a two-component GMM to this distribution. The component with the 
+lower mean was designated as the background noise model, parameterized by a mean (μnoise) and a 
+
+
+===== PAGE 34 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+standard deviation (σnoise). The specific cutoff for retaining a structural edge was defined as the 99.7% 
+confidence upper bound of this noise distribution (μnoise + 3σnoise). Edges with absolute weights 
+exceeding this threshold were retained in the final discrete GRN. 
+Energy landscape construction 
+Understanding the stable states of a system is crucial in the study of cell fate decision. The concept of an 
+energy landscape serves as a valuable tool for this, likening the system's state space to a topographical 
+map where low potential energy regions correspond to more stable states, i.e., states where gene 
+expression is more likely to reside. Different approaches have been developed to quantify the energy 
+landscape for gene networks41,44,54. Specifically, the energy landscape can be inferred from the stable state 
+probability distribution 𝑃ss(𝐱) using the formula  
+𝑈(𝐱) = −ln𝑃ss(𝐱).
+(15)  
+We employ two distinct approaches for constructing energy landscapes depending on information 
+availability: when a stochastic dynamical model (Eq. 5) is established, we quantify the landscape from 
+Gaussian approximation approach; conversely, in the absence of an explicit model, we estimate the 
+landscape directly from the observed data under a quasi-steady-state approximation. 
+Model-based landscape construction 
+If the system's dynamics can be described by Eq.5, the corresponding Fokker-Planck equation can be used 
+to estimate the energy landscape. This equation describes the temporal evolution of the probability 
+distribution 𝑃(𝐱), and it combines deterministic motion governed by the drift force 𝐟(𝐱) with stochastic 
+perturbations determined by the diffusion matrix 𝐃(𝐱) 
+∂𝑡𝑃(𝐱) = −∇⋅(𝐟(𝐱)𝑃(𝐱)) + ∇⋅(𝐃(𝐱)∇𝑃(𝐱)),
+(16) 
+
+
+===== PAGE 35 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+When the diffusion is small, the evolution of the probability distribution can be approximated using 
+moment equations41,44. For a Gaussian distribution, its probability distribution is fully determined by its 
+mean 𝛍(𝑡) and covariance 𝚺(𝑡). These moments evolve according to the following equations 
+d
+d𝑡𝛍(𝑡) = 𝐟(𝛍(𝑡))
+(17) 
+d
+d𝑡𝚺(𝑡) = 𝐉(𝛍)𝚺(𝑡) + 𝚺(𝑡)𝐉𝑇(𝛍) + 2𝐃(𝛍),
+(18) 
+where 𝐉 is the Jacobian matrix of the drift force 𝐟(𝐱). As time goes to infinity, the system reaches a 
+stable state, and the mean 𝛍 and covariance matrix 𝚺 at a specific attractor can be obtained by solving 
+the above Eq. (6). Then, the probability density distribution for an M-dimensional system at one stable 
+state can be expressed as 
+𝑃(𝐱) =
+1
+(2𝜋)
+𝑀
+2 |𝚺|
+1
+2
+exp (−1
+2 (𝐱−𝛍)𝑇𝛴−1(𝐱−𝛍)) .
+(19) 
+When the system has multiple attractors, the stable state probability distribution can be estimated as a 
+mixture model of them. By solving Lyapunov equation (6) at each attractor {𝜇𝑖}𝑖=1
+𝑁, we get covariances 
+{Σ𝑖}𝑖=1
+𝑁, and the probability density function of the system can be computed as 
+𝑃ss(𝐱) = ∑
+𝑤𝑖
+(2𝜋)
+𝑀
+2 |𝚺i|
+1
+2
+exp (−1
+2 (𝐱−𝛍𝑖)𝑇𝚺𝑖
+−1(𝐱−𝛍𝑖)) .
+𝑁
+𝑖=1
+(20) 
+Here 𝑤𝑖 is weight of each attractor. For detailed computation, one may refer to our previous works41,45. 
+Data-driven landscape construction 
+In contrast to the model-based approach discussed previously, which relies on knowing the system's 
+dynamical equations, the data-driven approach is employed when these equations are not available. In 
+
+
+===== PAGE 36 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+such cases, the system's steady state probability distribution can be estimated directly from experimental 
+data under the assumption that the system is near a stable state after a period of evolution. A commonly 
+used method is to approximate this distribution using a GMM 
+𝑃ss(𝐱) = ∑w𝑘𝒩(𝐱|𝛍𝑘, 𝚺𝑘)
+𝐾
+𝑘=1
+,
+(21) 
+where K represents the number of Gaussian components. 
+Since the true number of stable states is often unknown, we utilize the Bayesian Information Criterion 
+(BIC) to address this. Similar to the model-based landscape, each Gaussian component is described by its 
+weight w𝑘, mean 𝛍𝑘, and covariance matrix 𝚺𝑘. By fitting the experimental data, these quantities can be 
+obtained, and further used to approximate the steady state probability distribution and the energy 
+landscape. 
+Dimension reduction for landscape 
+Gene regulatory networks often involve a large number of genes, resulting in a high-dimensional state 
+space that can be challenging to interpret directly. To facilitate visualization and analysis of the energy 
+landscape, it is often necessary to project it onto a lower-dimensional subspace. We followed the method 
+in our recent work to reduce the high-dimension landscape41. A common and effective technique for this 
+dimensionality reduction is based on the principal components of the system's variability, which can be 
+extracted from the covariance matrix of the data. 
+Specifically, a projection matrix 𝐕∈𝑅𝑀×𝐶 is constructed, where M is the original high dimensionality 
+and 𝐶 <  𝑀 is the desired lower dimensionality. The columns of 𝐕 are formed by the 𝐶 eigenvectors 
+corresponding to the first 𝐶 largest eigenvalues of the covariance matrix 𝚺 of the system's data. These 
+eigenvectors represent the directions of maximum variance in the data. 
+
+
+===== PAGE 37 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+Given the data 𝑋𝑗 for the 𝑗-th stable state in the original high-dimensional space, the projected data 𝑍𝑗 
+in the low-dimensional space is obtained by 
+𝐙j = 𝐕𝑇𝐗𝑗.
+(22) 
+Similarly, if μ𝑗 and Σ𝑗 are the mean and covariance matrix of the 𝑗-th stable state in the original space, 
+their counterparts in the projected 𝐶-dimensional space, 𝛍𝑗
+𝑧 and 𝚺𝑗
+𝑧, are given by 
+𝛍𝑗
+𝑧= 𝐕𝑇𝛍𝑗, 
+𝚺𝑗
+𝑧= 𝐕𝑇𝚺𝑗𝐕.
+(23) 
+The probability density distribution of the 𝑗-th stable state in this projected 𝐶-dimensional space can then 
+be represented by a 𝐶-dimensional multivariate normal distribution 
+𝑝𝑗
+𝑧(𝐳) =
+1
+(2π)𝐶/2|𝚺𝑗
+𝑧|
+1/2 exp (−1
+2 (𝐳−𝛍𝑗
+𝑧)
+𝑇(𝚺𝑗
+𝑧)
+−1(𝐳−𝛍𝑗
+𝑧)) .
+(24) 
+Through this projection method, the complex, high-dimensional energy landscape can be effectively 
+reduced to a few key dimensions, allowing for easier visualization of the stable states (attractors) and the 
+potential barriers or transition pathways between them. This simplified representation facilitates a more 
+intuitive understanding of the system's dynamics and stability properties. 
+Evaluation 
+To systematically characterize the properties, dynamics, and predictive capability of the system under 
+investigation, we employ a comprehensive set of quantitative metrics and computational analyses. These 
+evaluations target five principal aspects: transition dynamics, classification accuracy, distributional 
+similarity, temporal characteristics, and vector field reconstruction. 
+
+
+===== PAGE 38 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+Minimum Action Path (MAP). The most probable transition trajectories between stable states are 
+identified by minimizing the Freidlin-Wentzell action functional, 𝑆𝑇(𝑥), using the Adaptive Minimum 
+Action Method (aMAM)75. The action functional quantifies the deviation from deterministic dynamics 
+𝑆𝑇(𝐱) = 1
+2 ∫||𝐱̇(𝑡) −𝐟(𝐱(𝑡))||
+2
+2
+d𝑡
+𝑇
+0
+(25) 
+where 𝑓(𝑥(𝑡)) is the drift term. Minimizing 𝑆𝑇(𝑥) yields the most probable transition path for state 
+switching in the presence of noise. 
+Classification Boundaries and F1 Score Comparison. To assess the system's state predictability and the 
+performance of potential classifiers, attractor basins and their separating decision boundaries ℬ are 
+defined. The effectiveness of assigning states 𝑥 to their correct final attractor ϕ(𝑥) is measured using 
+F1 scores, calculated from True Positives (TP), False Positives (FP), and False Negatives (FN). The class-
+specific F1 score is 
+F1𝑘=
+2TP𝑘
+2TP𝑘+ FP𝑘+ FN𝑘
+(26) 
+Maximum Mean Discrepancy (MMD). This non-parametric metric quantifies the dissimilarity between 
+the probability distributions of two sample sets, 𝑋 and 𝑌, by comparing their embeddings in a 
+reproducing kernel Hilbert space ℋ. The squared MMD is defined as the squared distance between the 
+mean embeddings 
+MMD2(𝑋, 𝑌) = |𝐸𝑥∼𝑃𝑋[κ(𝑥,⋅)] −𝐸𝑦∼𝑃𝑌[κ(𝑦,⋅)]|ℋ
+2
+(27) 
+where κ is the chosen kernel (e.g., RBF kernel 𝑘(𝑥, 𝑦) = exp(−|𝑥−𝑦|2/2σ2) ). MMD provides a 
+rigorous way to determine if observed differences between datasets are statistically significant, useful for 
+comparing experimental conditions or model simulations. 
+
+
+===== PAGE 39 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+Velocity Field Estimation. The underlying system dynamics are reconstructed from discrete observations 
+(e.g., single-cell measurements in an embedding space) by estimating a continuous velocity vector field.  
+First Passage Time (FPT) Analysis. FPT measures the time required for a stochastic process 𝑋𝑡 
+governed by an SDE to first reach a predefined target state or region, starting from 𝑋0 = 𝑥0. The FPT 
+between different cell states can be estimated through multiple simulations. 
+Statistics and Reproducibility 
+To evaluate the robustness of the DynNet framework, all computational findings were validated through 
+multiple independent simulation runs using different random seeds. For the MISA and branch synthetic 
+datasets, individual cells were simulated independently; the robustness of these simulations was verified 
+across various random seeds, with the exact number of simulated cells detailed in respective figure 
+legends. No statistical method was used to predetermine sample size. Rather, sample sizes for stochastic 
+simulations were chosen based on standard practices in computational systems biology to ensure the 
+stability of the inferred dynamic distributions and sufficient statistical power for transition analysis. 
+Specifically, for the hepatocyte dataset, FPT estimations involved 100 independent stochastic simulations 
+per temporal resolution condition to properly elucidate differentiation kinetics. For the simulated gene 
+knockouts, 50 independent cell trajectories were simulated for each knockout and wild-type control 
+group, with statistical significance between transition delays determined using a two-sided Wilcoxon 
+rank-sum test. Similarly, for the EMT dataset, the perturbation-induced changes in the minimum action 
+path (𝛥𝑆) were calculated as the average over 50 independent simulation replicates. All successfully 
+completed simulation runs were included in the reported results, and no data were excluded from the 
+analyses. While inherent stochasticity is introduced via the simulation algorithms, the experiments were 
+not randomized in terms of group allocation. Furthermore, the investigators were not blinded to allocation 
+during experiments and outcome assessment, as the group assignments—such as specific in silico gene 
+knockouts—were mathematically predefined by the computational models. 
+
+
+===== PAGE 40 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+Datasets and prior knowledge 
+This study utilizes both synthetic and experimental single-cell RNA sequencing (scRNA-seq) data. 
+Synthetic data, generated using the MISA and BoolODE models, was used to evaluate the method's 
+performance56. These data were split into training and testing sets (see Supplementary Information 
+Section E.1 and E.2). The MISA model simulates multi-stable gene regulatory networks, while the 
+BoolODE model combines Boolean logic with ordinary differential equations. Experimental scRNA-seq 
+data from publicly available sources, specifically an EMT dataset63 and a hepatocyte differentiation 
+dataset49, were pre-processed using Scanpy. 
+Prior knowledge about gene regulatory relationships was integrated into the model. This information, 
+extracted from databases like STRING and EVEX, was used to construct a prior gene regulatory network. 
+In addition, we also consider using correlation as an estimation of the gene regulatory network. Both hard 
+and soft constraints are employed to guide the learning process. Hard constraints enforce consistency with 
+highly reliable prior knowledge, while soft constraints allow the model to adapt when prior information is 
+less certain or incomplete. These constraints help to improve the biological interpretability of the model 
+by encouraging it to learn regulatory patterns consistent with existing knowledge. 
+Data Availability 
+The epithelial-to-mesenchymal transition (EMT) single-cell data used in this study are available in the 
+Cytobank Stanford database under experiment ID 26555 and from the Source Data file associated with 
+the original publication at https://www.nature.com/articles/s41467-019-13441-6. The hepatocyte 
+development single-cell RNA-seq data used in this study are available in the Gene Expression Omnibus 
+(GEO) database under accession code GSE96981. The synthetic datasets generated and analyzed in this 
+study have been deposited in the GitHub repository at 
+https://github.com/cetusdou/DynNet/tree/main/data. Source data are provided with this paper. No 
+restricted-access datasets were generated or analyzed in this study. 
+
+
+===== PAGE 41 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+Code Availability 
+The source code of DynNet to reproduce the results of this study is available on GitHub 
+https://github.com/cetusdou/DynNet.  
+References 
+1. 
+Pisarchik, A. N., Jaimes-Reátegui, R., Sevilla-Escoboza, R. & Huerta-Cuellar, G. Multistate 
+intermittency and extreme pulses in a fiber laser. Phys. Rev. E 86, 56219 (2012). 
+2. 
+Suzuki, K., Nakaoka, S., Fukuda, S. & Masuya, H. Energy landscape analysis elucidates the 
+multistability of ecological communities across environmental gradients. Ecol. Monogr. 91, e01469 
+(2021). 
+3. 
+Rapin, N., Mosekilde, E. & Lund, O. Bistability in autoimmune diseases. Autoimmunity 44, 256–
+260 (2011). 
+4. 
+Pati, N. C., Rech, P. C. & Layek, G. C. Multistability for nonlinear acoustic-gravity waves in a 
+rotating atmosphere. Chaos: Interdiscip. J. Nonlinear Sci. 31, 23108 (2021). 
+5. 
+Bashkirtseva, I., Pisarchik, A. N. & Ryashko, L. Multistability and stochastic phenomena in a 
+randomly forced thermochemical system. IOP Conf. Ser.: Mater. Sci. Eng. 192, 12011 (2017). 
+6. 
+Newman, J. P. & Butera, R. J. Mechanism, dynamics, and biological existence of multistability in 
+a large class of bursting neurons. Chaos: Interdiscip. J. Nonlinear Sci. 20, 23118 (2010). 
+7. 
+Ferrell, J. E. Self-perpetuating states in signal transduction: positive feedback, double-negative 
+feedback and bistability. Curr. Opin. Cell Biol. 14, 140–148 (2002). 
+8. 
+Ibrayeva, A. et al. Early stem cell aging in the mature brain. Cell Stem Cell 28, 955-966.e7 
+(2021). 
+9. 
+Feinerman, O., Veiga, J., Dorfman, J. R., Germain, R. N. & Altan-Bonnet, G. Variability and 
+robustness in T cell activation from regulated heterogeneity in protein levels. Science 321, 1081–1084 
+(2008). 
+10. 
+Huang, S., Ernberg, I. & Kauffman, S. Cancer attractors: a systems view of tumors from a gene 
+network dynamics and developmental perspective. Semin. Cell Dev. Biol. 20, 869–876 (2009). 
+11. 
+Li, C., Hong, T. & Nie, Q. Quantifying the landscape and kinetic paths for epithelial–
+mesenchymal transition from a core circuit. Phys. Chem. Chem. Phys. 18, 17949–17956 (2016). 
+12. 
+Kolodziejczyk, A. A., Kim, J. K., Svensson, V., Marioni, J. C. & Teichmann, S. A. The 
+technology and biology of single-cell RNA sequencing. Mol. Cell 58, 610–620 (2015). 
+13. 
+Papalexi, E. & Satija, R. Single-cell RNA sequencing to explore immune cell heterogeneity. Nat. 
+Rev. Immunol. 18, 35–45 (2018). 
+14. 
+Yuan, H. et al. CancerSEA: a cancer single-cell state atlas. Nucleic Acids Res. 47, D900–D908 
+(2019). 
+
+
+===== PAGE 42 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+15. 
+González-Silva, L., Quevedo, L. & Varela, I. Tumor functional heterogeneity unraveled by 
+scRNA-seq technologies. Trends Cancer 6, 13–19 (2020). 
+16. 
+Bergen, V., Lange, M., Peidli, S., Wolf, F. A. & Theis, F. J. Generalizing RNA velocity to 
+transient cell states through dynamical modeling. Nat. Biotechnol. 38, 1408–1414 (2020). 
+17. 
+Kharchenko, P. V. The triumphs and limitations of computational methods for scRNA-seq. Nat. 
+Methods 18, 723–732 (2021). 
+18. 
+Zhou, P., Wang, S., Li, T. & Nie, Q. Dissecting transition cells from single-cell transcriptome 
+data through multiscale stochastic dynamics. Nat. Commun. 12, 5609 (2021). 
+19. 
+Lange, M. et al. CellRank for directed single-cell fate mapping. Nat. Methods 19, 159–170 
+(2022). 
+20. 
+Li, Q. scTour: a deep learning architecture for robust inference and accurate prediction of cellular 
+dynamics. Genome Biol. 24, 149 (2023). 
+21. 
+Chen, Z., King, W. C., Hwang, A., Gerstein, M. & Zhang, J. DeepVelo: single-cell transcriptomic 
+deep velocity field learning with neural ordinary differential equations. Sci. Adv. 8, eabq3745 (2022). 
+22. 
+Chen, H. et al. Single-cell trajectories reconstruction, exploration and mapping of omics data with 
+STREAM. Nat. Commun. 10, 1903 (2019). 
+23. 
+Saelens, W., Cannoodt, R., Todorov, H. & Saeys, Y. A comparison of single-cell trajectory 
+inference methods. Nat. Biotechnol. 37, 547–554 (2019). 
+24. 
+Maizels, R. J., Snell, D. M. & Briscoe, J. Reconstructing developmental trajectories using latent 
+dynamical systems and time-resolved transcriptomics. Cell Syst. 15, 411-424.e9 (2024). 
+25. 
+Chu, L.-F. et al. Single-cell RNA-seq reveals novel regulators of human embryonic stem cell 
+differentiation to definitive endoderm. Genome Biol. 17, 173 (2016). 
+26. 
+Schiebinger, G. et al. Optimal-transport analysis of single-cell gene expression identifies 
+developmental trajectories in reprogramming. Cell 176, 928-943.e22 (2019). 
+27. 
+Campbell, K. R. & Yau, C. Uncovering pseudotemporal trajectories with covariates from single 
+cell and bulk expression data. Nat. Commun. 9, 2442 (2018). 
+28. 
+Chen, Z., Lu, J., Zhao, X., Yu, H. & Li, C. Energy landscape reveals the underlying mechanism 
+of cancer‐adipose conversion in gene network models. Adv. Sci. 11, 2404854 (2024). 
+29. 
+Weiler, P., Lange, M., Klein, M., Pe’er, D. & Theis, F. CellRank 2: unified fate mapping in 
+multiview single-cell data. Nat. Methods 21, 1196–1205 (2024). 
+30. 
+Chen, R. T. Q., Rubanova, Y., Bettencourt, J. & Duvenaud, D. Neural ordinary differential 
+equations. in Proceedings of the 32nd international conference on neural information processing systems 
+6572–6583 (Curran Associates Inc., Red Hook, NY, USA, 2018). 
+31. 
+Liao, X. et al. Multivariate stochastic modeling for transcriptional dynamics with cell-specific 
+latent time using SDEvelo. Nat. Commun. 15, 10849 (2024). 
+32. 
+Klumpe, H. E., Lugagne, J.-B., Khalil, A. S. & Dunlop, M. J. Deep neural networks for predicting 
+single-cell responses and probability landscapes. ACS Synth. Biol. 12, 2367–2381 (2023). 
+
+
+===== PAGE 43 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+33. 
+Zhang, J., Larschan, E., Bigness, J. & Singh, R. scNODE: generative model for temporal single 
+cell transcriptomic data prediction. Bioinformatics 40, ii146–ii154 (2024). 
+34. 
+Hossain, I., Fanfani, V., Fischer, J., Quackenbush, J. & Burkholz, R. Biologically informed 
+NeuralODEs for genome-wide regulatory dynamics. Genome Biol. 25, 127 (2024). 
+35. 
+Hasani, R. et al. Closed-form continuous-time neural networks. Nat. Mach. Intell. 4, 992–1003 
+(2022). 
+36. 
+Xie, C. et al. RNA velocity prediction via neural ordinary differential equation. iScience 27, 
+109635 (2024). 
+37. 
+Wang, K. et al. PhyloVelo enhances transcriptomic velocity field mapping using monotonically 
+expressed genes. Nature Biotechnology vol. 42 778–789 (2024). 
+38. 
+DiStefano III, J. Dynamic Systems Biology Modeling and Simulation. (Elsevier Science & 
+Technology, San Diego, 2015). 
+39. 
+Sasai, M. & Wolynes, P. G. Stochastic gene expression as a many-body problem. Proc. Natl. 
+Acad. Sci. 100, 2374–2379 (2003). 
+40. 
+Huang, B. et al. Interrogating the topological robustness of gene regulatory circuits by 
+randomization. PLOS Comput. Biol. 13, e1005456 (2017). 
+41. 
+Kang, X. & Li, C. A dimension reduction approach for energy landscape: identifying 
+intermediate states in metabolism‐EMT network. Adv. Sci. 8, 2003133 (2021). 
+42. 
+Lang, J., Nie, Q. & Li, C. Landscape and kinetic path quantify critical transitions in epithelial-
+mesenchymal transition. Biophys. J. 120, 4484–4500 (2021). 
+43. 
+Zhang, B. & Wolynes, P. G. Stem cell differentiation as a many-body problem. Proc. Natl. Acad. 
+Sci. 111, 10185–10190 (2014). 
+44. 
+Li, C. & Wang, J. Landscape and flux reveal a new global view and physical quantification of 
+mammalian cell cycle. Proc. Natl. Acad. Sci. 111, 14130–14135 (2014). 
+45. 
+Bian, S., Zhou, R., Lin, W. & Li, C. Quantifying the energy landscape of high-dimensional 
+oscillatory systems by diffusion decomposition. Cell Rep. Phys. Sci. 6, 102405 (2025). 
+46. 
+Bassewitz, J.-P. von et al. Learning explicit single-cell dynamics using ODE representations. 
+Preprint at https://doi.org/10.48550/arXiv.2510.02903 (2025). 
+47. 
+Sha, Y., Qiu, Y., Zhou, P. & Nie, Q. Reconstructing growth and dynamic trajectories from single-
+cell transcriptomics data. Nat. Mach. Intell. 6, 25–39 (2023). 
+48. 
+Waddington, C. H. The Strategy of the Genes. (Routledge, 1957). 
+49. 
+Camp, J. G. et al. Multilineage communication regulates human liver bud development from 
+pluripotency. Nature 546, 533–538 (2017). 
+50. 
+Gillespie, D. T. The chemical langevin equation. J. Chem. Phys. 113, 297–306 (2000). 
+51. 
+Zhou, J. X., Aliyu, M. D. S., Aurell, E. & Huang, S. Quasi-potential landscape in complex multi-
+stable systems. J. R. Soc. Interface 9, 3539–3553 (2012). 
+
+
+===== PAGE 44 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+52. 
+Gardiner, C. W. Stochastic Methods: A Handbook for the Natural and Social Sciences. vol. 4 
+(Springer, Berlin Heidelberg, 2009). 
+53. 
+Li, C. & Wang, J. Quantifying cell fate decisions for differentiation and reprogramming of a 
+human stem cell network: landscape and biological paths. PLOS Comput. Biol. 9, e1003165 (2013). 
+54. 
+Wang, J., Zhang, K., Xu, L. & Wang, E. Quantifying the waddington landscape and biological 
+paths for development and differentiation. Proc. Natl. Acad. Sci. 108, 8257–8262 (2011). 
+55. 
+Kauffman, S. A. The Origins of Order: Self-Organization and Selection in Evolution. (Oxford 
+University Press, 1993). doi:10.1093/oso/9780195079517.001.0001. 
+56. 
+Pratapa, A., Jalihal, A. P., Law, J. N., Bharadwaj, A. & Murali, T. M. Benchmarking algorithms 
+for gene regulatory network inference from single-cell transcriptomic data. Nat. Methods 17, 147–154 
+(2020). 
+57. 
+Dembo, A. & Zeitouni, O. Large Deviations Techniques and Applications. (Springer, Berlin New 
+York, 2010). 
+58. 
+Ibe, O. C. 6 - markov renewal processes. in Markov Processes for Stochastic Modeling 103–143 
+(Elsevier, Oxford, 2013). doi:https://doi.org/10.1016/B978-0-12-407795-9.00006-2. 
+59. 
+Lin, S. et al. The role of the TOB1 gene in growth suppression of hepatocellular carcinoma. 
+Oncol. Lett. 4, 981–987 (2012). 
+60. 
+Ho, K. J. et al. Tob1 is a constitutively expressed repressor of liver regeneration. J. Exp. Med. 
+207, 1197–1208 (2010). 
+61. 
+Lee, S. C.-H. Dynamic gene expression patterns during in vivo maturation of mouse hepatoblasts. 
+(University of British Columbia, 2013). doi:http://dx.doi.org/10.14288/1.0073493. 
+62. 
+Li, Y. et al. Identification of SRGAP2 as a potential oncogene and a prognostic biomarker in 
+hepatocellular carcinoma. Life Sci. 277, 119592 (2021). 
+63. 
+Karacosta, L. G. et al. Mapping lung cancer epithelial-mesenchymal transition states and 
+trajectories with single-cell resolution. Nat. Commun. 10, 5587 (2019). 
+64. 
+Lamouille, S., Xu, J. & Derynck, R. Molecular mechanisms of epithelial–mesenchymal 
+transition. Nat. Rev. Mol. Cell Biol. 15, 178–196 (2014). 
+65. 
+Le Bras, G. F. et al. CD44 upregulation in E-cadherin-negative esophageal cancers results in cell 
+invasion. PLOS One 6, e27063 (2011). 
+66. 
+Kawano, T. et al. MUC1 oncoprotein promotes growth and survival of human multiple myeloma 
+cells. Int. J. Oncol. 33, 153–159 (2008). 
+67. 
+Usman, S. et al. Vimentin is at the heart of epithelial mesenchymal transition (EMT) mediated 
+metastasis. Cancers 13, 4985 (2021). 
+68. 
+Barrios-Rodiles, M. et al. High-throughput mapping of a dynamic signaling network in 
+mammalian cells. Science 307, 1621–1625 (2005). 
+69. 
+Zavadil, J. & Böttinger, E. P. TGF-β and epithelial-to-mesenchymal transitions. Oncogene 24, 
+5764–5774 (2005). 
+
+
+===== PAGE 45 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+70. 
+Rukhlenko, O. S. et al. Control of cell state transitions. Nature 609, 975–985 (2022). 
+71. 
+Likhoshvai, V. & Ratushny, A. Generalized hill function method for modeling molecular 
+processes. J. Bioinf. Comput. Biol. 5, 521–531 (2007). 
+72. 
+Santillán, M. On the use of the hill functions in mathematical models of gene regulatory 
+networks. Math. Modell. Nat. Phenom. 3, 85–97 (2008). 
+73. 
+Kærn, M., Elston, T. C., Blake, W. J. & Collins, J. J. Stochasticity in gene expression: from 
+theories to phenotypes. Nat. Rev. Genet. 6, 451–464 (2005). 
+74. 
+Van Heyningen, V. Stochasticity in genetics and gene regulation. Philos. Trans. R. Soc. B: Biol. 
+Sci. 379, 20230476 (2024). 
+75. 
+Zhou, X., Ren, W. & E, W. Adaptive minimum action method for the study of rare events. J. 
+Chem. Phys. 128, 104111 (2008). 
+ 
+Funding 
+C.L. is supported by the National Natural Science Foundation of China (Grant no. 12171102) and the 
+National Key R&D Program of China (Grant no. 2019YFA0709502). 
+ 
+Author Contributions 
+C.L. and J.D. conceived and designed the research, J.D. performed the research, C.L., J.D., W.L., F.C., 
+and Q.N. analyzed the data, and J.D., Q.N., and C.L. wrote the manuscript. 
+ 
+Competing interests 
+The authors declare no competing interests. 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 46 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+Figure Captions 
+Figure 1: Overview of the DynNet framework. 
+A, Single-cell sequencing technology collects cells from multiple time points of a biological process and 
+performs sequencing. After converting the sequencing data into a count matrix and performing 
+preprocessing, the data is input into DynNet. B, By utilizing correlations and databases, a prior directed 
+gene expression network can be obtained to constrain DynNet, where ⊣ and → in the network represent 
+inhibitory and activating effects. C, The DynNet framework includes two sub-networks. Left is the 
+Velocity Estimation Network 𝐟θ(𝐱), which extracts mechanistic features using Hill function kinetics 
+(parameterized by threshold 𝑆 and coefficient 𝑛ℎ) and combines them through linear regulatory strength 
+(𝑤, which are decomposed into activation matrix 𝐴 and inhibition matrix 𝐵) to predict gene expression 
+velocity. Right is the Noise Estimation Network 𝐃𝜗(𝐱), which estimates the diffusion term. Both 
+networks take gene expression data as input. The velocity network outputs the velocity (drift) values, 
+while the noise network outputs the diffusion matrix (constrained as diagonal) representing stochastic 
+fluctuations for each data point. D, A GMM is used to estimate the data characteristics of scRNA-seq, 
+which serves as a prior for calculating the loss of the neural network. E, DynNet training involves 
+alternating training for the velocity estimator's parameters (thresholds and regulation parameters), 
+followed by independent training of the noise estimator. Key loss functions include drift loss, weight loss, 
+and KL divergence. Hyperparameters for combining these losses are determined during pre-training. F, 
+The dynamics modelling of DynNet is achieved by constructing and solving moment equations to obtain 
+the energy landscape, which quantifies the global dynamical behaviour of the system. G, Downstream 
+analysis tasks of DynNet include generating the energy landscape, analysing stable state transition paths, 
+predicting bifurcation points of cell fate, and analysing potential weighted regulatory networks. H, 
+DynNet’s capabilities are benchmarked against four commonly used dynamic analysis methods. 
+
+
+===== PAGE 47 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+Figure 2: DynNet accurately recovers multi-stable dynamics of MISA model. 
+A, Network of a MISA system, where two genes mutually inhibit each other (blue ⊣) and exhibit self-
+activation (red →). B, MISA identifies three distinct stable states (S1: exclusive expression of gene X1, 
+S2: exclusive expression of gene X2, S3: median expression of both genes) from scatter plot data whose 
+expression levels are shown in the table (see Supplementary Information Section E.1). C, DynNet 
+accurately estimates cluster centers and covariances, demonstrating close alignment between the model-
+inferred and data-driven cluster centers. The estimated covariances effectively encompass the data 
+distribution, validating the precision of the DynNet. D, The marginal distributions of gene expression 
+levels for gene X1 and X2, as estimated by DynNet, show correspondence with the empirical data. E, The 
+landscape and velocity field visualization inferred by DynNet reveal the topography of the energy 
+landscape and its associated flow dynamics. The attractors in the landscape correspond to the stable states 
+estimated by the MISA model, while the velocity field highlights the global dynamics of transitions from 
+unstable states toward these attractors. F, Decision boundaries inferred from both empirical data and 
+DynNet (highlighted by three distinct colors) clarify the partitioning of phase space among the three 
+stable states. The consistency between the boundaries derived from the model and the simulation data 
+suggests that DynNet's potential for predicting unobserved cellular dynamics. This synthetic dataset 
+includes 10000 cells and 5 timepoints. G, Comparison of the MSE for the velocity field estimation 
+between Neural ODE and DynNet. Each method is trained with 2, 3 and 5 time points, individually. H, 
+The velocity fields of benchmark (from ground truth data), Neural ODE (trained with 5 data points) and 
+DynNet (trained with 5 data points). Compared with Neural ODE, DynNet provides better estimation of 
+the ridge (red circle) and saddle point (blue circle).  
+Figure 3: DynNet reconstructs dynamics of developmental branching process. 
+A, The GRN (7 gene network) with red arrows indicating activating regulation and blue arrows 
+representing inhibitory regulation, reveals the underlying regulatory mechanisms of BoolODE that govern 
+
+
+===== PAGE 48 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+gene expression dynamics. B, PCA visualization of the system's trajectories shows the bifurcation process 
+in the simulation data, where each time point is colored according to its progression in the dynamical 
+process, and developmental trajectories of 1000 independent simulated cells are mapped onto a low-
+dimensional manifold. The differentiation process starts from initial state (I) and two distinct stable states 
+(D1 and D2) are marked by separate colors with darker shades representing later time points. C, Violin 
+plots compare gene expression levels between the two stable states, with the x-axis representing different 
+genes and the y-axis indicating expression levels. Each plot illustrates the distribution of expression 
+values for a specific gene in the respective stable states (left: D1, right: D2). D, Histogram shows the 
+alignments between the estimated marginal distribution of each gene with data. E, Gene expression 
+velocity field plot depicts the temporal trends of gene expression changes, with arrow directions 
+signifying trajectories largely consistent with the developmental paths in B and illustrating the system's 
+evolution toward the stable states. F, Gene expression trajectories over time illustrate the dynamic 
+expression patterns of genes G6 and G7 during the cell fate decision process, emphasizing the bifurcation 
+behaviour of gene expression and its association with cell fate determination. G, The activation and 
+inhibition parameter matrices quantify regulatory interaction strengths between genes under soft 
+constraints, with results largely consistent with prior knowledge. Higher values indicate stronger effects, 
+and inconsistent entries are highlighted by dashed outlines. H, Comparison of training loss curves in 
+DynNet shows faster convergence under hard constraints, but soft constraints eventually achieve a 
+similarly optimal result. 
+Figure 4: DynNet reconstructs hepatocyte differentiation and regulatory dynamics. 
+A, Schematic trajectory showing iPSCs sequentially progressing through DE, HE, IH, early/late LB, and 
+MH states, resembling a potential energy descent. B, The reference GRN is depicted as a circular 
+diagram, where each sector represents a key gene involved in hepatocyte differentiation—red arrows 
+indicate activation interactions while blue arrows denote inhibitory interactions. The GRN is primarily 
+derived from the dataset (see Supplementary Information Section F.1). C, Single-cell transcriptomic data 
+
+
+===== PAGE 49 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+are visualized by projecting onto the first two principal components (PC1 and PC2). Cell states are color-
+coded and a black line traces the overall differentiation pathway. D, Density plots display the expression 
+distributions of marker genes across various cell states, with distinct colors differentiating MH, LB, and 
+intermediate states. E, A PCA-based dynamic landscape presents a stability map where arrows indicate 
+transition trajectories. F, The state transition network is represented as a directed graph, with nodes 
+corresponding to cell states and edges weighted by transition probabilities and durations, delineating the 
+dynamics of state changes. G, Boxplots of first passage times (FPT) compare transition durations from 
+DE to MH and DE to LB states under different temporal resolutions (dt = 0.01 and 0.1). H, Scatter plots 
+reveal shifts in cell states following the knockout of latent regulatory genes (e.g., TOB1, RANBP1, 
+SRGAP2), with altered state distributions highlighted. I, Boxplots further illustrate delays in transition 
+times toward MH and LB states after simulated gene knockouts, underscoring the regulatory impact on 
+differentiation timing. For all boxplots in G and I, center lines indicate medians; box bounds represent 
+25th/75th percentiles; whiskers extend to 1.5× IQR; points denote outliers. Statistical significance was 
+determined using two-sided Wilcoxon rank-sum tests (*p < 0.05, **p < 0.01, ***p < 0.001). 
+Figure 5: DynNet captures the transition dynamics in EMT from single-cell data. 
+A, Model-based landscape is generated from experimental data, delineating four distinct stable states: E, 
+M, pEMT, IM. The landscape is reconstructed based on state probabilities observed in the dataset. B, 
+One-dimensional projections of initial (day 10) and stable states (day 20) of EMT process illustrate the 
+dynamic transition process, with landscape transformations elucidating the underlying cause of state 
+evolution. C, The estimated landscape by DynNet, aligned with experimental data points, validates the 
+model's accuracy in capturing dynamic features. The close correspondence between the two suggests that 
+DynNet effectively reconstructs the system's stability properties. D, Comparison of model-estimated and 
+experimental marginal distributions of stable states highlights the model's precision in reproducing stable 
+state properties. Statistical metrics confirm the consistency between estimated and observed distributions. 
+E, Estimated expression profiles of EMT core gene pairs reveal their regulatory relationships in stable 
+
+
+===== PAGE 50 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+states, suggesting coordinated expression patterns that define phenotypic stability. F, Gene expression 
+velocity field illustrates the directed dynamics toward stable states during MET, capturing the cell fate 
+transitions. Arrow directions indicate estimated expression trajectories. G, Weighted gene regulatory 
+network inferred by DynNet, with edge widths reflecting the potential strength of regulatory interactions, 
+and nodes representing core genes selected. 
+Figure 6: DynNet predicts possible transition paths and identifies critical genes for EMT. 
+A, Possible direct transition paths between the E state and the M state identified using the minimum 
+action path method (Red: M to E; White: E to M). B, Transition paths between the E state and the M state 
+through intermediate states, illustrate the process of cell transition from the E state to the M state, 
+including intermediate states (IM and pEMT). C, State transition network diagram depicts all transition 
+pathways among stable states. Arrow thickness represents transition probabilities, while labelled values 
+indicate the action associated with each transition path. D, Comparison of model-estimated and 
+experimental marginal distributions of stable states in the TGF-β-induced EMT process, assessing the 
+model's accuracy in replicating stable state properties. E, DynNet's estimated EMT landscape overlaid 
+with experimental data points, validating the model's ability to reconstruct state transitions and dynamic 
+stability. F, Parameter sensitivity analysis, showing the impact of changes in model weight parameters 𝑎 
+and 𝑏 on the transition action. The figure quantifies the effects of perturbations in parameters 𝑎 and 𝑏 
+on the transition actions from the E state to the M state (𝛥𝑆𝐸→𝑀) and from the M state to the E state 
+(𝛥𝑆𝑀→𝐸), revealing parameter-dependent shifts in transition dynamics. G, Temporal changes in gene 
+expression profiles during the transition from the M state to the E state via intermediate states, capturing 
+key regulatory shifts along the trajectory. H, Results of simulated gene knockout experiments, showing 
+the impact of knocking out CDH1 and VIM genes on cell state transitions. The red areas in the figure 
+indicate the states reached after knockout, while the grey areas represent the original experiment data. 
+ 
+
+
+===== PAGE 51 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+ 
+ 
+ 
+NCOMMS-25-37495C – Li 
+ 
+EDITORIAL SUMMARY 
+Dou and colleagues present DynNet, a biophysically informed deep learning framework that reconstructs 
+continuous cellular dynamics from time-resolved single-cell data. DynNet maps cell fate transitions and 
+offers insights into complex biological processes. 
+Peer Review Information: Nature Communications thanks the anonymous reviewer(s) for their 
+contribution to the peer review of this work. A peer review file is available. 
+ 
+
+
+===== PAGE 52 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+Initial state 
+Gene
+Cell
+PC1
+PC2
+Initial State
+Final State 1
+Final State 2
+Final State 3
+Final state 
+Gene
+Cell
+Multiple time points scRNA-seq
+Single Cell RNA Sequance Data
+Counting Martix
+Preprocess
+Single Cell
+A
+Estimate
+Cell fate decision 
+critical point
+Time
+Expression
+Cell Fate Analysis
+Weighted GRN
+Transition Path Analysis
+State3
+State2
+State4
+State1
+State5
+Model Capability Comparison
+Feature
+DynNet
+CellRank
+scTour
+DeepVelo
+SDEvelo
+No Un/Spliced Data
+Interpretability
+Multi-stability
+GRN Inference
+Reconstruct Trajectory
+Dynamics Inference 
+● = High
+● = Medium
+● = Low
+Velocity Estimation Network
+Input
+Gene expression 
+Output
+Estimated velocity
+…
+…
+…
+…
+Hidden
+Hill layer
+Velocity Estimation Network
+Input
+Gene expression 
+Output
+Estimated velocity
+…
+…
+…
+…
+Hidden
+Hill layer
+…
+…
+…
+…
+Input
+Gene expression
+Output
+Estimated noise variance
+Noise Estimation Network
+Network Structure
+Gaussian mixture model
+D
+Estimated distribution for data
+Density
+Gene expression
+2.Predicted Marginal Distribution
+3.Compare with Data Distribution
+1.Estimate Dynamics by SDEs
+Data point
+Drift force
+Mixture Distribution
+Weight
+Cls2
+Cls1
+Loss = Distribution Loss
+Velocity 
+Estimator
+Alternative
+Training
+Train regulation parameter w
+Train Hill threshold parameter S
+Train Noise Estimator
+E
+Train DynNet
+Loss  = Drift Loss + Weight Loss + Constraint
+Minimize drift at stable state
+Match the state weights
+C
+Compare
+Activation
+Inhibition
+Prior GRN
+B
+Input
+Train
+Constraint
+Estimate
+Output
+G
+Energy Landscape
+Time
+Expression
+Stable
+State
+First Order Moment Equation
+Landscape Construction
+Covariance
+Second Order Moment Equation
+F
+Analysis
+Input Data Preparation
+Dowmstream Analysis
+DynNet Training and Inference
+H
+
+
+===== PAGE 53 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+X2
+X1
+4.03
+6.29
+S3
+8.07
+0.42
+S2
+0.48
+8.06
+S1
+0
+2
+4
+6
+8
+10
+X1
+0
+2
+4
+6
+8
+10
+X2
+Decision Boundaries (DynNet)
+S3
+S2
+S1
+0
+2
+4
+6
+8
+10
+X1
+0
+2
+4
+6
+8
+10
+X2
+Decision Boundaries (Data)
+S3
+S2
+S1
+0
+2
+4
+6
+8
+10
+X1
+0
+2
+4
+6
+8
+10
+X2
+Landscape
+0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+U
+0
+2
+4
+6
+8
+X1
+0
+2
+4
+6
+8
+X2
+Stable State
+S3
+S2
+S1
+X1
+X2
+MISA model
+0
+2
+4
+6
+8
+X1
+0
+2
+4
+6
+8
+X2
+Stable State Comparision
+Data
+Data Center
+Estimated Center
+Estimated Data Region
+A
+B
+C
+D
+E
+F
+0
+2
+4
+6
+8
+Gene Expression
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+Density
+X1
+Data
+Estimated
+0
+2
+4
+6
+8
+Gene Expression
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+Density
+X2
+Data
+Estimated
+Marginal Distributions of Stable States
+0
+2
+4
+6
+8
+10
+X1
+0
+2
+4
+6
+8
+10
+X2
+DynNet
+0
+2
+4
+6
+8
+10
+X1
+0
+2
+4
+6
+8
+10
+X2
+Ground Truth
+0
+2
+4
+6
+8
+10
+X1
+0
+2
+4
+6
+8
+10
+X2
+Neural ODE
+2
+3
+4
+5
+Number of Snapshots
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+0.30
+MSE
+Error Comparison
+Neural ODE
+DynNet
+G
+H
+
+
+===== PAGE 54 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+PCA of Trajectory
+G6
+G7
+G2
+G3
+G5
+G1
+G4
+−3
+−2
+−1
+0
+1
+2
+PC1
+−3
+−2
+−1
+0
+1
+2
+PC2
+Velocity Field
+0
+1
+0
+1
+2
+G6
+0
+1
+Time
+0
+1
+2
+G7
+G1
+G2
+G3
+G4
+G5
+G6
+G7
+Gene
+−0.5
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+3.0
+3.5
+Expression Distribution
+Gene Expression Comparison at Stable State
+0
+1
+2
+0
+10
+20
+30
+Density
+G1
+0
+1
+2
+0
+2
+4
+6
+Density
+G2
+0
+1
+2
+0
+2
+4
+6
+Density
+G3
+0
+1
+2
+0
+1
+2
+3
+Density
+G4
+0
+1
+2
+0
+2
+4
+Density
+G5
+0
+1
+2
+0
+1
+2
+3
+Density
+G6
+0
+1
+2
+0
+2
+4
+Density
+G7
+Marginal Distribution
+Gene Network
+A
+B
+C
+D
+E
+F
+G
+0
+25
+50
+75
+100
+125
+150
+5
+10
+Log Loss
+Soft Constraint
+0
+25
+50
+75
+100
+125
+150
+Training Epochs
+0
+5
+10
+Log Loss
+Hard Constraint
+H
+I
+D1
+D2
+Critical Point
+G1
+G2
+G3
+G4
+G5
+G6
+G7
+G1
+G2
+G3
+G4
+G5
+G6
+G7
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.30
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.25
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.00
+0.18
+0.01
+0.00
+0.00
+0.00
+0.32
+0.01
+0.00
+0.19
+0.00
+0.00
+0.00
+0.00
+0.16
+0.00
+0.00
+0.00
+0.00
+0.00
+0.27
+0.01
+0.31
+0.83
+0.51
+1.65
+1.13
+Activation Parameters
+G1
+G2
+G3
+G4
+G5
+G6
+G7
+G1
+G2
+G3
+G4
+G5
+G6
+G7
+0.00
+0.00
+0.00
+0.08
+0.02
+0.01
+0.00
+0.00
+0.00
+0.00
+0.00
+0.01
+0.00
+0.01
+0.00
+0.00
+0.00
+0.04
+0.09
+0.05
+0.04
+0.00
+0.00
+0.00
+0.00
+0.00
+0.14
+0.00
+0.00
+0.00
+0.46
+0.00
+0.33
+0.00
+0.00
+0.00
+0.00
+0.00
+0.16
+0.00
+0.12
+0.01
+0.01
+0.01
+0.01
+0.07
+0.00
+Inhibition Parameters
+0.61
+1.34
+Parameters under Soft Constraint
+
+
+===== PAGE 55 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+PCA Visualization of Gene Expression Data
+DE
+HE
+early LB
+late LB
+IH
+iPSc
+MH
+transplant LB
+PC1
+PC2
+DE
+HE
+IH
+iPSc
+MH
+transplant LB
+early LB
+late LB
+−9
+−6
+−3
+0
+3
+6
+9
+PC1
+−15
+−12
+−9
+−6
+−3
+0
+3
+6
+PC2
+Landscape and Velocity Field
+Time 1
+Time 2
+Time 3
+Time 4
+LB
+MH
+6
+9
+12
+15
+18
+21
+24
+27
+U
+0
+5
+10
+15
+Expression
+0.0
+0.1
+0.2
+0.3
+Density
+VTN
+0
+5
+10
+15
+Expression
+0.0
+0.2
+0.4
+0.6
+0.8
+Density
+PDGFA
+0
+5
+10
+15
+Expression
+0.0
+0.2
+0.4
+0.6
+0.8
+Density
+EDEM1
+0
+5
+10
+15
+Expression
+0.0
+0.2
+0.4
+0.6
+0.8
+Density
+TOB1
+0
+5
+10
+15
+Expression
+0.0
+0.2
+0.4
+0.6
+0.8
+Density
+SRGAP2
+MH
+Estimated MH
+LB
+Estimated LB
+0
+5
+10
+15
+Expression
+0.0
+0.1
+0.2
+0.3
+Density
+RANBP1
+0
+5
+10
+15
+Expression
+0.00
+0.05
+0.10
+0.15
+0.20
+0.25
+Density
+SRSF9
+Stem marker
+MH marker
+LB marker
+Differentiation marker
+start
+end
+TOB1 Knockout
+start
+end
+RANBP1 Knockout
+start
+end
+SRGAP2 Knockout
+start
+end
+CHP1 Knockout
+start
+end
+SRSF9 Knockout
+start
+end
+AKR1B1 Knockout
+PC1
+PC2
+68.4
+303.8
+161.3
+87.3
+68.8
+224.3
+325.3
+68.3
+38.3
+DE
+HE
+IH
+MH
+early
+LB
+late
+LB
+Network of Cell State Transitions
+ARRDC3
+CHP1
+CAMK2D
+TOB1
+STAT2
+TMEM120B
+EDEM1
+PDGFA
+VTN
+LIN28A
+AKR1B1
+LAPTM4B
+HMGA1
+SERPINE2
+SRSF9
+RANBP1
+CLDN6
+CYC1
+SRGAP2SOX11
+Reference Gene Network
+DE to MH DE to LB
+0
+20
+40
+60
+80
+100
+Time
+DE to MH DE to LB
+0
+20
+40
+60
+80
+100
+First Passage Time Estimation
+dt = 0.01
+dt = 0.1
+None TOB1 CHP1
+Knockout Gene
+0
+10
+20
+30
+40
+50
+Arrival Time
+**
+**
+None RANBP1 SRSF9
+Knockout Gene
+0
+10
+20
+30
+40
+Arrival Time
+***
+*
+None SRGAP2 AKR1B1
+Knockout Gene
+0
+10
+20
+30
+40
+*
+**
+None SRGAP2 AKR1B1
+Knockout Gene
+0
+10
+20
+30
+40
+*
+FPT of LB State after Knockout
+FPT of MH State after Knockout
+A
+B
+C
+D
+E
+F
+G
+H
+I
+
+
+===== PAGE 56 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+M
+E
+IM
+pEMT
+Epithelial
+Mesenchymal
+Landscape from Single Cell Data
+−5
+0
+5
+0
+5
+10
+U
+M
+E
+IM
+pEMT
+Stable State Landscape (Day 20)
+PC1
+−5
+0
+5
+0
+10
+20
+U
+M
+E
+IM
+pEMT
+Initial State Landscape (Day 10)
+−8
+−6
+−4
+−2
+0
+2
+4
+PC1
+−4
+−2
+0
+2
+4
+PC2
+E
+M
+pEMT
+IM
+Velocity Field
+0
+5
+10
+Expression
+0.0
+0.1
+0.2
+0.3
+0.4
+Density
+CD44
+0
+5
+10
+Expression
+0.0
+0.1
+0.2
+0.3
+0.4
+Density
+MUC1
+0
+5
+10
+Expression
+0.0
+0.1
+0.2
+0.3
+0.4
+Density
+CDH1
+0
+5
+10
+Expression
+0.0
+0.1
+0.2
+0.3
+0.4
+Density
+CTNNB1
+0
+5
+10
+Expression
+0.0
+0.1
+0.2
+0.3
+0.4
+Density
+VIM
+Data
+Estimated
+Marginal Distribution of Stable State
+2
+4
+6
+CD44
+0
+2
+4
+6
+8
+MUC1
+E
+M
+pEMT
+IM
+2
+4
+6
+CD44
+0
+1
+2
+3
+4
+5
+6
+CDH1
+E
+M
+pEMT
+IM
+2
+4
+6
+CD44
+0
+1
+2
+3
+4
+5
+6
+CTNNB1
+E
+M
+pEMT
+IM
+0
+2
+4
+6
+8
+VIM
+0
+2
+4
+6
+8
+MUC1
+E
+M
+pEMT
+IM
+0
+2
+4
+6
+8
+VIM
+0
+1
+2
+3
+4
+5
+6
+CDH1
+E
+M
+pEMT
+IM
+0
+2
+4
+6
+8
+VIM
+0
+1
+2
+3
+4
+5
+6
+CTNNB1
+E
+M
+pEMT
+IM
+Estimated data (pairwise)
+−8
+−6
+−4
+−2
+0
+2
+4
+6
+PC1
+−4
+−2
+0
+2
+4
+PC2
+M
+E
+IM
+pEMT
+Landscape from DynNet
+MUC1
+VIM
+CTNNB1
+CDH1
+CD44
+Estimated Weighted GRN
+D
+A
+C
+F
+B
+E
+G
+
+
+===== PAGE 57 =====
+
+ARTICLE IN PRESS
+ARTICLE IN PRESS
+−9
+−6
+−3
+0
+3
+6
+9
+PC1
+−4
+−2
+0
+2
+4
+PC2
+0
+10
+U
+28.84
+11.43
+42.51
+87.45
+18.63
+112.21
+M
+E
+IM
+pEMT
+Indirect Transition Path between E and M state
+−7.5
+−5.0
+−2.5
+0.0
+2.5
+5.0
+7.5
+PC1
+−4
+−2
+0
+2
+4
+PC2
+E
+pEMT
+M
+IM
+Direct Transition Path between E and M state
+M
+E
+IM
+pEMT
+227.0
+28.8
+99.2
+334.1
+258.1
+112.2
+11.4
+153.0
+42.5
+134.2
+18.6
+87.4
+State Transition Network
+VIM→CD44
+CTNNB1→CDH1
+CTNNB1→MUC1
+CDH1→CTNNB1
+CDH1→MUC1
+MUC1→CTNNB1
+MUC1→CDH1
+CD44→VIM
+0.00
+0.05
+Regulatory Parameters
+Parameter Sensitivity Analysis of a
+0.00
+0.02
+0.04
+VIM→CTNNB1
+VIM→CDH1
+VIM→MUC1
+CTNNB1→VIM
+CTNNB1→CD44
+CDH1→VIM
+CDH1→CD44
+MUC1→VIM
+MUC1→CD44
+CD44→CTNNB1
+CD44→CDH1
+CD44→MUC1
+Regulatory Parameters
+Parameter Sensitivity Analysis of b
+0
+25
+50
+75
+100
+2
+4
+6
+Path M -> IM
+0
+25
+50
+75
+100
+2
+4
+6
+Path IM -> pEMT
+0
+25
+50
+75
+100
+2
+3
+4
+5
+6
+Path pEMT -> E
+CD44
+MUC1
+CDH1
+CTNNB1
+VIM
+Path
+Path
+Path
+Expression
+Original
+Perturbed
+E(start)
+pEMT
+CDH1 Knockout 
+IM
+M
+E
+M(start)
+IM
+pEMT
+CD44 Knockout 
+0
+2
+4
+6
+8
+Expression
+0.0
+0.2
+0.4
+0.6
+Density
+CD44
+0
+2
+4
+6
+8
+Expression
+0.0
+0.2
+0.4
+0.6
+0.8
+Density
+MUC1
+0
+2
+4
+6
+8
+Expression
+0.0
+0.2
+0.4
+0.6
+Density
+CDH1
+0
+2
+4
+6
+8
+Expression
+0.0
+0.2
+0.4
+0.6
+Density
+CTNNB1
+0
+2
+4
+6
+8
+Expression
+0.0
+0.2
+0.4
+0.6
+Density
+VIM
+Estimated
+Data
+Marginal Distribution Comparision of EMT process
+−9
+−6
+−3
+0
+3
+6
+9
+PC1
+−9
+−7
+−5
+−3
+−1
+1
+3
+5
+PC2
+0
+10
+20
+U
+EMT Landscape by DynNet
+A
+B
+C
+D
+F
+E
+G
+H

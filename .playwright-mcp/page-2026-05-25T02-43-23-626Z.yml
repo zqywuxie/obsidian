@@ -1,0 +1,13 @@
+- generic [ref=e6]:
+  - generic [ref=e8]:
+    - generic [ref=e9]: 正在检查浏览器以便让您访问 pmc.ncbi.nlm.nih.gov…
+    - generic [ref=e10]:
+      - text: 如果系统在 5 秒后未自动将您重定向，请点击
+      - link "此处" [ref=e11] [cursor=pointer]:
+        - /url: "#"
+      - text: 。
+  - iframe [ref=e14]:
+    - generic [ref=f1e6]:
+      - text: 由
+      - strong [ref=f1e7]: reCAPTCHA
+      - text: 提供保护

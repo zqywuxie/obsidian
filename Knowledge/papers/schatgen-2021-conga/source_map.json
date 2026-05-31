@@ -1,0 +1,53 @@
+{
+  "paper": {
+    "key": "schatgen-2021-conga",
+    "title": "Integrating T cell receptor sequences and transcriptional profiles by clonotype neighbor-graph analysis (CoNGA)",
+    "doi": "10.1038/s41587-021-00989-2",
+    "source": "defuddle(https://pmc.ncbi.nlm.nih.gov/articles/PMC8832949/)"
+  },
+  "blocks": [
+    { "id": "S001", "type": "abstract", "section": "Summary", "description": "CoNGA method overview — graph-theoretic approach for GEX/TCR correlation" },
+    { "id": "S002", "type": "body", "section": "Main", "description": "Prior work: TCR as clonal barcode, single-cell sequencing advances" },
+    { "id": "S003", "type": "body", "section": "Main", "description": "TCRdist, MAIT/iNKT, TCR sequence features and GEX phenotypes" },
+    { "id": "S004", "type": "body", "section": "Main", "description": "CoNGA introduction and key findings preview" },
+    { "id": "S005", "type": "body", "section": "Results: graph-vs-graph", "description": "CoNGA graph-vs-graph analysis method description" },
+    { "id": "S006", "type": "caption", "section": "Results: graph-vs-graph", "description": "Fig 1 caption — CoNGA workflow and application" },
+    { "id": "S007", "type": "body", "section": "Results: graph-vs-graph", "description": "Application to human CD8 T cells (10x_200k_donor2a), UMAP, clustering" },
+    { "id": "S008", "type": "body", "section": "Results: graph-vs-graph", "description": "Four CoNGA clusters: MAIT, Flu M1-specific, cluster features" },
+    { "id": "S009", "type": "body", "section": "Results: HOBIT+ Population", "description": "CoNGA on pMHC-sorted datasets, HOBIT+/HELIOS+ population discovery" },
+    { "id": "S010", "type": "caption", "section": "Results: HOBIT+ Population", "description": "Fig 2 caption — HOBIT+ CD8 T cell characterization" },
+    { "id": "S011", "type": "body", "section": "Results: HOBIT+ Population", "description": "Flow cytometry validation of HOBIT+ population" },
+    { "id": "S012", "type": "body", "section": "Results: HOBIT+ Population", "description": "CDR3 sequence biases: length, charge, hydrophobicity, iMHC score" },
+    { "id": "S013", "type": "body", "section": "Results: Thymic T cells", "description": "CoNGA on thymus atlas, DP/SP/Treg/CD8αα populations" },
+    { "id": "S014", "type": "caption", "section": "Results: Thymic T cells", "description": "Fig 3 caption — thymic T cell CoNGA analysis" },
+    { "id": "S015", "type": "body", "section": "Results: graph-vs-feature", "description": "Graph-vs-feature analysis method, iMHC score neighborhood mapping" },
+    { "id": "S016", "type": "caption", "section": "Results: graph-vs-feature", "description": "Fig 4 caption — graph-vs-feature analysis details" },
+    { "id": "S017", "type": "body", "section": "Results: graph-vs-feature", "description": "Reverse mapping: DEGs in TCR neighborhoods, MAIT/Flu/HOBIT genes" },
+    { "id": "S018", "type": "body", "section": "Results: graph-vs-feature", "description": "EPHB6-TRBV30 correlation discovery" },
+    { "id": "S019", "type": "caption", "section": "Results: graph-vs-feature", "description": "Fig 5 caption — EPHB6/TRBV30 covariation" },
+    { "id": "S020", "type": "body", "section": "Results: pMHC-specific", "description": "pMHC-binding graph analysis, GEX/TCR similarity among epitope-specific clonotypes" },
+    { "id": "S021", "type": "caption", "section": "Results: pMHC-specific", "description": "Fig 6 caption — pMHC-positive clonotype GEX/TCR analysis" },
+    { "id": "S022", "type": "body", "section": "Results: pMHC-specific", "description": "Differential expression across pMHC subsets, GSVA analysis" },
+    { "id": "S023", "type": "body", "section": "Discussion", "description": "Summary of CoNGA findings across datasets" },
+    { "id": "S024", "type": "body", "section": "Discussion", "description": "Graph-vs-feature gap-filling, EPHB6-TRBV30" },
+    { "id": "S025", "type": "body", "section": "Discussion", "description": "Limitations: clonotype-level analysis, distance measures, cohort size" },
+    { "id": "S026", "type": "body", "section": "Discussion", "description": "Future extensions: BCR, new similarity measures, graph algorithms" },
+    { "id": "S027", "type": "body", "section": "Discussion", "description": "Biological implications: memory continuum, TCR fate determination" }
+  ],
+  "section_index": {
+    "Summary": { "start": "S001", "blocks": ["S001"] },
+    "Main (Introduction)": { "start": "S002", "blocks": ["S002", "S003", "S004"] },
+    "Results: graph-vs-graph": { "start": "S005", "blocks": ["S005", "S006", "S007", "S008"] },
+    "Results: HOBIT+ Population": { "start": "S009", "blocks": ["S009", "S010", "S011", "S012"] },
+    "Results: Thymic T cells": { "start": "S013", "blocks": ["S013", "S014"] },
+    "Results: graph-vs-feature": { "start": "S015", "blocks": ["S015", "S016", "S017", "S018", "S019"] },
+    "Results: pMHC-specific": { "start": "S020", "blocks": ["S020", "S021", "S022"] },
+    "Discussion": { "start": "S023", "blocks": ["S023", "S024", "S025", "S026", "S027"] }
+  },
+  "resources": {
+    "doi": "https://doi.org/10.1038/s41587-021-00989-2",
+    "pmc": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8832949/",
+    "github": "https://github.com/phbradley/conga",
+    "pdf": "original.pdf (5 pages, 7.4 MB)"
+  }
+}

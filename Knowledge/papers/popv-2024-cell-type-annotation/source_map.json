@@ -1,0 +1,57 @@
+{
+  "paper": {
+    "key": "popv-2024-cell-type-annotation",
+    "title": "Consensus prediction of cell type labels in single-cell data with popV",
+    "doi": "10.1038/s41588-024-01993-3",
+    "source": "defuddle(https://www.nature.com/articles/s41588-024-01993-3)"
+  },
+  "blocks": [
+    { "id": "S001", "page": 1, "type": "abstract", "section": "Abstract", "description": "摘要 — uncertainty estimation for cell-type annotation" },
+    { "id": "S002", "page": 1, "type": "body", "section": "Main", "description": "Introduction — need for automated annotation and uncertainty" },
+    { "id": "S003", "page": 1, "type": "body", "section": "Main", "description": "Challenges in automated annotation" },
+    { "id": "S004", "page": 2, "type": "body", "section": "Main", "description": "popV overview — consensus approach, Cell Ontology" },
+    { "id": "S005", "page": 2, "type": "body", "section": "Main", "description": "Open-source package, pretrained models for Tabula Sapiens" },
+    { "id": "S006", "page": 2, "type": "body", "section": "Results: Overview of popV", "description": "8 methods detailed — RF, SVM, scANVI, OnClass, Celltypist, kNN+3 harmonization" },
+    { "id": "S007", "page": 3, "type": "body", "section": "Results: Overview of popV", "description": "Consensus voting — majority vote + OnClass ontology propagation" },
+    { "id": "S008", "page": 3, "type": "body", "section": "Results: Overview of popV", "description": "Sample report outputs — UMAP, confusion matrices, consensus score" },
+    { "id": "S009", "page": 3, "type": "body", "section": "Results: Overview of popV", "description": "Three modes: retrain, inference, fast — pretrained models" },
+    { "id": "S010", "page": 4, "type": "body", "section": "Results: PopV prediction score", "description": "Lung Cell Atlas case study setup" },
+    { "id": "S011", "page": 4, "type": "body", "section": "Results: PopV prediction score", "description": "High accuracy — ontology-based accuracy terms (exact/parent/child/sibling)" },
+    { "id": "S012", "page": 4, "type": "body", "section": "Results: PopV prediction score", "description": "Consensus score correlates with accuracy — 90% at ≥6, 98% at 8" },
+    { "id": "S013", "page": 5, "type": "body", "section": "Results: PopV prediction score", "description": "Reason 1 for low consensus — continuum cell states (endothelial example)" },
+    { "id": "S014", "page": 5, "type": "body", "section": "Results: PopV prediction score", "description": "Reason 2 — query-specific cell subsets absent from reference" },
+    { "id": "S015", "page": 5, "type": "body", "section": "Results: PopV prediction score", "description": "Reason 3 — inaccuracy in reference annotation (T cell example)" },
+    { "id": "S016", "page": 6, "type": "body", "section": "Results: PopV prediction score", "description": "Diverse classifiers essential — vs SVM-only majority voting" },
+    { "id": "S017", "page": 6, "type": "body", "section": "Results: Drastic composition differences", "description": "Thymus case study — age involution, query-specific thymocytes" },
+    { "id": "S018", "page": 6, "type": "body", "section": "Results: Drastic composition differences", "description": "Low consensus scores for query-specific compartments" },
+    { "id": "S019", "page": 7, "type": "body", "section": "Results: Drastic composition differences", "description": "Cortical epithelial cells and pDC identification" },
+    { "id": "S020", "page": 7, "type": "body", "section": "Results: Drastic composition differences", "description": "Cross-technology label transfer — Drop-seq and nuclei" },
+    { "id": "S021", "page": 7, "type": "body", "section": "Results", "description": "Ablation studies — removing algorithms reduces calibration" },
+    { "id": "S022", "page": 8, "type": "body", "section": "Discussion", "description": "popV summary — interpretable certainty quantification" },
+    { "id": "S023", "page": 8, "type": "body", "section": "Discussion", "description": "Flexible framework for new algorithms" },
+    { "id": "S024", "page": 8, "type": "body", "section": "Discussion", "description": "Limitations — dependent on underlying predictors, future directions" },
+    { "id": "S025", "page": 9, "type": "body", "section": "Methods", "description": "Package info, dependencies, reproducibility" },
+    { "id": "F001", "page": 2, "type": "figure", "section": "Results: Overview", "description": "Fig 1 — Framework of popV" },
+    { "id": "F002", "page": 4, "type": "figure", "section": "Results: Prediction score", "description": "Fig 2 — Lung Cell Atlas case study" },
+    { "id": "F003", "page": 6, "type": "figure", "section": "Results: Drastic composition", "description": "Fig 3 — Thymus case study" }
+  ],
+  "section_index": {
+    "Abstract": { "start": "S001", "blocks": ["S001"] },
+    "Main (Introduction)": { "start": "S002", "blocks": ["S002", "S003", "S004", "S005"] },
+    "Results: Overview of popV": { "start": "S006", "blocks": ["S006", "S007", "S008", "S009"] },
+    "Results: Prediction Score": { "start": "S010", "blocks": ["S010", "S011", "S012", "S013", "S014", "S015", "S016"] },
+    "Results: Drastic Composition Differences": { "start": "S017", "blocks": ["S017", "S018", "S019", "S020", "S021"] },
+    "Discussion": { "start": "S022", "blocks": ["S022", "S023", "S024"] },
+    "Methods": { "start": "S025", "blocks": ["S025"] }
+  },
+  "resources": {
+    "github": "https://github.com/YosefLab/popV",
+    "reproducibility": "https://github.com/YosefLab/popv-reproducibility",
+    "pypi": "https://pypi.org/project/popV/",
+    "colab": "https://github.com/YosefLab/popV (Google Colab notebook)",
+    "zenodo_pretrained": "https://doi.org/10.5281/zenodo.7580707",
+    "zenodo_data": "https://doi.org/10.5281/zenodo.7587774",
+    "reference_atlas": "Tabula Sapiens (CELLxGENE: e5f58829-1a66-40b5-a624-9046778e74f5)",
+    "license": "CC-BY-NC-ND 4.0"
+  }
+}
